@@ -21,7 +21,7 @@ $(function () {
             var url = response.results[i].url;
 
 
-            $('#news-results').append("<div><h3>" + title + "</h3><p>" + abstract + "</p><p>" + "<a target='_blank' href='" + url + "'>Read more.</a></p></div>");
+            $('#news').append("<div><h3>" + title + "</h3><p>" + abstract + "</p><p>" + "<a target='_blank' href='" + url + "'>Read more.</a></p></div>");
           }
         },
         error: function (response) {
