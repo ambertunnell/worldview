@@ -10,23 +10,25 @@ $(function () {
 
   $(".clock img").click(function() {
     var location = $(this).closest(".clock").data('city');
+    $(".weather").empty();
     switch (location){
       case 'nyc':
-        coords = nyc_coords
+        coords = nyc_coords;
         break;
       case 'london':
-        coords = london_coords
+        coords = london_coords;
         break;
       case 'beijing':
-        coords = beijing_coords
+        coords = beijing_coords;
         break;
       case 'sydney':
-        coords = sydney_coords
+        coords = sydney_coords;
         break;
       case 'paris':
-        coords = paris_coords
+        coords = paris_coords;
         break;
-    };
+      }
+    }
     
   var URL = "https://api.forecast.io/forecast/"+WEATHER_API_KEY+"/"+coords;
 
@@ -39,18 +41,20 @@ $(function () {
                city = place.replace(/.*\//,"").replace("_"," ");
          if (city === "Shanghai"){
           city = "Beijing";
-         };
+         }
          var locale = city + " | " + continent,
                temp = response['currently']['temperature'],
             summary = response['currently']['summary'],
       precipitation = response['currently']['precipProbability'];
-      $(".weather").empty().append('<h3>Weather</h3><br>' + locale + '<br><br>' + temp + ' Degrees - ' + summary +' - ' + precipitation + '% Chance of Rain');
-      console.log(response)
+      $(".weather").append('<h3>Weather</h3><br>' + locale + '<br><br>' + temp + ' Degrees - ' + summary +' - ' + precipitation + '% Chance of Rain');
+      console.log(response);
     },
     error: function(response) {
-      console.log("Forecast.io API request failed")
+      console.log("Forecast.io API request failed");
     }
 
   });
-  
-})
+
+});
+
+
