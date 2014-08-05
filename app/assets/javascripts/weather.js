@@ -41,7 +41,7 @@ $(function () {
                temp = response['currently']['temperature'],
             summary = response['currently']['summary'],
       precipitation = response['currently']['precipProbability'];
-      $(".weather").append('<br>' + locale + '<br><br>' + temp + ' Degrees - ' + summary +' - ' + precipitation + '% Chance of Rain');
+      $(".weather").empty().append('<br>' + locale + '<br><br>' + temp + ' Degrees - ' + summary +' - ' + precipitation + '% Chance of Rain');
       console.log(response)
     },
     error: function(response) {
