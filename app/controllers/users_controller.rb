@@ -1,5 +1,3 @@
-require 'twitter'
-
 class UsersController < ApplicationController
 
   def index
