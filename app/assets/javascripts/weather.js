@@ -30,25 +30,23 @@ $(function () {
     
   var URL = "https://api.forecast.io/forecast/"+WEATHER_API_KEY+"/"+coords;
 
-    weather = $.ajax({
-      url: URL,
-      dataType: 'jsonp',
-      success: function(response) {
-        var place = response['timezone'],
-            continent = (/.*\//).exec(place)[0].replace("/",""),
-              country = place.replace(/.*\//,"").replace("_"," "),
-               locale = country + " | " + continent,
-                 temp = response['currently']['temperature'],
-              summary = response['currently']['summary'],
-        precipitation = response['currently']['precipProbability'];
-        $(".weather").empty().append('<br>' + locale + '<br><br>' + temp + ' Degrees - ' + summary +' - ' + precipitation + '% Chance of Rain');
-        console.log(response)
-      },
-      error: function(response) {
-        console.log("error")
-      },
-
-    });
+  weather = $.ajax({
+    url: URL,
+    dataType: 'jsonp',
+    success: function(response) {
+      var place = response['timezone'],
+          continent = (/.*\//).exec(place)[0].replace("/",""),
+            country = place.replace(/.*\//,"").replace("_"," "),
+             locale = country + " | " + continent,
+               temp = response['currently']['temperature'],
+            summary = response['currently']['summary'],
+      precipitation = response['currently']['precipProbability'];
+      $(".weather").empty().append('<h3>Weather</h3><br>' + locale + '<br><br>' + temp + ' Degrees - ' + summary +' - ' + precipitation + '% Chance of Rain');
+      console.log(response)
+    },
+    error: function(response) {
+      console.log("Forecast.io API request failed")
+    }
 
   });
   

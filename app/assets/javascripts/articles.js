@@ -25,7 +25,6 @@ $(function () {
     };
 
     var API_KEY = "b00e64b2e922c80462649603bea2f71f:19:31738630";
-
     var URL = "http://api.nytimes.com/svc/news/v3/content/all/" + section + ".jsonp?api-key=" + API_KEY;
 
 
@@ -43,6 +42,7 @@ $(function () {
             var url = response.results[i].url;
 
 
+
             $('#news').append("<div><h3>" + title + "</h3><p>" + abstract + "</p><p>" + "<a target='_blank' href='" + url + "'>Read more.</a></p></div>");
           }
         },
@@ -52,3 +52,6 @@ $(function () {
     });
  });   
  });    
+  
+ });    
+
