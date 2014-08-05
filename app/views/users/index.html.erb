@@ -1,14 +1,30 @@
-<h1>Users index</h1>
+<% if logged_in? %>
+  <%= link_to current_user.name, user_path(current_user) %>
+  <%= link_to 'Log Out', logout_path %>
+<% else %>
+  <%= link_to 'Log In with Twitter', twitter_login_path %>
+<% end %>
 
-<h3>News:</h3>
-<div id="news"></div>
-
+Where are you?
+<br>
+<div class="clock" data-city="nyc" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %></a><br> <!-- 'data-city' => 'nyc' -->
+<li>NY</li></div>
+<div class="clock" data-city="london" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %><br>
+<li>London</li></div>
 <br>
 
 <h3>Weather:</h3> 
+
 <div class="weather"></div>
+<br>
+
+<h3>News:</h3>
+
+<div id="news"></div>
+<br>
 
 <br>
 
 <h3>Photos:</h3>
 <div id="flickr"></div>
+

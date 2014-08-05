@@ -1,10 +1,32 @@
 $(function () {
 
-// $(".place").click(function () {
+  $(".clock img").click(function() {
+    
+    $('#news').empty();
+
+    var location = $(this).closest(".clock").data('city');
+    
+    switch (location){
+      case 'nyc':
+        section = "world"
+        break;
+      case 'london':
+        section = "world; london"
+        break;
+      case 'beijing':
+        section = ""
+        break;
+      case 'sydney':
+        section = ""
+        break;
+      case 'paris':
+        section = ""
+        break;
+    };
 
     var API_KEY = "b00e64b2e922c80462649603bea2f71f:19:31738630";
 
-    var URL = "http://api.nytimes.com/svc/news/v3/content/all/world.jsonp?api-key=" + API_KEY;
+    var URL = "http://api.nytimes.com/svc/news/v3/content/all/" + section + ".jsonp?api-key=" + API_KEY;
 
 
     $.ajax({
@@ -28,5 +50,5 @@ $(function () {
             console.log("NYT ajax query failed.");
         } 
     });
- // });   
+ });   
  });    
