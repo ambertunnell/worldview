@@ -1,8 +1,34 @@
 $(function () {
 
 
-    var URL = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=iraq";
+  var nyc_coords = "new york",
+      london_coords = "london",
+      beijing_coords = "beijing",
+      sydney_coords = "sydney",
+      paris_coords = "paris france";
 
+  $(".clock img").click(function() {
+    $('#flickr').empty();
+    var location = $(this).closest(".clock").data('city');
+    switch (location){
+      case 'nyc':
+        coords = nyc_coords
+        break;
+      case 'london':
+        coords = london_coords
+        break;
+      case 'beijing':
+        coords = beijing_coords
+        break;
+      case 'sydney':
+        coords = sydney_coords
+        break;
+      case 'paris':
+        coords = paris_coords
+        break;
+    };
+  
+  var URL = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=" + coords;
 
     $.ajax({
         url: URL,
@@ -27,3 +53,6 @@ $(function () {
 
     });
  });
+
+});
+
