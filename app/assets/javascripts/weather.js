@@ -4,7 +4,7 @@ $(function () {
 
   var nyc_coords = "40.712784,-74.005941",
       london_coords = "51.507351,-0.127758",
-      beijing_coords = "39.90403,116.407526",
+      beijing_coords = "39.909066,116.415054",
       sydney_coords = "-33.867487,151.20699",
       paris_coords = "48.856614,2.352222";
 
@@ -36,8 +36,11 @@ $(function () {
     success: function(response) {
       var place = response['timezone'],
           continent = (/.*\//).exec(place)[0].replace("/",""),
-            country = place.replace(/.*\//,"").replace("_"," "),
-             locale = country + " | " + continent,
+               city = place.replace(/.*\//,"").replace("_"," ");
+         if (city === "Shanghai"){
+          city = "Beijing";
+         };
+         var locale = city + " | " + continent,
                temp = response['currently']['temperature'],
             summary = response['currently']['summary'],
       precipitation = response['currently']['precipProbability'];
