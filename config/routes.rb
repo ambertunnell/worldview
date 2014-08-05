@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   root 'users#index'
+  get '/twitter' =>'tweets#twitter_update'
 
   get '/auth/twitter', as: 'twitter_login'
   get '/auth/twitter/callback', to: 'sessions#create'

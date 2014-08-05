@@ -1,3 +1,5 @@
+require 'twitter'
+
 class UsersController < ApplicationController
 
   def index
@@ -5,6 +7,7 @@ class UsersController < ApplicationController
 
   def create
   end
+
 
   def new
   end
