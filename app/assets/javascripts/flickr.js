@@ -1,30 +1,30 @@
 $(function () {
 
 
-  var nyc_coords = "new york",
-      london_coords = "london",
-      beijing_coords = "beijing",
-      sydney_coords = "sydney",
-      paris_coords = "paris france";
+  var nyc = "new york",
+      london = "london",
+      beijing = "beijing",
+      sydney = "sydney",
+      paris = "paris france";
 
   $(".clock img").click(function() {
     $('#flickr').empty();
     var location = $(this).closest(".clock").data('city');
     switch (location){
       case 'nyc':
-        coords = nyc_coords
+        coords = nyc
         break;
       case 'london':
-        coords = london_coords
+        coords = london
         break;
       case 'beijing':
-        coords = beijing_coords
+        coords = beijing
         break;
       case 'sydney':
-        coords = sydney_coords
+        coords = sydney
         break;
       case 'paris':
-        coords = paris_coords
+        coords = paris
         break;
     };
   
