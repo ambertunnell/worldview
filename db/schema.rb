@@ -15,6 +15,10 @@ ActiveRecord::Schema.define(version: 20140805210946) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
+    t.text     "abstract"
+    t.string   "url"
+    t.string   "byline"
+    t.datetime "pubdate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   get '/auth/twitter', as: 'twitter_login'
   get '/auth/twitter/callback', to: 'sessions#create'
-  get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
 
   # You can have the root of your site routed with "root"

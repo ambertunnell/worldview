@@ -49,18 +49,8 @@ $(function () {
     },
     error: function(response) {
       console.log("Forecast.io API request failed")
-    },
-
-  });
+    }
 
   });
   
 })
-
-// $(function() {
-  
-// });
-
-
-
-
