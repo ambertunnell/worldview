@@ -1,7 +1,7 @@
 $(function () {
 
 
-  var nyc = "new york",
+  var nyc = "new york city",
       london = "london",
       beijing = "beijing",
       sydney = "sydney",
