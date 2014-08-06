@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
 
-  has_many :articleusers
-  has_many :articles, through: :userarticles
-  has_many :usertweets
-  has_many :tweets, through: :usertweets
-  has_many :userpictures
-  has_many :picture, through: :userpictures
+  has_many :user_articles
+  has_many :articles, through: :user_articles
+  has_many :user_tweets
+  has_many :tweets, through: :user_tweets
+  has_many :user_pictures
+  has_many :pictures, through: :user_pictures
 
   def self.create_from_omniauth(auth_hash)
     self.create(

@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    #binding.pry
     @user = User.find_by_provider_and_uid(auth_hash[:provider], auth_hash[:uid]) || User.create_from_omniauth(auth_hash)
     if @user
       session[:user_id] = @user.id
