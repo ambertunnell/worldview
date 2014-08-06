@@ -36,8 +36,8 @@ $(function () {
         dataType: "jsonp",
         jsonp: 'jsoncallback',
         success: function (response) {
-          console.log(response);
-            for (var i=0; i < 20; i++){  
+          // console.log(response);
+            for (var i=0; i < 10; i++){  
               var result = response.items[i];
               var title = result.title
               var image = result.media.m;
@@ -48,7 +48,7 @@ $(function () {
         },
         error: function (response) {
             console.log("error");
-            console.log(response);
+            // console.log(response);
         }
 
     });

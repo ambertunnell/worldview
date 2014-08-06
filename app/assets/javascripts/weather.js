@@ -52,12 +52,12 @@ $(function () {
                     precipitation = response['currently']['precipProbability'];
 
                 $(".weather").append('<br>' + locale + '<br><br>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain');
-                console.log(response);
+                // console.log(response);
                 $(".weather").animate({
                     left: "+=50",
                     height: "toggle"
                 }, 1000, function() {
-                    console.log("// Animation complete.");
+                    // console.log("// Animation complete.");
                   });
             },
             error: function (response) {

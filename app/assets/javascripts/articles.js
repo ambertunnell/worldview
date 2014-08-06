@@ -8,42 +8,45 @@ $(function () {
 
         switch (location) {
             case 'nyc':
-                section = "world";
+                var search = "new+york";
                 break;
             case 'london':
-                section = "world";
+                var search = "london";
                 break;
             case 'beijing':
-                section = "world";
+                var search = "beijing";
                 break;
             case 'sydney':
-                section = "world";
+                var search = "sydney";
                 break;
             case 'paris':
-                section = "world";
+                var search = "paris";
                 break;
         };
 
-        var API_KEY = "b00e64b2e922c80462649603bea2f71f:19:31738630";
-        var URL = "http://api.nytimes.com/svc/news/v3/content/all/" + section + ".jsonp?api-key=" + API_KEY;
-
+        var API_KEY = "dd74b110c07677ce3e0c5c1f94642e26:10:31738630";
+        var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + search + "&sort=newest&api-key=" + API_KEY;
 
         $.ajax({
             url: URL,
+            data: {},
             dataType: "jsonp",
+            jsonpCallback: 'svc_search_v2_articlesearch',
             success: function (response) {
-                console.log(response);
+                console.log(response.response.docs);
 
                 for (var i = 0; i < 10; i++) {
-                    var result = response.results[i];
-                    var title = response.results[i].title;
-                    var abstract = response.results[i].abstract;
-                    var byline = response.results[i].byline;
-                    var url = response.results[i].url;
+     
+                    var result = response.response.docs[i];
+                    var title = response.response.docs[i].headline.main;
+                    var abstract = response.response.docs[i].snippet;
+                    var byline = response.response.docs[i].byline.original;
+                    var url = response.response.docs[i].web_url;
+                    var pubdate = response.response.docs[i].pub_date;
+                    var imagesArray = response.response.docs[i].multimedia;
+                        // images urls = response.response.docs[i].multimedia[i].url 
 
-
-
-                    $('#news').append("<div><h3>" + title + "</h3><p>" + abstract + "</p><p>" + "<a target='_blank' href='" + url + "'>Read more.</a></p></div>");
+                    $('#news').append("<div><h3>" + title + "</h3><p>" + abstract + "</p>" + "<p>" + pubdate + "</p><p>" + "<a target='_blank' href='" + url + "'>Read more.</a></p></div>");
                 }
             },
             error: function (response) {
