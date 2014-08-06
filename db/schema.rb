@@ -37,12 +37,12 @@ ActiveRecord::Schema.define(version: 20140806143439) do
 
   create_table "user_articles", force: true do |t|
     t.integer  "user_id"
-    t.integer  "articles_id"
+    t.integer  "article_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "user_articles", ["articles_id"], name: "index_user_articles_on_articles_id"
+  add_index "user_articles", ["article_id"], name: "index_user_articles_on_article_id"
   add_index "user_articles", ["user_id"], name: "index_user_articles_on_user_id"
 
   create_table "user_photos", force: true do |t|

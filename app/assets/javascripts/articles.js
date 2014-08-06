@@ -74,12 +74,15 @@ $(function () {
       // var articleByline = 
       var articleUrl = $(this).eq(0).find("p").eq(2).find("a").attr("href");
   
+      var $that = $(this);
+
         $.ajax({
             type: "POST",
             url: "/articles",
             data: {article: {title: articleTitle, abstract: articleAbstract, url: articleUrl, pubdate: articlePubdate}},
             success: function(response){
                 console.log("Saving article successful.");
+                $that.eq(0).find(".save-article").text("Saved!");
             },
             error: function(response){
                 console.log("Saving article failed.");
