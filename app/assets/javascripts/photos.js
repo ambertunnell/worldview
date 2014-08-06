@@ -52,6 +52,21 @@ $(function () {
         }
 
     });
+
+    // save = $.ajax({
+    //   type: 'POST',
+    //   url: '/photos',
+    //   data: {
+    //       name: "test testing"
+    //   },
+    //   success: function(response) {
+    //       console.log("")
+    //   },
+    //   error: function(response) {
+    //       console.log("Didn't work");
+    //   }
+    //   });
+
  });
 
 });
