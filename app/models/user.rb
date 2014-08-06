@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :usertweets
   has_many :tweets, through: :usertweets
   has_many :userpictures
-  has_many :picture, through: :userpictures
+  has_many :pictures, through: :userpictures
 
   def self.create_from_omniauth(auth_hash)
     self.create(
