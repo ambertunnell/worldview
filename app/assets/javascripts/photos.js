@@ -1,14 +1,14 @@
 $(function () {
 
-
-  var nyc = "new york city",
+  $(".clock img").click(function() {
+    var nyc = "new york city",
       london = "london",
       beijing = "beijing",
       sydney = "sydney",
       paris = "paris france";
 
-  $(".clock img").click(function() {
     $('#flickr').empty();
+
     var location = $(this).closest(".clock").data('city');
     switch (location){
       case 'nyc':
@@ -42,7 +42,7 @@ $(function () {
               var title = result.title
               var image = result.media.m;
               var link = result.link
-              $('#flickr').append("<div><h3>" + "<a href='" + link + "'>" + title + "</h3><p>" + "<img src=" + image + "></p></div>");
+              $('#flickr').append("<div class='photo'><h3>" + "<a href='" + link + "'>" + title + "</h3><p>" + "<img src=" + image + "></p></div>");
             }
             
         },
@@ -53,7 +53,13 @@ $(function () {
 
     });
 
-    // save = $.ajax({
+ });
+
+
+  $( "#flickr" ).on( "click", ".photo", function( event ) {
+      event.preventDefault();
+
+     // $.ajax({
     //   type: 'POST',
     //   url: '/photos',
     //   data: {
@@ -66,8 +72,8 @@ $(function () {
     //       console.log("Didn't work");
     //   }
     //   });
+  });
 
- });
 
 });
 

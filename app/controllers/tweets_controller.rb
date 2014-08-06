@@ -11,4 +11,7 @@ class TweetsController < ApplicationController
     render :json => @client.search("##{params[:location]} -rt", :result_type => "popular", :lang => "en" ).take(10).collect.to_json
   end
 
+  def create
+  end 
+
 end
