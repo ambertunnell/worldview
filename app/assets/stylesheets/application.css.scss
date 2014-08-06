@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.eot"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.woff"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
@@ -39,3 +40,15 @@ body {
 .weather p {
   position: relative;
 }
+
+#news h3 {
+  position: relative;
+}
+
+#news p {
+  position: relative;
+}
+
+#news {
+  position: relative;
+} 
