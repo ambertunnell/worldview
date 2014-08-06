@@ -11,7 +11,33 @@ class TweetsController < ApplicationController
     render :json => @client.search("##{params[:location]} -rt", :result_type => "popular", :lang => "en" ).take(10).collect.to_json
   end
 
-  def create
-  end 
+
+
+    def create
+    @user = User.find(session[:user_id]) if session[:user_id]
+    
+    unless @user.tweets.find_by(data: params[:tweet][:data])
+      # binding.pry
+      @tweet = Tweet.create(tweet_params) 
+      @user.tweets << @tweet
+      @user.save
+
+    end
+   
+    respond_to do |format|
+      if @user.save
+        format.json { render json: @tweet }
+      else
+        format.json { render json: @tweet.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
+  private
+
+  def tweet_params
+    params.require(:tweet).permit(:data)
+  end  
 
 end
