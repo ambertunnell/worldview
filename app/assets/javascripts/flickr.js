@@ -12,23 +12,23 @@ $(function () {
     var location = $(this).closest(".clock").data('city');
     switch (location){
       case 'nyc':
-        coords = nyc
+        search = nyc;
         break;
       case 'london':
-        coords = london
+        search = london;
         break;
       case 'beijing':
-        coords = beijing
+        search = beijing;
         break;
       case 'sydney':
-        coords = sydney
+        search = sydney;
         break;
       case 'paris':
-        coords = paris
+        search = paris;
         break;
     };
   
-  var URL = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=" + coords;
+  var URL = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=" + search + "&sort=interestingness-desc";
 
     $.ajax({
         url: URL,
