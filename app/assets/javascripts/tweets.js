@@ -62,7 +62,7 @@ $(function () {
                         }
                     };
 
-                    $('#twitter').append("<div class='tweet'><h3>" + tweet + "</h3></div>");
+                    $('#twitter').append("<li><h3>" + tweet + "</h3></li>");
                 }
             },
             error: function (response) {
