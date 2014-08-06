@@ -64,6 +64,6 @@ $(function () {
                 console.log("Forecast.io API request failed");
             }
         });
-
     });
+
 });
