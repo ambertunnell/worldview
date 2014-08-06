@@ -1,6 +1,6 @@
 class Tweet < ActiveRecord::Base
 
-  has_many :usertweets
-  has_many :users, through: :usertweets
+  has_many :user_tweets
+  has_many :users, through: :user_tweets
 
 end
