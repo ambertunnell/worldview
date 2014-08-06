@@ -27,6 +27,7 @@ $(function () {
         //     break;
 
         var URL = "/twitter?location=" + location;
+        // var URL = "/twitter/search?q=" + location + "&src=typd&mode=news"
 
         $.ajax({
             url: URL,
@@ -36,6 +37,9 @@ $(function () {
                 // console.log(response);
                 for (var i = 0; i < 10; i++) {
                     var tweet = response[i].text;
+
+                    
+
                     $('#twitter').append("<div><h3>" + tweet + "</h3></div>");
                 }
             },
