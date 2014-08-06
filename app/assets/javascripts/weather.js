@@ -8,8 +8,7 @@ $(function () {
         sydney_coords = "-33.867487,151.20699",
         paris_coords = "48.856614,2.352222";
 
-    $(".clock img").click(function () {
-
+    $(".clock img").click(function() {
         var location = $(this).closest(".clock").data('city');
         $(".weather").empty();
 
@@ -31,7 +30,6 @@ $(function () {
                 break;
         }
 
-
         var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + coords;
 
         weather = $.ajax({
@@ -51,12 +49,14 @@ $(function () {
                     summary = response['currently']['summary'],
                     precipitation = response['currently']['precipProbability'];
 
-                $(".weather").append('<br>' + locale + '<br><br>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain');
+                $(".weather").append('<br><p>' + locale + '<br><br>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain</p>');
                 // console.log(response);
-                $(".weather").animate({
+                $(".weather p").animate({
+
                     left: "+=50",
-                    height: "toggle"
-                }, 1000, function() {
+                    // right: "+=50",
+                    // height: "toggle"
+                }, 700, function() {
                     // console.log("// Animation complete.");
                   });
             },
