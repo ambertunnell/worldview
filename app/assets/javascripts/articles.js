@@ -53,7 +53,7 @@ $(function () {
                     //     var image = imagesArray[i].url; 
                     //     // $('#news').append("<div>" + image + "</div>")
                     // }
-                    $('#news').append("<p class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Save for later.</button></p>");
+                    $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Save for later.</button></li>");
                 };
                 $('#news').hide();
                 $('#news').slideDown(5000);
@@ -67,11 +67,10 @@ $(function () {
     $( "#news" ).on( "click", ".save-article", function( event ) {
       event.preventDefault();
       
-      var articleTitle = $(this).closest('.article').eq(0).find("h3").text();
-      var articleAbstract = $(this).closest('.article').eq(0).find("p").eq(0).text(); 
-      var articlePubdate = $(this).closest('.article').eq(0).find("p").eq(1).text();
-      // var articleByline = 
-      var articleUrl = $(this).closest('.article').eq(0).find("p").eq(2).find("a").attr("href");
+      var articleTitle = $(this).closest('li').eq(0).find("h3").text();
+      var articleAbstract = $(this).closest('li').eq(0).find("p").eq(0).text(); 
+      var articlePubdate = $(this).closest('li').eq(0).find("p").eq(1).text();
+      var articleUrl = $(this).closest('li').eq(0).find("a").attr("href");
   
       var $that = $(this);
 
