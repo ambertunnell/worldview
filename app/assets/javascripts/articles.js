@@ -1,7 +1,10 @@
 $(function () {
 
+    $('.news-header').hide();
+
     $(".clock img").click(function () {
 
+        $('.news-header').show();
         $('#news').empty();
 
         var location = $(this).closest(".clock").data('city');
@@ -50,15 +53,16 @@ $(function () {
                     //     var image = imagesArray[i].url; 
                     //     // $('#news').append("<div>" + image + "</div>")
                     // }
-                    $('#news').append("<li class='article' data-id=" + id + "><h3>" + title + "</h3><p>" + abstract + "</p>" + "<p>" + pubdate + "</p><p>" + "<a target='_blank' href='" + url + "'>Read more.</a></p><button class='save-article'>Save for later.</button></li>");
-                }
+                    $('#news').append("<p class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Save for later.</button></p>");
+                };
+                $('#news').hide();
+                $('#news').slideDown(5000);
             },
             error: function (response) {
                 console.log("NYT ajax query failed.");
             }
         });
     });
-
 
     $( "#news" ).on( "click", ".save-article", function( event ) {
       event.preventDefault();

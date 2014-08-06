@@ -5,6 +5,9 @@ gem 'figaro', '~> 0.7.0'
 gem 'twitter', '~> 5.11.0'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'jquery-ui-rails'
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'

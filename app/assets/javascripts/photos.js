@@ -1,5 +1,7 @@
 $(function () {
 
+   $('.photos-header').hide();
+
   $(".clock img").click(function() {
     var nyc = "new york city",
       london = "london",
@@ -7,6 +9,7 @@ $(function () {
       sydney = "sydney",
       paris = "paris france";
 
+    $('.photos-header').show();
     $('#flickr').empty();
 
     var location = $(this).closest(".clock").data('city');
@@ -42,7 +45,7 @@ $(function () {
               var title = result.title
               var image = result.media.m;
               var link = result.link
-              $('#flickr').append("<div class='photo'><h3>" + "<a href='" + link + "'>" + title + "</h3><p>" + "<img src=" + image + "></p></div>");
+              $('#flickr').append("<li class='photo'><h3>" + "<a href='" + link + "'>" + title + "</h3><p>" + "<img src=" + image + "></p></li>");
             }
             
         },
