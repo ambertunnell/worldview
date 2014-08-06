@@ -1,30 +1,13 @@
 $(function () {
 
-    // var nyc = "new york city",
-    //      london = "london",
-    //      beijing = "beijing",
-    //      sydney = "sydney",
-    //      paris = "paris france";
+ $('.twitter-header').hide();
 
     $(".clock img").click(function () {
+
+        $('.twitter-header').show();
         $('#twitter').empty();
+
         var location = $(this).closest(".clock").data('city');
-        // switch (location){
-        //   case 'new york city':
-        //     search_term = nyc
-        //     break;
-        //   case 'london':
-        //     search_term = london
-        //     break;
-        //   case 'beijing':
-        //     search_term = beijing
-        //     break;
-        //   case 'sydney':
-        //     search_term = sydney
-        //     break;
-        //   case 'paris':
-        //     search_term = paris
-        //     break;
 
         var URL = "/twitter?location=" + location;
         // var URL = "/twitter/search?q=" + location + "&src=typd&mode=news"
@@ -62,7 +45,7 @@ $(function () {
                         }
                     };
 
-                    $('#twitter').append("<div class='tweet'><h3>" + tweet + "</h3></div>");
+                    $('#twitter').append("<li><h3>" + tweet + "</h3></li>");
                 }
             },
             error: function (response) {

@@ -1,5 +1,7 @@
 $(function () {
 
+$('.weather-header').hide();
+
     var WEATHER_API_KEY = 'c2ebf0ca079e86eb70261f70d92ce7ce';
 
     var nyc_coords = "40.712784,-74.005941",
@@ -9,9 +11,12 @@ $(function () {
         paris_coords = "48.856614,2.352222";
 
     $(".clock img").click(function() {
-        var location = $(this).closest(".clock").data('city');
+
+        $('.weather-header').show();
         $(".weather").empty();
 
+        var location = $(this).closest(".clock").data('city');
+       
         switch (location) {
             case 'nyc':
                 coords = nyc_coords;
@@ -36,9 +41,12 @@ $(function () {
             url: URL,
             dataType: 'jsonp',
             success: function (response) {
+                // console.log(response);
+
                 var place = response['timezone'];
                 var continent = (/.*\//).exec(place)[0].replace("/", "");
                 var city = place.replace(/.*\//, "").replace("_", " ");
+                var icon = response.currently.icon;
 
                 if (city === "Shanghai") {
                     city = "Beijing";
@@ -50,7 +58,7 @@ $(function () {
                     precipitation = response['currently']['precipProbability'];
 
                 $(".weather").append('<br><p>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain</p>');
-                // console.log(response);
+                
                 $(".weather p").animate({
 
                     left: "+=50",

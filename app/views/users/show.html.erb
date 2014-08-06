@@ -1,6 +1,5 @@
 <%= render "layouts/clocks" %>  
  
-
 <div class="weather" style="background-color:red"></div>
 
 <h3>News:</h3>
@@ -11,3 +10,7 @@
 
 <h3>Twitter:</h3> 
 <div id="twitter" style="background-color:gray"></div>
+
+<% if logged_in? %>
+<% else %>
+<% end %> 
