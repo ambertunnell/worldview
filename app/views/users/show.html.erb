@@ -1,19 +1,5 @@
-<h1 align="center">worldview</h1>
 <br>
-<p align="center">Where are you?</p>
-<br>
-<div class="row">
-<div class="clock col-md-2" data-city="nyc" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %></a><br> 
-<h2>NY</h2></div>
-<div class="clock" data-city="london" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %><br>
-<h2>London</h2></div>
-<div class="clock col-md-2" data-city="beijing" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %></a><br> 
-<h2>Beijing</h2></div>
-<div class="clock col-md-2" data-city="sydney" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %></a><br> 
-<h2>Sydney</h2></div>
-<div class="clock col-md-2" data-city="paris" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %></a><br> 
-<h2>Paris</h2></div><br>
-</div>
+<%= render "layouts/clocks" %>  
  
 <h3>Weather:</h3> 
 <div class="weather"></div>
@@ -23,7 +9,6 @@
 
 <h3>Photos:</h3>
 <div id="flickr"></div>
-
 
 <h3>Twitter:</h3> 
 <div id="twitter"></div>

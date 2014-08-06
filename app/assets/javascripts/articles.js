@@ -59,11 +59,6 @@ $(function () {
         });
     });
 
-// $(".save-article").on("click", function(e){
-//     e.preventDefault();
-//     // var article = $(this).closest('.article').data('id');
-//     console.log($(this));
-// });
 
     $( "#news" ).on( "click", ".article", function( event ) {
       event.preventDefault();
