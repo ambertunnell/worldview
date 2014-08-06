@@ -1,19 +1,16 @@
 <%= render "layouts/clocks" %>  
  
-<h3 class="weather-header">Weather:</h3> 
-<ul class="weather"></ul>
+<div class="weather" style="background-color:red"></div>
 
-<h3 class="news-header">News:</h3>
-<ul id="news"><p></p></ul>
+<h3>News:</h3>
+<ul id="news" style="background-color:green"><p></p></ul>
 
-<h3 class="photos-header">Photos:</h3>
-<ul id="flickr"></ul>
+<h3>Photos:</h3>
+<div id="flickr" style="background-color:purple"></div>
 
-<h3 class="twitter-header">Twitter:</h3> 
-<ul id="twitter"></ul>
-
+<h3>Twitter:</h3> 
+<div id="twitter" style="background-color:gray"></div>
 
 <% if logged_in? %>
 <% else %>
 <% end %> 
-

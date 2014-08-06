@@ -57,7 +57,7 @@ $('.weather-header').hide();
                     summary = response['currently']['summary'],
                     precipitation = response['currently']['precipProbability'];
 
-                $(".weather").append('<li><p>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain</p></li>');
+                $(".weather").append('<br><p>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain</p>');
                 
                 $(".weather p").animate({
 
