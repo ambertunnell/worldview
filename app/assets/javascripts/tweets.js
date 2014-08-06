@@ -10,7 +10,6 @@ $(function () {
         var location = $(this).closest(".clock").data('city');
 
         var URL = "/twitter?location=" + location;
-        // var URL = "/twitter/search?q=" + location + "&src=typd&mode=news"
 
         $.ajax({
             url: URL,
@@ -40,12 +39,11 @@ $(function () {
                     if (response[i].entities.media !== undefined) {
                         for (var j = 0; j < response[i].entities.media.length; j++) {
                         var url = response[i].entities.media[j].url
-                        // var eurl = response[i].media.urls[j].expanded_url
                         tweet = tweet.replace(url, "<a href=\"" + url + "\" target=\"_blank\">" + url + "</a>");
                         }
                     };
 
-                    $('#twitter').append("<li><h3>" + tweet + "</h3></li>");
+                    $('#twitter').append("<li><h3>" + tweet + "</h3><button class='save-tweet'>Save for later.</button></li>");
                 }
             },
             error: function (response) {
@@ -58,22 +56,27 @@ $(function () {
         });
     });
 
-  $( "#twitter" ).on( "click", ".tweet", function( event ) {
+  $( "#twitter" ).on( "click", ".save-tweet", function( event ) {
       event.preventDefault();
 
-     // $.ajax({
-    //   type: 'POST',
-    //   url: '/photos',
-    //   data: {
-    //       name: "test testing"
-    //   },
-    //   success: function(response) {
-    //       console.log("")
-    //   },
-    //   error: function(response) {
-    //       console.log("Didn't work");
-    //   }
-    //   });
+    var individual_tweet = $(this).closest('li').find('h3').html();
+  
+      var $that = $(this);
+
+        $.ajax({
+            type: "POST",
+            url: "/tweets",
+            data: {tweet: {data: individual_tweet}},
+            success: function(response){
+                console.log("Saving tweet successful.");
+                $that.text("Saved!");
+            },
+            error: function(response){
+                console.log("Saving tweet failed.");
+            }
+        });
+
+
   });
 
 });
