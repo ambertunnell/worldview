@@ -60,14 +60,14 @@ $(function () {
     });
 
 
-    $( "#news" ).on( "click", ".article", function( event ) {
+    $( "#news" ).on( "click", ".save-article", function( event ) {
       event.preventDefault();
       
-      var articleTitle = $(this).eq(0).find("h3").text();
-      var articleAbstract = $(this).eq(0).find("p").eq(0).text(); 
-      var articlePubdate = $(this).eq(0).find("p").eq(1).text();
+      var articleTitle = $(this).closest('.article').eq(0).find("h3").text();
+      var articleAbstract = $(this).closest('.article').eq(0).find("p").eq(0).text(); 
+      var articlePubdate = $(this).closest('.article').eq(0).find("p").eq(1).text();
       // var articleByline = 
-      var articleUrl = $(this).eq(0).find("p").eq(2).find("a").attr("href");
+      var articleUrl = $(this).closest('.article').eq(0).find("p").eq(2).find("a").attr("href");
   
       var $that = $(this);
 
@@ -77,7 +77,7 @@ $(function () {
             data: {article: {title: articleTitle, abstract: articleAbstract, url: articleUrl, pubdate: articlePubdate}},
             success: function(response){
                 console.log("Saving article successful.");
-                $that.eq(0).find(".save-article").text("Saved!");
+                $that.text("Saved!");
             },
             error: function(response){
                 console.log("Saving article failed.");
