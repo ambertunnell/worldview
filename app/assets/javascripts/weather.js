@@ -51,8 +51,14 @@ $(function () {
                     summary = response['currently']['summary'],
                     precipitation = response['currently']['precipProbability'];
 
-                $(".weather").append('<h3>Weather</h3><br>' + locale + '<br><br>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain');
+                $(".weather").append('<br>' + locale + '<br><br>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain');
                 console.log(response);
+                $(".weather").animate({
+                    left: "+=50",
+                    height: "toggle"
+                }, 1000, function() {
+                    console.log("// Animation complete.");
+                  });
             },
             error: function (response) {
                 console.log("Forecast.io API request failed");
