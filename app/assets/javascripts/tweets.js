@@ -36,7 +36,7 @@ $(function () {
                 // console.log(response);
                 for (var i = 0; i < 10; i++) {
                     var tweet = response[i].text;
-                    $('#twitter').append("<div><h3>" + tweet + "</h3></div>");
+                    $('#twitter').append("<div class='tweet'><h3>" + tweet + "</h3></div>");
                 }
             },
             error: function (response) {
@@ -48,6 +48,25 @@ $(function () {
 
         });
     });
+
+  $( "#twitter" ).on( "click", ".tweet", function( event ) {
+      event.preventDefault();
+
+     // $.ajax({
+    //   type: 'POST',
+    //   url: '/photos',
+    //   data: {
+    //       name: "test testing"
+    //   },
+    //   success: function(response) {
+    //       console.log("")
+    //   },
+    //   error: function(response) {
+    //       console.log("Didn't work");
+    //   }
+    //   });
+  });
+
 });
 
 

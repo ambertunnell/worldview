@@ -42,7 +42,7 @@ $(function () {
               var title = result.title
               var image = result.media.m;
               var link = result.link
-              $('#flickr').append("<div><h3>" + "<a href='" + link + "'>" + title + "</h3><p>" + "<img src=" + image + "></p></div>");
+              $('#flickr').append("<div class='photo'><h3>" + "<a href='" + link + "'>" + title + "</h3><p>" + "<img src=" + image + "></p></div>");
             }
             
         },
@@ -55,8 +55,11 @@ $(function () {
 
  });
 
-// $( "#photos" ).on( "click", ".something", function( event ) {
-    // save = $.ajax({
+
+  $( "#flickr" ).on( "click", ".photo", function( event ) {
+      event.preventDefault();
+
+     // $.ajax({
     //   type: 'POST',
     //   url: '/photos',
     //   data: {
@@ -69,7 +72,7 @@ $(function () {
     //       console.log("Didn't work");
     //   }
     //   });
-// });
+  });
 
 
 });
