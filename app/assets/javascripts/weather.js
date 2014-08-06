@@ -49,7 +49,7 @@ $(function () {
                     summary = response['currently']['summary'],
                     precipitation = response['currently']['precipProbability'];
 
-                $(".weather").append('<br><p>' + locale + '<br><br>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain</p>');
+                $(".weather").append('<br><p>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain</p>');
                 // console.log(response);
                 $(".weather p").animate({
 
