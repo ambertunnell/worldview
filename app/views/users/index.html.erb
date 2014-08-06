@@ -1,0 +1,43 @@
+<% if logged_in? %>
+  <%= link_to 'Log Out', logout_path %>
+<% else %>
+  <%= link_to 'Log In with Twitter', twitter_login_path %>
+<% end %>
+
+Where are you?
+
+<h1 align="center">Worldview</h1>
+<br>
+<p align="center">Where are you?</p>
+<br>
+<div class="row">
+<div class="clock col-md-2" data-city="nyc" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %></a><br> <!-- 'data-city' => 'nyc' -->
+<li>NY</li></div>
+<div class="clock" data-city="london" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %><br>
+<li>London</li></div>
+<div class="clock col-md-2" data-city="beijing" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %></a><br> 
+<li>Beijing</li></div>
+<div class="clock col-md-2" data-city="sydney" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %></a><br> 
+<li>Sydney</li></div>
+<div class="clock col-md-2" data-city="paris" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %></a><br> 
+<li>Paris</li></div><br>
+</div>
+ 
+<h3>Weather:</h3> 
+<div class="weather"></div>
+<br>
+
+<h3>News:</h3>
+
+<div id="news"></div>
+<br>
+
+<br>
+
+<h3>Photos:</h3>
+<div id="flickr"></div>
+
+Twitter: 
+<div id="twitter"></div>
+
+

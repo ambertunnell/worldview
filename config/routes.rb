@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:show]
   resources :articles, :only => [:create]
+  resources :photos, :only => [:create]
+  resources :tweets, :only => [:create]
 
   root 'users#show'
 
