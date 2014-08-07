@@ -21,7 +21,7 @@
           height: 300px;
           /*top: 0px;*/
           /*left: 285px;*/
-          left: 125px;
+          left: 135px;
           /*top: 5px;*/
          }
         
@@ -56,11 +56,20 @@
         .london-clock,
         .hongkong-clock,
         .sydney-clock,
-        .sanfran-clock, 
-        li {
+        .sanfran-clock 
+         {
           width: 300px;
           float: left;
           margin-left: 15px;
+        }
+
+        .sec li,
+        .min li,
+        .hour li {
+          width: 300px;
+          /*float: left;*/
+
+  
         }
 
         #clock-container {

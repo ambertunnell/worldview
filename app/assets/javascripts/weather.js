@@ -6,9 +6,10 @@ $('.weather-header').hide();
 
     var nyc_coords = "40.712784,-74.005941",
         london_coords = "51.507351,-0.127758",
-        hongkong_coords = "39.909066,116.415054", // coordinates need to be changed
+        hongkong_coords = "22.396428,114.10949700000003", 
         sydney_coords = "-33.867487,151.20699",
         paris_coords = "48.856614,2.352222";
+        sanfran_coords = "37.7749295,-122.41941550000001"; 
 
     $(".clock li").click(function() {
 
@@ -33,6 +34,9 @@ $('.weather-header').hide();
             case 'paris':
                 coords = paris_coords;
                 break;
+            case 'sanfran':
+                coords = sanfran_coords;
+                break;
         }
 
         var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + coords;
@@ -49,9 +53,9 @@ $('.weather-header').hide();
                 var icon = response.currently.icon;
                 var formatted_icon = response.currently.icon.toUpperCase().split("-").join("_");
                 console.log(formatted_icon);
-                if (city === "Shanghai") {
-                    city = "Beijing";
-                }
+                // if (city === "Shanghai") {
+                //     city = "Beijing";
+                // }
 
                 var locale = city + " | " + continent,
                     temp = response['currently']['temperature'],

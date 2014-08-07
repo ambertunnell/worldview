@@ -17,14 +17,17 @@ $(function () {
             case 'london':
                 var search = "london";
                 break;
-            case 'hong kong':
-                var search = "hong kong"; // changed this
+            case 'hongkong':
+                var search = "hong+kong"; 
                 break;
             case 'sydney':
                 var search = "sydney";
                 break;
             case 'paris':
                 var search = "paris";
+                break;
+            case 'sanfran':
+                var search = "san+francisco";
                 break;
         };
 
