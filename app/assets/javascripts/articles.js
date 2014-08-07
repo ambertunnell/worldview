@@ -95,7 +95,22 @@ $(function () {
     });
 
     // Populates dashboard with saved articles when profile link clicked 
+   
+    var x = location.hash;
+    if (x == "#dashboard"){
+        runClick();
+    }
+    $("#dashboard-xlink").click(function () {
+        $('#dashboard').css({ "opacity": "0", "z-index": "0"});
+    });
+
     $("#dashboard-link").click(function () {
+        runClick();
+    });
+    
+    function runClick(){
+        $('#dashboard').css({ "opacity": "1", "z-index": "99999"});
+
 
         $.ajax({
             type: "GET",
@@ -118,6 +133,6 @@ $(function () {
                 console.log("Article get request failed.");
             }
         });
-    });
+    }
 
 });
