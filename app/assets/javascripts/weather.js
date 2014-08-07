@@ -6,11 +6,11 @@ $('.weather-header').hide();
 
     var nyc_coords = "40.712784,-74.005941",
         london_coords = "51.507351,-0.127758",
-        beijing_coords = "39.909066,116.415054",
+        hongkong_coords = "39.909066,116.415054", // coordinates need to be changed
         sydney_coords = "-33.867487,151.20699",
         paris_coords = "48.856614,2.352222";
 
-    $(".clock img").click(function() {
+    $(".clock li").click(function() {
 
         $('.weather-header').show();
         $(".weather").empty();
@@ -24,8 +24,8 @@ $('.weather-header').hide();
             case 'london':
                 coords = london_coords;
                 break;
-            case 'beijing':
-                coords = beijing_coords;
+            case 'hongkong':
+                coords = hongkong_coords;
                 break;
             case 'sydney':
                 coords = sydney_coords;

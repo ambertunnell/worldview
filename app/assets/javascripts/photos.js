@@ -2,10 +2,11 @@ $(function () {
 
     $('.photos-header').hide();
 
-    $(".clock img").click(function () {
+    // $(".clock img").click(function () {
+    $(".clock li").click(function () {
         var nyc = "new york city",
             london = "london",
-            beijing = "beijing",
+            hongkong = "beijing", // this needs to be changed
             sydney = "sydney",
             paris = "paris france";
 

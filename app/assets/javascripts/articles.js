@@ -2,7 +2,8 @@ $(function () {
 
     $('.news-header').hide();
 
-    $(".clock img").click(function () {
+    // $(".clock img").click(function () {
+    $(".clock li").click(function () {
 
         $('.news-header').show();
         $('#news').empty();
@@ -16,8 +17,8 @@ $(function () {
             case 'london':
                 var search = "london";
                 break;
-            case 'beijing':
-                var search = "beijing";
+            case 'hong kong':
+                var search = "hong kong"; // changed this
                 break;
             case 'sydney':
                 var search = "sydney";
