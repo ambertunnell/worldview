@@ -89,29 +89,28 @@ $(function () {
         });
     });
 
-// Populates dashboard with saved photos when profile link clicked 
-$("#dashboard-link").click(function() {
+    // Populates dashboard with saved photos when profile link clicked 
+    $("#dashboard-link").click(function () {
 
-     $.ajax({
+        $.ajax({
             type: "GET",
             url: "/photos",
-            success: function(response){
+            success: function (response) {
                 console.log("Photo GET request successful.");
 
-        $('#dashboard .dashboard-photos').empty()
-        
-        for (var i=0; i < response.length; i++){
-            var url = response[i].url;
-            var title = response[i].title;
+                $('#dashboard .dashboard-photos').empty();
 
-           $('#dashboard .dashboard-photos').append("<li class='photo'><h3>" + "<a href='" + url + "'>" + title + "</h3><p>" + "<img src='" + url + "'>" + "</p></a><button class='remove-photo'>Remove.</li></button></p>");
-        }
+                for (var i = 0; i < response.length; i++) {
+                    var url = response[i].url;
+                    var title = response[i].title;
+
+                    $('#dashboard .dashboard-photos').append("<li class='photo'><h3>" + "<a href='" + url + "'>" + title + "</h3><p>" + "<img src='" + url + "'>" + "</p></a><button class='remove-photo'>Remove.</li></button></p>");
+                }
             },
-            error: function(response){
+            error: function (response) {
                 console.log("Photo get request failed.");
             }
-     });       
-});
-
+        });
+    });
 
 });
