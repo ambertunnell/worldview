@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/users/signed_in' 
 
+  get '/autocomplete/countries' => 'autocomplete#show'
+
   get '/twitter' =>'tweets#twitter_update'
   get '/auth/twitter', as: 'twitter_login'
   get '/auth/twitter/callback', to: 'sessions#create'
