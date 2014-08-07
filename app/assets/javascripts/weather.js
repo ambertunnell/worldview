@@ -41,13 +41,14 @@ $('.weather-header').hide();
             url: URL,
             dataType: 'jsonp',
             success: function (response) {
-                // console.log(response);
+                console.log(response);
 
                 var place = response['timezone'];
                 var continent = (/.*\//).exec(place)[0].replace("/", "");
                 var city = place.replace(/.*\//, "").replace("_", " ");
                 var icon = response.currently.icon;
-
+                var formatted_icon = response.currently.icon.toUpperCase().split("-").join("_");
+                console.log(formatted_icon);
                 if (city === "Shanghai") {
                     city = "Beijing";
                 }
@@ -57,8 +58,47 @@ $('.weather-header').hide();
                     summary = response['currently']['summary'],
                     precipitation = response['currently']['precipProbability'];
 
-                $(".weather").append('<br><p>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain</p>');
-                
+                var skycons = new Skycons({
+                    "color": "orange"});
+                // $(".weather").append(skycons.add("icon1", icon));
+                $(".weather").append('<br><p><canvas id="icon1" width="50" height="50">'+skycon_anim+'</canvas>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain</p>');
+                switch (icon) {
+                    case 'partly-cloudy-night':
+                        var skycon_anim = skycons.add("icon1", Skycons.PARTLY_CLOUDY_NIGHT);
+                        break;
+                    case 'partly-cloudy-day':
+                        var skycon_anim = skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
+                        break;
+                    case 'clear-day':
+                        var skycon_anim = skycons.add("icon1", Skycons.CLEAR_DAY);
+                        break;
+                    case 'clear-night':
+                        var skycon_anim = skycons.add("icon1", Skycons.CLEAR_NIGHT);
+                        break;
+                    case 'cloudy':
+                        var skycon_anim = skycons.add("icon1", Skycons.CLOUDY);
+                        break;
+                    case 'rain':
+                        var skycon_anim = skycons.add("icon1", Skycons.RAIN);
+                        break;
+                    case 'sleet':
+                        var skycon_anim = skycons.add("icon1", Skycons.SLEET);
+                        break;
+                    case 'snow':
+                        var skycon_anim = skycons.add("icon1", Skycons.SNOW);
+                        break;
+                    case 'wind':
+                        var skycon_anim = skycons.add("icon1", Skycons.WIND);
+                        break;
+                    case 'fog':
+                        var skycon_anim = skycons.add("icon1", Skycons.FOG);
+                        break;
+                };
+
+                // skycons.set("icon1", Skycons.formatted_icon);
+                console.log(formatted_icon);
+                skycons.play();
+
                 $(".weather p").animate({
 
                     left: "+=50",
