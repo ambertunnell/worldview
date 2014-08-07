@@ -51,8 +51,6 @@ $(function () {
                 console.log(response);
             }
 
-
-
         });
     });
 
@@ -75,7 +73,6 @@ $(function () {
                 console.log("Saving tweet failed.");
             }
         });
-
 
   });
 
