@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :cities
+
   root 'users#show'
 
   delete '/articles' => 'articles#destroy'
