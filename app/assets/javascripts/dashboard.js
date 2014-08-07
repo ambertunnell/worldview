@@ -45,7 +45,9 @@ $(function () {
 
       $(".modal-text").on("click",".remove-article", function(){
           console.log("Remove button clicked");
-
+          $(this).closest(".my-article").slideUp({
+            // populateDashboard();
+          });
           var articleUrl = $(this).closest('li').eq(0).find("a").attr("href");
           
           $(this).html("Removed");
@@ -60,7 +62,6 @@ $(function () {
               success: function(response) {
                   console.log("Article DELETE request successful");
                   console.log("article url = " + articleUrl);
-                  populateDashboard();
               },
               error: function(response) {
                   console.log("Article DELETE request failed");

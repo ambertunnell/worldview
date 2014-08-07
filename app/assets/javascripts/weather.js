@@ -60,7 +60,7 @@ $('.weather-header').hide();
                 var locale = city + " | " + continent,
                     temp = response['currently']['temperature'],
                     summary = response['currently']['summary'],
-                    precipitation = response['currently']['precipProbability'];
+                    precipitation = response['currently']['precipProbability']*100;
 
                 var skycons = new Skycons({
                     "color": "black"});
