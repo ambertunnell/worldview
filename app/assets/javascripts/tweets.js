@@ -1,6 +1,6 @@
 $(function () {
 
- $('.twitter-header').hide();
+    $('.twitter-header').hide();
 
     $(".clock img").click(function () {
 
@@ -10,7 +10,6 @@ $(function () {
         var location = $(this).closest(".clock").data('city');
 
         var URL = "/twitter?location=" + location;
-        // var URL = "/twitter/search?q=" + location + "&src=typd&mode=news"
 
         $.ajax({
             url: URL,
@@ -22,30 +21,29 @@ $(function () {
                     var tweet = response[i].text;
 
                     for (var j = 0; j < response[i].entities.hashtags.length; j++) {
-                    var hash = response[i].entities.hashtags[j].text
-                    tweet = tweet.replace("#" + hash, "<a href=\"http://twitter.com/search?q=%23" + hash + "\" target=\"_blank\">" + "#" + hash + "</a>");
+                        var hash = response[i].entities.hashtags[j].text;
+                        tweet = tweet.replace("#" + hash, "<a href=\"http://twitter.com/search?q=%23" + hash + "\" target=\"_blank\">" + "#" + hash + "</a>");
                     }
 
                     for (var j = 0; j < response[i].entities.user_mentions.length; j++) {
-                    var mentions = response[i].entities.user_mentions[j].screen_name
-                    tweet = tweet.replace("@" + mentions, "<a href=\"http://twitter.com/search?q=%40" + mentions + "\" target=\"_blank\">" + "@" + mentions + "</a>");
+                        var mentions = response[i].entities.user_mentions[j].screen_name;
+                        tweet = tweet.replace("@" + mentions, "<a href=\"http://twitter.com/search?q=%40" + mentions + "\" target=\"_blank\">" + "@" + mentions + "</a>");
                     }
 
                     for (var j = 0; j < response[i].entities.urls.length; j++) {
-                    var url = response[i].entities.urls[j].url
-                    var eurl = response[i].entities.urls[j].expanded_url
-                    tweet = tweet.replace(url, "<a href=\"" + eurl + "\" target=\"_blank\">" + eurl + "</a>");
+                        var url = response[i].entities.urls[j].url;
+                        var eurl = response[i].entities.urls[j].expanded_url;
+                        tweet = tweet.replace(url, "<a href=\"" + eurl + "\" target=\"_blank\">" + eurl + "</a>");
                     }
 
                     if (response[i].entities.media !== undefined) {
                         for (var j = 0; j < response[i].entities.media.length; j++) {
-                        var url = response[i].entities.media[j].url
-                        // var eurl = response[i].media.urls[j].expanded_url
-                        tweet = tweet.replace(url, "<a href=\"" + url + "\" target=\"_blank\">" + url + "</a>");
+                            var url = response[i].entities.media[j].url;
+                            tweet = tweet.replace(url, "<a href=\"" + url + "\" target=\"_blank\">" + url + "</a>");
                         }
-                    };
+                    }
 
-                    $('#twitter').append("<li><h3>" + tweet + "</h3></li>");
+                    $('#twitter').append("<li><h3>" + tweet + "</h3><button class='save-tweet'>Save for later.</button></li>");
                 }
             },
             error: function (response) {
@@ -53,29 +51,58 @@ $(function () {
                 console.log(response);
             }
 
-
-
         });
     });
 
-  $( "#twitter" ).on( "click", ".tweet", function( event ) {
-      event.preventDefault();
+    $("#twitter").on("click", ".save-tweet", function (event) {
+        event.preventDefault();
 
-     // $.ajax({
-    //   type: 'POST',
-    //   url: '/photos',
-    //   data: {
-    //       name: "test testing"
-    //   },
-    //   success: function(response) {
-    //       console.log("")
-    //   },
-    //   error: function(response) {
-    //       console.log("Didn't work");
-    //   }
-    //   });
-  });
+        var individual_tweet = $(this).closest('li').find('h3').html();
+
+        var $that = $(this);
+
+        $.ajax({
+            type: "POST",
+            url: "/tweets",
+            data: {
+                tweet: {
+                    data: individual_tweet
+                }
+            },
+            success: function (response) {
+                console.log("Saving tweet successful.");
+                $that.text("Saved!");
+
+                $('#dashboard .dashboard-tweets').append("<li><h3>" + individual_tweet + "</h3><button class='remove-tweet'>Remove.</button></li>");
+            },
+            error: function (response) {
+                console.log("Saving tweet failed.");
+            }
+        });
+    });
+
+    // Populates dashboard with saved tweets when profile link clicked 
+    $("#dashboard-link").click(function () {
+
+        $.ajax({
+            type: "GET",
+            url: "/tweets",
+            success: function (response) {
+                console.log("Tweet GET request successful.");
+
+                $('#dashboard .dashboard-tweets').empty();
+
+                for (var i = 0; i < response.length; i++) {
+                    var data = response[i].data;
+
+                    $('#dashboard .dashboard-tweets').append("<li><h3>" + data + "</h3><button class='remove-tweet'>Remove.</button></li>");
+                }
+            },
+            error: function (response) {
+                console.log("Tweet get request failed.");
+            }
+        });
+    });
 
 });
-
 

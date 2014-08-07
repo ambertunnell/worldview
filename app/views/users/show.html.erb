@@ -1,19 +1,17 @@
 <%= render "layouts/clocks" %>  
  
-<h3 class="weather-header">Weather:</h3> 
+<h3>Weather:</h3> 
 <ul class="weather"></ul>
 
-<h3 class="news-header">News:</h3>
-<ul id="news"><p></p></ul>
+<h3>News:</h3>
+<ul id="news"></ul>
 
-<h3 class="photos-header">Photos:</h3>
+<h3>Photos:</h3>
 <ul id="flickr"></ul>
 
-<h3 class="twitter-header">Twitter:</h3> 
+<h3>Twitter:</h3> 
 <ul id="twitter"></ul>
-
 
 <% if logged_in? %>
 <% else %>
 <% end %> 
-

@@ -11,6 +11,8 @@ class UsersController < ApplicationController
       session[:user_id] = nil
       @user = User.new
     end
+
+    @articles = @user.articles
   end
 
   private

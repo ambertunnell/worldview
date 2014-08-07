@@ -13,6 +13,7 @@
       <div class="collapse navbar-collapse navbar-responsive-collapse"> 
       <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
+            <li><%= render 'layouts/profile' %> </li>
             <li><%= link_to "Welcome, #{current_user.name}", root_path %></li>
             <li><%= link_to 'Log Out', logout_path %></li>
           <% else %>
