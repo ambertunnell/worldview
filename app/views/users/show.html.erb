@@ -1,6 +1,18 @@
-<%= render "layouts/clocks" %>  
+<%= render "layouts/clocks" %> 
+
+<div class="grid">
+
+  <div class="col-md-1 weather-header"><ul class="weather"></ul></div>
+  <div class="col-md-3 weather-header"><ul class="weather"></ul></div>
+  <div class="col-md-4 photos-header"><ul id="flickr"></ul></div>
+  <div class="col-md-5 news-header"><ul id="news"></ul></div>
+  <div class="col-md-7 twitter-header"><ul id="twitter"></ul></div>
+
+
+</div>
  
-<h3 class="weather-header">Weather:</h3> 
+ 
+<!-- <h3 class="weather-header">Weather:</h3> 
 <ul class="weather"></ul>
 
 <h3 class="news-header">News:</h3>
@@ -10,8 +22,12 @@
 <ul id="flickr"></ul>
 
 <h3 class="twitter-header">Twitter:</h3> 
-<ul id="twitter"></ul>
+<ul id="twitter"></ul> -->
 
 <% if logged_in? %>
 <% else %>
 <% end %> 
+
+
+
+
