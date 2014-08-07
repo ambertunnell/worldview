@@ -20,7 +20,7 @@ class PhotosController < ApplicationController
 
    def index
     @user = User.find(session[:user_id]) if session[:user_id]
-    @photos = @user.photos
+    @photos = @user.photos.reverse #So that newest are on top of list
     render json: @photos  
   end 
 
