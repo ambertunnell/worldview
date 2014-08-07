@@ -19,7 +19,9 @@ $(function () {
     
   function populateDashboard(){
       $('#dashboard').css({ "opacity": "1", "z-index": "99999"});
-      //ARTICLES
+      
+      //ARTICLES - DISPLAY
+      
       $.ajax({
         type: "GET",
         url: "/articles",
@@ -31,12 +33,42 @@ $(function () {
                 var title = response[i].title;
                 var pubdate = response[i].pubdate;
                 var abstract = response[i].abstract;
-                $('#dashboard .dashboard-articles').append("<li class='my-article'><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='remove-article'>Remove.</button></li>");
+                $('#dashboard .dashboard-articles').append("<li class='my-article'><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='remove-article'>Remove</button></li>");
             }
         },
         error: function (response) {
           console.log("Article get request failed.");
         }
+      });
+
+      //ARTICLES - REMOVE
+
+      $(".modal-text").on("click",".remove-article", function(){
+          console.log("Remove button clicked");
+
+          var articleUrl = $(this).closest('li').eq(0).find("a").attr("href");
+          
+          $(this).html("Removed");
+          $.ajax({
+              type: "DELETE",
+              url: "/articles",
+              data: {
+                  delete_request: {
+                      url: articleUrl
+                  }
+              },
+              success: function(response) {
+                  console.log("Article DELETE request successful");
+                  console.log("article url = " + articleUrl);
+                  populateDashboard();
+              },
+              error: function(response) {
+                  console.log("Article DELETE request failed");
+                  console.log("article url = " + articleUrl)
+              }
+
+          });
+
       });
       
       //FLICKR

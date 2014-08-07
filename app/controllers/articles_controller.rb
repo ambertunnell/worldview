@@ -25,8 +25,20 @@ class ArticlesController < ApplicationController
 
   def destroy
     @user = User.find(session[:user_id]) if session[:user_id]
-    # if user has an article with the article url, delete it
-
+    article_url = params[:delete_request][:url]
+    if @user.articles.find_by(url: article_url)
+      @article = @user.articles.find_by(url: article_url)
+      @article.destroy
+      @user.save
+    end
+    
+    respond_to do |format|
+      if @user.save
+        format.json { render json: @user}
+      else
+        format.json { head :no_content }
+      end
+    end
   end
 
   private
