@@ -35,6 +35,24 @@ class TweetsController < ApplicationController
     render json: @tweets  
   end 
 
+  def destroy
+    @user = User.find(session[:user_id]) if session[:user_id]
+    tweet_data = params[:delete_request][:data]
+    if @user.tweets.find_by(data: tweet_data)
+      @tweet = @user.tweets.find_by(data: tweet_data)
+      @tweet.destroy
+      @user.save
+    end
+    
+    respond_to do |format|
+      if @user.save
+        format.json { render json: @user}
+      else
+        format.json { head :no_content }
+      end
+    end
+  end
+
   private
 
   def tweet_params
