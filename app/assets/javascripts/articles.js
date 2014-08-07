@@ -51,7 +51,7 @@ $(function () {
                     var pubdate = response.response.docs[i].pub_date;
                     var imagesArray = response.response.docs[i].multimedia;
 
-                    $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Save for later.</button></li>");
+                    $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Save article</button></li>");
                 }
                 $('#news').hide();
                 $('#news').slideDown(5000);
@@ -111,7 +111,7 @@ $(function () {
                     var pubdate = response[i].pubdate;
                     var abstract = response[i].abstract;
 
-                    $('#dashboard .dashboard-articles').append("<li class='my-article'><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='remove-article'>Remove.</button></li>");
+                    $('#dashboard .dashboard-articles').append("<li class='my-article'><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='remove-article'>Remove</button></li>");
                 }
             },
             error: function (response) {
@@ -121,3 +121,6 @@ $(function () {
     });
 
 });
+
+
+

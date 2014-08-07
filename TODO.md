@@ -6,6 +6,18 @@ QUESTION
 
 What news should I read?
 
+THURSDAY
+
+- make remove buttons work on news, tweet, photos and dashboard (Ben)
+- hide save buttons when not logged in (AJAX response for if user is nil)
+- add stock info
+- format news time
+- make clocks reflect real time (Koren)
+- change 'my profile' click action so it doesn't display an empty dashboard if you go directly to #dashboard
+- add cities 
+- add testing (through jasmine?)
+- save user city in profile?
+
 WEDNESDAY
 
 - persist user data (Ben, Amber, Koren)

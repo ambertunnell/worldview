@@ -23,6 +23,11 @@ class ArticlesController < ApplicationController
     render json: @articles  
   end 
 
+  def destroy
+    @user = User.find(session[:user_id]) if session[:user_id]
+    # if user has an article with the article url, delete it
+
+  end
 
   private
 
