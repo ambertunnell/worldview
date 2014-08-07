@@ -1,9 +1,46 @@
+<<<<<<< HEAD
 <div align="center"><input type="text" name="country" id="autocomplete"/></div>
 
 
 <%= render "layouts/clocks" %>  
+=======
+<%= render "layouts/clocks" %> 
+
+<div class="grid">
+
+  <div class="col-md-1 weather-header">
+  <center><h3>Weather</h3></center>
+  <ul class="weather"></ul>
+  </div>
+
+  <div class="col-md-3 weather-header">
+  <center><h3>Stocks</h3></center>
+  <ul></ul>
+  </div>
+
+
+  <div class="col-md-4 photos-header">
+  <center><h3>Headline News</h3></center>
+  <ul id="flickr"></ul>
+  </div>
+
+
+  <div class="col-md-5 news-header">
+  <center><h3>Photos</h3></center>
+  <ul id="news"></ul>
+  </div>
+
+  <div class="col-md-6 twitter-header">
+  <center><h3>Top Tweets</h3></center>
+  <ul id="twitter"></ul>
+  </div>
+
+
+</div>
+>>>>>>> 00d1fa66437ded028926b405936fd9f00cae55ef
  
-<h3 class="weather-header">Weather:</h3> 
+ 
+<!-- <h3 class="weather-header">Weather:</h3> 
 <ul class="weather"></ul>
 
 <h3 class="news-header">News:</h3>
@@ -13,8 +50,12 @@
 <ul id="flickr"></ul>
 
 <h3 class="twitter-header">Twitter:</h3> 
-<ul id="twitter"></ul>
+<ul id="twitter"></ul> -->
 
 <% if logged_in? %>
 <% else %>
 <% end %> 
+
+
+
+

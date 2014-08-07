@@ -9,7 +9,7 @@
   position: relative;
   width: 180px; 
   height: 180px; 
-  margin:  15px auto 0 auto;
+  /*margin:0auto;*/
   background: url('romanclock2.png');
   background-size: cover;
   list-style: none;
@@ -57,7 +57,7 @@
 .sanfran-clock {
   width: 180px; 
   float: left;
-  margin-left: 18px;
+  /*margin-left: 10px;*/
   /*margin: auto;*/
 }
 
@@ -86,7 +86,9 @@
 .clock-row {
   /*background: blue;*/
   /*padding-left: 100px;*/
-  padding-left: 10px;
+  width: 1000px;
+  position: center;
+  /*padding-left: 10px;*/
 }
 
 #clock-container { 

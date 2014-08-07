@@ -1,0 +1,93 @@
+
+
+.grid {
+  width: 100%;
+}
+
+/*weather*/
+.col-md-1 {
+  background: #cccccc;
+  height: 300px;
+  width: 25%;
+  /*display: inline-block;*/
+  float: left;
+}
+
+.weather {
+  padding-top: 5%;
+  width: 65%;
+}
+
+.weather p {
+  font-size: 20px;
+}
+
+/*.weather h3 {
+  position: fixed;
+}*/
+
+/*stocks*/
+.col-md-3 {
+  background: #FDEFAA;
+  height: 300px;
+  width: 25%;
+  /*display: inline-block;*/
+  float: left;
+
+}
+
+/*photos*/
+.col-md-4 {
+  background: #FDB8A1;
+  height: 450px;
+  width: 50%;
+  /*display: inline-block;*/
+  float: right;
+  overflow: scroll;
+}
+
+#flickr {
+  /*height: 450px;*/
+  /*overflow: hidden;*/
+  list-style: none;
+}
+
+/*#flickr h3 {
+  position: fixed;
+}*/
+
+/*news*/
+.col-md-5 {
+  background: #87B6FD;
+  height: 450px;
+  width: 50%;
+  /*vertical-align: top;*/
+/*float: left;*/
+overflow: scroll;
+}
+
+#news {
+  list-style: none;
+}
+
+/*#news h3 {
+  position: fixed;
+}*/
+
+/*twitter*/
+.col-md-6 {
+  background: #82FCCE;
+  height: 300px;
+  width: 50%;
+  /*display: inline-block;*/
+  float: right;
+  overflow: scroll;
+}
+
+#twitter {
+  list-style: none;
+}
+
+/*#twitter h3 {
+  position: fixed;
+}*/
