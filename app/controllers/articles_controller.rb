@@ -17,6 +17,12 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def index
+    @user = User.find(session[:user_id]) if session[:user_id]
+    @articles = @user.articles
+    render json: @articles  
+  end 
+
 
   private
 
