@@ -54,7 +54,7 @@ $(function () {
                     var pubdate = response.response.docs[i].pub_date.split("T")[0];
                     var imagesArray = response.response.docs[i].multimedia;
                     console.log(pubdate);
-                    $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Save for later.</button></li>");
+                    $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Save for later</button></li>");
                 }
                 $('#news').hide();
                 $('#news').slideDown(5000);

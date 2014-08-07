@@ -63,7 +63,7 @@ $('.weather-header').hide();
                     precipitation = response['currently']['precipProbability'];
 
                 var skycons = new Skycons({
-                    "color": "orange"});
+                    "color": "black"});
                 // $(".weather").append(skycons.add("icon1", icon));
                 $(".weather").append('<br><p><canvas id="icon1" width="50" height="50">'+skycon_anim+'</canvas>' + temp + ' Degrees - ' + summary + ' - ' + precipitation + '% Chance of Rain</p>');
                 switch (icon) {

@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'users#show'
 
+  delete '/articles' => 'articles#destroy'
+
   get '/users/signed_in' 
 
   get '/twitter' =>'tweets#twitter_update'
