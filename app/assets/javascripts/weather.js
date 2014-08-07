@@ -41,7 +41,7 @@ $('.weather-header').hide();
             url: URL,
             dataType: 'jsonp',
             success: function (response) {
-                console.log(response);
+                // console.log(response);
 
                 var place = response['timezone'];
                 var continent = (/.*\//).exec(place)[0].replace("/", "");
@@ -96,7 +96,7 @@ $('.weather-header').hide();
                 };
 
                 // skycons.set("icon1", Skycons.formatted_icon);
-                console.log(formatted_icon);
+                // console.log(formatted_icon);
                 skycons.play();
 
                 $(".weather p").animate({
