@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   delete '/articles' => 'articles#destroy'
   delete '/photos' => 'photos#destroy'
+  delete '/tweets' => 'tweets#destroy'
 
   get '/users/signed_in' 
 

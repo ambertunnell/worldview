@@ -126,7 +126,8 @@ $(function () {
 
       });
 
-      //TWITTER
+      //TWITTER - DISPLAY
+
       $.ajax({
         type: "GET",
         url: "/tweets",
@@ -138,12 +139,43 @@ $(function () {
             for (var i = 0; i < response.length; i++) {
                 var data = response[i].data;
 
-                $('#dashboard .dashboard-tweets').append("<li><h3>" + data + "</h3><button class='remove-tweet'>Remove.</button></li>");
+                $('#dashboard .dashboard-tweets').append("<li><h3>" + data + "</h3><button class='remove-tweet'>Remove</button></li>");
             }
         },
         error: function (response) {
-            console.log("Tweet get request failed.");
+            console.log("Tweet GET request failed.");
         }
+      });
+
+      //TWITTER - REMOVE
+
+      $(".modal-text").on("click",".remove-tweet", function(){
+        console.log("Remove tweet button clicked");
+        $(this).closest("li").slideUp({
+        });
+        var tweetData = $(this).closest('li').find('h3').html();
+        console.log("tweet data url- " + tweetData);
+        
+        $(this).html("Removed");
+        $.ajax({
+            type: "DELETE",
+            url: "/tweets",
+            data: {
+                delete_request: {
+                    data: tweetData
+                }
+            },
+            success: function(response) {
+                console.log("Tweet DELETE request successful");
+                console.log("tweet url = " + tweetData);
+            },
+            error: function(response) {
+                console.log("Tweet DELETE request failed");
+                console.log("tweet url = " + tweetData)
+            }
+
+        });
+
       });
   }//end of populateDashboard
 });
