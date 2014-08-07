@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'users#show'
 
   delete '/articles' => 'articles#destroy'
+  delete '/photos' => 'photos#destroy'
 
   get '/users/signed_in' 
 
