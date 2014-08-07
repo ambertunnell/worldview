@@ -44,7 +44,7 @@ $(function () {
       //ARTICLES - REMOVE
 
       $(".modal-text").on("click",".remove-article", function(){
-          console.log("Remove button clicked");
+          console.log("Remove article button clicked");
           $(this).closest(".my-article").slideUp({
             // populateDashboard();
           });
@@ -72,7 +72,8 @@ $(function () {
 
       });
       
-      //FLICKR
+      //FLICKR - DISPLAY
+
       $.ajax({
         type: "GET",
         url: "/photos",
@@ -93,6 +94,38 @@ $(function () {
         }
       });
       
+      //FLICKR - REMOVE
+
+      $(".modal-text").on("click",".remove-photo", function(){
+        console.log("Remove photo button clicked");
+        $(this).closest(".photo").slideUp({
+          // populateDashboard();
+        });
+        var photoUrl = $(this).closest("li").find("p a").attr("href")
+        // console.log("photo url- " + photoUrl);
+        
+        $(this).html("Removed");
+        $.ajax({
+            type: "DELETE",
+            url: "/photos",
+            data: {
+                delete_request: {
+                    url: photoUrl
+                }
+            },
+            success: function(response) {
+                console.log("Photo DELETE request successful");
+                console.log("photo url = " + photoUrl);
+            },
+            error: function(response) {
+                console.log("Photo DELETE request failed");
+                console.log("photo url = " + photoUrl)
+            }
+
+        });
+
+      });
+
       //TWITTER
       $.ajax({
         type: "GET",

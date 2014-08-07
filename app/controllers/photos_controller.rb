@@ -24,6 +24,24 @@ class PhotosController < ApplicationController
     render json: @photos  
   end 
 
+  def destroy
+    @user = User.find(session[:user_id]) if session[:user_id]
+    photo_url = params[:delete_request][:url]
+    if @user.photos.find_by(url: photo_url)
+      @photo = @user.photos.find_by(url: photo_url)
+      @photo.destroy
+      @user.save
+    end
+    
+    respond_to do |format|
+      if @user.save
+        format.json { render json: @user}
+      else
+        format.json { head :no_content }
+      end
+    end
+  end
+
   private
 
   def photo_params
