@@ -13,8 +13,8 @@
       <div class="collapse navbar-collapse navbar-responsive-collapse"> 
       <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
-            <li><%= render 'layouts/profile' %> </li>
-            <li><%= link_to "Welcome, #{current_user.name}", root_path %></li>
+            <li><%= render 'layouts/dashboard' %> </li>
+            <li><%= link_to "Welcome, #{current_user.first_name}", root_path %></li>
             <li><%= link_to 'Log Out', logout_path %></li>
           <% else %>
             <li><%= link_to 'Log In with Twitter', twitter_login_path %></li>

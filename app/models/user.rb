@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
       name: auth_hash[:info][:name]
     )
   end
-  
+
+  def first_name
+    self.name.split(" ")[0]
+  end 
 
 end
