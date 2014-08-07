@@ -1,8 +1,6 @@
 $(function () {
 
     $('.news-header').hide();
-
-    // $(".clock img").click(function () {
     $(".clock li").click(function () {
 
         $('.news-header').show();
@@ -10,22 +8,25 @@ $(function () {
 
         var location = $(this).closest(".clock").data('city');
 
+        var search;
+
         switch (location) {
             case 'nyc':
-                var search = "new+york+city";
+                search = "new+york+city";
                 break;
             case 'london':
-                var search = "london";
+                search = "london";
                 break;
             case 'hongkong':
                 var search = "hong+kong"; 
                 break;
             case 'sydney':
-                var search = "sydney";
+                search = "sydney";
                 break;
             case 'paris':
-                var search = "paris";
+                search = "paris";
                 break;
+
             case 'sanfran':
                 var search = "san+francisco";
                 break;
@@ -43,7 +44,7 @@ $(function () {
                 // console.log(response.response.docs);
 
                 for (var i = 0; i < 10; i++) {
-     
+
                     var result = response.response.docs[i];
                     var id = response.response.docs[i]._id;
                     var title = response.response.docs[i].headline.main;
@@ -52,13 +53,9 @@ $(function () {
                     var url = response.response.docs[i].web_url;
                     var pubdate = response.response.docs[i].pub_date;
                     var imagesArray = response.response.docs[i].multimedia;
-        
-                    // for (var i=0; i<imagesArray.length;i++){
-                    //     var image = imagesArray[i].url; 
-                    //     // $('#news').append("<div>" + image + "</div>")
-                    // }
+
                     $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Save for later.</button></li>");
-                };
+                }
                 $('#news').hide();
                 $('#news').slideDown(5000);
             },
@@ -68,32 +65,38 @@ $(function () {
         });
     });
 
-    $( "#news" ).on( "click", ".save-article", function( event ) {
-      event.preventDefault();
-      
-      var articleTitle = $(this).closest('li').eq(0).find("h3").text();
-      var articleAbstract = $(this).closest('li').eq(0).find("p").eq(0).text(); 
-      var articlePubdate = $(this).closest('li').eq(0).find("p").eq(1).text();
-      var articleUrl = $(this).closest('li').eq(0).find("a").attr("href");
-  
-      var $that = $(this);
+
+    $("#news").on("click", ".save-article", function (event) {
+        event.preventDefault();
+
+        var articleTitle = $(this).closest('li').eq(0).find("h3").text();
+        var articleAbstract = $(this).closest('li').eq(0).find("p").eq(0).text();
+        var articlePubdate = $(this).closest('li').eq(0).find("p").eq(1).text();
+        var articleUrl = $(this).closest('li').eq(0).find("a").attr("href");
+
+        var $that = $(this);
 
         $.ajax({
             type: "POST",
             url: "/articles",
-            data: {article: {title: articleTitle, abstract: articleAbstract, url: articleUrl, pubdate: articlePubdate}},
-            success: function(response){
+            data: {
+                article: {
+                    title: articleTitle,
+                    abstract: articleAbstract,
+                    url: articleUrl,
+                    pubdate: articlePubdate
+                }
+            },
+            success: function (response) {
                 console.log("Saving article successful.");
                 $that.text("Saved!");
             },
-            error: function(response){
+            error: function (response) {
                 console.log("Saving article failed.");
             }
         });
-    
-
     });
 
-});   
-
-
+    // Populates dashboard with saved articles when profile link clicked 
+   
+    });

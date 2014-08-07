@@ -69,8 +69,8 @@ $(function () {
         event.preventDefault();
 
         var photoTitle = $(this).closest("li").find("h3").text();
-        var photoUrl = $(this).closest("li").find("a").attr("href");
-
+        var photoUrl = $(this).closest("li").find("img").attr("src");
+        console.log(photoUrl);
         var $that = $(this);
 
         $.ajax({
@@ -85,11 +85,14 @@ $(function () {
             success: function (response) {
                 console.log("Saving photo successful.");
                 $that.text("Saved!");
+
             },
             error: function (response) {
                 console.log("Saving photo failed.");
             }
         });
     });
+
+   
 
 });

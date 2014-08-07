@@ -1,7 +1,6 @@
 class PhotosController < ApplicationController
 
   def create
-    # binding.pry
     @user = User.find(session[:user_id]) if session[:user_id]
 
     unless @user.photos.find_by(url: params[:photo][:url])
@@ -18,6 +17,12 @@ class PhotosController < ApplicationController
       end
     end 
   end
+
+   def index
+    @user = User.find(session[:user_id]) if session[:user_id]
+    @photos = @user.photos
+    render json: @photos  
+  end 
 
   private
 
