@@ -73,7 +73,6 @@ $(function () {
                 console.log("Saving tweet successful.");
                 $that.text("Saved!");
 
-                $('#dashboard .dashboard-tweets').append("<li><h3>" + individual_tweet + "</h3><button class='remove-tweet'>Remove.</button></li>");
             },
             error: function (response) {
                 console.log("Saving tweet failed.");
@@ -84,24 +83,7 @@ $(function () {
     // Populates dashboard with saved tweets when profile link clicked 
     $("#dashboard-link").click(function () {
 
-        $.ajax({
-            type: "GET",
-            url: "/tweets",
-            success: function (response) {
-                console.log("Tweet GET request successful.");
-
-                $('#dashboard .dashboard-tweets').empty();
-
-                for (var i = 0; i < response.length; i++) {
-                    var data = response[i].data;
-
-                    $('#dashboard .dashboard-tweets').append("<li><h3>" + data + "</h3><button class='remove-tweet'>Remove.</button></li>");
-                }
-            },
-            error: function (response) {
-                console.log("Tweet get request failed.");
-            }
-        });
+        
     });
 
 });

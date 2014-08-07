@@ -96,43 +96,4 @@ $(function () {
 
     // Populates dashboard with saved articles when profile link clicked 
    
-    var x = location.hash;
-    if (x == "#dashboard"){
-        runClick();
-    }
-    $("#dashboard-xlink").click(function () {
-        $('#dashboard').css({ "opacity": "0", "z-index": "0"});
     });
-
-    $("#dashboard-link").click(function () {
-        runClick();
-    });
-    
-    function runClick(){
-        $('#dashboard').css({ "opacity": "1", "z-index": "99999"});
-
-
-        $.ajax({
-            type: "GET",
-            url: "/articles",
-            success: function (response) {
-                console.log("Article GET request successful.");
-
-                $('#dashboard .dashboard-articles').empty();
-
-                for (var i = 0; i < response.length; i++) {
-                    var url = response[i].url;
-                    var title = response[i].title;
-                    var pubdate = response[i].pubdate;
-                    var abstract = response[i].abstract;
-
-                    $('#dashboard .dashboard-articles').append("<li class='my-article'><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='remove-article'>Remove.</button></li>");
-                }
-            },
-            error: function (response) {
-                console.log("Article get request failed.");
-            }
-        });
-    }
-
-});
