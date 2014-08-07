@@ -2,7 +2,7 @@ $(function () {
 
     $('.twitter-header').hide();
 
-    $(".clock li").click(function () {
+    $(".ul-clock").click(function () {
 
         $('.twitter-header').show();
         $('#twitter').empty();

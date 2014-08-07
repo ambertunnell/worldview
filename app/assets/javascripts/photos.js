@@ -3,7 +3,7 @@ $(function () {
     $('.photos-header').hide();
 
     // $(".clock img").click(function () {
-    $(".clock li").click(function () {
+    $(".ul-clock").click(function () {
         var nyc = "new york city",
             london = "london",
             hongkong = "hong kong", 

@@ -1,7 +1,7 @@
 $(function () {
 
     $('.news-header').hide();
-    $(".clock li").click(function () {
+    $(".ul-clock").click(function () {
 
         $('.news-header').show();
         $('#news').empty();
@@ -26,7 +26,6 @@ $(function () {
             case 'paris':
                 search = "paris";
                 break;
-
             case 'sanfran':
                 var search = "san+francisco";
                 break;
