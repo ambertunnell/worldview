@@ -6,12 +6,13 @@
 
         .ul-clock {
           position: relative;
-          width: 300px;
-          height: 300px;
+          width: 180px; /*changed from 300*/
+          height: 180px; /*changed from 300*/
           margin:  15px auto 0 auto;
           /*margin-left: 15px;*/
           background: url('newclock.png');
           background-size: cover;
+
           list-style: none;
           }
         
@@ -58,15 +59,17 @@
         .sydney-clock,
         .sanfran-clock 
          {
-          width: 300px;
-          float: left;
-          margin-left: 15px;
+          width: 180px; /*changed from 300*/
+          /*float: left;*/
+          /*margin-left: 15px;*/
+          margin: auto;
+          
         }
 
         .sec li,
         .min li,
         .hour li {
-          width: 300px;
+          width: 180px; /*changed from 300*/
           /*float: left;*/
 
   
@@ -75,4 +78,5 @@
         #clock-container {
           /*width: 1000px;*/
           margin: auto;
+          height: 180px;
         }

@@ -11,7 +11,7 @@ $('.weather-header').hide();
         paris_coords = "48.856614,2.352222";
         sanfran_coords = "37.7749295,-122.41941550000001"; 
 
-    $(".clock li").click(function() {
+    $(".ul-clock").click(function() {
 
         $('.weather-header').show();
         $(".weather").empty();
