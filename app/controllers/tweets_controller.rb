@@ -11,7 +11,6 @@ class TweetsController < ApplicationController
   end
 
 
-
   def create
     @user = User.find(session[:user_id]) if session[:user_id]
     

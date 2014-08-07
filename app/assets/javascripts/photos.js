@@ -2,12 +2,14 @@ $(function () {
 
     $('.photos-header').hide();
 
-    $(".clock img").click(function () {
+    // $(".clock img").click(function () {
+    $(".ul-clock").click(function () {
         var nyc = "new york city",
             london = "london",
-            beijing = "beijing",
+            hongkong = "hong kong", 
             sydney = "sydney",
             paris = "paris france";
+            sanfran = "san francisco ca";
 
         $('.photos-header').show();
         $('#flickr').empty();
@@ -20,14 +22,17 @@ $(function () {
             case 'london':
                 search = london;
                 break;
-            case 'beijing':
-                search = beijing;
+            case 'hongkong':
+                search = hongkong;
                 break;
             case 'sydney':
                 search = sydney;
                 break;
             case 'paris':
                 search = paris;
+                break;
+            case 'sanfran':
+                search = sanfran;
                 break;
         }
 
@@ -45,7 +50,7 @@ $(function () {
                     var title = result.title;
                     var image = result.media.m;
                     var link = result.link;
-                    $('#flickr').append("<li class='photo'><h3>" + "<a href='" + link + "'>" + title + "</h3><p>" + "<img src=" + image + "></p></a><button class='save-photo'>Save for later</li></button></p>");
+                    $('#flickr').append("<li class='photo'><h3>" + "<a href='" + link + "' target='_blank'>" + title + "</h3><p>" + "<img src=" + image + "></p></a><button class='save-photo'>Save for later</li></button></p>");
 
                 }
 

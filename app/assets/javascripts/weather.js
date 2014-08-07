@@ -6,11 +6,12 @@ $('.weather-header').hide();
 
     var nyc_coords = "40.712784,-74.005941",
         london_coords = "51.507351,-0.127758",
-        beijing_coords = "39.909066,116.415054",
+        hongkong_coords = "22.396428,114.10949700000003", 
         sydney_coords = "-33.867487,151.20699",
         paris_coords = "48.856614,2.352222";
+        sanfran_coords = "37.7749295,-122.41941550000001"; 
 
-    $(".clock img").click(function() {
+    $(".ul-clock").click(function() {
 
         $('.weather-header').show();
         $(".weather").empty();
@@ -24,14 +25,17 @@ $('.weather-header').hide();
             case 'london':
                 coords = london_coords;
                 break;
-            case 'beijing':
-                coords = beijing_coords;
+            case 'hongkong':
+                coords = hongkong_coords;
                 break;
             case 'sydney':
                 coords = sydney_coords;
                 break;
             case 'paris':
                 coords = paris_coords;
+                break;
+            case 'sanfran':
+                coords = sanfran_coords;
                 break;
         }
 
@@ -49,9 +53,9 @@ $('.weather-header').hide();
                 var icon = response.currently.icon;
                 var formatted_icon = response.currently.icon.toUpperCase().split("-").join("_");
                 console.log(formatted_icon);
-                if (city === "Shanghai") {
-                    city = "Beijing";
-                }
+                // if (city === "Shanghai") {
+                //     city = "Beijing";
+                // }
 
                 var locale = city + " | " + continent,
                     temp = response['currently']['temperature'],
