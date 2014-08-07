@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
   has_many :tweets, through: :user_tweets
   has_many :user_photos
   has_many :photos, through: :user_photos
-
+  has_many :city_users
+  has_many :cities, through: :city_users
+  
   def self.create_from_omniauth(auth_hash)
     self.create(
       provider: auth_hash[:provider],

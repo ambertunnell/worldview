@@ -8,7 +8,7 @@ $('.weather-header').hide();
         london_coords = "51.507351,-0.127758",
         hongkong_coords = "22.396428,114.10949700000003", 
         sydney_coords = "-33.867487,151.20699",
-        paris_coords = "48.856614,2.352222";
+        paris_coords = "48.856614,2.352222",
         sanfran_coords = "37.7749295,-122.41941550000001"; 
 
     $(".ul-clock").click(function() {
