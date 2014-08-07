@@ -14,6 +14,8 @@ $(function () {
         $('.photos-header').show();
         $('#flickr').empty();
 
+        var search;
+
         var location = $(this).closest(".clock").data('city');
         switch (location) {
             case 'nyc':

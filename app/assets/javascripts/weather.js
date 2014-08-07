@@ -18,6 +18,8 @@ $('.weather-header').hide();
 
         var location = $(this).closest(".clock").data('city');
        
+        var coords;
+
         switch (location) {
             case 'nyc':
                 coords = nyc_coords;
