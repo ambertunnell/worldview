@@ -1,4 +1,4 @@
- 
+
         * {
           margin: 0;
           padding: 0;
@@ -9,6 +9,7 @@
           width: 180px; /*changed from 300*/
           height: 180px; /*changed from 300*/
           margin:  15px auto 0 auto;
+
           /*margin-left: 15px;*/
           background: url('newclock.png');
           background-size: cover;
@@ -18,12 +19,13 @@
         
         .sec, .min, .hour {
           position: absolute;
-          width: 30px;
-          height: 300px;
+          width: 20px;
+          height: 150px;
           /*top: 0px;*/
           /*left: 285px;*/
-          left: 135px;
-          /*top: 5px;*/
+          left: 80px;
+          top: 15px;
+
          }
         
         /*cannot change background image size, need to change actual size of element*/
@@ -62,7 +64,8 @@
           width: 180px; /*changed from 300*/
           /*float: left;*/
           /*margin-left: 15px;*/
-          margin: auto;
+          /*margin: auto;*/
+
           
         }
 
@@ -72,11 +75,22 @@
           width: 180px; /*changed from 300*/
           /*float: left;*/
 
+
   
         }
 
-        #clock-container {
-          /*width: 1000px;*/
+        .clock {
+          margin: 10px;
+        }
+
+        .clock h2 {
+          width: 180px;
+          font-size: 20px;
+        }
+
+   /*     #clock-container {
+      
+
           margin: auto;
           height: 180px;
-        }
+        }*/

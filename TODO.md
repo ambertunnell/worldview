@@ -8,8 +8,11 @@ What news should I read?
 
 THURSDAY
 
-- make remove buttons work on news, tweet, photos and dashboard (Ben)
-- hide save buttons when not logged in (AJAX response for if user is nil)
+- make remove buttons work in dashboard (Ben)
+  (done) - news
+  - tweets
+  - photos
+- hide save buttons when not logged in (AJAX response for if user is nil) (Ben)
 - add stock info
 - format news time
 - make clocks reflect real time (Koren)

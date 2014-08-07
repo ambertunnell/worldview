@@ -15,6 +15,14 @@ class UsersController < ApplicationController
     @articles = @user.articles
   end
 
+  def signed_in
+    if session[:user_id]
+      render json: "true"
+    else
+      render json: "false"
+    end 
+  end
+
   private
 
     def set_user
