@@ -80,12 +80,6 @@ $(function () {
         });
     });
 
-    // Populates dashboard with saved tweets when profile link clicked 
-    $("#dashboard-link").click(function () {
-
-        
-    });
-
 
 });
 
