@@ -52,7 +52,7 @@ $('.weather-header').hide();
                 var city = place.replace(/.*\//, "").replace("_", " ");
                 var icon = response.currently.icon;
                 var formatted_icon = response.currently.icon.toUpperCase().split("-").join("_");
-                console.log(formatted_icon);
+                // console.log(formatted_icon);
                 // if (city === "Shanghai") {
                 //     city = "Beijing";
                 // }
