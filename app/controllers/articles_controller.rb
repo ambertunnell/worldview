@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
 
   def index
     @user = User.find(session[:user_id]) if session[:user_id]
-    @articles = @user.articles
+    @articles = @user.articles.reverse #So that newest are on top of list
     render json: @articles  
   end 
 
