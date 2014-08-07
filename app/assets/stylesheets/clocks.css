@@ -1,0 +1,78 @@
+ 
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        .ul-clock {
+          position: relative;
+          width: 300px;
+          height: 300px;
+          margin:  15px auto 0 auto;
+          /*margin-left: 15px;*/
+          background: url('newclock.png');
+          background-size: cover;
+          list-style: none;
+          }
+        
+        .sec, .min, .hour {
+          position: absolute;
+          width: 30px;
+          height: 300px;
+          /*top: 0px;*/
+          /*left: 285px;*/
+          left: 135px;
+          /*top: 5px;*/
+         }
+        
+        /*cannot change background image size, need to change actual size of element*/
+        .sec {
+          /*width: 20px;*/
+          background: url('sechand.png');
+          background-size: 50%;
+          background-repeat: no-repeat;
+          z-index: 3;
+          background-position: center;
+            }
+           
+        .min {
+          background: url('minhand.png');
+          z-index: 2;
+          background-size: 50%;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+           
+        .hour {
+          background: url('hourhand.png');
+          z-index: 1;
+          background-size: 50%;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        .nyc-clock,
+        .paris-clock, 
+        .london-clock,
+        .hongkong-clock,
+        .sydney-clock,
+        .sanfran-clock 
+         {
+          width: 300px;
+          float: left;
+          margin-left: 15px;
+        }
+
+        .sec li,
+        .min li,
+        .hour li {
+          width: 300px;
+          /*float: left;*/
+
+  
+        }
+
+        #clock-container {
+          /*width: 1000px;*/
+          margin: auto;
+        }

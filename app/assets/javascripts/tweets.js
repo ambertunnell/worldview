@@ -2,7 +2,7 @@ $(function () {
 
     $('.twitter-header').hide();
 
-    $(".clock img").click(function () {
+    $(".clock li").click(function () {
 
         $('.twitter-header').show();
         $('#twitter').empty();
@@ -85,6 +85,7 @@ $(function () {
 
         
     });
+
 
 });
 

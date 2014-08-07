@@ -1,8 +1,7 @@
 $(function () {
 
     $('.news-header').hide();
-
-    $(".clock img").click(function () {
+    $(".clock li").click(function () {
 
         $('.news-header').show();
         $('#news').empty();
@@ -18,8 +17,8 @@ $(function () {
             case 'london':
                 search = "london";
                 break;
-            case 'beijing':
-                search = "beijing";
+            case 'hongkong':
+                var search = "hong+kong"; 
                 break;
             case 'sydney':
                 search = "sydney";
@@ -27,7 +26,11 @@ $(function () {
             case 'paris':
                 search = "paris";
                 break;
-        }
+
+            case 'sanfran':
+                var search = "san+francisco";
+                break;
+        };
 
         var API_KEY = "dd74b110c07677ce3e0c5c1f94642e26:10:31738630";
         var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + search + "&sort=newest&api-key=" + API_KEY;

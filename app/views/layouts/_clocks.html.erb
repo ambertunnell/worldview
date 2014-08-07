@@ -1,18 +1,82 @@
-<div class="row">
+<div class="row clock-row">
 
-<div class="clock col-md-2" data-city="nyc" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %><br> 
+<!-- <div class="clock col-md-2" data-city="nyc" ><%#= image_tag('/assets/clock_temp.jpeg', size: '60') %><br> 
 <h2>NY</h2></div>
 
-<div class="clock col-md-2" data-city="london" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %><br>
+<div class="clock col-md-2" data-city="london" ><%#= image_tag('/assets/clock_temp.jpeg', size: '60') %><br>
 <h2>London</h2></div>
 
-<div class="clock col-md-2" data-city="beijing" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %><br> 
+<div class="clock col-md-2" data-city="beijing" ><%#= image_tag('/assets/clock_temp.jpeg', size: '60') %><br> 
 <h2>Beijing</h2></div>
 
-<div class="clock col-md-2" data-city="sydney" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %><br> 
+<div class="clock col-md-2" data-city="sydney" ><%#= image_tag('/assets/clock_temp.jpeg', size: '60') %><br> 
 <h2>Sydney</h2></div>
 
-<div class="clock col-md-2" data-city="paris" ><%= image_tag('/assets/clock_temp.jpeg', size: '60') %><br> 
-<h2>Paris</h2></div>
+<div class="clock col-md-2" data-city="paris" ><%#= image_tag('/assets/clock_temp.jpeg', size: '60') %><br> 
+<h2>Paris</h2></div> -->
 
-</div>
+
+
+
+<div id="clock-container">
+
+<div class="nyc-clock col-md-2 clock" data-city="nyc">
+  <ul class="ul-clock"> 
+      <li class="sec"></li>
+      <li class="hour"></li>
+      <li class="min"></li>
+  </ul>
+  <center><h2>New York</h2></center>
+  </div>
+
+<div class="sanfran-clock col-md-2 clock" data-city="sanfran">
+    <ul class="ul-clock"> 
+      <li class="sec"></li>
+      <li class="hour"></li>
+      <li class="min"></li>
+  </ul>
+  <center><h2>San Francisco</h2></center>
+  </div>
+
+<div class="london-clock col-md-2 clock" data-city="london">
+    <ul class="ul-clock"> 
+      <li class="sec"></li>
+      <li class="hour"></li>
+    <li class="min"></li>
+  </ul>
+  <center><h2>London</h2></center>
+  </div>
+
+<div class="paris-clock col-md-2 clock" data-city="paris">
+    <ul class="ul-clock"> 
+      <li class="sec"></li>
+      <li class="hour"></li>
+    <li class="min"></li>
+  </ul>
+  <center><h2>Paris</h2></center>
+  </div>
+
+<!-- this needs to be changed from beijing -->
+<div class="hongkong-clock col-md-2 clock" data-city="hongkong">
+    <ul class="ul-clock"> 
+      <li class="sec"></li>
+      <li class="hour"></li>
+    <li class="min"></li>
+  </ul>
+  <center><h2>Hong Kong</h2></center>
+  </div>
+
+<div class="sydney-clock clock col-md-2" data-city="sydney">
+    <ul class="ul-clock"> 
+      <li class="sec"></li>
+      <li class="hour"></li>
+    <li class="min"></li>
+  </ul>
+  <center><h2>Sydney</h2></center>
+  </div>
+
+  </div>
+
+
+
+  </div>
