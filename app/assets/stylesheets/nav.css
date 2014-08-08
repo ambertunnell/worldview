@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Limelight);
 @import url(http://fonts.googleapis.com/css?family=Questrial);
 @import url(http://fonts.googleapis.com/css?family=Codystar);
+@import url(http://fonts.googleapis.com/css?family=Faster+One);
 
 body {
   background: white;
@@ -15,7 +16,7 @@ nav,
 }
 
 .navbar-inner {
-  border-bottom: 2px solid black;
+  border-bottom: 6px double black;
 }
 
 .navbar-inner a,
@@ -26,7 +27,7 @@ nav,
 .navbar-default .navbar-nav > li > a:visited {
   margin-top: 5px;
   color: black;
-  font-family: 'Codystar';
+  font-family: 'Questrial';
   font-size: 25px;
   transition-duration: .5s;
   transition-property: color;

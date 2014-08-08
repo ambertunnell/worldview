@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
 @import url(http://fonts.googleapis.com/css?family=Limelight);
 @import url(http://fonts.googleapis.com/css?family=Codystar);
+@import url(http://fonts.googleapis.com/css?family=Faster+One);
 
 /*stylesheet for clocks*/
 
@@ -13,7 +14,9 @@
   position: relative;
   width: 180px; 
   height: 180px; 
-  background: url('goldclock1.png');
+  background: url('newclock.png');
+  /*border: 6px double black;*/
+  border-radius: 50%;
   background-size: cover;
   list-style: none;
 }
@@ -21,7 +24,7 @@
 .ul-clock:hover {
   /*background: none;*/
   border-radius: 50%;
-  border: 2px solid #D60905;
+  border: 2px solid black;
 }
 
 .sec, .min, .hour {
@@ -96,13 +99,13 @@
 }
 
 .instructions h2 {
-  font-family: 'Codystar';
+  font-family: 'Faster One';
   font-size: 45px;
   padding-top: 70px;
   color: #D60905;
 }
 
 #clock-container h2 { 
-  font-family: 'Codystar';
+  font-family: 'Faster One';
   font-size: 25px;
 }
