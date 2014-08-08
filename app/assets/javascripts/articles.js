@@ -10,30 +10,38 @@ $(function () {
         var location = $(this).closest(".clock").data('city');
 
         var search;
+        var country;
 
         switch (location) {
             case 'nyc':
                 search = "new+york+city";
+                country = "\"New%20York%20City\""
                 break;
             case 'london':
                 search = "london";
+                country = "\"London (England)\""
                 break;
             case 'hongkong':
-                var search = "hong+kong"; 
+                search = "hong+kong"; 
+                country = "\"CHINA\"";
                 break;
             case 'sydney':
                 search = "sydney";
+                country = "\"Australia\"";
                 break;
             case 'paris':
                 search = "paris";
+                country = "\"france\"";
                 break;
             case 'sanfran':
-                var search = "san+francisco";
+                search = "san+francisco";
+                country = "\"San%20Francisco\"";
                 break;
         };
 
         var API_KEY = "dd74b110c07677ce3e0c5c1f94642e26:10:31738630";
-        var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + search + "&sort=newest&api-key=" + API_KEY;
+        var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + search + "&sort=newest&fq=type_of_material:(News)%20AND%20glocations:("+country+")&api-key=" + API_KEY;
+       
 
         $.ajax({
             url: URL,
@@ -41,25 +49,26 @@ $(function () {
             dataType: "jsonp",
             jsonpCallback: 'svc_search_v2_articlesearch',
             success: function (response) {
-                // console.log(response.response.docs);
-
+               
+                if (response.response.docs.length == 0){
+                    console.log ("No articles found with query " + search)
+                }
                 for (var i = 0; i < 10; i++) {
 
                     var result = response.response.docs[i];
                     var id = response.response.docs[i]._id;
                     var title = response.response.docs[i].headline.main;
                     var abstract = response.response.docs[i].snippet;
-                    // var byline = response.response.docs[i].byline.original;
                     var url = response.response.docs[i].web_url;
                     var pubdate = response.response.docs[i].pub_date.split("T")[0];
                     var imagesArray = response.response.docs[i].multimedia;
                     $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Save for later</button></li>");
-                }
+                     }
                 $('#news').hide();
                 $('#news').slideDown(5000);
             },
             error: function (response) {
-                console.log("NYT ajax query failed.");
+                console.log("news ajax query failed.");
             }
         });
     });
