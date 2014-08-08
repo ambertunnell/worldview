@@ -31,12 +31,17 @@ nav {
 }
 
 #dashboard > .modal-box {
-  width: 50%;
+  width: 70%;
   position: relative;
   margin: 10% auto;
   padding: 5px 20px 13px 20px;
   border-radius: 0px;
   color: black;
+}
+
+.dashboard-photo {
+  display: inline;
+  float: left;
 }
 
 .close {
