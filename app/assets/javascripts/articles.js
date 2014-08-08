@@ -27,7 +27,7 @@ $(function () {
                 break;
             case 'sydney':
                 search = "sydney";
-                country = "\"Aust2ralia\"";
+                country = "\"Australia\"";
                 break;
             case 'paris':
                 search = "paris";
