@@ -1,11 +1,16 @@
 @import url(http://fonts.googleapis.com/css?family=Limelight);
-@import url(http://fonts.googleapis.com/css?family=Questrial);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
 @import url(http://fonts.googleapis.com/css?family=Codystar);
 @import url(http://fonts.googleapis.com/css?family=Faster+One);
 
 body {
-  background: white;
+  background: #DBDBDC;
 }
+
+/*.navbar,
+.navbar-default {
+  min-width: 1100px;
+}*/
 
 nav,
 .navbar,
@@ -16,7 +21,7 @@ nav,
 }
 
 .navbar-inner {
-  border-bottom: 6px double black;
+  border-bottom: 10px solid black;
 }
 
 .navbar-inner a,
@@ -27,7 +32,7 @@ nav,
 .navbar-default .navbar-nav > li > a:visited {
   margin-top: 5px;
   color: black;
-  font-family: 'Questrial';
+  font-family: 'Oswald';
   font-size: 25px;
   transition-duration: .5s;
   transition-property: color;
@@ -43,9 +48,7 @@ nav,
 
 nav input {
   border: 1px solid black;
-  font-family: 'Questrial';
-  padding-top: 1px;
-  padding-bottom: 1px;
+  font-family: 'Oswald';
   font-size: 20px;
   padding-left: 30px;
 }

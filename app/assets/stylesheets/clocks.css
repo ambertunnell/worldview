@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
 @import url(http://fonts.googleapis.com/css?family=Limelight);
 @import url(http://fonts.googleapis.com/css?family=Codystar);
-@import url(http://fonts.googleapis.com/css?family=Faster+One);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
 
 /*stylesheet for clocks*/
 
@@ -14,8 +14,9 @@
   position: relative;
   width: 180px; 
   height: 180px; 
+  /*background: white;*/
   background: url('newclock.png');
-  /*border: 6px double black;*/
+  /*border: 10px solid #D60905;*/
   border-radius: 50%;
   background-size: cover;
   list-style: none;
@@ -99,13 +100,14 @@
 }
 
 .instructions h2 {
-  font-family: 'Faster One';
+  font-family: 'Oswald';
   font-size: 45px;
   padding-top: 70px;
   color: #D60905;
 }
 
 #clock-container h2 { 
-  font-family: 'Faster One';
+  font-family: 'Oswald';
   font-size: 25px;
+  color: black;
 }
