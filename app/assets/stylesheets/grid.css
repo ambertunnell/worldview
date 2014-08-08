@@ -3,7 +3,8 @@
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab);
 @import url(http://fonts.googleapis.com/css?family=Limelight);
-
+@import url(http://fonts.googleapis.com/css?family=Questrial);
+@import url(http://fonts.googleapis.com/css?family=Codystar);
 
 a,
 a:visited,
@@ -12,10 +13,9 @@ a:hover {
 }
 
 h4 {
-  font-family: 'Limelight';
-  font-size: 25px;
+  font-family: 'Codystar';
+  font-size: 30px;
 }
-
 
 .grid, 
 .container {
@@ -23,16 +23,15 @@ h4 {
   margin: auto;
 }
 
-/*weather*/
+/*WEATHER*/
 .col-md-1 {
-  background: white;
+  background: #EBF4FE;
   height: 250px;
   width: 48%;
-  /*display: inline-block;*/
   float: left;
-  border: 3px solid black;
+  border: 3px double black;
   margin: 1%;
-
+  box-shadow: 2px;
 }
 
 .weather {
@@ -42,41 +41,39 @@ h4 {
 
 .weather p {
   left: 0;
-  margin-left: 0;
-  color: red;
+  margin: 0;
+  padding: 0;
+  font-family: 'Questrial';
 }
 
 #icon1 {
   float: left;
   width: 65%;
   height: 65%;
-  /*width: 75px;
-  height: 75px;*/
+  margin: 0;
+  padding: 0;
 }
 
 .weather p {
   font-size: 20px;
 }
 
-/*.weather h3 {
-  position: fixed;
-}*/
+.weather {
+  /*background: blue;*/
+}
 
-/*photos*/
+/*PHOTOS*/
 .col-md-4 {
-  background: white;
+  background: #EBF4FE;
   height: 450px;
   width: 48%;
-  /*display: inline-block;*/
   float: right;
   overflow: scroll;
-  border: 3px solid red;
+  border: 3px double #D60905;
   margin: 1%;
 }
 
 #flickr {
-  /*height: 450px;*/
-  /*overflow: hidden;*/
   list-style: none;
 }
 
@@ -92,55 +89,52 @@ h4 {
   transition-property: color;
 }
 
-/*news*/
+/*NEWS*/
 .col-md-5 {
-  background: white;
+  background: #EBF4FE;
   height: 600px;
   width: 48%;
-  /*vertical-align: top;*/
-/*float: left;*/
-overflow: scroll;
-border: 3px solid red;
-margin: 1%;
+  overflow: scroll;
+  border: 3px double #D60905;
+  margin: 1%;
 }
-/*.col-md-5 h4 {
-  font-family: 'Limelight';
-}*/
 
 #news {
   list-style: none;
 }
 
 #news h3 {
-  font-family: 'Poiret One';
+  font-family: 'Questrial';
+  text-align: justify;
 }
 
 #news p {
-  font-family: 'Varela';
-  font-size: 15px;
+  font-family: 'Questrial';
+  font-size: 20px;
+  text-align: justify;
 }
 
 #news h3 a {
-  color: red;
+  color: #D60905;
+  text-align: justify;
   transition-duration: .5s;
   transition-property: color;
 }
 
 #news h3 a:hover {
-  color: black;
+  color: blue;
   transition-duration: .5s;
   transition-property: color;
 }
 
-/*twitter*/
+/*TWITTER*/
 .col-md-6 {
-  background: white;
+  background: #EBF4FE;
   height: 400px;
   width: 48%;
-  /*display: inline-block;*/
   float: right;
   overflow: scroll;
-  border: 3px solid black;
+  border: 3px double black;
   margin: 1%;
 }
 
@@ -149,24 +143,38 @@ margin: 1%;
 }
 
 #twitter h3 {
-  font-family: 'Poiret One';
+  font-family: 'Questrial';
 }
 
+#twitter a,
+#twitter a:visited {
+  color: blue;
+  transition-duration: .5s;
+  transition-property: color;
+}
+#twitter a:hover {
+  color: #D60905;
+  transition-duration: .5s;
+  transition-property: color;
+}
+
+/*BUTTONS*/
 button {
   background: none;
+  text-align: justify;
   border: 1px solid black;
   color: black;
   padding: 5px;
-  font-family: 'Poiret One';
+  font-family: 'Questrial';
   font-size: 17px;
   transition-duration: .5s;
-  transition-property: background, border, color;
+  transition-property: background, border-color, color;
 }
 
 button:hover {
-  background: red;
-  border: 1px solid white;
+  background: #D60905;
+  border: 1px solid black;
   color: white;
   transition-duration: .5s;
-  transition-property: background, border, color;
+  transition-property: background, border-color, color;
 }

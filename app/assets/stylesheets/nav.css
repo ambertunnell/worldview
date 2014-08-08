@@ -1,4 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Limelight);
+@import url(http://fonts.googleapis.com/css?family=Questrial);
+@import url(http://fonts.googleapis.com/css?family=Codystar);
 
 body {
   background: white;
@@ -10,13 +12,11 @@ nav,
 .navbar-default {
   background: white;
   border: none;
-  
 }
 
 .navbar-inner {
-border-bottom: 2px solid black;
+  border-bottom: 2px solid black;
 }
-
 
 .navbar-inner a,
 .navbar-inner a:visited,
@@ -24,10 +24,10 @@ border-bottom: 2px solid black;
 .navbar-nav a:visited,
 .navbar-default .navbar-nav > li > a,
 .navbar-default .navbar-nav > li > a:visited {
-  /*margin-top: 10px;*/
+  margin-top: 5px;
   color: black;
-  font-family: 'Limelight';
-  font-size: 20px;
+  font-family: 'Codystar';
+  font-size: 25px;
   transition-duration: .5s;
   transition-property: color;
 }
@@ -35,17 +35,23 @@ border-bottom: 2px solid black;
 .navbar-inner a:hover,
 .navbar-nav a:hover,
 .navbar-default .navbar-nav > li > a:hover {
-  color: red;
+  color: #D60905;
   transition-duration: .5s;
   transition-property: color;
 }
 
-
 nav input {
-  /*border-radius: 5px;*/
   border: 1px solid black;
-  /*padding: 2px;*/
- /* padding-left: 3px;
-  padding-right: 3px;
-*/}
+  font-family: 'Questrial';
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 

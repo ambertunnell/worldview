@@ -1,5 +1,24 @@
 $(document).ready(function() {
 
+    $('.clock-row').hide().fadeIn(2000);
+
+    // script to type text in header
+    var text = '         Click a clock.    ';
+
+    // text is split up to letters
+    $.each(text.split(''), function(i, letter){
+
+        // add 100*i ms delay to each letter 
+        setTimeout(function(){
+
+            // add the letter to the container
+            $('.instructions h2').html($('.instructions h2').html() + letter);
+
+          }, 130*i);
+
+        $('.instructions h2').show().delay(3500).fadeOut();
+    });
+
     var d = new Date ();
     var n = d.getTimezoneOffset();
     var UTChour = d.getUTCHours();

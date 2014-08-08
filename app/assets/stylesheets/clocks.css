@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
 @import url(http://fonts.googleapis.com/css?family=Limelight);
+@import url(http://fonts.googleapis.com/css?family=Codystar);
 
 /*stylesheet for clocks*/
 
@@ -12,18 +13,21 @@
   position: relative;
   width: 180px; 
   height: 180px; 
-  /*margin:0auto;*/
-  background: url('romanclock2.png');
+  background: url('goldclock1.png');
   background-size: cover;
   list-style: none;
-  }
+}
+
+.ul-clock:hover {
+  /*background: none;*/
+  border-radius: 50%;
+  border: 2px solid #D60905;
+}
 
 .sec, .min, .hour {
   position: absolute;
   width: 20px;
   height: 150px;
-  /*top: 0px;*/
-  /*left: 285px;*/
   left: 80px;
   top: 15px;
  }
@@ -60,26 +64,20 @@
 .sanfran-clock {
   width: 180px; 
   float: left;
-  /*margin-left: 10px;*/
-  /*margin: auto;*/
 }
 
 .sec li,
 .min li,
 .hour li {
   width: 180px; 
-  /*float: left;*/
 }
 
 .clock {
-  /*background: pink;*/
   margin-left: 17px;
 }
 
 .ul-clock {
-/*  background: blue;
-  border: 7px solid black;
-  border-radius: 50%;*/
+  /*background: blue;*/
 }
 
 .clock-row h2 {
@@ -89,18 +87,22 @@
 
 .clock-row {
   /*background: blue;*/
-  /*padding-left: 100px;*/
   width: 1000px;
   position: center;
-  /*padding-left: 10px;*/
 }
 
 #clock-container { 
-  /*margin: auto;*/
   /*background: red;*/
 }
 
+.instructions h2 {
+  font-family: 'Codystar';
+  font-size: 45px;
+  padding-top: 70px;
+  color: #D60905;
+}
+
 #clock-container h2 { 
-  font-family: 'Limelight';
+  font-family: 'Codystar';
   font-size: 25px;
 }

@@ -18,9 +18,10 @@ nav {
   background: #e7e7e7;
   z-index: 0;
   opacity:0;
-  -webkit-transition: opacity 400ms ease-in;
+/*  -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
-  transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;*/
+  transition-duration: 1.8s;
   pointer-events: none;
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
