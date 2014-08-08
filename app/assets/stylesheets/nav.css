@@ -1,0 +1,15 @@
+nav,
+.navbar,
+.navbar-inner,
+.navbar-default {
+  border: none;
+  background: #e7e7e7;
+}
+
+nav input {
+  border-radius: 5px;
+  padding: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
