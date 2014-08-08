@@ -26,9 +26,6 @@
   /*background: none;*/
   border-radius: 50%;
   border: 2px solid black;
-    .exit-clock {
-    opacity: 1;
-  }
 }
 
 .sec, .min, .hour {
@@ -113,17 +110,6 @@
   font-family: 'Oswald';
   font-size: 25px;
   color: black;
-}
-
-.exit-clock:before {
-  content:"X";
-}
-
-.exit-clock {
-  float: right;
-  opacity: 0.01;
-  z-index: 222;
-  width: 50;
 }
 
 .new-clock-form {
