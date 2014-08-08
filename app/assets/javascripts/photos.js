@@ -50,7 +50,6 @@ $(function () {
                 for (var i = 0; i < 10; i++) {
                     var result = response.items[i];
                     var title = result.title;
-                    // var image = result.media.m;
                     var image = result.media.m.replace("_m.","_c.");
                     var link = result.link;
                     $('#flickr').append("<li class='photo'><h3>" + "<a href='" + link + "' target='_blank'>" + title + "</h3><p>" + "<img src=" + image + "></p></a><button class='save-photo'>Save for later</li></button></p>");
