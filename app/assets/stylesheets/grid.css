@@ -212,3 +212,12 @@ button:hover {
   transition-duration: .5s;
   transition-property: background, border-color, color;
 }
+
+.dashboard-photo img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+ul {
+  list-style: none;
+}

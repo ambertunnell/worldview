@@ -5,25 +5,27 @@
     <a id="dashboard-xlink" href="#" title="Close" class="close">X</a>
     <div class="modal-text">
 
-      <h3>Personal Dashboard</h3>
-    <div class="dashboard-photo">
-      <img style="width: 200px" src=<%= "#{current_user.image}" %>>
+      <center><h4>Personal Dashboard</h4></center>
+
+    <div class="dashboard-photo col-md-1">
+    <center><h4><%= current_user.name %></h4></center>
+      <center><%= image_tag current_user.image %></center>
     </div>
 
-    <div class="col-md-5">
-      <h4>Favorited Articles</h4>
-      <ul class='dashboard-articles'>
-      </ul>
-    </div>  
-
-    <div class="col-md-5">
-      <h4>Favorited Photos</h4>
+        <div class="col-md-4">
+      <center><h4>Favorited Photos</h4></center>
       <ul class="dashboard-photos">
       </ul>
     </div>  
 
-    <div class="col-md-5">  
-      <h4>Favorited Tweets</h4>
+    <div class="col-md-5">
+      <center><h4>Favorited Articles</h4></center>
+      <ul class='dashboard-articles'>
+      </ul>
+    </div>  
+
+    <div class="col-md-6">  
+      <center><h4>Favorited Tweets</h4></center>
       <ul class="dashboard-tweets">
       </ul>
     </div>  

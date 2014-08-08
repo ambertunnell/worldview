@@ -14,7 +14,7 @@
       <div class="collapse navbar-collapse navbar-responsive-collapse"> 
       <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
-          <li><a><input type="text" name="country" id="autocomplete" placeholder="Enter a city..."></a></li>
+          <li><a><input type="text" name="country" id="autocomplete" placeholder="Enter another city..."></a></li>
             <li><%= render 'layouts/dashboard' %> </li>
 
             <li><%= link_to 'Log Out', logout_path %></li>
