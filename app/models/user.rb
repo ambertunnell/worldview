@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :cities, through: :city_users
   
   def self.create_from_omniauth(auth_hash)
+    binding.pry
     self.create(
       provider: auth_hash[:provider],
       uid: auth_hash[:uid],

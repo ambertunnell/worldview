@@ -4,11 +4,11 @@ $(function () {
 
     // $(".clock img").click(function () {
     $(".ul-clock").click(function () {
-        var nyc = "new york city",
-            london = "london",
-            hongkong = "hong kong", 
-            sydney = "sydney",
-            paris = "paris france";
+        var nyc = "new york city times square",
+            london = "london buckingham palace",
+            hongkong = "hong kong skyline", 
+            sydney = "sydney opera house",
+            paris = "paris france eiffel tower";
             sanfran = "san francisco ca";
 
         $('.photos-header').show();
