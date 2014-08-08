@@ -7,9 +7,10 @@ nav,
 }
 
 nav input {
-  border-radius: 5px;
+  /*border-radius: 5px;*/
+  border: 1px solid black;
   padding: 2px;
-  padding-left: 3px;
+ /* padding-left: 3px;
   padding-right: 3px;
-}
+*/}
 
