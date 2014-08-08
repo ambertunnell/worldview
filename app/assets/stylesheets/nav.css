@@ -46,6 +46,10 @@ nav,
   transition-property: color;
 }
 
+/*.navbar-left > li > a {
+  color: #D60905;
+}*/
+
 nav input {
   border: 1px solid black;
   font-family: 'Oswald';
