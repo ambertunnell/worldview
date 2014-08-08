@@ -26,6 +26,9 @@
   /*background: none;*/
   border-radius: 50%;
   border: 2px solid black;
+    .exit-clock {
+    opacity: 1;
+  }
 }
 
 .sec, .min, .hour {
@@ -111,3 +114,32 @@
   font-size: 25px;
   color: black;
 }
+
+.exit-clock:before {
+  content:"X";
+}
+
+.exit-clock {
+  float: right;
+  opacity: 0.01;
+  z-index: 222;
+  width: 50;
+}
+
+.new-clock-form {
+  position: relative;
+  width: 180px; 
+  height: 180px; 
+  /*background: white;*/
+  /*background: url('newclock.png');*/
+  /*border: 10px solid #D60905;*/
+  border-radius: 50%;
+  background-size: cover;
+  list-style: none;
+}
+
+
+
+
+
+
