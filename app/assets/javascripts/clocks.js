@@ -4,18 +4,13 @@ $(document).ready(function() {
 
     // script to type text in header
     var text = '         Click a clock.    ';
-
     // text is split up to letters
     $.each(text.split(''), function(i, letter){
-
         // add 100*i ms delay to each letter 
         setTimeout(function(){
-
             // add the letter to the container
             $('.instructions h2').html($('.instructions h2').html() + letter);
-
           }, 130*i);
-
         $('.instructions h2').show().delay(3500).fadeOut();
     });
 
