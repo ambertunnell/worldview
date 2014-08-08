@@ -8,18 +8,23 @@ What news should I read?
 
 THURSDAY
 
-- make remove buttons work in dashboard (Ben)
+(done) - make remove buttons work in dashboard (Ben)
   (done) - news
-  - tweets
-  - photos
-- hide save buttons when not logged in (AJAX response for if user is nil) (Ben)
+  (done) - tweets
+  (done) - photos
+(done) - format news time
+(done) - make clocks reflect real time (Koren)
+(done) - change 'my profile' click action so it doesn't display an empty dashboard if you go directly to #dashboard
 - add stock info
-- format news time
-- make clocks reflect real time (Koren)
-- change 'my profile' click action so it doesn't display an empty dashboard if you go directly to #dashboard
-- add cities 
+- add cities - choose from 100 
+  - autocomplete via pre-populated list with jquery ui
+  - weather - get coordinates
+  - news - city name (url encoded? not sure)
+  - photos - city name (url encoded? not sure)
+  - tweets - #cityname 
 - add testing (through jasmine?)
 - save user city in profile?
+- hide save buttons when not logged in (AJAX response for if user is nil) (Ben)
 
 WEDNESDAY
 
