@@ -51,6 +51,8 @@ nav input {
   font-family: 'Oswald';
   font-size: 20px;
   padding-left: 30px;
+  /*padding-top: 5px;*/
+  line-height: 1.5;
 }
 
 footer {

@@ -21,7 +21,7 @@ nav {
 /*  -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;*/
-  transition-duration: 1.8s;
+  transition-duration: 1.2s;
   pointer-events: none;
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

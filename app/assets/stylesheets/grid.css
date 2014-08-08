@@ -213,6 +213,7 @@ button:hover {
   transition-property: background, border-color, color;
 }
 
+/*DASHBOARD*/
 .dashboard-photo img {
   width: 150px;
   border-radius: 50%;
