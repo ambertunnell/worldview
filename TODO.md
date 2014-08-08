@@ -25,6 +25,7 @@ THURSDAY
 - add testing (through jasmine?)
 - save user city in profile?
 - hide save buttons when not logged in (AJAX response for if user is nil) (Ben)
+- slideshow for pics
 
 WEDNESDAY
 
