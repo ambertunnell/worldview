@@ -19,6 +19,7 @@
           <% if logged_in? %>
           <li><a>
             <select name='cities'>
+              <option value='default'>Choose a City</option>
               <% @cities.each do |city| %>
                 <% if !current_user.cities.include?(city) %>
                   <option value='<%= city.name %>'><%= city.name %></option>

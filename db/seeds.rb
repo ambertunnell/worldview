@@ -7,21 +7,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 puts "Creating users"
 
-@user1 = User.create(name: "User 1")
-@user2 = User.create(name: "User 2")
-@user3 = User.create(name: "User 3")
-@Memph = City.create(name: "Memphis")
-@Atl = City.create(name: "Atlanta")
 @Nyc = City.create(name: "New York")
 @Ldn = City.create(name: "London")
 @Hk = City.create(name: "Hong Kong")
 @Prs = City.create(name: "Paris")
 @Syd = City.create(name: "Sydney")
+@Memph = City.create(name: "Memphis")
+@Atl = City.create(name: "Atlanta")
 
 puts "Adding cities to users"
 
-@user1.cities << [@Nyc, @Ldn, @Hk, @Prs, @Syd]
-@user2.cities << @Atl
+# @user1.cities << [@Nyc, @Ldn, @Hk, @Prs, @Syd]
+# @user2.cities << @Atl
 
 puts "Creating bonus cities"
 
