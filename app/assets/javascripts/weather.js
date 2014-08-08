@@ -67,7 +67,7 @@ $('.weather-header').hide();
                 var skycons = new Skycons({
                     "color": "black"});
                 // $(".weather").append(skycons.add("icon1", icon));
-                $(".weather").append('<br><p><canvas id="icon1" width="50" height="50">'+skycon_anim+'</canvas><br>' + temp + ' Degrees<br>' + summary + '<br>' + precipitation + '% Chance of Rain</p>');
+                $(".weather").append('<br><p><canvas id="icon1">'+skycon_anim+'</canvas><br>' + temp + ' Degrees<br>' + summary + '<br>' + precipitation + '% Chance of Rain</p>');
                 switch (icon) {
                     case 'partly-cloudy-night':
                         var skycon_anim = skycons.add("icon1", Skycons.PARTLY_CLOUDY_NIGHT);
@@ -107,7 +107,7 @@ $('.weather-header').hide();
 
                 $(".weather p").animate({
 
-                    left: "+=50",
+                    left: "-=35",
                     // right: "+=50",
                     // height: "toggle"
                 }, 700, function() {

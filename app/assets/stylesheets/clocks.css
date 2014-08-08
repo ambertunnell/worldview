@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
+@import url(http://fonts.googleapis.com/css?family=Limelight);
 
 /*stylesheet for clocks*/
 
@@ -100,6 +101,6 @@
 }
 
 #clock-container h2 { 
-  font-family: 'Poiret One';
+  font-family: 'Limelight';
   font-size: 25px;
 }

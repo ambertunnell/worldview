@@ -2,13 +2,18 @@
 @import url(http://fonts.googleapis.com/css?family=Grand+Hotel);
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab);
-@import url(http://fonts.googleapis.com/css?family=Varela);
+@import url(http://fonts.googleapis.com/css?family=Limelight);
 
 
 a,
 a:visited,
 a:hover {
   text-decoration: none;
+}
+
+h4 {
+  font-family: 'Limelight';
+  font-size: 25px;
 }
 
 
@@ -31,8 +36,22 @@ a:hover {
 }
 
 .weather {
-  padding-top: 5%;
+  /*padding-top: 5%;*/
+  /*width: 65%;*/
+}
+
+.weather p {
+  left: 0;
+  margin-left: 0;
+  color: red;
+}
+
+#icon1 {
+  float: left;
   width: 65%;
+  height: 65%;
+  /*width: 75px;
+  height: 75px;*/
 }
 
 .weather p {
@@ -84,10 +103,9 @@ overflow: scroll;
 border: 3px solid red;
 margin: 1%;
 }
-.col-md-5 h4 {
-  font-family: 'Grand Hotel';
-  font-size: 45px;
-}
+/*.col-md-5 h4 {
+  font-family: 'Limelight';
+}*/
 
 #news {
   list-style: none;
