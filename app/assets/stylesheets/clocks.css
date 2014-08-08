@@ -124,5 +124,19 @@
 #clock-container h2 { 
   font-family: 'Oswald';
   font-size: 25px;
-  color: white;
+  color: black;
 }
+
+.new-clock-form {
+  position: relative;
+  width: 180px; 
+  height: 180px; 
+  /*background: white;*/
+  /*background: url('newclock.png');*/
+  /*border: 10px solid #D60905;*/
+  border-radius: 50%;
+  background-size: cover;
+  list-style: none;
+}
+
+
