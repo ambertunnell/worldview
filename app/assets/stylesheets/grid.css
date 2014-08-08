@@ -192,6 +192,16 @@ h4 {
   transition-property: color;
 }
 
+.col-md-7 {
+  background: white;
+  height: 100px;
+  width: 100%;
+  /*float: right;*/
+  /*overflow: scroll;*/
+  border: 10px solid black;
+  margin: 1%;
+}
+
 /*BUTTONS*/
 button {
   background: none;
