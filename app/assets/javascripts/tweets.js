@@ -43,7 +43,7 @@ $(function () {
                         }
                     }
 
-                    $('#twitter').append("<li><h3>" + tweet + "</h3><button class='save-tweet'>Save for later.</button></li>");
+                    $('#twitter').append("<li><h3>" + tweet + "</h3><button class='save-tweet'>Save for later</button></li>");
                 }
             },
             error: function (response) {
