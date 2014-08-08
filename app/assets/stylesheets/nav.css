@@ -20,9 +20,9 @@ nav,
   border: none;
 }
 
-.navbar-inner {
+/*.navbar-inner {
   border-bottom: 10px solid black;
-}
+}*/
 
 .navbar-inner a,
 .navbar-inner a:visited,
@@ -49,6 +49,17 @@ nav,
 /*.navbar-left > li > a {
   color: #D60905;
 }*/
+nav {
+  width: 100%;
+position: fixed;
+  z-index: 4;
+  border-bottom: solid 1px;
+    -webkit-box-shadow: 0 8px 6px -6px gray;
+       -moz-box-shadow: 0 8px 6px -6px gray;
+            box-shadow: 0 8px 6px -6px gray;
+  display: none;
+  opacity: .9;
+}
 
 nav input {
   border: 1px solid black;

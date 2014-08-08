@@ -19,7 +19,7 @@ $(function () {
                 break;
             case 'london':
                 search = "london";
-                country = "\"UNITED%20KINGDOM\""
+                country = "\"London (England)\""
                 break;
             case 'hongkong':
                 search = "hong+kong"; 
