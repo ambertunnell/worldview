@@ -12,7 +12,6 @@ $(function () {
             paris = "paris%20france",
             sanfran = "san%20francisco%20ca";    
 
-
         $('.photos-header').show();
         $('#flickr').show();
         $('#flickr').empty();
@@ -61,7 +60,6 @@ $(function () {
                     var link = "http://flickr.com/photo.gne?id=" + id + "_" + secret + "_n.jpg"
 
                     $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail'><a target='_blank' href='" + link +"'><img src=" + image + "></a><button class='save-photo'>Like</button></div></li>");
-
                 }
 
             },
@@ -99,6 +97,73 @@ $(function () {
                 console.log("Saving photo failed.");
             }
         });
+    });
+
+
+    $(".more-photos").click(function () {
+
+        var nyc = "new%20york%20city",
+            london = "london%20england",
+            hongkong = "hong%20kong",
+            sydney = "sydney%20australia",
+            paris = "paris%20france",
+            sanfran = "san%20francisco%20ca";    
+
+        $('#flickr').empty();
+
+        var locationstatus = $('#current-location').find('a')[0].text;
+
+        switch (locationstatus) {
+            case " CURRENT LOCATION: NYC":
+                var search = nyc;
+                break;
+            case " CURRENT LOCATION: LONDON":
+                var search = london;
+                break;
+            case " CURRENT LOCATION: HONG KONG":
+                var search = hongkong;
+                break;
+            case " CURRENT LOCATION: SYDNEY":
+                var search = sydney;
+                break;
+            case " CURRENT LOCATION: PARIS":
+                var search = paris;
+                break;
+            case " CURRENT LOCATION: SAN FRANCISCO":
+                var search = sanfran;
+                break;
+        }
+
+        $.ajax({
+            type: "GET",
+            url: "/photos/flickr",
+            data: {search: search},
+            dataType: "json",
+            success: function (response) {
+                console.log("Flickr photos GET request successful.");
+
+                var photosArray = response.photos.photo;
+
+                for (var i = 0; i < 12; i++) {
+                    var farmid = photosArray[i].farm;
+                    var id = photosArray[i].id;
+                    var serverid = photosArray[i].server;
+                    var secret = photosArray[i].secret;
+                    var title = photosArray[i].title;
+
+                    var image = "https://farm" + farmid + ".staticflickr.com/" + serverid + "/" + id + "_" + secret + "_n.jpg";
+
+                    var link = "http://flickr.com/photo.gne?id=" + id + "_" + secret + "_n.jpg"
+
+                    $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail'><a target='_blank' href='" + link +"'><img src=" + image + "></a><button class='save-photo'>Like</button></div></li>");
+                }
+
+            },
+            error: function (response) {
+                console.log("Flickr photos get request failed.");
+            }
+        });
+
     });
 
 });
