@@ -13,7 +13,7 @@
     <div>
       <div class="collapse navbar-collapse navbar-responsive-collapse"> 
       <ul class="nav navbar-nav navbar-left">
-        <li><a>CURRENT LOCATION: LONDON</a></li>
+         <li id="current-location"><a>CURRENT LOCATION: LONDON</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
@@ -21,7 +21,17 @@
           <li><a href="#photos-anchor">PHOTOS</a></li>
           <li><a href="#news-anchor">NEWS</a></li>
           <li><a href="#tweets-anchor">TWEETS</a></li>
-      <!--     <li><a><input type="text" name="country" id="autocomplete" placeholder="Enter another city..."></a></li> -->
+ <!--           <li><a>
+            <select name='cities'>
+              <option value='default'>Choose a City</option>
+              <%# @cities.each do |city| %>
+                <%# if !current_user.cities.include?(city) %>
+                  <option value='<%#= city.name %>'><%#= city.name %></option>
+                <%# end %>
+              <%# end %>
+            </select>
+          </li> -->
+
           <li><%= render 'layouts/dashboard' %> </li>
           <li><%= link_to 'LOG OUT', logout_path %></li>
         <% else %>

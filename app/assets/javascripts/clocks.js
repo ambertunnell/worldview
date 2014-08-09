@@ -2,6 +2,15 @@ $(document).ready(function() {
 
     $('.clock-row').hide().fadeIn(3000);
 
+    // console.log($(".ul-clock").html());
+
+    // $('.exit-clock').on("click", function() {
+    //     // alert("this is "+$(this));
+    //     $(this).closest($('.ul-clock')).hide();
+    //     $(this).closest("div").find("center h2").hide();
+    //     $(this).closest($('.ul-clock')).parent('div').append("Select a city<form action=''><select name='cars'><option value='select'>--Select an option--</option><option value='volvo'>Volvo</option><option value='saab'>Saab</option><option value='fiat'>Fiat</option><option value=;audi;>Audi</option></select></form>");
+    // });
+
     // script to type text in header
     var text = '         Click a clock.    ';
     // text is split up to letters
