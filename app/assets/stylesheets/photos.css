@@ -3,9 +3,9 @@
 }
 
 
-#flickr h4 {
+.photos-header h4 {
   color: white;
-  background-color: rgba(250,250,250, 0.6);
+  background-color: rgba(250,250,250, 0.3);
 }
 
 #flickr .photo {
@@ -16,8 +16,7 @@
   position: relative;
   /*max-width: 100%;*/
   /*height: 150px;*/
-  padding: 5px;
-  margin: auto;  
+  /*padding: 5px;*/
 }
 
 #flickr img {
@@ -26,6 +25,7 @@
   /*max-height: 100%;*/
   height: 180px;
   /*padding: 5px;*/
+  margin:auto;
 }
 
 .save-photo {
