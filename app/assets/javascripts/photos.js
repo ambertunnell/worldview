@@ -5,15 +5,7 @@ $(function () {
 
     $(".ul-clock").click(function () {
 
-
-        // var nyc = "times%20square",
-        //     london = "buckingham%20palace",
-        //     hongkong = "hong%20kong%20skyline",
-        //     sydney = "sydney%20opera%20house",
-        //     paris = "paris%20france%20eiffel%20tower",
-        //     sanfran = "san%20francisco%20ca";
-
-         var nyc = "new%20york%20city",
+        var nyc = "new%20york%20city",
             london = "london%20england",
             hongkong = "hong%20kong",
             sydney = "sydney%20australia",
@@ -66,7 +58,9 @@ $(function () {
 
                     var image = "https://farm" + farmid + ".staticflickr.com/" + serverid + "/" + id + "_" + secret + "_n.jpg";
 
-                    $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail'><a target='_blank' href='" + image +"'><img src=" + image + "></a><button class='save-photo'>Like</button></div></li>");
+                    var link = "http://flickr.com/photo.gne?id=" + id + "_" + secret + "_n.jpg"
+
+                    $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail'><a target='_blank' href='" + link +"'><img src=" + image + "></a><button class='save-photo'>Like</button></div></li>");
 
                 }
 
