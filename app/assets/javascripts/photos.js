@@ -51,7 +51,7 @@ $(function () {
 
                 var photosArray = response.photos.photo;
 
-                for (var i = 0; i < 10; i++) {
+                for (var i = 0; i < 12; i++) {
                     var farmid = photosArray[i].farm;
                     var id = photosArray[i].id;
                     var serverid = photosArray[i].server;
@@ -62,7 +62,7 @@ $(function () {
 
                     console.log(image);
 
-                    $('#flickr').append("<li><div class='photo col-md-2'><img src=" + image + "><button class='save-photo'>Like</button></div></li>");
+                    $('#flickr').append("<li><div class='photo col-md-3'><img src=" + image + "><button class='save-photo'>Like</button></div></li>");
 
                 }
 

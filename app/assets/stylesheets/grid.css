@@ -113,14 +113,6 @@ h4 {
 
 /*PHOTOS*/
 
-/*.API-container-photos {
-  background: green;
-<<<<<<< HEAD
-  height: 450px;
-  overflow: hidden;
-  padding: auto;
-}*/
-
 .col-md-4 {
   /*background: green;*/
   width: 100%;
@@ -128,7 +120,7 @@ h4 {
 /*  float: right;*/
   overflow: hidden;
   margin: auto;
-  padding: auto;
+  /*padding: auto;*/
 
     background-image: url('2.jpg');
   background-attachment: fixed;
