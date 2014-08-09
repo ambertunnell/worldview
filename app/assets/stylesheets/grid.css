@@ -21,19 +21,58 @@ h4 {
 
 .grid, 
 .container {
-  width: 1100px;
+  min-width: 1100px;
   margin: auto;
 }
 
+.container {
+  width: 100%;
+  background-image: url('1.jpg');
+    background-attachment: fixed;
+  background-size: cover;
+  height: 700px;
+  border-bottom: 20px solid white;
+}
+
+/*.divider {
+  background-image: url('2.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+}*/
+
+/*.API-container-weather,
+.API-container-news,
+.API-container-tweets,
+.API-container-photos, {
+  width: 100%;
+  border: 2px solid black;
+}*/
+
+
+
 /*WEATHER*/
+
+/*.API-container-weather {
+  background: pink;
+  height: 250px;
+  overflow: hidden;
+  padding: auto;
+}*/
+
 .col-md-1 {
   background: white;
   height: 250px;
-  width: 48%;
-  float: left;
-  border: 10px solid black;
-  margin: 1%;
-  box-shadow: 2px;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin: auto;
+  padding: auto;
+ /* float: left;*/
+/*  border: 10px solid black;*/
+/*  margin: 1%;*/
+/*  box-shadow: 2px;*/
 /*  transition-duration: .7s;
   transition-property: background;*/
 }
@@ -73,14 +112,24 @@ h4 {
 }
 
 /*PHOTOS*/
+
 .col-md-4 {
-  background: white;
-  height: 450px;
-  width: 48%;
-  float: right;
-  overflow: scroll;
-  border: 10px solid black;
-  margin: 1%;
+  /*background: green;*/
+  width: 100%;
+  height: 700px;
+/*  float: right;*/
+  overflow: hidden;
+  margin: auto;
+  /*padding: auto;*/
+
+    background-image: url('2.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+   border-bottom: 20px solid white;
+
+ 
+/*  border: 10px solid black;
+  margin: 1%;*/
 /*  transition-duration: .7s;
   transition-property: background;*/
 }
@@ -108,13 +157,28 @@ h4 {
 }
 
 /*NEWS*/
-.col-md-5 {
-  background: white;
+
+/*.API-container-news {
+  background: blue;
   height: 600px;
-  width: 48%;
-  overflow: scroll;
-  border: 10px solid black;
-  margin: 1%;
+  overflow: hidden;
+  padding: auto;
+}*/
+.col-md-5 {
+  background: blue;
+  height: 600px;
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+  padding: auto;
+
+      background-image: url('3.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+   border-bottom: 20px solid white;
+
+/*  border: 10px solid black;
+  margin: 1%;*/
 /*  transition-duration: .7s;
   transition-property: background;*/
 }
@@ -154,14 +218,29 @@ h4 {
 }
 
 /*TWITTER*/
-.col-md-6 {
-  background: white;
+
+/*.API-container-tweets {
+  background: green;
   height: 400px;
-  width: 48%;
-  float: right;
-  overflow: scroll;
-  border: 10px solid black;
-  margin: 1%;
+  overflow: hidden;
+  padding: auto;
+}*/
+
+.col-md-6 {
+  background: pink;
+  height: 400px;
+  width: 100%;
+/*  float: right;*/
+  overflow: hidden;
+  margin: auto;
+  padding: auto;
+
+      background-image: url('4.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+   border-bottom: 20px solid white;
+/*  border: 10px solid black;
+  margin: 1%;*/
 /*  transition-duration: .7s;
   transition-property: background;*/
 }
@@ -192,22 +271,22 @@ h4 {
   transition-property: color;
 }
 
-.col-md-7 {
-  background: white;
+/*.col-md-7 {
+  background: green;
   height: 100px;
   width: 100%;
-  /*float: right;*/
-  /*overflow: scroll;*/
+  float: right;
+  overflow: hidden;
   border: 10px solid black;
   margin: 1%;
-}
+}*/
 
 /*BUTTONS*/
 button {
   background: none;
   text-align: justify;
-  border: 1px solid black;
-  color: black;
+  border: 1px solid white;
+  color: white;
   padding: 5px;
   font-family: 'Oswald';
   font-size: 17px;
@@ -217,7 +296,7 @@ button {
 
 button:hover {
   background: #D60905;
-  border: 1px solid black;
+  border: 1px solid red;
   color: white;
   transition-duration: .5s;
   transition-property: background, border-color, color;
