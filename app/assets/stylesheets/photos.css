@@ -1,7 +1,17 @@
 #flickr .photo {
   margin: 10px;
-  height: 200px;
-  width: 300px;
   background-color: #9d435a;
   overflow: hidden;
+  float:left;
+}
+
+#flickr img {
+  /*height: 200px;*/
+  width: 100%;
+  padding: 5px;
+}
+
+.save-photo {
+  z-index: 100;
+  top-margin: -20px;
 }
