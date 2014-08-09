@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
-
     $('.clock-row').hide().fadeIn(3000);
-
 
     // script to type text in header
     var text = '         Click a clock.    ';
@@ -16,11 +14,23 @@ $(document).ready(function() {
         $('.instructions h2').show().delay(3500).fadeOut();
     });
 
+var nyc_coords = "40.712784,-74.005941",
+        london_coords = "51.507351,-0.127758",
+        hongkong_coords = "22.396428,114.10949700000003", 
+        sydney_coords = "-33.867487,151.20699",
+        paris_coords = "48.856614,2.352222",
+        sanfran_coords = "37.7749295,-122.41941550000001"; 
 
+     makeClock("New York", nyc_coords);
+     makeClock("London", london_coords);
+     makeClock("Hong Kong", hongkong_coords);
+     makeClock("Sydney", sydney_coords);
+     makeClock("Paris", paris_coords);
     
+ 
+}); 
 
-//use $( "#clock-container " ).children('div').eq(0);
-   function makeClock (city,coords){
+function makeClock (city,coords){
         var d = new Date ();
         var n = d.getTimezoneOffset();
         var UTChour = d.getUTCHours();
@@ -69,6 +79,13 @@ $(document).ready(function() {
                 
                 var built =  $( " #clock-container " ).children('div').eq(4).detach();
                 $( "#clock-container " ).prepend(built);
+
+                //CLOCK LISTENR
+                $(".ul-clock").click(function () {
+                    var location = $(this).closest(".clock").data('city');
+                    console.log(location);
+                    articles(location);
+                });
             },
               
             error: function (response) {
@@ -76,28 +93,8 @@ $(document).ready(function() {
                 
             }
             
-        });
-
-        
+        });    
         
    }//end makeclock function
 
 
-var nyc_coords = "40.712784,-74.005941",
-        london_coords = "51.507351,-0.127758",
-        hongkong_coords = "22.396428,114.10949700000003", 
-        sydney_coords = "-33.867487,151.20699",
-        paris_coords = "48.856614,2.352222",
-        sanfran_coords = "37.7749295,-122.41941550000001"; 
-
-    // NEW YORK
-
-     makeClock("New York", nyc_coords);
-     makeClock("London", london_coords);
-     makeClock("Hong Kong", hongkong_coords);
-     makeClock("Sydney", sydney_coords);
-     makeClock("Paris", paris_coords);
-
-    
- 
-}); 
