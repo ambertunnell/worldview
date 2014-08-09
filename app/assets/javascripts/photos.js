@@ -62,7 +62,7 @@ $(function () {
 
                     console.log(image);
 
-                    $('#flickr').append("<li><div class='col-md-2'><h5>" + title + "</h5><img src=" + image + "><button class='save-photo'>Like</button></div></li>");
+                    $('#flickr').append("<li><div class='photo col-md-2'><h5>" + title + "</h5><img src=" + image + "><button class='save-photo'>Like</button></div></li>");
 
                 }
 

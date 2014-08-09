@@ -1,0 +1,7 @@
+#flickr .photo {
+  margin: 10px;
+  height: 200px;
+  width: 300px;
+  background-color: #9d435a;
+  overflow: hidden;
+}
