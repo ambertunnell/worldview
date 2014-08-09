@@ -151,21 +151,27 @@ $(function () {
 
         switch (loopNum) {
             case 0:
+                var start = 0;
+                var end = 12;
+                break;            
+            case 1:
                 var start = 13;
                 var end = 25;
                 break;
-            case 1:
+            case 2:
                 var start = 26;
                 var end = 50;
                 break;
-            case 2:
+            case 3:
                 var start = 51;
                 var end = 75;
                 break;  
-            case 3:
+            case 4:
                 var start = 76;
                 var end = 100;
                 break;
+            case 5:
+                $('.more-photos').data('flickr-num', 0);
             }                       
 
                 for (var i = start; i < end; i++) {
