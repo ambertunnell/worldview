@@ -1,0 +1,63 @@
+.about {
+  background-image: url('4.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  border-bottom: 5px solid white;
+  height: 400px;
+  width: 100%;
+}
+
+.contributors {
+  margin: auto;
+/*  background: pink;*/
+  height: 300px;
+  width: 900px;
+}
+
+.about p {
+/*  height: 200px;*/
+  width: 200px;
+/*  border-radius: 50%;*/
+  background: white;
+  padding: auto;
+  margin: auto;
+  display: inline;
+ /* float: left;*/
+}
+
+.contributor {
+  width: 200px;
+  float: left;
+  margin-left: 20px;
+}
+
+#amber,
+#koren,
+#ben,
+#ed {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background: white;
+ /* float: left;*/
+}
+
+#amber {
+
+}
+
+#koren {
+  background-image: url('koren.jpg');
+  background-size: cover;
+}
+
+#ben {
+  
+}
+
+#ed {
+  
+}
+
+

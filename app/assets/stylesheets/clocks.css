@@ -14,8 +14,14 @@
   color: white;
   font-family: 'Oswald';
   padding-top: 80px;
-  padding-bottom: 60px;
   font-size: 50px;
+}
+
+.head-container p {
+  color: white;
+  font-family: 'Oswald';
+  padding-bottom: 40px;
+  font-size: 15px;
 }
 
 .login {

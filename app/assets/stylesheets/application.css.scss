@@ -21,6 +21,7 @@
  //= depend_on_asset "2.jpg"
  //= depend_on_asset "3.jpg"
  //= depend_on_asset "4.jpg"
+ //= depend_on_asset "koren.jpg"
  */
 @import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
@@ -60,3 +61,4 @@ body {
 @import "clocks";
 @import "grid";
 @import "nav";
+@import "about";
