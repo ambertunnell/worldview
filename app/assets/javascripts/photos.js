@@ -5,6 +5,8 @@ $(function () {
 
     $(".ul-clock").click(function () {
 
+        $('.more-photos').data('flickr-num', 0);
+
         var nyc = "new%20york%20city",
             london = "london%20england",
             hongkong = "hong%20kong",
@@ -140,11 +142,33 @@ $(function () {
             data: {search: search},
             dataType: "json",
             success: function (response) {
-                console.log("Flickr photos GET request successful.");
+                console.log("Flickr photos GET more request successful.");
 
                 var photosArray = response.photos.photo;
+                var loopNum = $('.more-photos').data('flickr-num');
 
-                for (var i = 0; i < 12; i++) {
+                console.log(loopNum);
+
+        switch (loopNum) {
+            case 0:
+                var start = 13;
+                var end = 25;
+                break;
+            case 1:
+                var start = 26;
+                var end = 50;
+                break;
+            case 2:
+                var start = 51;
+                var end = 75;
+                break;  
+            case 3:
+                var start = 76;
+                var end = 100;
+                break;
+            }                       
+
+                for (var i = start; i < end; i++) {
                     var farmid = photosArray[i].farm;
                     var id = photosArray[i].id;
                     var serverid = photosArray[i].server;
@@ -156,6 +180,9 @@ $(function () {
                     var link = "http://flickr.com/photo.gne?id=" + id + "_" + secret + "_n.jpg"
 
                     $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail'><a target='_blank' href='" + link +"'><img src=" + image + "></a><button class='save-photo'>Like</button></div></li>");
+                   
+                    var newNum = loopNum + 1;
+                    $('.more-photos').data('flickr-num', newNum);
                 }
 
             },
