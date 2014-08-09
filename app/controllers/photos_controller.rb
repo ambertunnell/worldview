@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'json'
+
 class PhotosController < ApplicationController
 
   def create
@@ -41,6 +44,23 @@ class PhotosController < ApplicationController
       end
     end
   end
+
+
+  def flickr
+      search = params[:search]
+      api_key = "d88f34c6825ef1746df9f258a7990787"
+      source = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" + api_key + "&format=json&nojsoncallback=1&tags=" + search + "&sort=interestingness-desc&safe_search=1"
+
+      @images = JSON.load(open(source))
+
+     respond_to do |format| 
+        if @images != {}
+          format.json { render json: @images}
+        else
+          format.json { head :no_content }
+        end 
+     end      
+  end 
 
   private
 
