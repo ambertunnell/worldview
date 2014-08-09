@@ -63,6 +63,7 @@ $(function () {
 
                     $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail'><a target='_blank' href='" + link +"'><img src=" + image + "></a><button class='save-photo'>Like</button></div></li>");
                 }
+                $('.more-photos').data('flickr-num', 1);
 
             },
             error: function (response) {
@@ -102,7 +103,7 @@ $(function () {
     });
 
 
-    $(".more-photos").click(function () {
+$(".more-photos").click(function () {
 
         var nyc = "new%20york%20city",
             london = "london%20england",
@@ -160,17 +161,29 @@ $(function () {
                 break;
             case 2:
                 var start = 26;
-                var end = 50;
+                var end = 38;
                 break;
             case 3:
-                var start = 51;
-                var end = 75;
+                var start = 39;
+                var end = 51;
                 break;  
             case 4:
-                var start = 76;
-                var end = 100;
+                var start = 52;
+                var end = 64;
                 break;
             case 5:
+                var start = 65;
+                var end = 77;
+                break;
+            case 6:
+                var start = 78;
+                var end = 90;
+                break;  
+            case 7:
+                var start = 91;
+                var end = 100;
+                break;                
+            case 8:
                 $('.more-photos').data('flickr-num', 0);
             }                       
 
