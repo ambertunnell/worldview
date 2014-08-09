@@ -1,1 +1,13 @@
-news.css
+.news-header {
+  background-color: rgba(250,250,250, 0.6);
+}
+
+#news {
+  background-color: rgba(250,250,250, 0.6);
+  border-radius: 10px;
+}
+
+.save-article {
+  margin-left: 15px;
+  color: rgba(250,250,250, 0.6);
+}
