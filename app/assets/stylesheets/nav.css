@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Limelight);
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 @import url(http://fonts.googleapis.com/css?family=Codystar);
-@import url(http://fonts.googleapis.com/css?family=Faster+One);
+@import url(http://fonts.googleapis.com/css?family=Didact+Gothic);
 
 body {
   background: #DBDBDC;
@@ -20,6 +20,11 @@ nav,
   border: none;
 }
 
+nav,
+.navbar-default {
+  height: 0;
+}
+
 /*.navbar-inner {
   border-bottom: 10px solid black;
 }*/
@@ -32,8 +37,8 @@ nav,
 .navbar-default .navbar-nav > li > a:visited {
   margin-top: 5px;
   color: black;
-  font-family: 'Oswald';
-  font-size: 25px;
+  font-family: 'Didact Gothic';
+  font-size: 16px;
   transition-duration: .5s;
   transition-property: color;
 }
@@ -58,13 +63,13 @@ position: fixed;
        -moz-box-shadow: 0 8px 6px -6px gray;
             box-shadow: 0 8px 6px -6px gray;
   display: none;
-  opacity: .9;
+  opacity: .93;
 }
 
 nav input {
   border: 1px solid black;
-  font-family: 'Oswald';
-  font-size: 20px;
+  font-family: 'Didact Gothic';
+  font-size: 15px;
   padding-left: 30px;
   /*padding-top: 5px;*/
   line-height: 1.5;

@@ -1,5 +1,5 @@
 <center>
-<div class="head-container">
+<div class="head-container" id="top">
 <h1>WORLDVIEW.</h1>
 <div class="row clock-row">
   <div id="clock-container">
@@ -51,7 +51,19 @@
       </ul>
       <center><h2>San Francisco</h2></center>
     </div> -->
+
   </div>
+
+
+<% unless logged_in? %> 
+<div class="login">
+<center>
+    <p><%= link_to image_tag('twitter.png'), twitter_login_path %><br>
+<%= link_to 'Login with Twitter', twitter_login_path %></p>
+</center>
+    </div>
+  <% end %> 
+
 </div>
 
 

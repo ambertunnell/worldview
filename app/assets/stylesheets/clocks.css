@@ -13,9 +13,27 @@
 .head-container h1 {
   color: white;
   font-family: 'Oswald';
-  padding-top: 130px;
-  padding-bottom: 70px;
+  padding-top: 80px;
+  padding-bottom: 60px;
   font-size: 50px;
+}
+
+.login {
+  /*float: left;*/
+  text-align: center;
+  margin: auto;
+  padding-top: 300px;
+}
+
+.login a {
+  color: white;
+  font-family: 'Arial';
+}
+
+.login p {
+  width: 150px;
+  border: 1px solid white;
+  padding: 5px;
 }
 
 .ul-clock {

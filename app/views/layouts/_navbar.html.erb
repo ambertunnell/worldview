@@ -3,7 +3,7 @@
 <div class="navbar navbar-default">
   <div class="navbar-inner">
     <div class="navbar-header">
-      <a class="navbar-brand" href="">worldview</a>
+      <a class="navbar-brand" href="#top">WORLDVIEW</a>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -13,18 +13,20 @@
     <div>
       <div class="collapse navbar-collapse navbar-responsive-collapse"> 
       <ul class="nav navbar-nav navbar-left">
-      <li><a>Current Location: London</a></li>
+        <li><a>CURRENT LOCATION: LONDON</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          <% if logged_in? %>
-          <li><a><input type="text" name="country" id="autocomplete" placeholder="Enter another city..."></a></li>
-            <li><%= render 'layouts/dashboard' %> </li>
-
-            <li><%= link_to 'Log Out', logout_path %></li>
-
-          <% else %>
-            <li><%= link_to 'Log In with Twitter', twitter_login_path %></li>
-          <% end %> 
+        <% if logged_in? %>
+          <li><a href="#weather-anchor">WEATHER</a></li>
+          <li><a href="#photos-anchor">PHOTOS</a></li>
+          <li><a href="#news-anchor">NEWS</a></li>
+          <li><a href="#tweets-anchor">TWEETS</a></li>
+      <!--     <li><a><input type="text" name="country" id="autocomplete" placeholder="Enter another city..."></a></li> -->
+          <li><%= render 'layouts/dashboard' %> </li>
+          <li><%= link_to 'LOG OUT', logout_path %></li>
+        <% else %>
+          <li><%= link_to 'LOG IN WITH TWITTER', twitter_login_path %></li>
+        <% end %> 
       </ul>
     </div>
     </div>
@@ -32,3 +34,6 @@
 </div>
 </nav>
 <!-- </div> -->
+
+
+
