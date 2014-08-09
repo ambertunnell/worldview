@@ -13,9 +13,33 @@
 .head-container h1 {
   color: white;
   font-family: 'Oswald';
-  padding-top: 130px;
-  padding-bottom: 70px;
+  padding-top: 80px;
   font-size: 50px;
+}
+
+.head-container p {
+  color: white;
+  font-family: 'Oswald';
+  padding-bottom: 40px;
+  font-size: 15px;
+}
+
+.login {
+  /*float: left;*/
+  text-align: center;
+  margin: auto;
+  padding-top: 300px;
+}
+
+.login a {
+  color: white;
+  font-family: 'Arial';
+}
+
+.login p {
+  width: 150px;
+  border: 1px solid white;
+  padding: 5px;
 }
 
 .ul-clock {
@@ -40,6 +64,7 @@
   transition-property: background;
   transition-duration: .5s;
 }
+
 
 .sec, .min, .hour {
   position: absolute;
@@ -124,7 +149,7 @@
 #clock-container h2 { 
   font-family: 'Oswald';
   font-size: 25px;
-  color: black;
+  color: white !important;
 }
 
 .new-clock-form {

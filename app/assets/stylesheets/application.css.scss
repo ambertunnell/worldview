@@ -17,6 +17,11 @@
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.woff"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.svg"
+ //= depend_on_asset "1.jpg"
+ //= depend_on_asset "2.jpg"
+ //= depend_on_asset "3.jpg"
+ //= depend_on_asset "4.jpg"
+ //= depend_on_asset "koren.jpg"
  */
 @import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
@@ -56,3 +61,4 @@ body {
 @import "clocks";
 @import "grid";
 @import "nav";
+@import "about";

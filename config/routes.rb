@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get '/autocomplete/countries' => 'autocomplete#show'
 
+  get '/photos/flickr'
   get '/twitter' =>'tweets#twitter_update'
   get '/auth/twitter', as: 'twitter_login'
   get '/auth/twitter/callback', to: 'sessions#create'

@@ -62,13 +62,13 @@ $(function () {
                     var url = response.response.docs[i].web_url;
                     var pubdate = response.response.docs[i].pub_date.split("T")[0];
                     var imagesArray = response.response.docs[i].multimedia;
-                    $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Save for later</button></li>");
+                    $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
                      }
                 $('#news').hide();
                 $('#news').slideDown(5000);
             },
             error: function (response) {
-                console.log("news ajax query failed.");
+                console.log("News ajax query failed.");
             }
         });
     });
@@ -97,7 +97,7 @@ $(function () {
             },
             success: function (response) {
                 console.log("Saving article successful.");
-                $that.text("Saved!");
+                $that.text("Article saved in dashboard!");
             },
             error: function (response) {
                 console.log("Saving article failed.");

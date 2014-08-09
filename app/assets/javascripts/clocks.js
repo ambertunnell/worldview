@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('.clock-row').hide().fadeIn(2000);
+    $('.clock-row').hide().fadeIn(3000);
 
     // console.log($(".ul-clock").html());
 

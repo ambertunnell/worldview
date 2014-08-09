@@ -1,64 +1,71 @@
 <center>
-<div class="head-container">
-<h1>WORLDVIEW.</h1>
-<div class="row clock-row">
-  <div id="clock-container">
-    <div class="nyc-clock col-md-2 clock" data-city="nyc">
-      <ul class="ul-clock"> 
-        <li class="exit-clock"></li>
-        <li class="sec"></li>
-        <li class="hour"></li>
-        <li class="min"></li>
-      </ul>
-      <center><h2>New York</h2></center>
+<div class="head-container" id="top">
+<h1>worldview</h1>
+<p>Click a clock.</p>
+  <div class="row clock-row">
+    <div id="clock-container">
+      <div class="nyc-clock col-md-2 clock" data-city="nyc">
+        <ul class="ul-clock"> 
+          <li class="exit-clock"></li>
+          <li class="sec"></li>
+          <li class="hour"></li>
+          <li class="min"></li>
+        </ul>
+        <center><h2>New York</h2></center>
+      </div>
+      <div class="london-clock col-md-2 clock" data-city="london">
+        <ul class="ul-clock"> 
+          <li class="exit-clock"></li>
+          <li class="sec"></li>
+          <li class="hour"></li>
+          <li class="min"></li>
+        </ul>
+        <center><h2>London</h2></center>
+      </div>
+      <div class="hongkong-clock col-md-2 clock" data-city="hongkong">
+        <ul class="ul-clock"> 
+          <li class="exit-clock"></li>
+          <li class="sec"></li>
+          <li class="hour"></li>
+          <li class="min"></li>
+        </ul>
+        <center><h2>Hong Kong</h2></center>
+      </div>
+      <div class="paris-clock col-md-2 clock" data-city="paris">
+        <ul class="ul-clock"> 
+          <li class="exit-clock"></li>
+          <li class="sec"></li>
+          <li class="hour"></li>
+          <li class="min"></li>
+        </ul>
+        <center><h2>Paris</h2></center>
+      </div>
+      <div class="sydney-clock clock col-md-2" data-city="sydney">
+        <ul class="ul-clock"> 
+          <li class="exit-clock"></li>
+          <li class="sec"></li>
+          <li class="hour"></li>
+          <li class="min"></li>
+        </ul>
+        <center><h2>Sydney</h2></center>
+      </div>
+  <!--     <div class="sanfran-clock col-md-2 clock" data-city="sanfran">
+        <ul class="ul-clock"> 
+          <li class="sec"></li>
+          <li class="hour"></li>
+          <li class="min"></li>
+        </ul>
+        <center><h2>San Francisco</h2></center>
+      </div> -->
     </div>
-    <div class="london-clock col-md-2 clock" data-city="london">
-      <ul class="ul-clock"> 
-        <li class="exit-clock"></li>
-        <li class="sec"></li>
-        <li class="hour"></li>
-        <li class="min"></li>
-      </ul>
-      <center><h2>London</h2></center>
-    </div>
-    <div class="hongkong-clock col-md-2 clock" data-city="hongkong">
-      <ul class="ul-clock"> 
-        <li class="exit-clock"></li>
-        <li class="sec"></li>
-        <li class="hour"></li>
-        <li class="min"></li>
-      </ul>
-      <center><h2>Hong Kong</h2></center>
-    </div>
-    <div class="paris-clock col-md-2 clock" data-city="paris">
-      <ul class="ul-clock"> 
-        <li class="exit-clock"></li>
-        <li class="sec"></li>
-        <li class="hour"></li>
-        <li class="min"></li>
-      </ul>
-      <center><h2>Paris</h2></center>
-    </div>
-    <div class="sydney-clock clock col-md-2" data-city="sydney">
-      <ul class="ul-clock"> 
-        <li class="exit-clock"></li>
-        <li class="sec"></li>
-        <li class="hour"></li>
-        <li class="min"></li>
-      </ul>
-      <center><h2>Sydney</h2></center>
-    </div>
-<!--     <div class="sanfran-clock col-md-2 clock" data-city="sanfran">
-      <ul class="ul-clock"> 
-        <li class="sec"></li>
-        <li class="hour"></li>
-        <li class="min"></li>
-      </ul>
-      <center><h2>San Francisco</h2></center>
-    </div> -->
+    <% unless logged_in? %> 
+      <div class="login">
+        <center>
+        <p><%= link_to image_tag('twitter.png'), twitter_login_path %><br>
+        <%= link_to 'Login with Twitter', twitter_login_path %></p>
+        </center>
+      </div>
+    <% end %> 
   </div>
-</div>
-
-
 </center>
 </div>
