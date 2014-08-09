@@ -27,11 +27,11 @@ h4 {
 
 .container {
   width: 100%;
-  background-image: url('1.jpg');
-    background-attachment: fixed;
+  background-image: image-url('1.jpg');
+  background-attachment: fixed;
   background-size: cover;
-  height: 700px;
-  border-bottom: 20px solid white;
+  border-bottom: 5px solid white;
+  height: 100vh;
 }
 
 /*.divider {
@@ -122,10 +122,10 @@ h4 {
   margin: auto;
   /*padding: auto;*/
 
-    background-image: url('2.jpg');
+  background-image: url('2.jpg');
   background-attachment: fixed;
   background-size: cover;
-   border-bottom: 20px solid white;
+  border-bottom: 5px solid white;
 
  
 /*  border: 10px solid black;
@@ -175,7 +175,7 @@ h4 {
       background-image: url('3.jpg');
   background-attachment: fixed;
   background-size: cover;
-   border-bottom: 20px solid white;
+   border-bottom: 5px solid white;
 
 /*  border: 10px solid black;
   margin: 1%;*/
@@ -238,7 +238,7 @@ h4 {
       background-image: url('4.jpg');
   background-attachment: fixed;
   background-size: cover;
-   border-bottom: 20px solid white;
+   border-bottom: 5px solid white;
 /*  border: 10px solid black;
   margin: 1%;*/
 /*  transition-duration: .7s;
