@@ -15,6 +15,7 @@ $(function () {
 
 
         $('.photos-header').show();
+        $('#flickr').show();
         $('#flickr').empty();
 
         var location = $(this).closest(".clock").data('city');
@@ -57,11 +58,11 @@ $(function () {
                     var secret = photosArray[i].secret;
                     var title = photosArray[i].title;
 
-                    var image = "https://farm" + farmid + ".staticflickr.com/" + serverid + "/" + id + "_" + secret + ".jpg";
+                    var image = "https://farm" + farmid + ".staticflickr.com/" + serverid + "/" + id + "_" + secret + "_n.jpg";
 
                     console.log(image);
 
-                    $('#flickr').append("<li><div class='clearfix' style='height: 50px'><h5>" + title + "</h5><img src=" + image + "><button class='save-photo'>Like</button></div></li>");
+                    $('#flickr').append("<li><div class='col-md-2'><h5>" + title + "</h5><img src=" + image + "><button class='save-photo'>Like</button></div></li>");
 
                 }
 
