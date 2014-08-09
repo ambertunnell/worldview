@@ -43,7 +43,7 @@ $(function () {
                         }
                     }
 
-                    $('#twitter').append("<li><h3>" + tweet + "</h3><button class='save-tweet'>Save for later</button></li>");
+                    $('#twitter').append("<li><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></li>");
                 }
             },
             error: function (response) {
@@ -71,7 +71,7 @@ $(function () {
             },
             success: function (response) {
                 console.log("Saving tweet successful.");
-                $that.text("Saved!");
+                $that.text("Saved in dashboard!");
 
             },
             error: function (response) {
