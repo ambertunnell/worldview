@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $('.clock-row').on('click', function(event) {
+    $('.clock-row').on('click', '.ul-clock', function(){
         var target = $('#weather-anchor');
         if( target.length ) {
             event.preventDefault();
