@@ -79,7 +79,10 @@ $(function () {
 
         var photoTitle = $(this).closest("li").find("h5").text();
         var photoUrl = $(this).closest("li").find('img').attr("src");
+        var photoLink = $(this).closest("li").find('a').attr("href");
+
         console.log(photoUrl);
+        console.log(photoLink);
 
         var $that = $(this);
 
@@ -89,7 +92,8 @@ $(function () {
             data: {
                 photo: {
                     title: photoTitle,
-                    url: photoUrl
+                    url: photoUrl,
+                    link: photoLink
                 }
             },
             success: function (response) {
