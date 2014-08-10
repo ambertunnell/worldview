@@ -17,10 +17,10 @@
 //= require articles
 //= require current_location
 //= require dashboard
+//= require weather 
 //= require nav
 //= require photos
 //= require skycons
 //= require tweets
 //= require user
-//= require weather 
 //= require clocks
