@@ -33,7 +33,8 @@ $(function () {
                 var title = response[i].title;
                 var pubdate = response[i].pubdate;
                 var abstract = response[i].abstract;
-                $('#dashboard .dashboard-articles').append("<li class='my-article'><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='remove-article'>Remove</button></li>");
+                var image = response[i].image;
+                $('#dashboard .dashboard-articles').append("<li class='my-article'><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><img src=" + image + "><p>" + abstract + "</p><p>" + pubdate + "</p><button class='remove-article'>Remove</button></li>");
             }
         },
         error: function (response) {
@@ -103,7 +104,7 @@ $(function () {
         $(this).closest(".photo").slideUp({
           // populateDashboard();
         });
-        var photoUrl = $(this).closest("li").find("p a").attr("href")
+        var photoUrl = $(this).closest("li").find("img").attr("src")
         // console.log("photo url- " + photoUrl);
         
         $(this).html("Removed");

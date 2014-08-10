@@ -81,9 +81,6 @@ $(function () {
         var photoUrl = $(this).closest("li").find('img').attr("src");
         var photoLink = $(this).closest("li").find('a').attr("href");
 
-        console.log(photoUrl);
-        console.log(photoLink);
-
         var $that = $(this);
 
         $.ajax({

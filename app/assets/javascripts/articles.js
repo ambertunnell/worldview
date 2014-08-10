@@ -48,7 +48,6 @@ function article (location) {
                     console.log ("No articles found with query " + search)
                 }
                 for (var i = 0; i < 10; i++) {
-
                     var result = response.response.docs[i];
                     var id = response.response.docs[i]._id;
                     var title = response.response.docs[i].headline.main;
@@ -56,7 +55,15 @@ function article (location) {
                     var url = response.response.docs[i].web_url;
                     var pubdate = response.response.docs[i].pub_date.split("T")[0];
                     var imagesArray = response.response.docs[i].multimedia;
-                    $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
+
+                    if (imagesArray.length > 0){
+                        var image = "http://www.nytimes.com/" + imagesArray[0].url;
+                         $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><img src=" + image + "><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
+                    } else {
+                        var image = "no image available"
+                         $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
+                    }
+  
                      }
                 $('#news').hide();
                 $('#news').slideDown(5000);
@@ -77,6 +84,7 @@ $(function () {
         var articleAbstract = $(this).closest('li').eq(0).find("p").eq(0).text();
         var articlePubdate = $(this).closest('li').eq(0).find("p").eq(1).text();
         var articleUrl = $(this).closest('li').eq(0).find("a").attr("href");
+        var articleImage = $(this).closest('li').eq(0).find("img").attr("src");
 
         var $that = $(this);
 
@@ -88,7 +96,8 @@ $(function () {
                     title: articleTitle,
                     abstract: articleAbstract,
                     url: articleUrl,
-                    pubdate: articlePubdate
+                    pubdate: articlePubdate,
+                    image: articleImage
                 }
             },
             success: function (response) {
