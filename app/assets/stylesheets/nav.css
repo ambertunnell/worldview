@@ -16,7 +16,7 @@ nav,
 .navbar,
 .navbar-inner,
 .navbar-default {
-  background: white;
+  background: black;
   border: none;
 }
 
@@ -36,7 +36,7 @@ nav,
 .navbar-default .navbar-nav > li > a,
 .navbar-default .navbar-nav > li > a:visited {
   margin-top: 5px;
-  color: black;
+  color: white;
   font-family: 'Didact Gothic';
   font-size: 16px;
   transition-duration: .5s;
@@ -46,7 +46,8 @@ nav,
 .navbar-inner a:hover,
 .navbar-nav a:hover,
 .navbar-default .navbar-nav > li > a:hover {
-  color: #D60905;
+  /*color: #D60905;*/
+  color: black;
   transition-duration: .5s;
   transition-property: color;
 }
@@ -63,7 +64,7 @@ position: fixed;
        -moz-box-shadow: 0 8px 6px -6px gray;
             box-shadow: 0 8px 6px -6px gray;
   display: none;
-  opacity: .93;
+  opacity: .8;
 }
 
 nav input {
