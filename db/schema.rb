@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20140810065309) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "bigger_thing"
-    t.integer  "lon"
-    t.integer  "lat"
+    t.float    "lon"
+    t.float    "lat"
     t.string   "country"
   end
 
