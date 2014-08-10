@@ -61,7 +61,14 @@ $(function () {
 
                     var link = "http://flickr.com/photo.gne?id=" + id + "_" + secret + "_n.jpg"
 
-                    $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail'><a target='_blank' href='" + link +"'><img src=" + image + "></a><button class='save-photo'>Like</button></div></li>");
+                    
+                    // $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail'><a target='_blank' href='" + link +"'><img src=" + image + "></a><button class='save-photo'>Like</button></div></li>");
+                    $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link +"'><img></a><button class='save-photo'>Like</button></div></li>");
+
+
+
+
+
                 }
                 $('.more-photos').data('flickr-num', 1);
 
