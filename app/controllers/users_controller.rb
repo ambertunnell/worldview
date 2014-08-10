@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_create :set_default_cities
+ 
   
   def update
     @user = User.find_by(id: session[:user_id])
@@ -18,9 +18,13 @@ class UsersController < ApplicationController
   end
 
   def get_cities
-    binding.pry
-    @user = User.find(session[:user_id]) if session[:user_id]
-    render json: @user.cities.all.to_json 
+    #binding.pry
+    @user = User.find(session[:user_id]) if session[:user_id] 
+    if @user != nil
+      render json: @user.cities.all.to_json 
+    else
+      render json: City.all[0..4].to_json 
+    end
   end
 
   def signed_in
@@ -31,9 +35,7 @@ class UsersController < ApplicationController
     end 
   end
 
-  def set_default_cities
-    @user.cities << [@Nyc, @Ldn, @Hk, @Prs, @Syd]
-  end
+
 
   private
 

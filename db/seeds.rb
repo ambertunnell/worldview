@@ -5,27 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-puts "Creating users"
+puts "Creating default cities"
 
-@Nyc = City.create(name: "New York")
-@Ldn = City.create(name: "London")
-@Hk = City.create(name: "Hong Kong")
-@Prs = City.create(name: "Paris")
-@Syd = City.create(name: "Sydney")
-@Memph = City.create(name: "Memphis")
-@Atl = City.create(name: "Atlanta")
+City.create(name: "New York City", bigger_thing: "New York", lon: -73.997009, lat: 40.750134, country: "US")
+City.create(name: "Sydney", bigger_thing: "Australia", lon: 151.179993, lat: -33.950001, country: "AU")
+City.create(name: "London", bigger_thing: "United Kingdom", lon: -0.45, lat: 51.48, country: "GB")
+City.create(name: "Hong Kong International", bigger_thing: "China", lon: 113.914719, lat: 22.308889, country: "CN")
+City.create(name: "Paris", bigger_thing: "France", lon: 2.333333, lat: 48.866665, country: "FR")
 
-puts "Adding cities to users"
+# puts "Adding cities to users"
 
 # @user1.cities << [@Nyc, @Ldn, @Hk, @Prs, @Syd]
 # @user2.cities << @Atl
 
-puts "Creating bonus cities"
+# puts "Creating bonus cities"
 
-City.create(name: "Aberdeen")
-City.create(name: "Abilene")
-City.create(name: "Akron")
-City.create(name: "Albany")
+# City.create(name: "Aberdeen")
+# City.create(name: "Abilene")
+# City.create(name: "Akron")
+# City.create(name: "Albany")
 # City.create(name: "Albuquerque")
 # City.create(name: "Alexandria")
 # City.create(name: "Allentown")
