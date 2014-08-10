@@ -1,8 +1,13 @@
 // $(function (){
 
-  function submit_new_city() {
-    console.log("submitted");
-      var user_input = $("#new-city").val();
+  function submit_new_city(passedInput) {
+    console.log("submitted " + passedInput);
+      if (passedInput !== undefined){ 
+        var user_input = passedInput;
+      }else{
+        var user_input = $("#new-city").val();     
+      }
+
     // $("#new-city").submit(function(e) {
       // e.preventDefault();
       console.log("submitted via ajax: " + user_input);
@@ -29,6 +34,7 @@
           var lat = response.RESULTS[0].lat;
           var lon = response.RESULTS[0].lon;
           var country = response.RESULTS[0].c;
+          var lastClock = $( " #clock-container " ).children('div').eq(4).data('city');
           console.log("new city form success: " + first_result +". Cityname = " + cityname + " and bigger thing= " + bigger_thing);
           
           $("#new-city").val("");
@@ -43,11 +49,13 @@
                     bigger_thing: bigger_thing,
                     lat: lat,
                     lon: lon,
-                    country: country
+                    country: country,
+                    lastClock: lastClock 
                 }
             },
             success: function (response) {
                 console.log("Saving city successful.");
+                makeClock(response);
                 
             },
             error: function (response) {

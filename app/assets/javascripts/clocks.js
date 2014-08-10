@@ -21,31 +21,34 @@ var nyc_coords = "40.712784,-74.005941",
         paris_coords = "48.856614,2.352222",
         sanfran_coords = "37.7749295,-122.41941550000001"; 
 
-     makeClock("New York", nyc_coords);
-     makeClock("London", london_coords);
-     makeClock("Hong Kong", hongkong_coords);
-     makeClock("Sydney", sydney_coords);
-     makeClock("Paris", paris_coords);
+     // submit_new_city("New York City");
+     // submit_new_city("London");
+     // submit_new_city("Hong Kong");
+     // submit_new_city("Sydney");
+     // submit_new_city("Paris");
+
     
  
 }); 
 
-function makeClock (city,coords){
+function makeClock (cityobject){
         var d = new Date ();
         var n = d.getTimezoneOffset();
         var UTChour = d.getUTCHours();
 
+
         var WEATHER_API_KEY = 'c2ebf0ca079e86eb70261f70d92ce7ce';
-        var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + coords;
+        var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + cityobject.lat+","+cityobject.lon;
         var offset;
         weather = $.ajax({
             url: URL,
             dataType: 'jsonp',
             success: function (response) {
-                console.log(city + " UTC ajax success");
-                var datacity = city.toLowerCase().replace(/ /, '');
+                console.log(cityobject.name + " UTC ajax success");
+                 var datacity = cityobject.name.toLowerCase().replace(/ /g, '')+cityobject.id;
                 
-                $( " #clock-container " ).children('div').eq(4).replaceWith("<div class=\""+datacity+"-clock col-md-2 clock\" data-city=\""+datacity+"\"><ul class=\"ul-clock\"><li class=\"exit-clock\"></li><li class=\"sec\"></li><li class=\"hour\"></li><li class=\"min\"></li></ul><center><h2>"+city+"</h2></center></div>");
+
+                $( " #clock-container " ).children('div').eq(4).replaceWith("<div class=\""+datacity+"-clock col-md-2 clock\" data-city=\""+cityobject.id+"\"><ul class=\"ul-clock\"><li class=\"exit-clock\"></li><li class=\"sec\"></li><li class=\"hour\"></li><li class=\"min\"></li></ul><center><h2>"+cityobject.name+"</h2></center></div>");
                 $( " #clock-container " ).children('div').eq(4).hide();
 
                 offset = response['offset'];
@@ -76,7 +79,8 @@ function makeClock (city,coords){
                 var mrotate = "rotate(" + mdegree + "deg)";
                 $("."+datacity+"-clock .min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate}); 
                 }, 1000 );
-                $( " #clock-container " ).children('div').eq(4).find("h2").text(city);
+                
+                $( " #clock-container " ).children('div').eq(4).find("h2").text(cityobject.name);
                 
                 $( " #clock-container " ).children('div').eq(4).show();
                 var built =  $( " #clock-container " ).children('div').eq(4).detach();

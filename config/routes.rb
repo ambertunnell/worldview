@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   delete '/tweets' => 'tweets#destroy'
 
   get '/users/signed_in' 
+  get '/users/get_cities' => 'users#get_cities'
 
   get '/autocomplete/countries' => 'autocomplete#show'
 
