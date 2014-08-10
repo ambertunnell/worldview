@@ -1,7 +1,7 @@
 class CitiesController < ApplicationController
 
   def create
-    
+
     @user = User.find(session[:user_id]) if session[:user_id]
     @city = City.find_or_create_by(lat: city_params[:lat], lon: city_params[:lon]) do |city| 
       city.name = city_params[:name] 
@@ -37,7 +37,7 @@ class CitiesController < ApplicationController
 
  
 
-# {"city"=>{"name"=>"Boston", "bigger_thing"=>"Massachusetts", "lat"=>"42.370468", "lon"=>"-71.027473", "country"=>"US"}, "action"=>"create", "controller"=>"cities"}
+
   def city_params
     params.require(:city).permit(:name, :bigger_thing, :lat, :lon, :country, :lastClock)
   end 
