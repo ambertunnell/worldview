@@ -17,17 +17,18 @@ h4 {
   font-family: 'Oswald';
   font-size: 40px;
   color: black;
+  padding-top: 50px;
 }
 
 .entire-container {
   width: 1300px;
-  float: left;
+  float: center;
   margin: 0;
 }
 
 .grid, 
 .container {
-  width: 1300px;
+  width: 100%;
   margin: 0;
   float: left;
 }
@@ -44,14 +45,35 @@ h4 {
 }
 
 .divider {
-  background-image: url('times.jpg');
-  background-attachment: fixed;
-  background-size: cover;
   /*background: white;*/
   border-bottom: 5px solid white;
   height: 200px;
   width: 100%;
   float: left;
+}
+
+.dividerone {
+  background-image: url('paris.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.dividertwo {
+    background-image: url('nyc.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.dividerthree {
+    background-image: url('hongkong.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.dividerfour {
+    background-image: url('nyc2.jpg');
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 /*.API-container-weather,
@@ -72,10 +94,9 @@ h4 {
 }*/
 
 .col-md-1 {
-  background: green;
+  background: white;
   height: 250px;
   width: 100%;
-  height: 200px;
   overflow: hidden;
   margin: 0;
   padding: auto;
@@ -129,7 +150,7 @@ h4 {
   /*background: white;*/
   width: 100%;
   min-width: 1200px;
-  height: 700px;
+  height: 800px;
 /*  float: right;*/
   overflow: hidden;
   margin: 0;
@@ -140,7 +161,7 @@ h4 {
   background-size: cover;*/
   background: white;
   border-bottom: 5px solid white;
-  background: pink;
+
 
  
 /*  border: 10px solid black;
@@ -185,7 +206,7 @@ h4 {
   overflow: hidden;
   margin: 0;
   padding: auto;
-  background: blue;
+  background: white;
 /*  background-image: url('3.jpg');
   background-attachment: fixed;
   background-size: cover;*/
@@ -241,8 +262,8 @@ h4 {
 }*/
 
 .col-md-6 {
-  background: yellow;
-  height: 400px;
+  background: white;
+  height: 500px;
   width: 100%;
 /*  float: right;*/
   overflow: hidden;

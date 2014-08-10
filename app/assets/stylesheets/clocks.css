@@ -10,19 +10,25 @@
   padding: 0;
 }
 
-/*.head-container {
-    width: 1300px;
+.head-container {
+  
     float: left;
     margin: 0;
     padding: 0;
     left: 0;
     top: 0;
-}*/
+
+      /*width: 1300px;*/
+      width: 100%;
+  background-image: image-url('1.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 h1 {
   color: white;
   font-family: 'Oswald';
-  /*padding-top: 80px;*/
+  padding-top: 80px;
   font-size: 50px;
 }
 
@@ -49,6 +55,11 @@ h6 {
   width: 150px;
   border: 1px solid white;
   padding: 5px;
+}
+
+.col-md-2 {
+  padding: 0;
+  margin: 0;
 }
 
 .ul-clock {
@@ -172,5 +183,7 @@ h6 {
   background-size: cover;
   list-style: none;
 }
+
+
 
 

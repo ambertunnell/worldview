@@ -1,10 +1,10 @@
 
-<div class="container">
+<!-- <div class="container"> -->
 
 <%= render "layouts/clocks" %>  
 
 
-<div class="grid">
+<!-- <div class="grid"> -->
 
 <!-- <div class="API-container-weather"> -->
   <div class="col-md-1 weather-header" id="weather-anchor">
@@ -13,7 +13,27 @@
   </div>
 <!-- </div> -->
 
-<!-- <div class="API-container-photos"> -->
+  <div class="col-md-9 divider dividerone">
+<!--   <center><h1>Random text</h1></center> -->
+  </div>
+
+
+
+  <!-- <div class="API-container-news"> -->
+  <div class="col-md-5 news-header" id="news-anchor">
+  <center><h4>Headline News</h4></center>
+  <ul id="news"></ul>
+  </div>
+<!-- </div> -->
+
+
+
+
+  <div class="col-md-9 divider dividertwo">
+<!--   <center><h1>Random text</h1></center> -->
+  </div>
+
+  <!-- <div class="API-container-photos"> -->
 
   <div class="col-md-4 photos-header" id="photos-anchor">
   <center><h4>Popular Photos</h4><button class="more-photos" data-flickr-num="1">More Photos</button></center>
@@ -23,18 +43,7 @@
 <!-- </div> -->
 
 
-  <div class="col-md-9 divider">
-<!--   <center><h1>Random text</h1></center> -->
-  </div>
-
-<!-- <div class="API-container-news"> -->
-  <div class="col-md-5 news-header" id="news-anchor">
-  <center><h4>Headline News</h4></center>
-  <ul id="news"></ul>
-  </div>
-<!-- </div> -->
-
-  <div class="col-md-9 divider">
+  <div class="col-md-9 divider dividerthree">
 <!--   <center><h1>Random text</h1></center> -->
   </div>
 
@@ -54,44 +63,61 @@
 <h2></h2>
 </div> -->
 
-  <div class="col-md-9 divider">
+  <div class="col-md-9 divider dividerfour">
  <!--  <center><h1>Random text</h1></center> -->
   </div>
 
   <div class="col-md-9 about">
-  <center><h1>About</h1></center>
+  <center><h4>Created By</h4></center>
 <div class="contributors">
+
+      <div class="contributor">
+        <div id="ed">
+   </div>
+     <center> <p>Edward Warren</p></center>
+     <center><a href=""><%= image_tag 'github.png', height: "25" %></a>
+     <a href=""><%= image_tag 'linkedin.png', height: "25" %></a>
+     <a href=""><%= image_tag 'twitter3.png', height: "30" %></a>
+     </center>
+      </div>
 
   <div class="contributor">
    <div id="amber">
    </div>
-      <center><p>Amber</p></center>
+      <center><p>Amber Tunnell</p></center>
+     <center><a href=""><%= image_tag 'github.png', height: "25" %></a>
+     <a href=""><%= image_tag 'linkedin.png', height: "25" %></a>
+     <a href=""><%= image_tag 'twitter3.png', height: "30" %></a>
+     </center>
       </div>
 
 <div class="contributor">
         <div id="koren">
    </div>
-      <center><p>Koren</p></center>
+      <center><p>Koren Leslie Cohen</p></center>
+     <center><a href=""><%= image_tag 'github.png', height: "25" %></a>
+     <a href=""><%= image_tag 'linkedin.png', height: "25" %></a>
+     <a href=""><%= image_tag 'twitter3.png', height: "30" %></a>
+     </center>
       </div>
 
       <div class="contributor">
         <div id="ben">
    </div>
-     <center> <p>Ben</p></center>
+     <center> <p>Ben Serviss</p></center>
+     <center><a href=""><%= image_tag 'github.png', height: "25" %></a>
+     <a href=""><%= image_tag 'linkedin.png', height: "25" %></a>
+     <a href=""><%= image_tag 'twitter3.png', height: "30" %></a>
+     </center>
       </div>
 
-      <div class="contributor">
-        <div id="ed">
-   </div>
-     <center> <p>Ed</p></center>
-      </div>
   
   </div>
   </div>
 
 
-</div>
-</div>
+<!-- </div>
+</div> -->
  
 
 

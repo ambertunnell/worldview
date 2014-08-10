@@ -1,7 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
 .about {
   background-image: url('4.jpg');
   background-attachment: fixed;
   background-size: cover;
+  background: white;
   border-bottom: 5px solid white;
   height: 400px;
   width: 100%;
@@ -9,34 +12,38 @@
 
 .contributors {
   margin: auto;
-/*  background: pink;*/
+  /*background: pink;*/
+  margin-top: 20px;
   height: 300px;
   width: 900px;
 }
 
 .about p {
 /*  height: 200px;*/
-  width: 160px;
+  width: 170px;
 /*  border-radius: 50%;*/
   background: white;
   padding: auto;
   margin: auto;
   display: inline;
  /* float: left;*/
+ color: black;
+ font-size: 20px;
+ font-family: 'Oswald';
 }
 
 .contributor {
-  width: 160px;
+  width: 170px;
   float: left;
-  margin: auto;
+  margin-left: 45px;
 }
 
 #amber,
 #koren,
 #ben,
 #ed {
-  height: 160px;
-  width: 160px;
+  height: 170px;
+  width: 170px;
   border-radius: 50%;
   border: 1px solid white;
   background: white;
