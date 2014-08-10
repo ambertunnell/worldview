@@ -85,8 +85,10 @@ $(function () {
             for (var i = 0; i < response.length; i++) {
                 var url = response[i].url;
                 var title = response[i].title;
-                console.log(url)
-                $('#dashboard .dashboard-photos').append("<li class='photo'><h3>" + "<a href='" + url + "'>" + title + "</h3><p>" + "<img src=" + url + "> </p></a><button class='remove-photo'>Remove.</li></button></p>");
+                var link = response[i].link;
+                console.log(url);
+                console.log(link);
+                $('#dashboard .dashboard-photos').append("<li class='photo'><h3>" + "<a target='_blank' href='" + link + "'>" + title + "</h3><p>" + "<img src=" + url + "> </p></a><button class='remove-photo'>Remove.</li></button></p>");
             }
         },
         error: function (response) {
