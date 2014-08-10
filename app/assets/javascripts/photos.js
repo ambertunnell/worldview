@@ -1,9 +1,8 @@
-$(function () {
+function photos(location) {
 
-    $('.photos-header').hide();
-    $('#flickr').hide();
+  
 
-    $(".ul-clock").click(function () {
+ 
 
         $('.more-photos').data('flickr-num', 0);
 
@@ -18,9 +17,9 @@ $(function () {
         $('#flickr').show();
         $('#flickr').empty();
 
-        var location = $(this).closest(".clock").data('city');
+  
         switch (location) {
-            case 'nyc':
+            case 'newyork':
                 var search = nyc;
                 break;
             case 'london':
@@ -78,7 +77,7 @@ $(function () {
             }
         });
 
-    });
+    
 
 
     $("#flickr").on("click", ".save-photo", function (event) {
@@ -219,4 +218,4 @@ $(".more-photos").click(function () {
 
     });
 
-});
+}
