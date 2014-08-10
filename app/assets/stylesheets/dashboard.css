@@ -49,13 +49,61 @@ ul {
   float: left;
 }*/
 
+.dashboard-articles {
+  float: left;
+  margin: 5px;
+  height: 195px;
+}
+
+.dashboard-photos {
+
+}
+
+.dashboard-tweets {
+
+}
+
+
+.dashboard-articles li {
+    border: 1px solid grey;
+    width: 50%;
+    height: 100%;
+}
+
+.my-article h3 a {
+  color: #003399 !important;
+  font-family: Oswald;
+  font-size: 20px;
+  text-align: 
+}
+
+.my-article img {
+  height: 200px;
+  float: left;
+  margin: 10px;
+}
+
+.dashboard-articles li .remove-article {
+  color: black;
+  bottom: 0;
+  border: 1px solid grey;
+  right: 0;
+  float: right;
+  float: bottom;
+}
+
+#dashboard-xlink {
+  font-size: 100px;
+  color: black;
+}
+
 .close {
-  color: #fff;
-  line-height: 25px;
+  color: black;
+  line-height: 300px;
   position: absolute;
   right: -12px;
   text-align: center;
-  font-size: 60px;
+  font-size: 200px;
   top: -20px;
   width: 80px;
   height: 80px;

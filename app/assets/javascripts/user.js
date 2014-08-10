@@ -14,9 +14,10 @@ $(function () {
             $('.save-tweet').show();            
           } else {
             console.log("A user is not logged in.")
+            $('.save-tweet').hide();
             $('.save-article').hide();
             $('.save-photo').hide();
-            $('.save-tweet').hide();
+            
           }
         },
         error: function (response){

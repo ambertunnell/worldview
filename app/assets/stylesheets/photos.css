@@ -1,9 +1,38 @@
-#flickr {
-  margin-bottom: 15px;
+
+/*PHOTOS*/
+
+.col-md-4 {
+  /*background: white;*/
+  width: 100%;
   min-width: 1200px;
-  padding-bottom: 15px;
+  height: 800px;
+  overflow: hidden;
+  margin: 0;
+/*  background-image: url('2.jpg');
+  background-attachment: fixed;
+  background-size: cover;*/
+  background: white;
+  border-bottom: 5px solid white;
 }
 
+#flickr {
+  list-style: none;
+  margin-bottom: 15px;
+  min-width: 1200px;
+  padding-bottom: 15px;  
+}
+
+#flickr h3 a {
+  color: #6EA9FC;
+  transition-duration: .5s;
+  transition-property: color;
+}
+
+#flickr h3 a:hover {
+  color: black;
+  transition-duration: .5s;
+  transition-property: color;
+}
 
 .photos-header h4 {
   color: black;

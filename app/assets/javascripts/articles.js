@@ -103,8 +103,9 @@ $(function () {
         event.preventDefault();
 
         var articleTitle = $(this).closest('li').eq(0).find("h3").text();
-        var articleAbstract = $(this).closest('li').eq(0).find("p").eq(0).text();
-        var articlePubdate = $(this).closest('li').eq(0).find("p").eq(1).text();
+        var articlePubdate = $(this).closest('li').eq(0).find("p").eq(0).text();
+        var articleAbstract = $(this).closest('li').eq(0).find("p").eq(1).text();
+        // var newDate = $(this).closest('li').eq(0).find("p").eq(1).text().split("T")[0];
         var articleUrl = $(this).closest('li').eq(0).find("a").attr("href");
         var articleImage = $(this).closest('li').eq(0).find("img").attr("src");
 
