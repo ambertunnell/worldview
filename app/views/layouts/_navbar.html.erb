@@ -34,6 +34,10 @@
           <li><%= render 'layouts/dashboard' %></li>
           <li><%= link_to 'LOG OUT', logout_path %></li>
         <% else %>
+          <li><a href="#weather-anchor" id="#weather-anch">WEATHER</a></li>
+          <li><a href="#photos-anchor">PHOTOS</a></li>
+          <li><a href="#news-anchor">NEWS</a></li>
+          <li><a href="#tweets-anchor">TWEETS</a></li>
           <li><%= link_to 'LOG IN WITH TWITTER', twitter_login_path %></li>
         <% end %> 
       </ul>

@@ -60,16 +60,16 @@ function article (location) {
 
                     if (imagesArray.length > 0){
                         var image = "http://www.nytimes.com/" + imagesArray[1].url;
-                         $('#news1').append("<li class='article' data-id=" + id + "><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
+                         $('#news1').append("<li class='article' data-id=" + id + "><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "  " + pubdate + "</p><button class='save-article'>Read later</button></li>");
                     } else {
                         var image = "no image available"
-                         $('#news1').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
+                         $('#news1').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "  " + pubdate + "</p><button class='save-article'>Read later</button></li>");
                     }
   
                 }
 
 
-                for (var i = 6; i < 10; i++) {
+                for (var i = 5; i < 10; i++) {
                     var result = response.response.docs[i];
                     var id = response.response.docs[i]._id;
                     var title = response.response.docs[i].headline.main;
@@ -80,10 +80,10 @@ function article (location) {
 
                     if (imagesArray.length > 0){
                         var image = "http://www.nytimes.com/" + imagesArray[1].url;
-                         $('#news2').append("<li class='article' data-id=" + id + "><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
+                         $('#news2').append("<li class='article' data-id=" + id + "><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "  " + pubdate + "</p><button class='save-article'>Read later</button></li>");
                     } else {
                         var image = "no image available"
-                         $('#news2').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
+                         $('#news2').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "  " + pubdate + "</p><button class='save-article'>Read later</button></li>");
                     }
   
                 } 

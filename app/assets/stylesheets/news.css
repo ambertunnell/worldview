@@ -1,7 +1,7 @@
 /*NEWS*/
 
 .col-md-5 {
-  height: 1000px;
+  height: 1400px;
   width: 100% !important;
   overflow: hidden;
   margin: 0;
@@ -19,17 +19,20 @@
 
 #news h3 {
   font-family: 'Oswald';
-  text-align: justify;
-  display: inline;
-  float: left;
+  /*text-align: justify;*/
+  /*display: inline;*/
+  /*float: left;*/
+  padding: 3px;
+  margin: 0;
+  font-size: 23px;
 }
 
 #news p {
   font-family: 'Oswald';
-  font-size: 18px;
+  font-size: 16px;
   text-align: justify;
-  display: inline;
-  float: left;
+  /*display: inline;*/
+  /*float: left;*/
 }
 
 #news h3 a {
@@ -45,34 +48,59 @@
   transition-property: color;
 }
 
-
 .article {
   margin: 10px;
+  padding: 15px;
+  /*background: #cccccc;*/
+  border: 1px solid grey;
 }
 
-.save-article {
-  margin-left: 15px;
-  margin-bottom: 10px;
-  color: black;
-}
-
-#news1 {
-  width: 50%;
-  display: inline;
-  text-align: left;
-}
-
+#news1,
 #news2 {
   width: 50%;
   display: inline;
   text-align: left;
+  padding: 15px;
 }
 
-#news img {
-  vertical-align: left;
-  display: inline;
-/*  float: left;*/
-  width: 30%;
+#news1 li, 
+#news2 li {
+  /*height: 250px;*/
+  overflow: hidden;
+}
+
+#news1 li h3 a,
+#news2 li h3 a {
+  /*float: left;*/
+  /*padding-left: 15px;*/
+}
+
+#news1 li p, 
+#news2 li p {
+  /*float: left;*/
+  /*text-wrap: unrestricted;*/
+  /*padding-left: 15px;*/
+}
+
+#news1 li img,
+#news2 li img {
+  /*vertical-align: left;*/
+  /*display: inline;*/
+  float: left;
+  /*width: 30%;*/
   /*max-height: 20%;*/
   margin: 5px;
+  height: 195px;
+  /*padding-top: 15px;*/
+  /*padding-left: 15px;*/
+}
+
+#news1 li button,
+#news2 li button {
+  /*margin-left: 15px;*/
+  /*margin-bottom: 10px;*/
+  color: black;
+  bottom: 0;
+  float: left;
+  border: 1px solid grey;
 }
