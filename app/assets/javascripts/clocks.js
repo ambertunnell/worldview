@@ -80,12 +80,6 @@ function makeClock (city,coords){
                 var built =  $( " #clock-container " ).children('div').eq(4).detach();
                 $( "#clock-container " ).prepend(built);
 
-         //       CLOCK LISTENER of the future 
-                // $(".ul-clock").click(function () {
-                //     var location = $(this).closest(".clock").data('city');
-                //     console.log(location);
-                //     article(location);
-                // });
             },
               
             error: function (response) {
