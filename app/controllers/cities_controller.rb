@@ -1,7 +1,7 @@
 class CitiesController < ApplicationController
 
   def create
-    binding.pry
+    # binding.pry
     @user = User.find(session[:user_id]) if session[:user_id]
     @city = City.find_or_create_by(lat: city_params[:lat], lon: city_params[:lon]) do |city| 
       city.name = city_params[:name] 

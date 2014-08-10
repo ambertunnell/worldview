@@ -1,6 +1,8 @@
 // $(function (){
 
   function submit_new_city() {
+    $("#invalid_city").text(" ");
+    $("#invalid_city").append("<span class = 'space'>&nbsp;</span>");
     console.log("submitted");
       var user_input = $("#new-city").val();
     // $("#new-city").submit(function(e) {
@@ -17,13 +19,14 @@
         url: "http://autocomplete.wunderground.com/aq?cb=city_results&query=" + user_input,
         dataType: 'jsonp',
         success: function(response) {
-          if (typeof response.RESULTS == 'undefined'){
-            $("#invalid-city").prepend("Not a valid city");
-          };
+          if (response.RESULTS.length === 0){
+            $("#invalid_city").text("Not a valid city");
+            console.log("Successful response and marked as undefined")
+          } else {
           var first_result = response.RESULTS[0].name;
+          $("#invalid_city").text(first_result + " added");
           console.log(response);
           console.log(response.RESULTS);
-          
           var cityname = first_result.match(/(\D+)(,\s+)(\D+)/)[1]
           var bigger_thing = first_result.match(/(\D+)(,\s+)(\D+)/)[3]
           var lat = response.RESULTS[0].lat;
@@ -33,6 +36,7 @@
           
           $("#new-city").val("");
           console.log("finished");
+          }
 
           $.ajax({
             type: "POST",
