@@ -13,5 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree .
-
+//= require load
+//= require articles
+//= require current_location
+//= require dashboard
+//= require nav
+//= require photos
+//= require skycons
+//= require tweets
+//= require user
+//= require weather 
+//= require clocks

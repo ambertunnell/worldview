@@ -1,19 +1,18 @@
-$(function () {
+function article (location) {
 
-    $('.news-header').hide();
+    
 
-    $(".ul-clock").click(function () {
 
         $('.news-header').show();
         $('#news').empty();
 
-        var location = $(this).closest(".clock").data('city');
+        console.log("article location = " + location);
 
         var search;
         var country;
 
         switch (location) {
-            case 'nyc':
+            case 'newyork':
                 search = "new+york+city";
                 country = "\"New%20York%20City\""
                 break;
@@ -41,6 +40,7 @@ $(function () {
 
         var API_KEY = "dd74b110c07677ce3e0c5c1f94642e26:10:31738630";
         var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + search + "&sort=newest&fq=type_of_material:(News)%20AND%20glocations:("+country+")&api-key=" + API_KEY;
+        console.log('Articl URL = ' + URL);
        
 
         $.ajax({
@@ -71,7 +71,7 @@ $(function () {
                 console.log("News ajax query failed.");
             }
         });
-    });
+   
 
 
     $("#news").on("click", ".save-article", function (event) {
@@ -107,4 +107,4 @@ $(function () {
 
     // Populates dashboard with saved articles when profile link clicked 
    
-    });
+}
