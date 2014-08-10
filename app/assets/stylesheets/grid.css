@@ -76,22 +76,7 @@ h4 {
   background-size: cover;
 }
 
-/*.API-container-weather,
-.API-container-news,
-.API-container-tweets,
-.API-container-photos, {
-  width: 100%;
-  border: 2px solid black;
-}*/
-
 /*WEATHER*/
-
-/*.API-container-weather {
-  background: pink;
-  height: 250px;
-  overflow: hidden;
-  padding: auto;
-}*/
 
 .col-md-1 {
   background: white;
@@ -107,12 +92,6 @@ h4 {
 /*  transition-duration: .7s;
   transition-property: background;*/
 
-}
-
-.col-md-1:hover {
-  /*background: #DBDBDC;*/
-/*  transition-duration: .7s;
-  transition-property: background;*/
 }
 
 .weather {
@@ -151,29 +130,13 @@ h4 {
   width: 100%;
   min-width: 1200px;
   height: 800px;
-/*  float: right;*/
   overflow: hidden;
   margin: 0;
-  /*padding: auto;*/
-
 /*  background-image: url('2.jpg');
   background-attachment: fixed;
   background-size: cover;*/
   background: white;
   border-bottom: 5px solid white;
-
-
- 
-/*  border: 10px solid black;
-  margin: 1%;*/
-/*  transition-duration: .7s;
-  transition-property: background;*/
-}
-
-.col-md-4:hover {
-  /*background: #DBDBDC;*/
-/*  transition-duration: .7s;
-  transition-property: background;*/
 }
 
 #flickr {
@@ -194,12 +157,6 @@ h4 {
 
 /*NEWS*/
 
-/*.API-container-news {
-  background: blue;
-  height: 600px;
-  overflow: hidden;
-  padding: auto;
-}*/
 .col-md-5 {
   height: 600px;
   width: 100%;
@@ -211,17 +168,6 @@ h4 {
   background-attachment: fixed;
   background-size: cover;*/
   border-bottom: 5px solid white;
-
-/*  border: 10px solid black;
-  margin: 1%;*/
-/*  transition-duration: .7s;
-  transition-property: background;*/
-}
-
-.col-md-5:hover {
-  /*background: #DBDBDC;*/
-/*  transition-duration: .7s;
-  transition-property: background;*/
 }
 
 #news {
@@ -254,13 +200,6 @@ h4 {
 
 /*TWITTER*/
 
-/*.API-container-tweets {
-  background: green;
-  height: 400px;
-  overflow: hidden;
-  padding: auto;
-}*/
-
 .col-md-6 {
   background: white;
   height: 500px;
@@ -269,21 +208,10 @@ h4 {
   overflow: hidden;
   margin: 0;
   padding: auto;
-
 /*      background-image: url('4.jpg');
   background-attachment: fixed;
   background-size: cover;*/
    border-bottom: 5px solid white;
-/*  border: 10px solid black;
-  margin: 1%;*/
-/*  transition-duration: .7s;
-  transition-property: background;*/
-}
-
-.col-md-6:hover {
-  /*background: #DBDBDC;*/
-/*  transition-duration: .7s;
-  transition-property: background;*/
 }
 
 #twitter {
@@ -306,17 +234,8 @@ h4 {
   transition-property: color;
 }
 
-/*.col-md-7 {
-  background: green;
-  height: 100px;
-  width: 100%;
-  float: right;
-  overflow: hidden;
-  border: 10px solid black;
-  margin: 1%;
-}*/
-
 /*BUTTONS*/
+
 button {
   background: none;
   text-align: justify;
@@ -335,14 +254,4 @@ button:hover {
   color: white;
   transition-duration: .5s;
   transition-property: background, border-color, color;
-}
-
-/*DASHBOARD*/
-.dashboard-photo img {
-  width: 150px;
-  border-radius: 50%;
-}
-
-ul {
-  list-style: none;
 }

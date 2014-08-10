@@ -19,6 +19,7 @@
 //= require dividers
 //= require weather 
 //= require nav
+//= require initial_click
 //= require photos
 //= require skycons
 //= require tweets
