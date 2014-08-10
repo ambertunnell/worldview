@@ -1,7 +1,8 @@
 function article (location) {
 
         $('.news-header').show();
-        $('#news').empty();
+        $('#news1').empty();
+        $('#news2').empty();
 
         var search;
         var country;
@@ -47,7 +48,8 @@ function article (location) {
                 if (response.response.docs.length == 0){
                     console.log ("No articles found with query " + search)
                 }
-                for (var i = 0; i < 10; i++) {
+
+                for (var i = 0; i < 5; i++) {
                     var result = response.response.docs[i];
                     var id = response.response.docs[i]._id;
                     var title = response.response.docs[i].headline.main;
@@ -57,14 +59,34 @@ function article (location) {
                     var imagesArray = response.response.docs[i].multimedia;
 
                     if (imagesArray.length > 0){
-                        var image = "http://www.nytimes.com/" + imagesArray[0].url;
-                         $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><img src=" + image + "><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
+                        var image = "http://www.nytimes.com/" + imagesArray[1].url;
+                         $('#news1').append("<li class='article' data-id=" + id + "><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
                     } else {
                         var image = "no image available"
-                         $('#news').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
+                         $('#news1').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
                     }
   
-                     }
+                }
+
+
+                for (var i = 6; i < 10; i++) {
+                    var result = response.response.docs[i];
+                    var id = response.response.docs[i]._id;
+                    var title = response.response.docs[i].headline.main;
+                    var abstract = response.response.docs[i].snippet;
+                    var url = response.response.docs[i].web_url;
+                    var pubdate = response.response.docs[i].pub_date.split("T")[0];
+                    var imagesArray = response.response.docs[i].multimedia;
+
+                    if (imagesArray.length > 0){
+                        var image = "http://www.nytimes.com/" + imagesArray[1].url;
+                         $('#news2').append("<li class='article' data-id=" + id + "><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
+                    } else {
+                        var image = "no image available"
+                         $('#news2').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='save-article'>Read later</button></li>");
+                    }
+  
+                } 
                 $('#news').hide();
                 $('#news').slideDown(5000);
             },

@@ -1,13 +1,78 @@
-.news-header {
-  background-color: rgba(250,250,250, 0.6);
+/*NEWS*/
+
+.col-md-5 {
+  height: 700px;
+  width: 100% !important;
+  overflow: hidden;
+  margin: 0;
+  padding: auto;
+  background: white;
+/*  background-image: url('3.jpg');
+  background-attachment: fixed;
+  background-size: cover;*/
+  border-bottom: 5px solid white;
 }
 
-#news {
-  background-color: rgba(250,250,250, 0.6);
-  border-radius: 10px;
+/*#news {
+  list-style: none;
+}*/
+
+#news h3 {
+  font-family: 'Oswald';
+  text-align: justify;
+  display: inline;
+  float: left;
+}
+
+#news p {
+  font-family: 'Oswald';
+  font-size: 18px;
+  text-align: justify;
+  display: inline;
+  float: left;
+}
+
+#news h3 a {
+  color: #D60905;
+  text-align: justify;
+  transition-duration: .5s;
+  transition-property: color;
+}
+
+#news h3 a:hover {
+  color: blue;
+  transition-duration: .5s;
+  transition-property: color;
+}
+
+
+.article {
+  margin: 10px;
 }
 
 .save-article {
   margin-left: 15px;
-  color: rgba(250,250,250, 0.6);
+  margin-bottom: 10px;
+  color: black;
+}
+
+#news1 {
+  width: 50%;
+  display: inline;
+  text-align: left;
+}
+
+#news2 {
+  width: 50%;
+  display: inline;
+  text-align: left;
+}
+
+#news img {
+  vertical-align: left;
+  display: inline;
+/*  float: left;*/
+  width: 30%;
+  /*max-height: 20%;*/
+  margin: 5px;
 }
