@@ -21,6 +21,8 @@ $(function () {
 
     if (location === "hongkong"){
       var newLocation = "HONG KONG";
+    } else if (location === "newyork"){
+      var newLocation = "NEW YORK";
     } else {
       var newLocation = location.toUpperCase();
     }

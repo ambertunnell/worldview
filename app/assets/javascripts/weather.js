@@ -9,7 +9,6 @@ function weather1 (location) {
         sanfran_coords = "37.7749295,-122.41941550000001"; 
 
 
-
         $('.weather-header').show();
         $(".weather").empty();
 

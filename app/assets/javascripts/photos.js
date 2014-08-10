@@ -79,7 +79,7 @@ $(function () {
 
         var photoTitle = $(this).closest("li").find("h5").text();
         var photoUrl = $(this).closest("li").find('img').attr("src");
-        console.log(photoUrl);
+        var photoLink = $(this).closest("li").find('a').attr("href");
 
         var $that = $(this);
 
@@ -89,7 +89,8 @@ $(function () {
             data: {
                 photo: {
                     title: photoTitle,
-                    url: photoUrl
+                    url: photoUrl,
+                    link: photoLink
                 }
             },
             success: function (response) {
@@ -206,6 +207,25 @@ $(".more-photos").click(function () {
                         $('.more-photos').data('flickr-num', 0);
                     }
                 }
+
+        $.ajax({
+            type: "GET",
+            url: "/users/signed_in",
+            success: function (response) {
+              console.log("Sign_in AJAX request succeeded.");
+
+              if (response == true){
+                console.log("Show like button - A user is logged in.")
+                $('.save-photo').show();         
+              } else {
+                console.log("Hide like button - A user is not logged in.")
+                $('.save-photo').hide();
+              }
+            },
+            error: function (response){
+              console.log("Error could not retrieve user information.");
+            }
+        }); 
 
             },
             error: function (response) {

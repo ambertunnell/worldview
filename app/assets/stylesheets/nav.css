@@ -95,6 +95,7 @@ background: none;
   border: none;
        background: rgb(1, 18, 25);  /*Fall-back for browsers that don't support rgba */
   background: rgba(1, 18, 25, .85);
+
 }
 
 nav input {
