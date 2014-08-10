@@ -51,7 +51,9 @@ function tweets(location) {
 
         });
     
-
+}
+$(function () {
+    $('.twitter-header').hide();
     $("#twitter").on("click", ".save-tweet", function (event) {
         event.preventDefault();
 
@@ -77,7 +79,7 @@ function tweets(location) {
             }
         });
     });
+});
 
 
-}
 
