@@ -1,7 +1,4 @@
-$(function () {
-
-$('.weather-header').hide();
-
+function weather1 (location) {
     var WEATHER_API_KEY = 'c2ebf0ca079e86eb70261f70d92ce7ce';
 
     var nyc_coords = "40.712784,-74.005941",
@@ -11,17 +8,16 @@ $('.weather-header').hide();
         paris_coords = "48.856614,2.352222",
         sanfran_coords = "37.7749295,-122.41941550000001"; 
 
-    $(".ul-clock").click(function() {
+
 
         $('.weather-header').show();
         $(".weather").empty();
 
-        var location = $(this).closest(".clock").data('city');
        
         var coords;
 
         switch (location) {
-            case 'nyc':
+            case 'newyork':
                 coords = nyc_coords;
                 break;
             case 'london':
@@ -39,9 +35,10 @@ $('.weather-header').hide();
             case 'sanfran':
                 coords = sanfran_coords;
                 break;
-        }
+        };
 
         var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + coords;
+        
 
         weather = $.ajax({
             url: URL,
@@ -118,6 +115,6 @@ $('.weather-header').hide();
                 console.log("Forecast.io API request failed");
             }
         });
-    });
 
-});
+
+}
