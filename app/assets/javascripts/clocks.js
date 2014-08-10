@@ -44,8 +44,9 @@ function makeClock (city,coords){
             success: function (response) {
                 console.log(city + " UTC ajax success");
                 var datacity = city.toLowerCase().replace(/ /, '');
+                
                 $( " #clock-container " ).children('div').eq(4).replaceWith("<div class=\""+datacity+"-clock col-md-2 clock\" data-city=\""+datacity+"\"><ul class=\"ul-clock\"><li class=\"exit-clock\"></li><li class=\"sec\"></li><li class=\"hour\"></li><li class=\"min\"></li></ul><center><h2>"+city+"</h2></center></div>");
-
+                $( " #clock-container " ).children('div').eq(4).hide();
 
                 offset = response['offset'];
                 setInterval( function() {
@@ -77,15 +78,11 @@ function makeClock (city,coords){
                 }, 1000 );
                 $( " #clock-container " ).children('div').eq(4).find("h2").text(city);
                 
+                $( " #clock-container " ).children('div').eq(4).show();
                 var built =  $( " #clock-container " ).children('div').eq(4).detach();
                 $( "#clock-container " ).prepend(built);
+                
 
-         //       CLOCK LISTENER of the future 
-                // $(".ul-clock").click(function () {
-                //     var location = $(this).closest(".clock").data('city');
-                //     console.log(location);
-                //     article(location);
-                // });
             },
               
             error: function (response) {

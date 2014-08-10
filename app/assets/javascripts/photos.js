@@ -69,9 +69,10 @@ function photos(location) {
             }
         });
 
-    
+}
 
-
+$(function () {
+    $('.photos-header').hide();
     $("#flickr").on("click", ".save-photo", function (event) {
         event.preventDefault();
 
@@ -112,10 +113,10 @@ $(".more-photos").click(function () {
 
         $('#flickr').empty();
 
-        var locationstatus = $('#current-location').find('a')[0].text;
+        var locationstatus = $('#current-location')[0].text;
 
         switch (locationstatus) {
-            case " CURRENT LOCATION: NYC":
+            case " CURRENT LOCATION: NEWYORK":
                 var search = nyc;
                 break;
             case " CURRENT LOCATION: LONDON":
@@ -210,4 +211,4 @@ $(".more-photos").click(function () {
 
     });
 
-}
+});

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @city = City.new
     if session[:user_id] && !User.all.empty?
       @user = User.find(session[:user_id]) 
     else
