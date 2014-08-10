@@ -11,10 +11,9 @@ class CitiesController < ApplicationController
    
     unless @user.cities.find_by(lat: city_params[:lat], lon: city_params[:lon])
         @user.cities << @city
-        
-       # del_city_id = City.find_by(city_id: city_params[:lastClock]) 
-        #puts "Would delete #{del_city_id}"
-        # CityUser.find_by(user_id: @user.id, city_id: del_city_id).destroy
+       # binding.pry
+        del_city_id = City.find(city_params[:lastClock]).id
+        CityUser.find_by(user_id: @user.id, city_id: del_city_id).destroy
     end
       
       #  Should and this to solve race condition error
