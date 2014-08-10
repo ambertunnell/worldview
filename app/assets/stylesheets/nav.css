@@ -3,8 +3,11 @@
 @import url(http://fonts.googleapis.com/css?family=Codystar);
 @import url(http://fonts.googleapis.com/css?family=Didact+Gothic);
 
+html,
 body {
-  background: #DBDBDC;
+  background: white;
+  margin: 0;
+  padding: 0;
 }
 
 /*.navbar,
@@ -15,9 +18,17 @@ body {
 nav,
 .navbar,
 .navbar-inner,
-.navbar-default {
-  background: black;
+.navbar-default,
+.navbar-default .navbar-collapse,
+.navbar-collapse {
+/*  background: rgb(1, 18, 25);  Fall-back for browsers that don't support rgba 
+  background: rgba(1, 18, 25, .4);*/
+  /*background: pink;*/
+  border-radius: 0px;
+  background: none;
   border: none;
+
+
 }
 
 nav,
@@ -47,10 +58,19 @@ nav,
 .navbar-nav a:hover,
 .navbar-default .navbar-nav > li > a:hover {
   /*color: #D60905;*/
-  color: black;
+
   transition-duration: .5s;
   transition-property: color;
 }
+
+/*nav,
+.navbar,
+.navbar-default,
+.navbar-inner {
+   background: rgb(1, 18, 25);  Fall-back for browsers that don't support rgba 
+  background: rgba(1, 18, 25, .7);
+
+}*/
 
 /*.navbar-left > li > a {
   color: #D60905;
@@ -59,21 +79,31 @@ nav {
   width: 100%;
 position: fixed;
   z-index: 4;
-  border-bottom: solid 1px;
-    -webkit-box-shadow: 0 8px 6px -6px gray;
+  /*border-bottom: solid 1px;*/
+   /* -webkit-box-shadow: 0 8px 6px -6px gray;
        -moz-box-shadow: 0 8px 6px -6px gray;
-            box-shadow: 0 8px 6px -6px gray;
+            box-shadow: 0 8px 6px -6px gray;*/
   display: none;
-  opacity: .8;
+background: none;
+    border-radius: 0px;
+  border: none;
+
+}
+
+.navbar-inner {
+      border-radius: 0px;
+  border: none;
+       background: rgb(1, 18, 25);  /*Fall-back for browsers that don't support rgba */
+  background: rgba(1, 18, 25, .85);
 }
 
 nav input {
-  border: 1px solid black;
-  font-family: 'Didact Gothic';
-  font-size: 15px;
-  padding-left: 30px;
+  /*border: 1px solid black;*/
+  /*font-family: 'Didact Gothic';*/
+  /*font-size: 15px;*/
+  /*padding-left: 30px;*/
   /*padding-top: 5px;*/
-  line-height: 1.5;
+  /*line-height: 1.5;*/
 }
 
 footer {

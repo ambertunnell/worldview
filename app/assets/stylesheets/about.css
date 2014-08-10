@@ -59,7 +59,9 @@
 }
 
 #ed {
-  
+  background-image: url('ed.png');
+  background-size: cover;
+  background-position: center;
 }
 
 

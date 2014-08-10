@@ -10,14 +10,23 @@
   padding: 0;
 }
 
-.head-container h1 {
+/*.head-container {
+    width: 1300px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+}*/
+
+h1 {
   color: white;
   font-family: 'Oswald';
-  padding-top: 80px;
+  /*padding-top: 80px;*/
   font-size: 50px;
 }
 
-.head-container p {
+h6 {
   color: white;
   font-family: 'Oswald';
   padding-bottom: 40px;
