@@ -55,7 +55,6 @@ $(function () {
       data: {id: city_id},
       url: '/cities/get_city',
       success: function(response){
-        console.log(response);
         article(response);
         weather1(response);
         photos(response);
