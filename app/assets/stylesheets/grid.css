@@ -85,27 +85,28 @@ h4 {
 }
 
 .weather {
+  padding-left: 29%;
   /*padding-top: 5%;*/
-  /*width: 65%;*/
+  /*width: 265%;*/
 }
 
 .weather p {
   left: 0;
-  margin: 0;
-  padding: 0;
   font-family: 'Oswald';
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  position: block;
 }
 
 #icon1 {
   float: left;
-  width: 65%;
+  width: 32%;
   height: 65%;
   margin: 0;
   padding: 0;
-}
-
-.weather p {
-  font-size: 20px;
 }
 
 .weather {
