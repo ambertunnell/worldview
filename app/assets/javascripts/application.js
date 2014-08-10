@@ -24,3 +24,4 @@
 //= require tweets
 //= require user
 //= require clocks
+//= require new_city

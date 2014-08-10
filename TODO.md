@@ -2,6 +2,16 @@ News Navigator
 News Sprint | NewSprint
 worldview
 
+SUNDAY
+
+- testing
+- finalize domain
+- buy domain
+- add new cities with populated data
+- more css revisions
+- background photo should pull in from flickr (or something)
+- redo dashboard
+
 QUESTION
 
 What news should I read?
