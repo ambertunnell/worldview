@@ -28,13 +28,20 @@
     <% unless logged_in? %> 
       <div class="login">
         <center>
-        <p><%= link_to image_tag('twitter.png'), twitter_login_path %><br>
-        <%= link_to 'Login with Twitter', twitter_login_path %></p>
+          <p>
+            <%= link_to image_tag('twitter.png'), twitter_login_path %><br>
+            <%= link_to 'Login with Twitter', twitter_login_path %></p><br><br>
+            <%= form_for @city, url: cities_path do |f| %>
+              <%= f.text_field :name, placeholder: "          Add a city..." %>
+            <% end %>
+
         </center>
       </div>
+    <% else %>
+      <%= form_for @city, url: cities_path, html: {:class => 'login'} do |f| %>
+        <%= f.text_field :name, placeholder: "          Add a city..." %>
+      <% end %>
     <% end %> 
   </div>
-
 </center>
 
-</div>
