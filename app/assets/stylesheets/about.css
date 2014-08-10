@@ -12,24 +12,20 @@
 
 .contributors {
   margin: auto;
-  /*background: pink;*/
   margin-top: 20px;
   height: 300px;
   width: 900px;
 }
 
 .about p {
-/*  height: 200px;*/
   width: 170px;
-/*  border-radius: 50%;*/
   background: white;
   padding: auto;
   margin: auto;
   display: inline;
- /* float: left;*/
- color: black;
- font-size: 20px;
- font-family: 'Oswald';
+  color: black;
+  font-size: 20px;
+  font-family: 'Oswald';
 }
 
 .contributor {
@@ -47,27 +43,23 @@
   border-radius: 50%;
   border: 1px solid white;
   background: white;
- /* float: left;*/
+  background-size: cover;
 }
 
 #amber {
   background-image: url('amber.jpg');
-  background-size: cover;
 }
 
 #koren {
   background-image: url('klc.jpg');
-  background-size: cover;
 }
 
 #ben {
   background-image: url('ben.png');
-  background-size: cover;
 }
 
 #ed {
   background-image: url('ed.png');
-  background-size: cover;
   background-position: center;
 }
 

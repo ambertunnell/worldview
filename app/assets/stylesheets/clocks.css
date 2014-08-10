@@ -11,15 +11,13 @@
 }
 
 .head-container {
-  
-    float: left;
-    margin: 0;
-    padding: 0;
-    left: 0;
-    top: 0;
-
-      /*width: 1300px;*/
-      width: 100%;
+  float: left;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  /*width: 1300px;*/
+  width: 100%;
   background-image: image-url('1.jpg');
   background-attachment: fixed;
   background-size: cover;
@@ -40,7 +38,6 @@ h6 {
 }
 
 .login {
-  /*float: left;*/
   text-align: center;
   margin: auto;
   padding-top: 300px;
@@ -66,8 +63,6 @@ h6 {
   position: relative;
   width: 180px; 
   height: 180px; 
-  /*background: white;*/
-  /*background: url('newclock.png');*/
   border: 2px solid white;
   border-radius: 50%;
   background-size: cover;
@@ -84,7 +79,6 @@ h6 {
   transition-property: background;
   transition-duration: .5s;
 }
-
 
 .sec, .min, .hour {
   position: absolute;
@@ -136,10 +130,6 @@ h6 {
 
 .clock {
   margin-left: 45px;
-}
-
-.ul-clock {
-  /*background: blue;*/
 }
 
 .clock-row h2 {

@@ -1,5 +1,16 @@
 /******* Dashboard **********/
 
+/*DASHBOARD*/
+
+.dashboard-photo img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+ul {
+  list-style: none;
+}
+
 #dashboard {
   position: fixed;
   overflow: scroll;

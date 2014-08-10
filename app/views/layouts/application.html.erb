@@ -8,18 +8,14 @@
   <%= analytics_init if Rails.env.production? %>
   <meta name="keywords" content="Koren Leslie Cohen, Amber Tunnel, Edward Warren, Ben Serviss, The Flatiron School, world clocks, javascript, ajax, rails"/>
   <meta name="description" content="Snapshots of cities around the world.">
-
 </head>
-
 <body>
-<center>
-<div class="entire-container">
-
-<%= render "layouts/navbar" %>    
-<%= yield %>
-<%= render "layouts/footer" %>  
-</div>
-</div>
-
+  <center>
+  <div class="entire-container">
+    <%= render "layouts/navbar" %>    
+    <%= yield %>
+    <%= render "layouts/footer" %>
+  </div>
+  </center> 
 </body>
 </html>

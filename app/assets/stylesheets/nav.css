@@ -10,35 +10,21 @@ body {
   padding: 0;
 }
 
-/*.navbar,
-.navbar-default {
-  min-width: 1100px;
-}*/
-
 nav,
 .navbar,
 .navbar-inner,
 .navbar-default,
 .navbar-default .navbar-collapse,
 .navbar-collapse {
-/*  background: rgb(1, 18, 25);  Fall-back for browsers that don't support rgba 
-  background: rgba(1, 18, 25, .4);*/
-  /*background: pink;*/
   border-radius: 0px;
   background: none;
   border: none;
-
-
 }
 
 nav,
 .navbar-default {
   height: 0;
 }
-
-/*.navbar-inner {
-  border-bottom: 10px solid black;
-}*/
 
 .navbar-inner a,
 .navbar-inner a:visited,
@@ -57,45 +43,25 @@ nav,
 .navbar-inner a:hover,
 .navbar-nav a:hover,
 .navbar-default .navbar-nav > li > a:hover {
-  /*color: #D60905;*/
-
   transition-duration: .5s;
   transition-property: color;
 }
 
-/*nav,
-.navbar,
-.navbar-default,
-.navbar-inner {
-   background: rgb(1, 18, 25);  Fall-back for browsers that don't support rgba 
-  background: rgba(1, 18, 25, .7);
-
-}*/
-
-/*.navbar-left > li > a {
-  color: #D60905;
-}*/
 nav {
   width: 100%;
-position: fixed;
+  position: fixed;
   z-index: 4;
-  /*border-bottom: solid 1px;*/
-   /* -webkit-box-shadow: 0 8px 6px -6px gray;
-       -moz-box-shadow: 0 8px 6px -6px gray;
-            box-shadow: 0 8px 6px -6px gray;*/
   display: none;
-background: none;
-    border-radius: 0px;
+  background: none;
+  border-radius: 0px;
   border: none;
-
 }
 
 .navbar-inner {
-      border-radius: 0px;
+  border-radius: 0px;
   border: none;
-       background: rgb(1, 18, 25);  /*Fall-back for browsers that don't support rgba */
+  background: rgb(1, 18, 25);  /*Fall-back for browsers that don't support rgba */
   background: rgba(1, 18, 25, .85);
-
 }
 
 nav input {
@@ -107,9 +73,5 @@ nav input {
   /*line-height: 1.5;*/
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
+
 
