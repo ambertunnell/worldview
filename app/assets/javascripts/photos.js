@@ -208,6 +208,25 @@ $(".more-photos").click(function () {
                     }
                 }
 
+        $.ajax({
+            type: "GET",
+            url: "/users/signed_in",
+            success: function (response) {
+              console.log("Sign_in AJAX request succeeded.");
+
+              if (response == true){
+                console.log("Show like button - A user is logged in.")
+                $('.save-photo').show();         
+              } else {
+                console.log("Hide like button - A user is not logged in.")
+                $('.save-photo').hide();
+              }
+            },
+            error: function (response){
+              console.log("Error could not retrieve user information.");
+            }
+        }); 
+
             },
             error: function (response) {
                 console.log("Flickr photos get request failed.");

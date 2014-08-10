@@ -1,11 +1,8 @@
 function tweets(location) {
 
-    
    
         $('.twitter-header').show();
         $('#twitter').empty();
-
-      
 
         var URL = "/twitter?location=" + location;
 
