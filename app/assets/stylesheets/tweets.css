@@ -1,1 +1,18 @@
-tweets.css
+.twitter-header {
+  background-color: rgba(250,250,250, 0.6);
+}
+
+#twitter {
+  background-color: rgba(250,250,250, 0.6);
+  border-radius: 10px;
+}
+
+#twitter h3 {
+  padding: 10px;
+}
+
+.save-tweet {
+  margin-left: 15px;
+  color: rgba(250,250,250, 0.6);
+}
+

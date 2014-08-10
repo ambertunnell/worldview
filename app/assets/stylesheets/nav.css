@@ -64,7 +64,7 @@ position: fixed;
        -moz-box-shadow: 0 8px 6px -6px gray;
             box-shadow: 0 8px 6px -6px gray;
   display: none;
-  opacity: .8;
+  /*opacity: .8;*/
 }
 
 nav input {

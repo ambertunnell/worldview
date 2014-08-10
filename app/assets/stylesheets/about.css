@@ -16,7 +16,7 @@
 
 .about p {
 /*  height: 200px;*/
-  width: 200px;
+  width: 160px;
 /*  border-radius: 50%;*/
   background: white;
   padding: auto;
@@ -26,17 +26,17 @@
 }
 
 .contributor {
-  width: 200px;
+  width: 160px;
   float: left;
-  margin-left: 20px;
+  margin: auto;
 }
 
 #amber,
 #koren,
 #ben,
 #ed {
-  height: 200px;
-  width: 200px;
+  height: 160px;
+  width: 160px;
   border-radius: 50%;
   border: 1px solid white;
   background: white;
@@ -44,16 +44,18 @@
 }
 
 #amber {
-
+  background-image: url('amber.jpg');
+  background-size: cover;
 }
 
 #koren {
-  background-image: url('koren.jpg');
+  background-image: url('klc.jpg');
   background-size: cover;
 }
 
 #ben {
-  
+  background-image: url('ben.png');
+  background-size: cover;
 }
 
 #ed {

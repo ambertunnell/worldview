@@ -1,9 +1,5 @@
 function photos(location) {
 
-  
-
- 
-
         $('.more-photos').data('flickr-num', 0);
 
         var nyc = "new%20york%20city",
@@ -62,8 +58,7 @@ function photos(location) {
 
                     
                     // $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail'><a target='_blank' href='" + link +"'><img src=" + image + "></a><button class='save-photo'>Like</button></div></li>");
-                    $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link +"'><img style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Like</button></div></li>");
-
+                    $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link +"'><img src=" + image + " style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Like</button></div></li>");
 
                 }
                 $('.more-photos').data('flickr-num', 1);
@@ -74,15 +69,18 @@ function photos(location) {
             }
         });
 
-    
+}
 
-
+$(function () {
+    $('.photos-header').hide();
     $("#flickr").on("click", ".save-photo", function (event) {
         event.preventDefault();
+        console.log("hit");
 
         var photoTitle = $(this).closest("li").find("h5").text();
-        var photoUrl = $(this).closest("li").find("img").attr("src");
+        var photoUrl = $(this).closest("li").find('img').attr("src");
         console.log(photoUrl);
+
         var $that = $(this);
 
         $.ajax({
@@ -117,10 +115,10 @@ $(".more-photos").click(function () {
 
         $('#flickr').empty();
 
-        var locationstatus = $('#current-location').find('a')[0].text;
+        var locationstatus = $('#current-location')[0].text;
 
         switch (locationstatus) {
-            case " CURRENT LOCATION: NYC":
+            case " CURRENT LOCATION: NEWYORK":
                 var search = nyc;
                 break;
             case " CURRENT LOCATION: LONDON":
@@ -186,8 +184,6 @@ $(".more-photos").click(function () {
                 var start = 91;
                 var end = 100;
                 break;                
-            case 8:
-                $('.more-photos').data('flickr-num', 0);
             }                       
 
                 for (var i = start; i < end; i++) {
@@ -202,9 +198,13 @@ $(".more-photos").click(function () {
                     var link = "http://flickr.com/photo.gne?id=" + id + "_" + secret + "_n.jpg"
 
                     $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link +"'><img style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Like</button></div></li>");
-                   
+
                     var newNum = loopNum + 1;
                     $('.more-photos').data('flickr-num', newNum);
+
+                    if (end == 100){
+                        $('.more-photos').data('flickr-num', 0);
+                    }
                 }
 
             },
@@ -215,4 +215,4 @@ $(".more-photos").click(function () {
 
     });
 
-}
+});

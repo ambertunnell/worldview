@@ -35,6 +35,8 @@
 
 #flickr img {
   border: none;
+/*  height: 2px;
+  width: 2px;*/
 }
 
 #flickr a {
@@ -50,7 +52,7 @@
   color: rgba(250,250,250, 0.6);
 }
 
-.save-photo:hover, .more-photos:hover {
+.save-photo, .more-photos {
   background-color: rgba(61, 61, 61, 0.9);
   border-color: rgba(61, 61, 61, 0.8);
   color: #fff;
