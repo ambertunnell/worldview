@@ -30,15 +30,18 @@ class CitiesController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-
-
   end
 
- 
+  def get_city
+    # binding.pry
+    @city = City.find(params[:id])
+    render json: @city.to_json
+  end
 
+  private
 
   def city_params
-    params.require(:city).permit(:name, :bigger_thing, :lat, :lon, :country, :lastClock)
+    params.require(:city).permit(:name, :id, :bigger_thing, :lat, :lon, :country, :lastClock)
   end 
 
 end

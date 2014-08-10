@@ -48,26 +48,40 @@ $(function () {
 
   //listeners
   $('.clock-row').on('click', '.ul-clock', function(){
-    var location = $(this).closest(".clock").data('city');
-    console.log(location);
-    article(location);
-    weather1(location);
-    photos(location);
-    tweets(location);
+    var city_id = $(this).closest(".clock").data('city');
+
+    $.ajax({
+      type: "POST",
+      data: {id: city_id},
+      url: '/cities/get_city',
+      success: function(response){
+        console.log(response);
+        article(response);
+        weather1(response);
+        photos(response);
+        tweets(response);
+        var newLocation = (response.name + ", " + response.bigger_thing).toUpperCase();
+        $('#current-location').empty();
+        $('#current-location').append("<li><a> CURRENT LOCATION: " + newLocation + "</a></li>");
+      },
+      error: function(response){
+        console.log("Clock clicking failed - could not post to cities/get_city");
+      }
+
+    })
+
 
     //set navbar loc
-    var location = $(this).closest(".clock").data('city');
+    // var location = $(this).closest(".clock").data('city');
 
-    if (location === "hongkong"){
-      var newLocation = "HONG KONG";
-    } else if (location === "newyork"){
-      var newLocation = "NEW YORK";
-    } else {
-      var newLocation = location.toUpperCase();
-    }
+    // if (location === "hongkong"){
+    //   var newLocation = "HONG KONG";
+    // } else if (location === "newyork"){
+    //   var newLocation = "NEW YORK";
+    // } else {
+    //   var newLocation = location.toUpperCase();
+    // }
     
-    $('#current-location').empty();
-    $('#current-location').append("<li><a> CURRENT LOCATION: " + newLocation + "</a></li>");
   });
 });
 

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/users/signed_in' 
   get '/users/get_cities' => 'users#get_cities'
 
+  post '/cities/get_city' => 'cities#get_city'
+
   get '/autocomplete/countries' => 'autocomplete#show'
 
   get '/photos/flickr'
