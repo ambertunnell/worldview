@@ -58,7 +58,7 @@ function photos(location) {
 
                     
                     // $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail'><a target='_blank' href='" + link +"'><img src=" + image + "></a><button class='save-photo'>Like</button></div></li>");
-                    $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link +"'><img style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Like</button></div></li>");
+                    $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link +"'><img src=" + image + " style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Like</button></div></li>");
 
                 }
                 $('.more-photos').data('flickr-num', 1);
@@ -75,10 +75,12 @@ $(function () {
     $('.photos-header').hide();
     $("#flickr").on("click", ".save-photo", function (event) {
         event.preventDefault();
+        console.log("hit");
 
         var photoTitle = $(this).closest("li").find("h5").text();
-        var photoUrl = $(this).closest("li").find("img").attr("src");
+        var photoUrl = $(this).closest("li").find('img').attr("src");
         console.log(photoUrl);
+
         var $that = $(this);
 
         $.ajax({
