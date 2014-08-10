@@ -1,13 +1,11 @@
-$(function () {
+function tweets(location) {
 
-    $('.twitter-header').hide();
-
-    $(".ul-clock").click(function () {
-
+    
+   
         $('.twitter-header').show();
         $('#twitter').empty();
 
-        var location = $(this).closest(".clock").data('city');
+      
 
         var URL = "/twitter?location=" + location;
 
@@ -52,7 +50,7 @@ $(function () {
             }
 
         });
-    });
+    
 
     $("#twitter").on("click", ".save-tweet", function (event) {
         event.preventDefault();
@@ -81,5 +79,5 @@ $(function () {
     });
 
 
-});
+}
 
