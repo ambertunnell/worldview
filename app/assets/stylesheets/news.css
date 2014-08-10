@@ -1,9 +1,9 @@
 /*NEWS*/
 
 .col-md-5 {
-  height: 1400px;
+  /*height: 1300px;*/
   width: 100% !important;
-  overflow: hidden;
+  overflow: auto;
   margin: 0;
   padding: auto;
   background: white;
@@ -81,6 +81,7 @@
   /*float: left;*/
   /*text-wrap: unrestricted;*/
   /*padding-left: 15px;*/
+  /*display: inline;*/
 }
 
 #news1 li img,
@@ -101,11 +102,13 @@
   /*margin-left: 15px;*/
   /*margin-bottom: 10px;*/
   color: black;
-  bottom: 0;
+  /*bottom: 0;*/
   /*float: left;*/
   border: 1px solid grey;
-  right: 0;
+  /*right: 0;*/
   float: right;
   float: bottom;
+  display: inline;
+  text-wrap: normal;
   /*position: absolute;*/
 }
