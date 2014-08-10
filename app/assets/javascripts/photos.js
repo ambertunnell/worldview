@@ -184,8 +184,6 @@ $(".more-photos").click(function () {
                 var start = 91;
                 var end = 100;
                 break;                
-            case 8:
-                $('.more-photos').data('flickr-num', 0);
             }                       
 
                 for (var i = start; i < end; i++) {
@@ -203,6 +201,10 @@ $(".more-photos").click(function () {
 
                     var newNum = loopNum + 1;
                     $('.more-photos').data('flickr-num', newNum);
+
+                    if (end == 100){
+                        $('.more-photos').data('flickr-num', 0);
+                    }
                 }
 
             },
