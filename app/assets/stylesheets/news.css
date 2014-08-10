@@ -61,6 +61,7 @@
   display: inline;
   text-align: left;
   padding: 15px;
+  position: relative;
 }
 
 #news1 li, 
@@ -101,6 +102,10 @@
   /*margin-bottom: 10px;*/
   color: black;
   bottom: 0;
-  float: left;
+  /*float: left;*/
   border: 1px solid grey;
+  right: 0;
+  float: right;
+  float: bottom;
+  /*position: absolute;*/
 }
