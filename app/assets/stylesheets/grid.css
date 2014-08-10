@@ -118,6 +118,7 @@ h4 {
 .col-md-4 {
   /*background: white;*/
   width: 100%;
+  min-width: 1200px;
   height: 700px;
 /*  float: right;*/
   overflow: hidden;
