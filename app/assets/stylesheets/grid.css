@@ -53,13 +53,13 @@ h4 {
 }
 
 .dividerone {
-  background-image: url('paris.jpg');
+  background-image: url('nyc.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
 
 .dividertwo {
-    background-image: url('nyc.jpg');
+    background-image: url('paris.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
@@ -155,48 +155,6 @@ h4 {
   transition-property: color;
 }
 
-/*NEWS*/
-
-.col-md-5 {
-  height: 600px;
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
-  padding: auto;
-  background: white;
-/*  background-image: url('3.jpg');
-  background-attachment: fixed;
-  background-size: cover;*/
-  border-bottom: 5px solid white;
-}
-
-#news {
-  list-style: none;
-}
-
-#news h3 {
-  font-family: 'Oswald';
-  text-align: justify;
-}
-
-#news p {
-  font-family: 'Oswald';
-  font-size: 20px;
-  text-align: justify;
-}
-
-#news h3 a {
-  color: #D60905;
-  text-align: justify;
-  transition-duration: .5s;
-  transition-property: color;
-}
-
-#news h3 a:hover {
-  color: blue;
-  transition-duration: .5s;
-  transition-property: color;
-}
 
 /*TWITTER*/
 
