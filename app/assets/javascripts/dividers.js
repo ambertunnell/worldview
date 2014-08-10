@@ -3,7 +3,7 @@ $(function () {
   $('.divider').hide();
   $('.about').hide();
 
-  $(".ul-clock").click(function () {
+  $(".clock-row").click(function () {
     $('.divider').show();
     $('.about').show();
   });

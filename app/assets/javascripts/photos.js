@@ -1,9 +1,5 @@
 function photos(location) {
 
-  
-
- 
-
         $('.more-photos').data('flickr-num', 0);
 
         var nyc = "new%20york%20city",
@@ -63,7 +59,6 @@ function photos(location) {
                     
                     // $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail'><a target='_blank' href='" + link +"'><img src=" + image + "></a><button class='save-photo'>Like</button></div></li>");
                     $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link +"'><img style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Like</button></div></li>");
-
 
                 }
                 $('.more-photos').data('flickr-num', 1);
@@ -202,7 +197,7 @@ $(".more-photos").click(function () {
                     var link = "http://flickr.com/photo.gne?id=" + id + "_" + secret + "_n.jpg"
 
                     $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link +"'><img style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Like</button></div></li>");
-                   
+
                     var newNum = loopNum + 1;
                     $('.more-photos').data('flickr-num', newNum);
                 }
