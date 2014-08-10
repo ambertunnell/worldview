@@ -77,6 +77,7 @@ function makeClock (city,coords){
                 $("."+datacity+"-clock .min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate}); 
                 }, 1000 );
                 $( " #clock-container " ).children('div').eq(4).find("h2").text(city);
+                
                 $( " #clock-container " ).children('div').eq(4).show();
                 var built =  $( " #clock-container " ).children('div').eq(4).detach();
                 $( "#clock-container " ).prepend(built);

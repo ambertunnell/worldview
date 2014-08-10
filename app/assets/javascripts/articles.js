@@ -70,8 +70,9 @@ function article (location) {
             }
         });
    
-
-
+}
+$(function () {
+    $('.news-header').hide();
     $("#news").on("click", ".save-article", function (event) {
         event.preventDefault();
 
@@ -103,6 +104,5 @@ function article (location) {
         });
     });
 
-    // Populates dashboard with saved articles when profile link clicked 
    
-}
+});

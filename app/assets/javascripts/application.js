@@ -15,7 +15,6 @@
 //= require bootstrap
 //= require load
 //= require articles
-//= require current_location
 //= require dashboard
 //= require dividers
 //= require weather 
