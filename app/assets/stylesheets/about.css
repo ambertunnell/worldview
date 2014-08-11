@@ -41,8 +41,13 @@
   padding-bottom: 30px;
 }
 
-.about h5 span {
+.about h5 a,
+.about h5 a:visited {
   color: red;
+}
+
+.about h5 a:hover {
+  color: blue;
 }
 
 .contributor {

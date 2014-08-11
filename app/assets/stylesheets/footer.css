@@ -1,7 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
 footer {
 /*  position: absolute;
   bottom: 0;*/
   height: 50px;
   width: 100%;
+}
+
+footer p {
   font-family: 'Oswald';
+  color: black;
+}
+
+footer p a,
+footer, p a:visited {
+  color: red;
+}
+
+footer p a:hover {
+  color: blue;
 }
