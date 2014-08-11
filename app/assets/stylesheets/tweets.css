@@ -1,18 +1,52 @@
-.twitter-header {
-  background-color: rgba(250,250,250, 0.6);
+/*TWITTER*/
+
+.col-md-6 {
+  background: white;
+  width: 100%;
+/*  float: right;*/
+  overflow: auto;
+  margin: 0;
+  padding: auto;
+/*      background-image: url('4.jpg');
+  background-attachment: fixed;
+  background-size: cover;*/
+   border-bottom: 5px solid white;
 }
 
 #twitter {
-  background-color: rgba(250,250,250, 0.6);
-  border-radius: 10px;
+  list-style: none;
 }
 
 #twitter h3 {
-  padding: 10px;
+  font-family: 'Oswald';
+  padding: 10px; 
+  font-size: 22px;
 }
+
+#twitter a,
+#twitter a:visited {
+  color: #D60905;
+  transition-duration: .5s;
+  transition-property: color;
+}
+#twitter a:hover {
+  color: blue;
+  transition-duration: .5s;
+  transition-property: color;
+}
+
+/*.twitter-header {
+  background-color: rgba(250,250,250, 0.6);
+}*/
+
+/*#twitter {
+  background-color: rgba(250,250,250, 0.6);
+}*/
+
 
 .save-tweet {
   margin-left: 15px;
-  color: rgba(250,250,250, 0.6);
+  color: black;
+  border-color: black;
 }
 

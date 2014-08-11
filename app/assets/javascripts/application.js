@@ -14,14 +14,16 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require articles
+//= require tweets
+//= require photos
+//= require user
+
 //= require dashboard
 //= require dividers
 //= require weather 
 //= require nav
 //= require initial_click
-//= require photos
 //= require skycons
-//= require tweets
 //= require clocks
 //= require new_city
 //= require user

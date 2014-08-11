@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     $('.clock-row').on('click', '.ul-clock', function(){
-        var target = $('#news-anchor');
+        var target = $('#weather-anchor');
         if( target.length ) {
             event.preventDefault();
             $('html, body').animate({

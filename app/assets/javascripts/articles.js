@@ -75,6 +75,7 @@ function article (passedCity1) {
                                 URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+country+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)&api-key=" + API_KEY;
                                 // URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+country+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)%20AND%20glocations:("+country+")&api-key=" + API_KEY;   q=countyr and geoloc = country
 
+
                                 console.log("finding more articles by searching only country as query URL= " + URL);
                                 $.ajax({
                                     url: URL,
@@ -127,10 +128,10 @@ function printArticles(response){
 
         if (imagesArray.length > 0){
             var image = "http://www.nytimes.com/" + imagesArray[1].url;
-             $('#news1').append("<li class='article' data-id=" + id + "><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "  " + pubdate + "</p><button class='save-article'>Read later</button></li>");
+             $('#news1').append("<li class='article' data-id=" + id + "><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + pubdate + "</p><p>" + abstract + "</p><button class='save-article'>Read later</button></li>");
         } else {
             var image = "no image available"
-             $('#news1').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "  " + pubdate + "</p><button class='save-article'>Read later</button></li>");
+             $('#news1').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + pubdate + "</p><p>" + abstract + "</p><button class='save-article'>Read later</button></li>");
         }
 
     }
@@ -147,10 +148,10 @@ function printArticles(response){
 
             if (imagesArray.length > 0){
                 var image = "http://www.nytimes.com/" + imagesArray[1].url;
-                 $('#news2').append("<li class='article' data-id=" + id + "><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "  " + pubdate + "</p><button class='save-article'>Read later</button></li>");
+                 $('#news2').append("<li class='article' data-id=" + id + "><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + pubdate + "</p><p>" + abstract + "</p><button class='save-article'>Read later</button></li>");
             } else {
                 var image = "no image available"
-                 $('#news2').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "  " + pubdate + "</p><button class='save-article'>Read later</button></li>");
+                 $('#news2').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + pubdate + "</p><p>" + abstract + "</p><button class='save-article'>Read later</button></li>");
             }
 
         } 
@@ -168,8 +169,9 @@ $(function () {
         event.preventDefault();
 
         var articleTitle = $(this).closest('li').eq(0).find("h3").text();
-        var articleAbstract = $(this).closest('li').eq(0).find("p").eq(0).text();
-        var articlePubdate = $(this).closest('li').eq(0).find("p").eq(1).text();
+        var articlePubdate = $(this).closest('li').eq(0).find("p").eq(0).text();
+        var articleAbstract = $(this).closest('li').eq(0).find("p").eq(1).text();
+        // var newDate = $(this).closest('li').eq(0).find("p").eq(1).text().split("T")[0];
         var articleUrl = $(this).closest('li').eq(0).find("a").attr("href");
         var articleImage = $(this).closest('li').eq(0).find("img").attr("src");
 
