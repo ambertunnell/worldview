@@ -39,16 +39,16 @@
 
   <div class="col-md-9 about" id="creators">
     <center><h4>Created By</h4></center>
-      <div class="contributors">
-        <div class="contributor">
-          <div id="ed">
-          </div>
-         <center> <p>Edward Warren</p></center>
-         <center><%= link_to image_tag('/assets/github.png', height: '25'), '#', target: '_blank' %>
-          <%= link_to image_tag('linkedin.png', height: '25'), '#', target: '_blank' %>
-          <%= link_to image_tag('twitter3.png', height: '25'), '#', target: '_blank' %>
-        </center>
+    <div class="contributors">
+      <div class="contributor">
+        <div id="ed">
         </div>
+       <center> <p>Edward Warren</p></center>
+       <center><%= link_to image_tag('/assets/github.png', height: '25'), '#', target: '_blank' %>
+        <%= link_to image_tag('linkedin.png', height: '25'), '#', target: '_blank' %>
+        <%= link_to image_tag('twitter3.png', height: '25'), 'http://www.twitter.com/ewarren7', target: '_blank' %>
+      </center>
+      </div>
       <div class="contributor">
         <div id="amber">
         </div>
@@ -76,12 +76,13 @@
           <%= link_to image_tag('twitter3.png', height: '25'), 'http://www.twitter.com/benserviss', target: '_blank' %>
         </center>
       </div>
-      <br>
-      <center><h5>worldview is built with...</h5></center>
+
     </div>
+    <center><h5><span>worldview</span> providers users with curated media from thousands of searchable locations around the world using the Twitter, Forecast.io, Weather Underground, Flickr and New York Times APIs. Users can log in through Twitter OAuth, where they will have the ability to save all content to a personalized dashboard. Read more.</h5></center>
   </div>
+
 <%#= render "layouts/footer" %>
 <footer>
-  <center><p>&copy; worldview 2014 | Built with &hearts; by Amber Tunnell, Koren Leslie Cohen, Ben Serviss &amp; Edward Warren</p></center>
+  <center><p>&copy; worldview 2014 | Built with &hearts; by <a href="http://www.twitter.com/ambertunnell" target="_blank">Amber Tunnell</a>, <a href="http://www.twitter.com/korenlc" target="_blank">Koren Leslie Cohen</a>, <a href="http://www.twitter.com/benserviss" target="_blank">Ben Serviss</a> &amp; <a href="http://www.twitter.com/ewarren7" target="_blank">Edward Warren</a></p></center>
 </footer>  
 
