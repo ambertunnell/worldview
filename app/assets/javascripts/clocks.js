@@ -62,7 +62,7 @@ function makeClock (cityobject){
 
                 setInterval( function() {           //SET MINUTES
                 var mins = clockTime(offset).getMinutes();
-                console.log("   City MIN setting to: " + mins + " for " + cityobject.name);
+                //console.log("   City MIN setting to: " + mins + " for " + cityobject.name);
                 var mdegree = mins * 6;
                 var mrotate = "rotate(" + mdegree + "deg)";
                 $("."+datacity+"-clock .min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate}); 
