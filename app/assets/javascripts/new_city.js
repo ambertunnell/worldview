@@ -35,6 +35,9 @@ function submit_new_city(passedInput) {
           } else if (response.RESULTS[i].type === "country" || response.RESULTS[i].lon === "-9999.000000") {
             $("#invalid_city").text("Please enter a city and country");
             console.log("Successful response and marked as a country, not a city")
+          } else if (response.RESULTS[i].name.match(/(international|executive|school)/i)) {
+            $("#invalid_city").text("That right there is an airport, try again");
+            console.log("Successful response and marked as an International airport, not a city")
           }
 
             else {
