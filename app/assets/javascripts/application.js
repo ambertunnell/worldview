@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require load
 //= require articles
 //= require tweets
 //= require photos
@@ -27,3 +26,5 @@
 //= require skycons
 //= require clocks
 //= require new_city
+//= require user
+//= require load

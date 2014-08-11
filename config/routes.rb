@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  post '/cities/get_city' => 'cities#get_city'
+
+  get '/users/get_cities' => 'users#get_cities'
+  
   resources :cities
 
   root 'users#show'
