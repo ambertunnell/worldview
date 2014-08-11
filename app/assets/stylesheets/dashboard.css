@@ -54,11 +54,14 @@ ul {
 
 .col-dashboard-news {
   clear: both;
-  width: 90% !important;
+  width: 90.4% !important;
   display: block;
   border: 1px solid grey;
-  overflow: auto;   
-  background-color: #e7e7e7;  
+  overflow: scroll;
+  height: 500px;     
+  background-color: #fff;  
+  padding: 5px;
+  margin-bottom: 3px;
 }
 
 .dashboard-articles {
@@ -130,14 +133,14 @@ ul {
 }
 
 
-/*****************************************/
+/******************* photos and tweets **********************/
 
 .col-dashboard-photos, .col-dashboard-tweets {
   width: 45% !important;
-  overflow: auto; 
+  overflow: scroll; 
+  height: 500px;
   border: 1px solid grey;
   display: inline-block;
-  margin: 0;
 }
 
 /****** PHOTOS ******/
@@ -145,7 +148,16 @@ ul {
 
 .dashboard-photos li {
   height: 150px;
-  width: 45%;
+  width: 50%;
+  display: inline-block;
+  padding: 5px;
+}
+
+.dashboard-photos .photo {
+  height: 150px;
+}
+
+.dashboard-photos h3 {
   display: inline;
 }
 
@@ -155,19 +167,22 @@ ul {
 
 
 .dashboard-photos li img {
-  height: 100px;
+  height: 150px;
+  float: left;
+  align: center;
+  margin: auto;
 }
 
-.dashboard-photos button {
-  position: relative;
-  float: right;
+.dashboard-photos .photo button {
+  position: absolute;
+  float: left;
   float: bottom;
-  bottom: 0;
-/*  margin-bottom: 20px;*/ 
+/*  bottom: 0;
+  left: 0;
+  margin-left: 15px;
+  margin-bottom: 20px; 
   color: black; 
-  border: 1px solid black;  
-  display: inline;
-  text-wrap: normal;
+  border: 1px solid black;  */
 }
 
 .dashboard-photos button:hover {
@@ -190,6 +205,18 @@ ul {
 
 .dashboard-tweets li {
   text-align: left;
+}
+
+.dashboard-tweets h3 {
+  font-family: Oswald;
+  font-size: 20px;
+  text-align: left !important;  
+}
+
+.dashboard-tweets h3 a {
+  color: #003399 !important;
+  font-size: 20px; 
+  font-family: Oswald;   
 }
 
 .dashboard-tweets button {
@@ -223,7 +250,7 @@ ul {
   color: black;
   line-height: 300px;
   position: absolute;
-  right: -20px;
+  right: 100px;
   text-align: center;
   font-size: 200px;
   top: -20px;
