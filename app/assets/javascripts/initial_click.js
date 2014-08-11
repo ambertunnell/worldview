@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    // scroll to weather on initial click
     $('.clock-row').on('click', '.ul-clock', function(){
         var target = $('#weather-anchor');
         if( target.length ) {
