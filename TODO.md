@@ -4,18 +4,32 @@ worldview
 
 MONDAY
 
-- testing and collect all bugs/feedback items
+- testing and collect all bugs/feedback items (everyone)
+- getting fifth clock back up to clock row (koren)
 - background photo should pull in from flickr (or a map?)
-- finish dashboard
-- reconnect saving/retrieving content items
-- rename ap in twitter auth page
-- general css styling
+- refining article results (edward)
+- refactoring the login status (global variable) (edward)
+  - preventing 'save' buttons from appearing on content if user is not logged in
+- refine twitter results with fallbacks 
+  - results page if there are no results for a search
+- finish dashboard (amber)
+- additional city validation (ben)
+  (done) - reject zipcodes
+  - reject cities already being displayed
+  - make sure user can only have 5 cities at one time
+  - reject countries
+  - reject hurricanes
+  - (low) adding a city when you're not logged in
+  - (next year) autocomplete when adding 3 characters
+- reconnect saving/retrieving content items (ben, later when css is more solid)
+- rename ap in twitter auth page (koren)
+- general css styling (koren)
 - possibly make clock hands white? easier to see on the dark background
   - possibly make night/day clock backgrounds
 - show photos attached to tweets
 - footer & about page (and diagram of ajax calls)
 - tuesday (deploy to heroku to find problems)
-- all github, linkedin, twitter links for all of us to bottom of the page
+(done) - all github, linkedin, twitter links for all of us to bottom of the page
 
 SUNDAY
 

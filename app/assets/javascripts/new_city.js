@@ -4,7 +4,12 @@
     console.log("submitted " + passedInput);
       if (passedInput !== undefined){ 
         var user_input = passedInput;
-      }else{
+      } else if (parseInt($("#new-city").val()) * 0 == 0) {
+        console.log("Input is a number and not a valid city");
+        $("#invalid_city").text("Not a valid city");
+        console.log(("result: "+parseInt($("#new-city").val()) % 2))
+        return false;
+      } else {
         var user_input = $("#new-city").val();     
       }
 
@@ -12,7 +17,6 @@
     $("#invalid_city").append("<span class = 'space'>&nbsp;</span>");
 
       var user_input = $("#new-city").val();
-
 
       console.log("submitted via ajax: " + user_input);
 
@@ -29,9 +33,15 @@
           if (response.RESULTS.length === 0){
             $("#invalid_city").text("Not a valid city");
             console.log("Successful response and marked as undefined")
-          } else {
+          } else if (response.RESULTS[0].type === "country" || response.RESULTS[0].lon === "-9999.000000") {
+            $("#invalid_city").text("Please enter a city");
+            console.log("Successful response and marked as a country, not a city")
+          }
+          // if city is already displayed - check id
+
+
+          else {
           var first_result = response.RESULTS[0].name;
-          $("#invalid_city").text(first_result + " added");
           console.log(response);
           console.log(response.RESULTS);
           var cityname = first_result.match(/(\D+)(,\s+)(\D+)/)[1]
@@ -60,9 +70,14 @@
                 }
             },
             success: function (response) {
-                console.log("Saving city successful.");
-                makeClock(response);
-                
+                if (response == "this city already exists"){
+                  $("#invalid_city").text("You're already tracking that city");
+                  console.log("Saving city denied - city is already on page.");
+                } else {
+                  $("#invalid_city").text(first_result + " added");
+                  console.log("Saving city successful: "+response);
+                  makeClock(response);
+                }
             },
             error: function (response) {
                 console.log("Saving city failed.");
