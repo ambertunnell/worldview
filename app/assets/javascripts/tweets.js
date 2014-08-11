@@ -1,6 +1,5 @@
 function tweets(location) {
 
-   
         $('.twitter-header').show();
         $('#twitter').empty();
 
