@@ -15,7 +15,7 @@ function tweets(location) {
             success: function(response) {
                 console.log("twitter response: "+response);
                 for (var i = 0; i < 10; i++) {
-                    console.log(response);
+                    // console.log(response);
                     var tweet = response[i].text;
 
                     // render hashtags as links
@@ -45,11 +45,21 @@ function tweets(location) {
                     }
 
                     $('#twitter').append("<li><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></li>");
+                    
+                    if (loggedIn == true){
+                        console.log("Show tweet like button.")
+                        $('.save-tweet').show();            
+                      } else {
+                        console.log("Hide tweet like button.")
+                        $('.save-tweet').hide();
+                      }
+
+
                 }
             },
             error: function (response) {
                 console.log("error");
-                console.log(response);
+                // console.log(response);
             }
 
         });

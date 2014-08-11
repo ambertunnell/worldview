@@ -4,35 +4,43 @@ worldview
 
 MONDAY
 
-- testing and collect all bugs/feedback items (everyone)
-- getting fifth clock back up to clock row (koren)
-- background photo should pull in from flickr (or a map?)
-- refining article results (edward)
+PRIORITY
+
 - refactoring the login status (global variable) (edward)
   - preventing 'save' buttons from appearing on content if user is not logged in
+- finish dashboard (amber & koren)
+- fix the container for the 'log in' button in the top right - keeps overflowing
+- check for duplicate news headlines (edward)
+- make sure you only have 5 cities in a session 
+- animate clocks getting added and deleted (ben)
+- look at UTC offset for countries off by minutes and not hours (edward)
+
+OTHERS
+
+  - if you're logged in and save something, when you save out and come back, the 'save' button should be 'saved'
+- testing and collect all bugs/feedback items (everyone)
+- background photo should pull in from flickr (or a map?)
 - refine twitter results with fallbacks 
   - results page if there are no results for a search
-- finish dashboard (amber)
-- additional city validation (ben)
-  (done) - reject zipcodes
-  - reject cities already being displayed
-  - make sure user can only have 5 cities at one time
-  - reject countries
-  - reject hurricanes
   - (low) adding a city when you're not logged in
   - (next year) autocomplete when adding 3 characters
-- reconnect saving/retrieving content items (ben, later when css is more solid)
 - rename ap in twitter auth page (koren)
 - general css styling (koren)
 - possibly make clock hands white? easier to see on the dark background
   - possibly make night/day clock backgrounds
-- show photos attached to tweets
+- show photos attached to tweets (ben)
 - footer & about page (and diagram of ajax calls)
 - tuesday (deploy to heroku to find problems)
-(done) - all github, linkedin, twitter links for all of us to bottom of the page
 
 SUNDAY
 
+(done) - refining article results (edward)
+(done) - additional city validation (ben)
+  (done) - reject zipcodes
+  (done) - reject cities already being displayed
+  (done) - reject countries
+(done) - all github, linkedin, twitter links for all of us to bottom of the page
+(done) - getting fifth clock back up to clock row (koren)
 (done) - finalize domain
 (done) - buy domain
 (done) - add new cities with populated data

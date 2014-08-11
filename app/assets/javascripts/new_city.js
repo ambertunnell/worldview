@@ -27,15 +27,15 @@ function submit_new_city(passedInput) {
         jsonpCallback: "city_results",
         url: "http://autocomplete.wunderground.com/aq?cb=city_results&query=" + user_input,
         dataType: 'jsonp',
-        success: function (response) {
-            if (response.RESULTS.length === 0) {
-                $("#invalid_city").text("Not a valid city");
-                console.log("Successful response and marked as undefined");
-            } else if (response.RESULTS[0].type === "country" || response.RESULTS[0].lon === "-9999.000000") {
-                $("#invalid_city").text("Please enter a city");
-                console.log("Successful response and marked as a country, not a city");
-            }
-            // if city is already displayed - check id
+
+        success: function(response) {
+          if (response.RESULTS.length === 0){
+            $("#invalid_city").text("Not a valid city");
+            console.log("Successful response and marked as undefined")
+          } else if (response.RESULTS[0].type === "country" || response.RESULTS[0].lon === "-9999.000000") {
+            $("#invalid_city").text("Please enter a city and country");
+            console.log("Successful response and marked as a country, not a city")
+          }
 
             else {
                 var first_result = response.RESULTS[0].name;
@@ -48,7 +48,6 @@ function submit_new_city(passedInput) {
                 var country = response.RESULTS[0].c;
                 var lastClock = $(" #clock-container ").children('div').eq(4).data('city');
                 console.log("new city form success: " + first_result + ". Cityname = " + cityname + " and bigger thing= " + bigger_thing);
-
 
 console.log(cityname);
 console.log(lastClock);

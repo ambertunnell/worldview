@@ -64,39 +64,50 @@ function weather1 (location) {
                     precipitation = parseInt(response['currently']['precipProbability']*100);
 
                 var skycons = new Skycons({
-                    "color": "black"});
+                    "color": 'black'});
                 // $(".weather").append(skycons.add("icon1", icon));
                 $(".weather").append('<p><canvas id="icon1" >'+skycon_anim+'</canvas><br>' + temp + ' Degrees<br>' + summary + '<br>' + precipitation + '% Chance of Rain</p>');
                 switch (icon) {
                     case 'partly-cloudy-night':
                         var skycon_anim = skycons.add("icon1", Skycons.PARTLY_CLOUDY_NIGHT);
+                        skycons.color = 'black';
                         break;
                     case 'partly-cloudy-day':
                         var skycon_anim = skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
+                        skycons.color = 'gray';
+                        console.log("color is: "+skycons.color);
                         break;
                     case 'clear-day':
                         var skycon_anim = skycons.add("icon1", Skycons.CLEAR_DAY);
+                        skycons.color = 'yellow';
                         break;
                     case 'clear-night':
                         var skycon_anim = skycons.add("icon1", Skycons.CLEAR_NIGHT);
+                        skycons.color = 'black';
                         break;
                     case 'cloudy':
                         var skycon_anim = skycons.add("icon1", Skycons.CLOUDY);
+                        skycons.color = 'gray';
                         break;
                     case 'rain':
                         var skycon_anim = skycons.add("icon1", Skycons.RAIN);
+                        skycons.color = 'blue';
                         break;
                     case 'sleet':
                         var skycon_anim = skycons.add("icon1", Skycons.SLEET);
+                        skycons.color = 'black';
                         break;
                     case 'snow':
                         var skycon_anim = skycons.add("icon1", Skycons.SNOW);
+                        skycons.color = 'black';
                         break;
                     case 'wind':
                         var skycon_anim = skycons.add("icon1", Skycons.WIND);
+                        skycons.color = 'black';
                         break;
                     case 'fog':
                         var skycon_anim = skycons.add("icon1", Skycons.FOG);
+                        skycons.color = 'gray';
                         break;
                 };
 
@@ -106,7 +117,7 @@ function weather1 (location) {
 
                 $(".weather p").animate({
 
-                    left: "+=40",
+                    left: "+=80",
                     // right: "+=50",
                     // height: "toggle"
                 }, 700, function() {

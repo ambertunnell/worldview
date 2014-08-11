@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('.clock-row').hide().fadeIn(3000);
+    $('.clock-row').hide().fadeIn(1000);
 
     // script to type text in header
     var text = '         Click a clock.    ';
@@ -14,29 +14,11 @@ $(document).ready(function() {
         $('.instructions h2').show().delay(3500).fadeOut();
     });
 
-var nyc_coords = "40.712784,-74.005941",
-        london_coords = "51.507351,-0.127758",
-        hongkong_coords = "22.396428,114.10949700000003", 
-        sydney_coords = "-33.867487,151.20699",
-        paris_coords = "48.856614,2.352222",
-        sanfran_coords = "37.7749295,-122.41941550000001"; 
-
-     // submit_new_city("New York City");
-     // submit_new_city("London");
-     // submit_new_city("Hong Kong");
-     // submit_new_city("Sydney");
-     // submit_new_city("Paris");
-
-    
  
 }); 
 
 function makeClock (cityobject){
-        var d = new Date ();
-        var n = d.getTimezoneOffset();
-        var UTChour = d.getUTCHours();
-
-
+   
         var WEATHER_API_KEY = 'c2ebf0ca079e86eb70261f70d92ce7ce';
         var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + cityobject.lat+","+cityobject.lon;
         var offset;
@@ -44,46 +26,55 @@ function makeClock (cityobject){
             url: URL,
             dataType: 'jsonp',
             success: function (response) {
-                console.log(cityobject.name + " UTC ajax success");
+                console.log(cityobject.name + " UTC ajax success.");
                  var datacity = cityobject.name.toLowerCase().replace(/ /g, '')+cityobject.id;
                 
+                // if clock 4 exists, fade it out
 
                 $( " #clock-container " ).children('div').eq(4).replaceWith("<div class=\""+datacity+"-clock col-md-2 clock\" data-city=\""+cityobject.id+"\"><ul class=\"ul-clock\"><li class=\"exit-clock\"></li><li class=\"sec\"></li><li class=\"hour\"></li><li class=\"min\"></li></ul><center><h2>"+cityobject.name+"</h2></center></div>");
                 $( " #clock-container " ).children('div').eq(4).hide();
 
                 offset = response['offset'];
+                console.log("   City offset: " + cityobject.name+ " " + offset);
+                
+                
+
                 setInterval( function() {
                 var seconds = new Date().getSeconds();
                 var sdegree = seconds * 6;
                 var srotate = "rotate(" + sdegree + "deg)";
-                $("."+datacity+"-clock .sec").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+                $(".clock .sec").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
                 }, 1000 );
                 
-                setInterval( function() {
-                var hours = UTChour + offset;
+                setInterval( function() {           //SET HOUR
+                var hours = clockTime(offset).getHours();
                 if (hours >= 24) {
                   hours -= 24;
                 } else if (hours < 0) {
                   hours -= -24;
                 };
                 
-                var mins = new Date().getMinutes();
+                var mins = clockTime(offset).getMinutes() //get min for hour hand pos
                 var hdegree = hours * 30 + (mins / 2);
                 var hrotate = "rotate(" + hdegree + "deg)";
                 $("."+datacity+"-clock .hour").css({"-moz-transform" : hrotate, "-webkit-transform" : hrotate}); 
                 }, 1000 );
 
-                setInterval( function() {
-                var mins = new Date().getMinutes();
+                setInterval( function() {           //SET MINUTES
+                var mins = clockTime(offset).getMinutes();
+                //console.log("   City MIN setting to: " + mins + " for " + cityobject.name);
                 var mdegree = mins * 6;
                 var mrotate = "rotate(" + mdegree + "deg)";
                 $("."+datacity+"-clock .min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate}); 
                 }, 1000 );
                 
+                //SET NAME OF CITY BELOW CLOCK
                 $( " #clock-container " ).children('div').eq(4).find("h2").text(cityobject.name);
                 
-                $( " #clock-container " ).children('div').eq(4).show();
-                var built =  $( " #clock-container " ).children('div').eq(4).detach();
+                $( " #clock-container " ).children('div').eq(4).fadeIn(1200,function(){});
+
+                //MOVE BUILT CLOCK from 5th pos to 1st
+                var built = $( " #clock-container " ).children('div').eq(4).detach();
                 $( "#clock-container " ).prepend(built);
                 
 
@@ -97,5 +88,31 @@ function makeClock (cityobject){
         });    
         
    }//end makeclock function
+
+   function clockTime(cityUTCOffset){
+                
+                
+                var today= new Date();
+                var m = today.getUTCMinutes();
+                var h = today.getUTCHours();
+
+                // console.log ("  CURRENT UTC IS " + h + ":" + m);
+                if (cityUTCOffset < 0){
+                    var hoursOff = Math.ceil(cityUTCOffset);
+                    
+                } else {
+                    var hoursOff = Math.floor(cityUTCOffset);
+                      
+                }
+                var minOff = (cityUTCOffset - hoursOff) * 60;
+
+            
+                
+                var cityTime =  new Date ( today );
+                cityTime.setHours ( h + hoursOff);
+                cityTime.setMinutes ( m + minOff);
+                return cityTime;
+                
+   }
 
 
