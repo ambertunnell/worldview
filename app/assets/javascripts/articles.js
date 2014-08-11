@@ -125,10 +125,10 @@ function articlePooler(response, fire){ //collect articles until there are at le
     for (var i = 0; i < numberOfArticles; i++) {
         flagDup = false;
         for (b = 0; b < pickedArticles.length; b++) { // loop through existing article for dup titles
-            if (response.response.docs[i].headline.main == pickedArticles[b].headline.main) {flagDup = true}
+            if (response.response.docs[i].headline.main == pickedArticles[b].headline.main) {flagDup = true; console.log ("dup detected. " + response.response.docs[i].headline.main); }
 
         }
-       if (!flagDup){ console.log ("dup detected. " + response.response.docs[i].headline.main); pickedArticles[pickedArticles.length] = response.response.docs[i];}
+       if (!flagDup){pickedArticles[pickedArticles.length] = response.response.docs[i]}
     }
     console.log("Pooler has  " + pickedArticles.length  + " articles and FIRE = " + fire);
     if (pickedArticles.length >= 10 || fire == true){
