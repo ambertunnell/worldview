@@ -98,3 +98,8 @@ button:hover {
   transition-duration: .5s;
   transition-property: background, border-color, color;
 }
+
+#new-city {
+  text-align: center;
+  font-size: 16px;
+}
