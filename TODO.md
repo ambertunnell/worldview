@@ -11,6 +11,7 @@ PRIORITY
 - finish dashboard (amber & koren)
 - fix the container for the 'log in' button in the top right - keeps overflowing
 - check for duplicate news headlines (edward)
+- make sure you only have 5 cities in a session 
 - animate clocks getting added and deleted (ben)
 - look at UTC offset for countries off by minutes and not hours (edward)
 

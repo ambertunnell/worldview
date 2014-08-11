@@ -37,8 +37,6 @@
             $("#invalid_city").text("Please enter a city and country");
             console.log("Successful response and marked as a country, not a city")
           }
-          // if city is already displayed - check id
-
 
           else {
           var first_result = response.RESULTS[0].name;

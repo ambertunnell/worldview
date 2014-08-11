@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('.clock-row').hide().fadeIn(3000);
+    $('.clock-row').hide().fadeIn(1000);
 
     // script to type text in header
     var text = '         Click a clock.    ';
@@ -83,8 +83,8 @@ function makeClock (cityobject){
                 
                 $( " #clock-container " ).children('div').eq(4).find("h2").text(cityobject.name);
                 
-                $( " #clock-container " ).children('div').eq(4).show();
-                var built =  $( " #clock-container " ).children('div').eq(4).detach();
+                $( " #clock-container " ).children('div').eq(4).fadeIn(1200,function(){});
+                var built = $( " #clock-container " ).children('div').eq(4).detach();
                 $( "#clock-container " ).prepend(built);
                 
 
