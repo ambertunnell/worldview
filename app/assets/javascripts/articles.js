@@ -23,14 +23,16 @@ function article (passedCity1) {
                 break;
             default:
                 search = cityName;
-                country = "\""+biggerthing+"\"";
+                country = biggerthing;
             
         };
 
         var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth(); //January is 0 so this will be a month behind
-        var yyyy = today.getFullYear();
+        var past = today.setDate(today.getDate()-15);
+        var pastDate = new Date(past);
+        var dd = pastDate.getDate();
+        var mm = pastDate.getMonth() + 1; //January is 0 so this will be a month behind
+        var yyyy = pastDate.getFullYear();
 
         if(dd<10) {
             dd='0'+dd
@@ -53,11 +55,12 @@ function article (passedCity1) {
             jsonpCallback: 'svc_search_v2_articlesearch',
             success: function (response) {
                 var numberOfArticles = response.response.docs.length;
-                 console.log("Initially found this many articles " + numberOfArticles);
+                 console.log("Initially found this many articles " + numberOfArticles + " URL= " + URL);
 
-               if (numberOfArticles < 5){
-                    console.log("finding more articles by removing geoloc");
-                    URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + search + "%20" + country + "&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)%20&api-key=" + API_KEY;
+               if (numberOfArticles < 5){ //FIRST <5 IF
+                    
+                    URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + search + "%20" + country + "&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)&api-key=" + API_KEY;
+                    console.log("finding more articles by removing geoloc and searching city + bigthing in query. URL= " + URL);
 
                     $.ajax({
                         url: URL,
@@ -67,9 +70,12 @@ function article (passedCity1) {
                         success: function (response) {
                             numberOfArticles = response.response.docs.length;
                             console.log("On 2nd search found this many articles " + numberOfArticles);
-                            if (numberOfArticles < 5){
-                                console.log("finding more articles by searching only country");
-                                URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + country + "&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)%20&api-key=" + API_KEY;
+                            if (numberOfArticles < 5){ //BEGIN 2ND <5 IF
+                                
+                                URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+country+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)&api-key=" + API_KEY;
+                                // URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+country+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)%20AND%20glocations:("+country+")&api-key=" + API_KEY;   q=countyr and geoloc = country
+
+                                console.log("finding more articles by searching only country as query URL= " + URL);
                                 $.ajax({
                                     url: URL,
                                     data: {},
@@ -84,7 +90,7 @@ function article (passedCity1) {
                                         console.log("News ajax query failed.");
                                     }
                                 });
-                            } else {//end end <5 if
+                            } else {//end 2nd <5 if
                                 printArticles(response);
                             }
                         },
@@ -108,7 +114,9 @@ function article (passedCity1) {
 
 function printArticles(response){
     numberOfArticles = response.response.docs.length;
-    for (var i = 0; i < 5; i++) {
+    var loop1;
+    if (numberOfArticles > 5) {loop1 = 5} else {loop1 = numberOfArticles}
+    for (var i = 0; i < loop1; i++) {
         var result = response.response.docs[i];
         var id = response.response.docs[i]._id;
         var title = response.response.docs[i].headline.main;
