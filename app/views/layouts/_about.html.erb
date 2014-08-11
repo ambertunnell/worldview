@@ -1,1 +1,37 @@
-_about.html.erb
+<a id="dashboard-link" href="#dashboard"><%= "worldview" %></a>
+
+<div id="dashboard">
+  <div class="modal-box">
+    <a id="dashboard-xlink" href="#" title="Close" class="close">X</a>
+    <div class="modal-text">
+
+      <center><h4>PERSONAL DASHBOARD</h4></center>
+
+    <div class="dashboard-photo">
+    <center><h4><%= current_user.name %></h4></center>
+      <center><%= image_tag current_user.image %></center>
+    </div>
+    
+    <div style="height: 20px"></div>
+
+    <div class="col-dashboard-news">
+      <center><h4>Favorited Articles</h4></center>
+      <ul class='dashboard-articles'>
+      </ul>
+    </div>  
+
+    <div class="col-dashboard-photos">
+      <center><h4>Favorited Photos</h4></center>
+      <ul class="dashboard-photos">
+      </ul>
+    </div>  
+    
+    <div class="col-dashboard-tweets">  
+      <center><h4>Favorited Tweets</h4></center>
+      <ul class="dashboard-tweets">
+      </ul>
+    </div>  
+
+    </div>
+  </div>
+</div> 
