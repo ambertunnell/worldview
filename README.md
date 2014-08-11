@@ -8,9 +8,6 @@ Rails app that curates media for tens of thousands of searchable cities in the w
 
 ![Alt text](/public/screenshot-photos-section.png "Popular Photos")
 
-## Background
-
-
 
 ## Features
 
@@ -30,6 +27,7 @@ Rails app that curates media for tens of thousands of searchable cities in the w
 
 ## Authors
 
+Koren Leslie Cohen, Edward Warren, Ben Serviss, & Amber Tunnell 
 
 ## License
 
