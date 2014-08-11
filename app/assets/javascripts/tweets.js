@@ -4,7 +4,7 @@ function tweets(location) {
    
         $('.twitter-header').show();
         $('#twitter').empty();
-        console.log("HEY THIS IS "+search_term);
+        
         var URL = "/twitter?location=" + search_term;
 
         $.ajax({

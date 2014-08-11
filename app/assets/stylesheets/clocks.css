@@ -69,6 +69,7 @@ h6 {
   list-style: none;
   transition-property: background;
   transition-duration: .5s;
+  /*background: red;*/
 }
 
 .ul-clock:hover {
@@ -129,7 +130,10 @@ h6 {
 }
 
 .clock {
-  margin-left: 45px;
+  /*margin-left: 45px;*/
+  /*color: pink;*/
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .clock-row h2 {
@@ -172,6 +176,12 @@ h6 {
   border-radius: 50%;
   background-size: cover;
   list-style: none;
+}
+
+input {
+  width: 300px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 
