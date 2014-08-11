@@ -2,38 +2,40 @@ function photos(location) {
 
         $('.more-photos').data('flickr-num', 0);
 
-        var nyc = "new%20york%20city",
-            london = "london%20england",
-            hongkong = "hong%20kong",
-            sydney = "sydney%20australia",
-            paris = "paris%20france",
-            sanfran = "san%20francisco%20ca";    
+        var search = (location.name + "%20" + location.bigger_thing).replace(/ /g,"%20").toLowerCase();
+
+        // var nyc = "new%20york%20city",
+        //     london = "london%20england",
+        //     hongkong = "hong%20kong",
+        //     sydney = "sydney%20australia",
+        //     paris = "paris%20france",
+        //     sanfran = "san%20francisco%20ca";    
 
         $('.photos-header').show();
         $('#flickr').show();
         $('#flickr').empty();
 
   
-        switch (location) {
-            case 'newyork':
-                var search = nyc;
-                break;
-            case 'london':
-                var search = london;
-                break;
-            case 'hongkong':
-                var search = hongkong;
-                break;
-            case 'sydney':
-                var search = sydney;
-                break;
-            case 'paris':
-                var search = paris;
-                break;
-            case 'sanfran':
-                var search = sanfran;
-                break;
-        }
+        // switch (location) {
+        //     case 'newyork':
+        //         var search = nyc;
+        //         break;
+        //     case 'london':
+        //         var search = london;
+        //         break;
+        //     case 'hongkong':
+        //         var search = hongkong;
+        //         break;
+        //     case 'sydney':
+        //         var search = sydney;
+        //         break;
+        //     case 'paris':
+        //         var search = paris;
+        //         break;
+        //     case 'sanfran':
+        //         var search = sanfran;
+        //         break;
+        // }
 
         $.ajax({
             type: "GET",
@@ -107,37 +109,39 @@ $(function () {
 
 $(".more-photos").click(function () {
 
-        var nyc = "new%20york%20city",
-            london = "london%20england",
-            hongkong = "hong%20kong",
-            sydney = "sydney%20australia",
-            paris = "paris%20france",
-            sanfran = "san%20francisco%20ca";    
+        // var nyc = "new%20york%20city",
+        //     london = "london%20england",
+        //     hongkong = "hong%20kong",
+        //     sydney = "sydney%20australia",
+        //     paris = "paris%20france",
+        //     sanfran = "san%20francisco%20ca";    
+
+        var search = $("#current-location").text().replace(" CURRENT LOCATION: ", "").replace(/, /g,"%20").replace(/ /g,"%20").toLowerCase();
 
         $('#flickr').empty();
 
-        var locationstatus = $('#current-location')[0].text;
+        // var locationstatus = $('#current-location')[0].text;
 
-        switch (locationstatus) {
-            case " CURRENT LOCATION: NEWYORK":
-                var search = nyc;
-                break;
-            case " CURRENT LOCATION: LONDON":
-                var search = london;
-                break;
-            case " CURRENT LOCATION: HONG KONG":
-                var search = hongkong;
-                break;
-            case " CURRENT LOCATION: SYDNEY":
-                var search = sydney;
-                break;
-            case " CURRENT LOCATION: PARIS":
-                var search = paris;
-                break;
-            case " CURRENT LOCATION: SAN FRANCISCO":
-                var search = sanfran;
-                break;
-        }
+        // switch (locationstatus) {
+        //     case " CURRENT LOCATION: NEWYORK":
+        //         var search = nyc;
+        //         break;
+        //     case " CURRENT LOCATION: LONDON":
+        //         var search = london;
+        //         break;
+        //     case " CURRENT LOCATION: HONG KONG":
+        //         var search = hongkong;
+        //         break;
+        //     case " CURRENT LOCATION: SYDNEY":
+        //         var search = sydney;
+        //         break;
+        //     case " CURRENT LOCATION: PARIS":
+        //         var search = paris;
+        //         break;
+        //     case " CURRENT LOCATION: SAN FRANCISCO":
+        //         var search = sanfran;
+        //         break;
+        // }
 
         $.ajax({
             type: "GET",

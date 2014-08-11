@@ -1,18 +1,21 @@
 function tweets(location) {
 
+        var search_term = location.name.replace(/ /g,"");
    
         $('.twitter-header').show();
         $('#twitter').empty();
-
-        var URL = "/twitter?location=" + location;
+        console.log("HEY THIS IS "+search_term);
+        var URL = "/twitter?location=" + search_term;
 
         $.ajax({
             url: URL,
+            type: "GET",
             data: {},
             dataType: "json",
-            success: function (response) {
-                // console.log(response);
+            success: function(response) {
+                console.log("twitter response: "+response);
                 for (var i = 0; i < 10; i++) {
+                    console.log(response);
                     var tweet = response[i].text;
 
                     for (var j = 0; j < response[i].entities.hashtags.length; j++) {
