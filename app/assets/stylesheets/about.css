@@ -1,19 +1,21 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 
 .about {
-  background-image: url('4.jpg');
+/*  background-image: url('4.jpg');
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover;*/
   background: white;
   border-bottom: 5px solid white;
-  height: 400px;
+/*  height: 400px;*/
   width: 100%;
+  overflow: auto;
 }
 
 .contributors {
   margin: auto;
   margin-top: 20px;
-  height: 300px;
+  /*height: 300px;*/
+  overflow: auto;
   width: 900px;
 }
 
@@ -26,6 +28,26 @@
   color: black;
   font-size: 20px;
   font-family: 'Oswald';
+}
+
+.about h5 {
+  max-width: 900px;
+  padding: auto;
+  margin: auto;
+  color: black;
+  font-size: 20px;
+  font-family: 'Oswald';
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.about h5 a,
+.about h5 a:visited {
+  color: red;
+}
+
+.about h5 a:hover {
+  color: blue;
 }
 
 .contributor {
