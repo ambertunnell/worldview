@@ -178,6 +178,12 @@ h6 {
   list-style: none;
 }
 
+input {
+  width: 300px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 
 
 
