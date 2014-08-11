@@ -8,6 +8,7 @@ $(function () {
   $('#flickr').hide();
   $('.divider').hide();
   $('.about').hide();
+  $('footer').hide();
 
   $.ajax({
         type: "GET",
@@ -54,6 +55,7 @@ $(function () {
 
     $('.divider').show();
     $('.about').show();
+    $('footer').show();
 
 
 
