@@ -106,7 +106,7 @@ function weather1 (location) {
 
                 $(".weather p").animate({
 
-                    left: "+=30",
+                    left: "+=40",
                     // right: "+=50",
                     // height: "toggle"
                 }, 700, function() {
