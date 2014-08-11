@@ -14,7 +14,7 @@ function tweets(location) {
             dataType: "json",
             success: function(response) {
                 console.log("twitter response: "+response);
-                for (var i = 0; i < 10; i++) {
+                for (var i = 0; i < response.length; i++) {
                     // console.log(response);
                     var tweet = response[i].text;
 

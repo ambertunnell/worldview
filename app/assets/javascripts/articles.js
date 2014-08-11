@@ -119,10 +119,16 @@ function article (passedCity1) {
 
 
 function articlePooler(response, fire){ //collect articles until there are at least 10. Passed most geo specific articles first 
-    numberOfArticles = response.response.docs.length;
+    var numberOfArticles = response.response.docs.length;
+    var flagDup;
     console.log("Pooler passed " + numberOfArticles + " articles");
     for (var i = 0; i < numberOfArticles; i++) {
-        pickedArticles[pickedArticles.length] = response.response.docs[i]
+        flagDup = false;
+        for (b = 0; b < pickedArticles.length; b++) { // loop through existing article for dup titles
+            if (response.response.docs[i].headline.main == pickedArticles[b].headline.main) {flagDup = true}
+
+        }
+       if (!flagDup){ console.log ("dup detected. " + response.response.docs[i].headline.main); pickedArticles[pickedArticles.length] = response.response.docs[i];}
     }
     console.log("Pooler has  " + pickedArticles.length  + " articles and FIRE = " + fire);
     if (pickedArticles.length >= 10 || fire == true){
