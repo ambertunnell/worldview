@@ -34,7 +34,7 @@
             $("#invalid_city").text("Not a valid city");
             console.log("Successful response and marked as undefined")
           } else if (response.RESULTS[0].type === "country" || response.RESULTS[0].lon === "-9999.000000") {
-            $("#invalid_city").text("Please enter a city");
+            $("#invalid_city").text("Please enter a city and country");
             console.log("Successful response and marked as a country, not a city")
           }
           // if city is already displayed - check id
