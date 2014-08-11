@@ -9,7 +9,7 @@ PRIORITY
 - finish dashboard (amber & koren)
 - fix the container for the 'log in' button in the top right - keeps overflowing (koren)
 - check for duplicate news headlines (edward)
-- add international and school filter to city locations
+- add international and school filter to city locations (ben)
   - if there's an int'l or school, go to the next array result
 - articles won't display if the article array is less than 10
 
