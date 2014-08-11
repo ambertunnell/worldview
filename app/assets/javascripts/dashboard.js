@@ -36,9 +36,9 @@ $(function () {
                 var image = response[i].image;
 
                 if (image != null) {
-                  $('#dashboard .dashboard-articles').append("<li class='my-article'><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p class='dashboard-pubdate'>" + pubdate + "</p><br><p>" + abstract + "</p><button class='remove-article'>Remove</button></li>");
+                  $('#dashboard .dashboard-articles').append("<li class='my-article'><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p class='dashboard-pubdate'>" + pubdate + "</p><p>" + abstract + "</p><button class='remove-article'>Remove</button></li>");
                 } else {
-                $('#dashboard .dashboard-articles').append("<li class='my-article'><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p class='dashboard-pubdate'>" + pubdate + "</p><br><p>" + abstract + "</p><button class='remove-article'>Remove</button></li>");
+                $('#dashboard .dashboard-articles').append("<li class='my-article'><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p class='dashboard-pubdate'>" + pubdate + "</p><p>" + abstract + "</p><button class='remove-article'>Remove</button></li>");
                 }
 
             }
@@ -95,7 +95,7 @@ $(function () {
                 var link = response[i].link;
                 console.log(url);
                 console.log(link);
-                $('#dashboard .dashboard-photos').append("<li class='photo'><h3>" + "<a target='_blank' href='" + link + "'>" + title + "</h3><p>" + "<img src=" + url + "> </p></a><button class='remove-photo'>Remove.</li></button></p>");
+                $('#dashboard .dashboard-photos').append("<li class='photo'><a target='_blank' href='" + link + "'><img src=" + url + "></a><button class='remove-photo'>Remove.</li></button></p>");
             }
         },
         error: function (response) {
