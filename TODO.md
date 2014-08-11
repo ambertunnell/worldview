@@ -2,15 +2,27 @@ News Navigator
 News Sprint | NewSprint
 worldview
 
+MONDAY
+
+- testing and collect all bugs/feedback items
+- background photo should pull in from flickr (or a map?)
+- finish dashboard
+- reconnect saving/retrieving content items
+- rename ap in twitter auth page
+- general css styling
+- possibly make clock hands white? easier to see on the dark background
+  - possibly make night/day clock backgrounds
+- show photos attached to tweets
+- footer & about page (and diagram of ajax calls)
+- tuesday (deploy to heroku to find problems)
+- all github, linkedin, twitter links for all of us to bottom of the page
+
 SUNDAY
 
-- testing
-- finalize domain
-- buy domain
-- add new cities with populated data
-- more css revisions
-- background photo should pull in from flickr (or something)
-- redo dashboard
+(done) - finalize domain
+(done) - buy domain
+(done) - add new cities with populated data
+(done) - more css revisions
 
 QUESTION
 

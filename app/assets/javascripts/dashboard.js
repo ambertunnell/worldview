@@ -31,14 +31,14 @@ $(function () {
             for (var i = 0; i < response.length; i++) {
                 var url = response[i].url;
                 var title = response[i].title;
-                var pubdate = response[i].pubdate;
+                var pubdate = response[i].pubdate.split("T")[0];
                 var abstract = response[i].abstract;
                 var image = response[i].image;
 
                 if (image != null) {
-                  $('#dashboard .dashboard-articles').append("<li class='my-article'><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><img src=" + image + "><p>" + abstract + "</p><p>" + pubdate + "</p><button class='remove-article'>Remove</button></li>");
+                  $('#dashboard .dashboard-articles').append("<li class='my-article'><img src=" + image + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p class='dashboard-pubdate'>" + pubdate + "</p><br><p>" + abstract + "</p><button class='remove-article'>Remove</button></li>");
                 } else {
-                $('#dashboard .dashboard-articles').append("<li class='my-article'><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + abstract + "</p><p>" + pubdate + "</p><button class='remove-article'>Remove</button></li>");
+                $('#dashboard .dashboard-articles').append("<li class='my-article'><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p class='dashboard-pubdate'>" + pubdate + "</p><br><p>" + abstract + "</p><button class='remove-article'>Remove</button></li>");
                 }
 
             }
