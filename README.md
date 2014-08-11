@@ -6,6 +6,7 @@ Rails app that curates media for tens of thousands of searchable cities in the w
 
 ## Screenshots
 
+![Alt text](/public/screenshot-photos.png "Popular Photos")
 
 ## Background
 
