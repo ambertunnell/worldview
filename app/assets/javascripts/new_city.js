@@ -18,7 +18,6 @@
 
       var user_input = $("#new-city").val();
 
-
       console.log("submitted via ajax: " + user_input);
 
       function city_results(json) {
@@ -43,7 +42,6 @@
 
           else {
           var first_result = response.RESULTS[0].name;
-          $("#invalid_city").text(first_result + " added");
           console.log(response);
           console.log(response.RESULTS);
           var cityname = first_result.match(/(\D+)(,\s+)(\D+)/)[1]
@@ -72,9 +70,14 @@
                 }
             },
             success: function (response) {
-                console.log("Saving city successful.");
-                makeClock(response);
-                
+                if (response == "this city already exists"){
+                  $("#invalid_city").text("You're already tracking that city");
+                  console.log("Saving city denied - city is already on page.");
+                } else {
+                  $("#invalid_city").text(first_result + " added");
+                  console.log("Saving city successful: "+response);
+                  makeClock(response);
+                }
             },
             error: function (response) {
                 console.log("Saving city failed.");
