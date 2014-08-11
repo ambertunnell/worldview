@@ -5,7 +5,7 @@
 Rails app that curates media for tens of thousands of searchable cities in the world. 
 
 ## Screenshots
-
+<img src="screenshot-photos.png">
 
 ## Background
 
