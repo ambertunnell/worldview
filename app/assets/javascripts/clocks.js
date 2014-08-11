@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('.clock-row').hide().fadeIn(3000);
+    $('.clock-row').hide().fadeIn(1000);
 
     // script to type text in header
     var text = '         Click a clock.    ';
@@ -47,6 +47,7 @@ function makeClock (cityobject){
                 console.log(cityobject.name + " UTC ajax success");
                  var datacity = cityobject.name.toLowerCase().replace(/ /g, '')+cityobject.id;
                 
+                // if clock 4 exists, fade it out
 
                 $( " #clock-container " ).children('div').eq(4).replaceWith("<div class=\""+datacity+"-clock col-md-2 clock\" data-city=\""+cityobject.id+"\"><ul class=\"ul-clock\"><li class=\"exit-clock\"></li><li class=\"sec\"></li><li class=\"hour\"></li><li class=\"min\"></li></ul><center><h2>"+cityobject.name+"</h2></center></div>");
                 $( " #clock-container " ).children('div').eq(4).hide();
@@ -82,8 +83,8 @@ function makeClock (cityobject){
                 
                 $( " #clock-container " ).children('div').eq(4).find("h2").text(cityobject.name);
                 
-                $( " #clock-container " ).children('div').eq(4).show();
-                var built =  $( " #clock-container " ).children('div').eq(4).detach();
+                $( " #clock-container " ).children('div').eq(4).fadeIn(1200,function(){});
+                var built = $( " #clock-container " ).children('div').eq(4).detach();
                 $( "#clock-container " ).prepend(built);
                 
 
