@@ -17,7 +17,6 @@ $(function () {
             $('.save-tweet').hide();
             $('.save-article').hide();
             $('.save-photo').hide();
-            
           }
         },
         error: function (response){
