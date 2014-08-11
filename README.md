@@ -2,7 +2,7 @@
 
 ## Description
 
-Add a short description of your app.
+Rails app that curates media for tens of thousands of searchable cities in the world. 
 
 ## Screenshots
 
@@ -15,7 +15,10 @@ like?
 
 ## Features
 
-Bullet point some of the key features of your app here.
++ Utilized The New York Times, Flickr, Twitter, Weather Underground, and Weather Forecast.io APIs to serve customized, curated content, including major world news, photos, and tweets
++ Integrated Ajax to allow users to save articles, photos, and other media to their personal dashboard
++ Implemented OAuth 1.1 to allow users to login through their Twitter account 
++ Used Ajax and jQuery animations to deliver a dynamic and interactive user experience
 
 ## Usage
 
