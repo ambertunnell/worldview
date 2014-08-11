@@ -4,7 +4,12 @@
     console.log("submitted " + passedInput);
       if (passedInput !== undefined){ 
         var user_input = passedInput;
-      }else{
+      } else if (parseInt($("#new-city").val()) * 0 == 0) {
+        console.log("Input is a number and not a valid city");
+        $("#invalid_city").text("Not a valid city");
+        console.log(("result: "+parseInt($("#new-city").val()) % 2))
+        return false;
+      } else {
         var user_input = $("#new-city").val();     
       }
 
@@ -29,7 +34,12 @@
           if (response.RESULTS.length === 0){
             $("#invalid_city").text("Not a valid city");
             console.log("Successful response and marked as undefined")
-          } else {
+          } 
+          // if city is already displayed - check id
+          // if city is not a country
+
+
+          else {
           var first_result = response.RESULTS[0].name;
           $("#invalid_city").text(first_result + " added");
           console.log(response);
