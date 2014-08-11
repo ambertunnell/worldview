@@ -11,8 +11,9 @@ class CitiesController < ApplicationController
    
     unless @user.cities.find_by(lat: city_params[:lat], lon: city_params[:lon])
       @user.cities << @city
-      del_city_id = City.find(city_params[:lastClock]).id
+      del_city_id = city_params[:lastClock].to_i
       CityUser.find_by(user_id: @user.id, city_id: del_city_id).destroy
+      
       render json: @city
     else
       render json: "this city already exists".to_json
@@ -35,7 +36,6 @@ class CitiesController < ApplicationController
   end
 
   def get_city
-    # binding.pry
     @city = City.find(params[:id])
     render json: @city.to_json
   end
