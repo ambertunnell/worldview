@@ -10,18 +10,19 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
+//= require user
 //= require bootstrap
 //= require articles
 //= require tweets
 //= require photos
-//= require user
 //= require dashboard
 //= require weather 
 //= require nav
 //= require skycons
 //= require clocks
 //= require new_city
-//= require user
 //= require load
+
