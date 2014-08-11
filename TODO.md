@@ -2,15 +2,21 @@ News Navigator
 News Sprint | NewSprint
 worldview
 
-SUNDAY
+MONDAY
 
-- testing
-- finalize domain
-- buy domain
-- add new cities with populated data
-- more css revisions
+- testing and collect all bugs/feedback items
 - background photo should pull in from flickr (or something)
 - redo dashboard
+- rename ap in twitter auth page
+- show photos attached to tweets
+- tuesday (deploy to heroku to find problems)
+
+SUNDAY
+
+(done) - finalize domain
+(done) - buy domain
+(done) - add new cities with populated data
+(done) - more css revisions
 
 QUESTION
 
