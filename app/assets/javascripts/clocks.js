@@ -57,7 +57,7 @@ function makeClock (cityobject){
                 var seconds = new Date().getSeconds();
                 var sdegree = seconds * 6;
                 var srotate = "rotate(" + sdegree + "deg)";
-                $("."+datacity+"-clock .sec").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+                $(".clock .sec").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
                 }, 1000 );
                 
                 setInterval( function() {
