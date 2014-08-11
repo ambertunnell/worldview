@@ -155,8 +155,8 @@ function printArticles(response){
             }
 
         } 
-        $('#news').hide();
-        $('#news').slideDown(5000);
+        // $('#news').hide();
+        // $('#news').slideDown(5000);
     }
 
 }

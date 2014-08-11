@@ -1,4 +1,4 @@
-// script nav fade in and out
+// nav fade in and out
 (function($) {
     $(document).ready(function(){
 
@@ -15,7 +15,7 @@
 
 $(document).ready(function(){
 
-    // scroll to anchors element script
+    // scroll to top of page
     $('a[href^="#top"]').on('click', function(event) {
         var target = $( $(this).attr('href') );
         if( target.length ) {
@@ -26,7 +26,7 @@ $(document).ready(function(){
         }
     });
 
-    // scroll to anchors element script
+    // scroll to weather
     $('a[href^="#weather-anchor"]').on('click', function(event) {
         var target = $( $(this).attr('href') );
         if( target.length ) {
@@ -37,7 +37,7 @@ $(document).ready(function(){
         }
     });
 
-    // scroll to anchors element script
+    // scroll to photos
     $('a[href^="#photos-anchor"]').on('click', function(event) {
         var target = $( $(this).attr('href') );
         if( target.length ) {
@@ -48,7 +48,7 @@ $(document).ready(function(){
         }
     });
 
-    // scroll to anchors element script
+    // scroll to news
     $('a[href^="#news-anchor"]').on('click', function(event) {
         var target = $( $(this).attr('href') );
         if( target.length ) {
@@ -59,7 +59,7 @@ $(document).ready(function(){
         }
     });
 
-    // scroll to anchors element script
+    // scroll to tweets
     $('a[href^="#tweets-anchor"]').on('click', function(event) {
         var target = $( $(this).attr('href') );
         if( target.length ) {

@@ -48,5 +48,47 @@
   margin-left: 15px;
   color: black;
   border-color: black;
+  float: right;
+  display: inline;
 }
+
+.col-md-6 ul li {
+  width: 48%;
+  height: 175px;
+  float: left;
+  display: inline;
+  text-align: left;
+  border: 1px solid grey;
+  margin: 5px;
+  overflow: hidden;
+  /*border-radius: 5px;*/
+  padding: 10px;
+  padding: auto;
+  padding-bottom: 15px;
+
+}
+
+.col-md-6 ul li h3 {
+  text-align: left;
+}
+
+/*<li><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></li>
+tweet = <a href="">some kind of content - either the text, hashtag, handle or text</a>*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

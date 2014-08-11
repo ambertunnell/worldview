@@ -18,22 +18,25 @@ function tweets(location) {
                     console.log(response);
                     var tweet = response[i].text;
 
+                    // render hashtags as links
                     for (var j = 0; j < response[i].entities.hashtags.length; j++) {
                         var hash = response[i].entities.hashtags[j].text;
                         tweet = tweet.replace("#" + hash, "<a href=\"http://twitter.com/search?q=%23" + hash + "\" target=\"_blank\">" + "#" + hash + "</a>");
                     }
 
+                    // render handles as links
                     for (var j = 0; j < response[i].entities.user_mentions.length; j++) {
                         var mentions = response[i].entities.user_mentions[j].screen_name;
                         tweet = tweet.replace("@" + mentions, "<a href=\"http://twitter.com/search?q=%40" + mentions + "\" target=\"_blank\">" + "@" + mentions + "</a>");
                     }
 
+                    // render urls as clickable links
                     for (var j = 0; j < response[i].entities.urls.length; j++) {
                         var url = response[i].entities.urls[j].url;
-                        var eurl = response[i].entities.urls[j].expanded_url;
-                        tweet = tweet.replace(url, "<a href=\"" + eurl + "\" target=\"_blank\">" + eurl + "</a>");
+                        tweet = tweet.replace(url, "<a href=\"" + url + "\" target=\"_blank\">" + url + "</a>");
                     }
 
+                    // render media urls as clickanle links
                     if (response[i].entities.media !== undefined) {
                         for (var j = 0; j < response[i].entities.media.length; j++) {
                             var url = response[i].entities.media[j].url;
