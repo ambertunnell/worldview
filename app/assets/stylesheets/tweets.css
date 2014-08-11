@@ -30,7 +30,7 @@
   transition-property: color;
 }
 #twitter a:hover {
-  color: blue;
+  color: #003399;
   transition-duration: .5s;
   transition-property: color;
 }

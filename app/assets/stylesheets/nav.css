@@ -43,6 +43,7 @@ nav,
 .navbar-inner a:hover,
 .navbar-nav a:hover,
 .navbar-default .navbar-nav > li > a:hover {
+  color: #D60905;  
   transition-duration: .5s;
   transition-property: color;
 }
