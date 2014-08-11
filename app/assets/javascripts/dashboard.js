@@ -95,7 +95,7 @@ $(function () {
                 var link = response[i].link;
                 console.log(url);
                 console.log(link);
-                $('#dashboard .dashboard-photos').append("<li class='photo'><a target='_blank' href='" + link + "'><img src=" + url + "></a><button class='remove-photo'>Remove.</li></button></p>");
+                $('#dashboard .dashboard-photos').append("<li><div class='photo'><a target='_blank' href='" + link + "'><img src=" + url + "></a><button class='remove-photo'>Remove</button></div></li>");
             }
         },
         error: function (response) {
@@ -107,7 +107,7 @@ $(function () {
 
       $(".modal-text").on("click",".remove-photo", function(){
         console.log("Remove photo button clicked");
-        $(this).closest(".photo").slideUp({
+        $(this).closest("li").slideUp({
           // populateDashboard();
         });
         var photoUrl = $(this).closest("li").find("img").attr("src")
