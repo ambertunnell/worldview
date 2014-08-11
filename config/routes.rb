@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  post '/cities/get_city' => 'cities#get_city'
+
+  get '/users/get_cities' => 'users#get_cities'
+  
   resources :cities
 
   root 'users#show'
@@ -9,9 +13,6 @@ Rails.application.routes.draw do
   delete '/tweets' => 'tweets#destroy'
 
   get '/users/signed_in' 
-  get '/users/get_cities' => 'users#get_cities'
-
-  post '/cities/get_city' => 'cities#get_city'
 
   get '/autocomplete/countries' => 'autocomplete#show'
 

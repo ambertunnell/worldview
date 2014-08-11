@@ -1,40 +1,43 @@
 function weather1 (location) {
     var WEATHER_API_KEY = 'c2ebf0ca079e86eb70261f70d92ce7ce';
 
-    var nyc_coords = "40.712784,-74.005941",
-        london_coords = "51.507351,-0.127758",
-        hongkong_coords = "22.396428,114.10949700000003", 
-        sydney_coords = "-33.867487,151.20699",
-        paris_coords = "48.856614,2.352222",
-        sanfran_coords = "37.7749295,-122.41941550000001"; 
+    var lon = location.lon;
+    var lat = location.lat;
+    var coords = lat+","+lon;
+    // var nyc_coords = "40.712784,-74.005941",
+    //     london_coords = "51.507351,-0.127758",
+    //     hongkong_coords = "22.396428,114.10949700000003", 
+    //     sydney_coords = "-33.867487,151.20699",
+    //     paris_coords = "48.856614,2.352222",
+    //     sanfran_coords = "37.7749295,-122.41941550000001"; 
 
 
         $('.weather-header').show();
         $(".weather").empty();
 
        
-        var coords;
+        // var coords;
 
-        switch (location) {
-            case 'newyork':
-                coords = nyc_coords;
-                break;
-            case 'london':
-                coords = london_coords;
-                break;
-            case 'hongkong':
-                coords = hongkong_coords;
-                break;
-            case 'sydney':
-                coords = sydney_coords;
-                break;
-            case 'paris':
-                coords = paris_coords;
-                break;
-            case 'sanfran':
-                coords = sanfran_coords;
-                break;
-        };
+        // switch (location) {
+        //     case 'newyork':
+        //         coords = nyc_coords;
+        //         break;
+        //     case 'london':
+        //         coords = london_coords;
+        //         break;
+        //     case 'hongkong':
+        //         coords = hongkong_coords;
+        //         break;
+        //     case 'sydney':
+        //         coords = sydney_coords;
+        //         break;
+        //     case 'paris':
+        //         coords = paris_coords;
+        //         break;
+        //     case 'sanfran':
+        //         coords = sanfran_coords;
+        //         break;
+        // };
 
         var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + coords;
         
