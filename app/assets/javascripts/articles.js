@@ -1,3 +1,4 @@
+ var pickedArticles = [];
 function article (passedCity1) {
 
         $('.news-header').show();
@@ -54,13 +55,16 @@ function article (passedCity1) {
             dataType: "jsonp",
             jsonpCallback: 'svc_search_v2_articlesearch',
             success: function (response) {
+                pickedArticles = []; //reset this glob var so it doesnt have articles from other cities
                 var numberOfArticles = response.response.docs.length;
-                 console.log("Initially found this many articles " + numberOfArticles + " URL= " + URL);
-
-               if (numberOfArticles < 5){ //FIRST <5 IF
+                console.log("Initially found this many articles " + numberOfArticles);
+                articlePooler(response);
+                
+               if (numberOfArticles < 10){ //FIRST <10 IF
                     
+                    // pickedArticles[pickedArticles.length] = 
                     URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + search + "%20" + country + "&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)&api-key=" + API_KEY;
-                    console.log("finding more articles by removing geoloc and searching city + bigthing in query. URL= " + URL);
+                    console.log("finding more articles by removing geoloc and searching city + bigthing in query.");
 
                     $.ajax({
                         url: URL,
@@ -70,13 +74,14 @@ function article (passedCity1) {
                         success: function (response) {
                             numberOfArticles = response.response.docs.length;
                             console.log("On 2nd search found this many articles " + numberOfArticles);
+                            articlePooler(response);
                             if (numberOfArticles < 5){ //BEGIN 2ND <5 IF
                                 
                                 URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+country+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)&api-key=" + API_KEY;
                                 // URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+country+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)%20AND%20glocations:("+country+")&api-key=" + API_KEY;   q=countyr and geoloc = country
 
 
-                                console.log("finding more articles by searching only country as query URL= " + URL);
+                                console.log("finding more articles by searching only country as query");
                                 $.ajax({
                                     url: URL,
                                     data: {},
@@ -85,14 +90,14 @@ function article (passedCity1) {
                                     success: function (response) {
                                         numberOfArticles = response.response.docs.length;
                                         console.log("On 3nd search found this many articles " + numberOfArticles);
-                                        printArticles(response);
+                                        articlePooler(response);
                                     },
                                      error: function (response) {
                                         console.log("News ajax query failed.");
                                     }
                                 });
                             } else {//end 2nd <5 if
-                                printArticles(response);
+                                // articlePooler(response);
                             }
                         },
                         error: function (response) {
@@ -101,7 +106,7 @@ function article (passedCity1) {
                     });
                 } else { //end if articles < 5
 
-                    printArticles(response);
+                    // articlePooler(response);
                }
 
             },
@@ -112,19 +117,37 @@ function article (passedCity1) {
    
 }
 
-
-function printArticles(response){
+function articlePooler(response){ //collect articles until there are at least 10. Passed most geo specific articles first 
     numberOfArticles = response.response.docs.length;
-    var loop1;
-    if (numberOfArticles > 5) {loop1 = 5} else {loop1 = numberOfArticles}
-    for (var i = 0; i < loop1; i++) {
-        var result = response.response.docs[i];
-        var id = response.response.docs[i]._id;
-        var title = response.response.docs[i].headline.main;
-        var abstract = response.response.docs[i].snippet;
-        var url = response.response.docs[i].web_url;
-        var pubdate = response.response.docs[i].pub_date.split("T")[0];
-        var imagesArray = response.response.docs[i].multimedia;
+    console.log("Pooler passed " + numberOfArticles + " articles");
+    for (var i = 0; i < numberOfArticles; i++) {
+        pickedArticles[pickedArticles.length] = response.response.docs[i]
+    }
+    if (pickedArticles.length >= 10){
+        printArticles();
+    }
+
+}
+
+
+
+
+
+function printArticles(){
+    numberOfArticles = pickedArticles.length;
+    var response = pickedArticles;
+    
+ 
+    
+    for (var i = 0; i < 10; i=i+2) {
+        console.log("first for loop i = " + i);
+        var result = response[i];
+        var id = response[i]._id;
+        var title = response[i].headline.main;
+        var abstract = response[i].snippet;
+        var url = response[i].web_url;
+        var pubdate = response[i].pub_date.split("T")[0];
+        var imagesArray = response[i].multimedia;
 
         if (imagesArray.length > 0){
             var image = "http://www.nytimes.com/" + imagesArray[1].url;
@@ -137,14 +160,15 @@ function printArticles(response){
     }
 
     if (numberOfArticles > 5) {
-        for (var i = 5; i < numberOfArticles; i++) {
-            var result = response.response.docs[i];
-            var id = response.response.docs[i]._id;
-            var title = response.response.docs[i].headline.main;
-            var abstract = response.response.docs[i].snippet;
-            var url = response.response.docs[i].web_url;
-            var pubdate = response.response.docs[i].pub_date.split("T")[0];
-            var imagesArray = response.response.docs[i].multimedia;
+        for (var i = 1; i < 10; i=i+2) {
+            console.log("Second for loop i = " + i);
+            var result = response[i];
+            var id = response[i]._id;
+            var title = response[i].headline.main;
+            var abstract = response[i].snippet;
+            var url = response[i].web_url;
+            var pubdate = response[i].pub_date.split("T")[0];
+            var imagesArray = response[i].multimedia;
 
             if (imagesArray.length > 0){
                 var image = "http://www.nytimes.com/" + imagesArray[1].url;
