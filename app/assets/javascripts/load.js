@@ -6,6 +6,8 @@ $(function () {
 
   $('.weather-header').hide();
   $('#flickr').hide();
+  $('.divider').hide();
+  $('.about').hide();
 
   $.ajax({
         type: "GET",
@@ -50,6 +52,11 @@ $(function () {
   $('.clock-row').on('click', '.ul-clock', function(){
     var city_id = $(this).closest(".clock").data('city');
 
+    $('.divider').show();
+    $('.about').show();
+
+
+
     $.ajax({
       type: "POST",
       data: {id: city_id},
@@ -80,6 +87,15 @@ $(function () {
     // } else {
     //   var newLocation = location.toUpperCase();
     // }
+
+        // scroll to weather on initial click
+        var target = $('#weather-anchor');
+        if( target.length ) {
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 1000);
+        }
     
   });
 });
