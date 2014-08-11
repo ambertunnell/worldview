@@ -13,6 +13,7 @@ function weather1 (location) {
 
 
         $('.weather-header').show();
+        $('.weather-header h4').show();
         $(".weather").empty();
 
        

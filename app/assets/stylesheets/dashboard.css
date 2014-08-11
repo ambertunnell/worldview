@@ -3,7 +3,7 @@
 #dashboard {
   position: fixed;
   overflow: scroll;
-  background-color: white;  
+  background-color: black;  
   font-family: Arial, Helvetica, sans-serif;
   top: 0;
   right: 0;
@@ -36,6 +36,7 @@
 #dashboard h4 {
   font-size: 35px;
   padding: 10px;
+  color: white;
 }
 
 ul {
@@ -144,7 +145,7 @@ ul {
 
 .col-dashboard-photos, .col-dashboard-tweets {
   width: 45% !important;
-  overflow: scroll; 
+  overflow: auto; 
   height: 550px;
   border: 1px solid grey;
   display: inline-block;
