@@ -49,7 +49,6 @@
          <a href="" target="_blank"><%= image_tag 'twitter3.png', height: "30" %></a>
          </center>
         </div>
-
       <div class="contributor">
         <div id="amber">
         </div>
@@ -59,14 +58,13 @@
          <a href="" target="_blank"><%= image_tag 'twitter3.png', height: "30" %></a>
          </center>
         </div>
-
       <div class="contributor">
         <div id="koren">
         </div>
         <center><p>Koren Leslie Cohen</p></center>
-        <center><a href="http://github.com/KorenLeslieCohen" target="_blank"><%= image_tag 'github.png', height: "25" %></a>
-        <a href="https://www.linkedin.com/profile/view?id=89988366&trk=nav_responsive_tab_profile"><%= image_tag 'linkedin.png', height: "25" %></a>
-        <a href="http://twitter.com/korenlc"><%= image_tag 'twitter3.png', height: "30" %></a>
+        <center><%= link_to image_tag('/assets/github.png', height: '25'), 'https://github.com/KorenLeslieCohen/', target: '_blank' %>
+          <%= link_to image_tag('linkedin.png', height: '25'), 'https://www.linkedin.com/pub/koren-leslie-cohen/26/178/726', target: '_blank' %>
+          <%= link_to image_tag('twitter3.png', height: '25'), 'http://www.twitter.com/korenlc', target: '_blank' %>
         </center>
       </div>
 
@@ -74,12 +72,11 @@
         <div id="ben">
         </div>
         <center> <p>Ben Serviss</p></center>
-        <center><a href="" target="_blank"><%= image_tag 'github.png', height: "25" %></a>
-        <a href="" target="_blank"><%= image_tag 'linkedin.png', height: "25" %></a>
-        <a href="" target="_blank"><%= image_tag 'twitter3.png', height: "30" %></a>
+        <center><%= link_to image_tag('/assets/github.png', height: '25'), 'https://github.com/kamoh/', target: '_blank' %>
+          <%= link_to image_tag('linkedin.png', height: '25'), 'http://www.linkedin.com/in/benserviss', target: '_blank' %>
+          <%= link_to image_tag('twitter3.png', height: '25'), 'http://www.twitter.com/benserviss', target: '_blank' %>
         </center>
       </div>
-
     </div>
   </div>
 
