@@ -1,5 +1,6 @@
 var loggedIn;
 var userCities;
+var userCity;
 
 $(function () {
   //things to hide on load
@@ -44,6 +45,7 @@ $(function () {
       data: {id: city_id},
       url: '/cities/get_city',
       success: function(response){
+        userCity = response;
         article(response);
         weather1(response);
         photos(response);
@@ -59,16 +61,6 @@ $(function () {
     })
 
 
-    //set navbar loc
-    // var location = $(this).closest(".clock").data('city');
-
-    // if (location === "hongkong"){
-    //   var newLocation = "HONG KONG";
-    // } else if (location === "newyork"){
-    //   var newLocation = "NEW YORK";
-    // } else {
-    //   var newLocation = location.toUpperCase();
-    // }
 
         // scroll to anchor on initial click
         var target = $('#weather-anchor');

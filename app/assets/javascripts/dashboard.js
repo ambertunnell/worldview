@@ -125,6 +125,8 @@ $(function () {
             success: function(response) {
                 console.log("Photo DELETE request successful");
                 console.log("photo url = " + photoUrl);
+                userPhotos = response;
+                photos(userCity);
             },
             error: function(response) {
                 console.log("Photo DELETE request failed");

@@ -46,6 +46,7 @@ function photos(location) {
                     for (var j = 0; j < userPhotos.length; j++) {
                         if (image === userPhotos[j]) {
                             $("#flickr :last-child button").last().html("Saved");
+                            $("#flickr :last-child button").last().prop("disabled",true);
                         }
                     }
                 }
@@ -66,8 +67,10 @@ function photos(location) {
 
 }
 
-//**************** PHOTO SAVE ******************//
+
 $(function () {
+
+    //**************** PHOTO SAVE ******************//   
     $('.photos-header').hide();
     $("#flickr").on("click", ".save-photo", function (event) {
         event.preventDefault();
@@ -198,4 +201,5 @@ $(function () {
         });
 
     });
-});
+
+}); 

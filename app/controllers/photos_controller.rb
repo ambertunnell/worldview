@@ -38,7 +38,7 @@ class PhotosController < ApplicationController
     
     respond_to do |format|
       if @user.save
-        format.json { render json: @user}
+        format.json { render json: user_photos(@user)}
       else
         format.json { head :no_content }
       end
