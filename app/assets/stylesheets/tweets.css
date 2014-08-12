@@ -3,66 +3,63 @@
 .col-md-6 {
   background: white;
   width: 100%;
-/*  float: right;*/
   overflow: auto;
   margin: 0;
   padding: auto;
-/*      background-image: url('4.jpg');
-  background-attachment: fixed;
-  background-size: cover;*/
-   border-bottom: 5px solid white;
+  border-bottom: 5px solid white;
 }
 
 #twitter {
   list-style: none;
 }
 
-#twitter h3 {
+#twitter h3,
+.individual-tweet h3 {
   font-family: 'Oswald';
   padding: 10px; 
-  font-size: 22px;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
-#twitter a,
-#twitter a:visited {
+.individual-tweet img {
+  width: 100%;
+  padding-top: 5px;
+}
+
+#twitter1 a,
+#twitter1 a:visited,
+#twitter2 a,
+#twitter2 a:visited,
+#twitter3 a,
+#twitter3 a:visited,
+#twitter4 a,
+#twitter4 a:visited {
   color: #D60905;
   transition-duration: .5s;
   transition-property: color;
 }
-#twitter a:hover {
+#twitter1 a:hover,
+#twitter2 a:hover,
+#twitter3 a:hover,
+#twitter4 a:hover  {
   color: #003399;
   transition-duration: .5s;
   transition-property: color;
 }
 
-/*.twitter-header {
-  background-color: rgba(250,250,250, 0.6);
-}*/
-
-/*#twitter {
-  background-color: rgba(250,250,250, 0.6);
-}*/
-
-
 .save-tweet {
-  margin-left: 15px;
+  margin-left: 10px;
   color: black;
   border-color: black;
-  float: right;
   display: inline;
 }
 
 .col-md-6 ul li {
-  width: 48%;
-  height: 175px;
-  float: left;
+  overflow: auto;
   display: inline;
   text-align: left;
-  border: 1px solid grey;
   margin: 5px;
-  overflow: hidden;
-  /*border-radius: 5px;*/
-  padding: 10px;
   padding: auto;
   padding-bottom: 15px;
 
@@ -72,23 +69,36 @@
   text-align: left;
 }
 
-/*<li><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></li>
-tweet = <a href="">some kind of content - either the text, hashtag, handle or text</a>*/
+.individual-tweet {
+  border: 1px solid grey;
+  font-family: 'Oswald';
+  padding: 5px;
+}
 
+.col-md-6 ul li button {
+  background: black;
+  color: white;
+  display: inline;
+}
 
+.col-md-8 {
+  padding: 5px;
+}
 
+#twitter1,
+#twitter2,
+#twitter3,
+#twitter4 {
+  display: inline;
+  position: relative;
+  width: 24%;
+}
 
+#twitter1 {
+  margin-left: 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+#twitter4 {
+  margin-right: 10px;
+}
 

@@ -96,7 +96,7 @@ $(function () {
             event.preventDefault();
             $('html, body').animate({
                 scrollTop: target.offset().top
-            }, 2000);
+            }, 1500);
         }
     
   });
