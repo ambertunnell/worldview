@@ -60,14 +60,15 @@ function weather1 (location) {
                 // }
 
                 var locale = city + " | " + continent,
-                    temp = response['currently']['temperature'],
+                    temp = parseInt(response['currently']['temperature']),
+                    tempc = parseInt((((temp - 32) * 5) / 9)),
                     summary = response['currently']['summary'],
                     precipitation = parseInt(response['currently']['precipProbability']*100);
 
                 var skycons = new Skycons({
                     "color": 'black'});
                 // $(".weather").append(skycons.add("icon1", icon));
-                $(".weather").append('<p><canvas id="icon1" >'+skycon_anim+'</canvas><br>' + temp + ' Degrees<br>' + summary + '<br>' + precipitation + '% Chance of Rain</p>');
+                $(".weather").append('<p><canvas id="icon1" >'+skycon_anim+'</canvas><br>' + temp + ' °F | ' + tempc + ' °C<br>' + summary + '<br>' + precipitation + '% Chance of Rain</p>');
                 switch (icon) {
                     case 'partly-cloudy-night':
                         var skycon_anim = skycons.add("icon1", Skycons.PARTLY_CLOUDY_NIGHT);
