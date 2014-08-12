@@ -181,6 +181,9 @@ ul {
   padding: 10px;
 }
 
+.dash-photo:hover {
+  opacity: .8;
+}
 
 .dashboard-photos li img {
   height: 210px;
@@ -193,9 +196,6 @@ ul {
   margin: auto;
   border: 5px solid white;
   /*height: 200px;*/
-}
-.photo:hover {
-/*  opacity: .8;*/
 }
 
 .dashboard-photos .photo button {
