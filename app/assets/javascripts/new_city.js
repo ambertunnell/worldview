@@ -29,18 +29,25 @@ function submit_new_city(passedInput) {
         dataType: 'jsonp',
         success: function(response) {
           var i = 0;
-          if (response.RESULTS.length === 0){
-            $("#invalid_city").text("Not a valid city");
-            console.log("Successful response and marked as undefined")
-          } else if (response.RESULTS[i].type === "country" || response.RESULTS[i].lon === "-9999.000000") {
-            $("#invalid_city").text("Please enter a city and country");
-            console.log("Successful response and marked as a country, not a city")
-          } else if (response.RESULTS[i].name.match(/(international|executive|school)/i)) {
-            $("#invalid_city").text("That right there is an airport, try again");
-            console.log("Successful response and marked as an International airport, not a city")
-          }
 
-            else {
+          function findCityArray(i) {
+              if (response.RESULTS.length === 0){
+                $("#invalid_city").text("Please enter a valid city");
+                console.log("Successful response and marked as undefined, nothing in the results array")
+                console.log("response: "+response.RESULTS[i]);
+                return;
+              } else if (response.RESULTS[i].type === "country" || response.RESULTS[i].lon === "-9999.000000") {
+                $("#invalid_city").text("Please enter a city and country");
+                console.log("Successful response and marked as a country, not a city");
+                console.log("response: "+response.RESULTS[i]);
+                return;
+              } else if (response.RESULTS[i].name.match(/(international|school|S.A.R.)/i)) {
+                $("#invalid_city").text("That right there is an airport, try again");
+                console.log("Successful response and marked as an International airport, not a city");
+                console.log("response: "+response.RESULTS[i].name);
+                console.log("value of i = "+i++);
+                return findCityArray(i++);
+              } else {
                 var first_result = response.RESULTS[i].name;
                 console.log(response);
                 console.log(response.RESULTS);
@@ -51,25 +58,30 @@ function submit_new_city(passedInput) {
                 var country = response.RESULTS[i].c;
                 var lastClock = $(" #clock-container ").children('div').eq(4).data('city');
                 console.log("new city form success: " + first_result + ". Cityname = " + cityname + " and bigger thing= " + bigger_thing);
+                return [cityname, bigger_thing, lat, lon, country, lastClock];
+                }
 
-console.log(cityname);
-console.log(lastClock);
+            }
+                
+                var cityArray = findCityArray(i);
+
+                console.log("city name: "+cityArray[0]);
+                console.log("last clock: "+cityArray[5]);
 
                 $("#new-city").val("");
                 console.log("finished");
-            }
 
             $.ajax({
                 type: "POST",
                 url: "/cities",
                 data: {
                     city: {
-                        name: cityname,
-                        bigger_thing: bigger_thing,
-                        lat: lat,
-                        lon: lon,
-                        country: country,
-                        lastClock: lastClock
+                        name: cityArray[0],
+                        bigger_thing: cityArray[1],
+                        lat: cityArray[2],
+                        lon: cityArray[3],
+                        country: cityArray[4],
+                        lastClock: cityArray[5]
                     }
                 },
                 success: function (response) {
@@ -77,13 +89,14 @@ console.log(lastClock);
                         $("#invalid_city").text("You're already tracking that city");
                         console.log("Saving city denied - city is already on page.");
                     } else {
-                        $("#invalid_city").text(first_result + " added");
+                        $("#invalid_city").text(cityArray[0] + ", " + cityArray[1] + " added");
                         console.log("Saving city successful: " + response);
                         makeClock(response);
                     }
                 },
                 error: function (response) {
                     console.log("Saving city failed.");
+                    console.log(response);
                 }
             });
         },
