@@ -82,7 +82,7 @@ function tweets(location) {
 }
 $(function () {
     $('.twitter-header').hide();
-    $("#twitter").on("click", ".save-tweet", function (event) {
+    $("#twitter1, #twitter2, #twitter3, #twitter4").on("click", ".save-tweet", function (event) {
         event.preventDefault();
 
         var individual_tweet = $(this).closest('li').find('h3').html();
