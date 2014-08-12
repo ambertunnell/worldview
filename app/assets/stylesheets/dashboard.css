@@ -145,7 +145,7 @@ ul {
 /******************* photos and tweets **********************/
 
 .col-dashboard-tweets {
-  /*width: 45% !important;*/
+  width: 90%;
   overflow: auto; 
   /*height: 550px;*/
   /*border: 1px solid grey;*/
@@ -221,7 +221,6 @@ ul {
 .dashboard-tweets {
   float: left;
   margin: 5px;
-  width: 90%;
 }
 
 
