@@ -9,8 +9,8 @@ PRIORITY
 - finish dashboard (amber & koren)
 - fix the container for the 'log in' button in the top right - keeps overflowing (koren)
 - check for duplicate news headlines (edward)
+- if there is no content (articles, photos, tweets), add a notice and fallback to bigger thing search
 - articles won't display if the article array is less than 10 (edward)
-- fix log in with twitter button so the whole thing is a clickable link
 - testing (ben)
 
 OTHERS
@@ -29,7 +29,9 @@ OTHERS
 - show photos attached to tweets (ben)
 - footer & about page (and diagram of ajax calls)
 - tuesday (deploy to heroku to find problems)
+- adding another login (facebook? linkedin?)
 
+(done) - fix log in with twitter button so the whole thing is a clickable link (ben)
 (done) - add international and school filter to city locations (ben)
   (done) - if there's an int'l or school, go to the next array result
 (done) - look at UTC offset for countries off by minutes and not hours (edward)
