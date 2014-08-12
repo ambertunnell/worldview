@@ -1,4 +1,8 @@
 var pickedArticles = []; //used by article pooler
+var cityName;
+var biggerthing;
+var searchTries = 0;
+
 function article (passedCity1) {
 
         $('.news-header').show();
@@ -7,8 +11,8 @@ function article (passedCity1) {
 
         var search;
         var country;
-        var cityName = passedCity1.name.toLowerCase();
-        var biggerthing = passedCity1.bigger_thing;
+        cityName = passedCity1.name.toLowerCase();
+        biggerthing = passedCity1.bigger_thing;
         switch (cityName) {
             case 'new york city':
                 search = "new+york+city";
@@ -28,96 +32,66 @@ function article (passedCity1) {
             
         };
 
-        var today = new Date();
-        var past = today.setDate(today.getDate()-15);
-        var pastDate = new Date(past);
-        var dd = pastDate.getDate();
-        var mm = pastDate.getMonth() + 1; //January is 0 so this will be a month behind
-        var yyyy = pastDate.getFullYear();
+            
+       articleLoop();
 
-        if(dd<10) {
-            dd='0'+dd
-        } 
-
-        if(mm<10) {
-            mm='0'+mm
-        } 
         
-        past_month = yyyy+mm+dd;
-        
-        var API_KEY = "dd74b110c07677ce3e0c5c1f94642e26:10:31738630";
-        var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + search + "&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)%20AND%20glocations:("+country+")&api-key=" + API_KEY;
-       
-
-        $.ajax({
-            url: URL,
-            data: {},
-            dataType: "jsonp",
-            jsonpCallback: 'svc_search_v2_articlesearch',
-            success: function (response) {
-                pickedArticles = []; //reset this glob var so it doesnt have articles from other cities
-                var numberOfArticles = response.response.docs.length;
-                console.log("Initially found this many articles " + numberOfArticles);
-                articlePooler(response);
-                
-               if (numberOfArticles < 10){ //FIRST <10 IF
-                    
-                    // pickedArticles[pickedArticles.length] = 
-                    URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + search + "%20" + country + "&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)&api-key=" + API_KEY;
-                    console.log("finding more articles by removing geoloc and searching city + bigthing in query.");
-
-                    $.ajax({
-                        url: URL,
-                        data: {},
-                        dataType: "jsonp",
-                        jsonpCallback: 'svc_search_v2_articlesearch',
-                        success: function (response) {
-                            numberOfArticles = response.response.docs.length;
-                            console.log("On 2nd search found this many articles " + numberOfArticles);
-                            totArt = articlePooler(response);
-                            if (totArt < 10){ //BEGIN 2ND <5 IF
-                                
-                                URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+country+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)&api-key=" + API_KEY;
-                                // URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+country+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)%20AND%20glocations:("+country+")&api-key=" + API_KEY;   q=countyr and geoloc = country
-
-
-                                console.log("finding more articles by searching only country as query");
-                                $.ajax({
-                                    url: URL,
-                                    data: {},
-                                    dataType: "jsonp",
-                                    jsonpCallback: 'svc_search_v2_articlesearch',
-                                    success: function (response) {
-                                        numberOfArticles = response.response.docs.length;
-                                        console.log("On 3nd search found this many articles " + numberOfArticles);
-                                        articlePooler(response,true);
-                                    },
-                                     error: function (response) {
-                                        console.log("News ajax query failed.");
-                                    }
-                                });
-                            } else {//end 2nd <5 if
-                                // articlePooler(response);
-                            }
-                        },
-                        error: function (response) {
-                         console.log("News ajax query failed.");
-                        }
-                    });
-                } else { //end if articles < 5
-
-                    // articlePooler(response);
-               }
-
-            },
-            error: function (response) {
-                console.log("News ajax query failed.");
-            }
-        });
    
 }
 
+//loop through the term array until there are 10 articles. relies on global vars to track tries
+function articleLoop(){
+    var terms = [[cityName,biggerthing],[cityName + " " + biggerthing,"skip"], [biggerthing,"skip", true]];
+    var query = terms[searchTries][0];
+    var geoloc = terms[searchTries][1];
+    console.log ("  ...Have " + pickedArticles.length + " articles. Now Searching for QUERY " + query + " GEOLOC " + geoloc);
+    articleRequest(query, geoloc);
+}
 
+//perform ajax query to news api.
+function articleRequest(query, geoloc, fire){
+    var API_KEY = "dd74b110c07677ce3e0c5c1f94642e26:10:31738630";
+    var today = new Date();
+    var past = today.setDate(today.getDate()-15);
+    var pastDate = new Date(past);
+    var dd = pastDate.getDate();
+    var mm = pastDate.getMonth() + 1; //January is 0 so this will be a month behind
+    var yyyy = pastDate.getFullYear();
+
+    if(dd<10) {
+        dd='0'+dd;
+    } 
+
+    if(mm<10) {
+        mm='0'+mm;
+    } 
+    
+    past_month = yyyy+mm+dd;
+
+    if (geoloc != undefined && geoloc != "skip"){         
+        var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + query + "&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)%20AND%20glocations:("+geoloc+")&api-key=" + API_KEY;
+    }else {
+        var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+query+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)&api-key=" + API_KEY;
+    }
+
+    $.ajax({
+        url: URL,
+        data: {},
+        dataType: "jsonp",
+        jsonpCallback: 'svc_search_v2_articlesearch',
+        success: function (response) {
+            // var numberOfArticles = response.response.docs.length;
+            // console.log("On 3nd search found this many articles " + numberOfArticles);
+            articlePooler(response, fire);
+            searchTries ++;
+        },
+         error: function (response) {
+            console.log("News ajax query failed.");
+        }
+    });
+}
+
+//collect articles in array until there are 10 or until sent the fire command
 function articlePooler(response, fire){ //collect articles until there are at least 10. Passed most geo specific articles first 
     var numberOfArticles = response.response.docs.length;
     var flagDup;
@@ -130,11 +104,15 @@ function articlePooler(response, fire){ //collect articles until there are at le
         }
         //flag predictable and undesirable articles from being included
         if (response.response.docs[i].headline.main == "Fight Schedule") {flagDup = true}
-       if (!flagDup){pickedArticles[pickedArticles.length] = response.response.docs[i]}
+        if (!flagDup){pickedArticles[pickedArticles.length] = response.response.docs[i]}
     }
     console.log("Pooler has  " + pickedArticles.length  + " articles and FIRE = " + fire);
     if (pickedArticles.length >= 10 || fire == true){
         printArticles();
+        searchTries = 0;
+
+    }else{
+        articleLoop();
     }
     
     return pickedArticles.length;
@@ -191,6 +169,7 @@ function printArticles(){
         } 
         // $('#news').hide();
         // $('#news').slideDown(5000);
+        pickedArticles = [];
     }
 
     if (loggedIn == true){
