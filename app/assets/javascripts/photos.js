@@ -92,6 +92,7 @@ $(function () {
             success: function (response) {
                 console.log("Saving photo successful.");
                 $that.text("Saved!");
+                $that.prop("disabled",true);
 
             },
             error: function (response) {
