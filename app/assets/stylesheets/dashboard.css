@@ -43,7 +43,7 @@ ul {
 }
 
 .dashboard-photo {
-  width: 100%;
+  width: 90%;
   float: left;
   /*height: 300px;*/
   display: block;
@@ -78,7 +78,8 @@ ul {
 }
 
 .dashboard-articles li {
-    /*border: 1px solid grey;*/
+    border-bottom: 1px solid grey;
+    padding-bottom: 5px;
     margin-bottom: 10px;
     padding-right: 5px;
     height: 150px;
@@ -106,6 +107,7 @@ ul {
   height: 150px;
   float: left;
   margin-right: 10px;
+  padding-bottom: 10px;
 }
 
 .my-article p {
@@ -145,15 +147,19 @@ ul {
 /******************* photos and tweets **********************/
 
 .col-dashboard-tweets {
-  width: 90%;
-  overflow: auto; 
+  width: 100%;
+  overflow: auto;
   /*height: 550px;*/
   /*border: 1px solid grey;*/
   display: inline-block;
+  font-family: 'Oswald';
+  margin-left: 40px;
 }
 
 .col-dashboard-photos {
   display: inline-block;
+  margin-left: 35px;
+  width: 100%;
 }
 
 /****** PHOTOS ******/
@@ -164,7 +170,8 @@ ul {
   /*width: 100%;*/
   display: inline-block;
   /*padding: 10px;*/
-
+  float: left;
+  margin: 5px;
 }
 
 .dashboard-photos h3 {
@@ -218,19 +225,40 @@ ul {
 
 /****** TWEETS ******/
 
-.dashboard-tweets {
+.dashboard-tweets1,
+.dashboard-tweets2,
+.dashboard-tweets3 {
   float: left;
+  width: 30%;
   margin: 5px;
+  font-family: 'Oswald';
 }
 
 
-.dashboard-tweets li {
+.individual-tweet-dash {
   text-align: left;
-  height: 105px;
+  /*height: 105px;*/
   padding: 10px;
+  border-bottom: 1px solid grey;
+  overflow: auto;
+  display: block;
+
 }
 
-.dashboard-tweets h3 {
+.dashboard-tweets1 li img,
+.dashboard-tweets2 li img,
+.dashboard-tweets3 li img {
+  /*height: 150px;*/
+  float: left;
+  display: inline;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.dashboard-tweets1 h3,
+.dashboard-tweets2 h3,
+.dashboard-tweets3 h3 {
   font-family: Oswald;
   font-size: 20px;
   text-align: left !important;  
@@ -238,25 +266,30 @@ ul {
   margin-bottom: 15px;  
 }
 
-.dashboard-tweets h3 a {
+.dashboard-tweets1 h3 a,
+.dashboard-tweets2 h3 a,
+.dashboard-tweets3 h3 a {
   color: #003399 !important;
   font-size: 20px; 
   font-family: Oswald;   
 }
 
-.dashboard-tweets button {
+.dashboard-tweets1 button,
+.dashboard-tweets2 button,
+.dashboard-tweets3 button {
   float: right;
   float: bottom;
   bottom: 0;
   right: 0;
-  margin-bottom: 20px; 
   color: black; 
   border: 1px solid black;  
   display: inline;
   text-wrap: normal;
 }
 
-.dashboard-tweets button:hover {
+.dashboard-tweets1 button:hover,
+.dashboard-tweets2 button:hover,
+.dashboard-tweets3 button:hover {
   background: #003399;
   border: 1px solid white;
   color: white;
