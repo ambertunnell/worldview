@@ -13,6 +13,7 @@ function weather1 (location) {
 
 
         $('.weather-header').show();
+        $('.weather-header h4').show();
         $(".weather").empty();
 
        
@@ -117,7 +118,7 @@ function weather1 (location) {
 
                 $(".weather p").animate({
 
-                    left: "+=80",
+                    left: "+=10",
                     // right: "+=50",
                     // height: "toggle"
                 }, 700, function() {

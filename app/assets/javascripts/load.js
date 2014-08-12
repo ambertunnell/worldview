@@ -4,7 +4,7 @@ var userCities;
 $(function () {
   //things to hide on load
 
-  $('.weather-header').hide();
+  $('.weather-header h4').hide();
   $('#flickr').hide();
   $('.divider').hide();
   $('.about').hide();
@@ -90,13 +90,13 @@ $(function () {
     //   var newLocation = location.toUpperCase();
     // }
 
-        // scroll to weather on initial click
+        // scroll to anchor on initial click
         var target = $('#weather-anchor');
         if( target.length ) {
             event.preventDefault();
             $('html, body').animate({
                 scrollTop: target.offset().top
-            }, 1000);
+            }, 1500);
         }
     
   });

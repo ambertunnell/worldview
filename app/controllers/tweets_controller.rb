@@ -7,7 +7,7 @@ class TweetsController < ApplicationController
       config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
       config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
     end
-    render :json => @client.search("##{params[:location]} -rt", :result_type => "popular", :lang => "en" ).take(10).collect.to_json
+    render :json => @client.search("##{params[:location]} -rt", :result_type => "popular", :lang => "en" ).take(16).collect.to_json
     # binding.pry
   end
 

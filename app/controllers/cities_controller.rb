@@ -13,9 +13,10 @@ class CitiesController < ApplicationController
       @user.cities << @city
       del_city_id = city_params[:lastClock].to_i
       CityUser.find_by(user_id: @user.id, city_id: del_city_id).destroy
-      
+      # binding.pry      
       render json: @city
     else
+      # binding.pry
       render json: "this city already exists".to_json
     end
       
