@@ -69,7 +69,7 @@ function tweets(location) {
                         console.log("Hide tweet like button.")
                         $('.save-tweet').hide();
                       }
-
+                      // console.log("tweet response is: "+response);
                 }
             },
             error: function (response) {
