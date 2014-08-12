@@ -39,7 +39,7 @@ function tweets(location) {
                         tweet = tweet.replace(url, "<a href=\"" + url + "\" target=\"_blank\">" + url + "</a>");
                     }
 
-                    // render media urls as clickanle links
+                    // render media urls as clickable links
                     if (response[i].entities.media !== undefined) {
                         for (var j = 0; j < response[i].entities.media.length; j++) {
                             var url = response[i].entities.media[j].url;

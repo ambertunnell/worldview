@@ -43,7 +43,7 @@ ul {
 }
 
 .dashboard-photo {
-  width: 100%;
+  width: 90%;
   float: left;
   /*height: 300px;*/
   display: block;
@@ -78,7 +78,8 @@ ul {
 }
 
 .dashboard-articles li {
-    /*border: 1px solid grey;*/
+    border-bottom: 1px solid grey;
+    padding-bottom: 5px;
     margin-bottom: 10px;
     padding-right: 5px;
     height: 150px;
@@ -106,6 +107,7 @@ ul {
   height: 150px;
   float: left;
   margin-right: 10px;
+  padding-bottom: 10px;
 }
 
 .my-article p {
@@ -154,6 +156,8 @@ ul {
 
 .col-dashboard-photos {
   display: inline-block;
+  padding-left: 35px;
+  width: 100%;
 }
 
 /****** PHOTOS ******/
@@ -164,7 +168,8 @@ ul {
   /*width: 100%;*/
   display: inline-block;
   /*padding: 10px;*/
-
+  float: left;
+  margin: 5px;
 }
 
 .dashboard-photos h3 {

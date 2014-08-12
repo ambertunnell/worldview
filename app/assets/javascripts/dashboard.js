@@ -107,9 +107,9 @@ $(function () {
 
       $(".modal-text").on("click",".remove-photo", function(){
         console.log("Remove photo button clicked");
-        $(this).closest("li").slideUp({
+        $(this).closest("li").fadeOut({
           // populateDashboard();
-        });
+        }, 1500);
         var photoUrl = $(this).closest("li").find("img").attr("src")
         // console.log("photo url- " + photoUrl);
         
