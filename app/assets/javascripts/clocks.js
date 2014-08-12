@@ -22,7 +22,7 @@ function makeClock (cityobject){
         var WEATHER_API_KEY = 'c2ebf0ca079e86eb70261f70d92ce7ce';
         var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + cityobject.lat+","+cityobject.lon;
         var offset;
-        sleep(100);
+      
         weather = $.ajax({
             url: URL,
             dataType: 'jsonp',
