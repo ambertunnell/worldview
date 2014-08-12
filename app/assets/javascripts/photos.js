@@ -33,14 +33,21 @@ function photos(location) {
                     $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link +"'><img src=" + image + " style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Like</button></div></li>");
 
                     if (loggedIn == true){
-                        console.log("Show photo like button.")
-                        $('.save-photo').show();            
-                      } else {
-                        console.log("Hide photo like button.")
-                        $('.save-photo').hide();
-                      }
+                        console.log("Show photo like button.");
+
+                        for(var j=0; j<userPhotos.length; j++){
+                            if (image === userPhotos[j]){
+                                $("#flickr :last-child button").last().html("Saved");
+                            } 
+                        } 
+                      } 
 
                 }
+
+                if (loggedIn == false) {
+                    $('.save-photo').hide();
+                }
+
                 $('.more-photos').data('flickr-num', 1);
 
             },
@@ -82,41 +89,11 @@ $(function () {
     });
 
 
-$(".more-photos").click(function () {
-
-        // var nyc = "new%20york%20city",
-        //     london = "london%20england",
-        //     hongkong = "hong%20kong",
-        //     sydney = "sydney%20australia",
-        //     paris = "paris%20france",
-        //     sanfran = "san%20francisco%20ca";    
+$(".more-photos").click(function () { 
 
         var search = $("#current-location").text().replace(" CURRENT LOCATION: ", "").replace(/, /g,"%20").replace(/ /g,"%20").toLowerCase();
 
         $('#flickr').empty();
-
-        // var locationstatus = $('#current-location')[0].text;
-
-        // switch (locationstatus) {
-        //     case " CURRENT LOCATION: NEWYORK":
-        //         var search = nyc;
-        //         break;
-        //     case " CURRENT LOCATION: LONDON":
-        //         var search = london;
-        //         break;
-        //     case " CURRENT LOCATION: HONG KONG":
-        //         var search = hongkong;
-        //         break;
-        //     case " CURRENT LOCATION: SYDNEY":
-        //         var search = sydney;
-        //         break;
-        //     case " CURRENT LOCATION: PARIS":
-        //         var search = paris;
-        //         break;
-        //     case " CURRENT LOCATION: SAN FRANCISCO":
-        //         var search = sanfran;
-        //         break;
-        // }
 
         $.ajax({
             type: "GET",
@@ -195,7 +172,7 @@ $(".more-photos").click(function () {
 
               if (response == true){
                 console.log("Show like button - A user is logged in.")
-                $('.save-photo').show();         
+                $('.save-photo').show();
               } else {
                 console.log("Hide like button - A user is not logged in.")
                 $('.save-photo').hide();
