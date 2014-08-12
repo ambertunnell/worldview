@@ -128,6 +128,8 @@ function articlePooler(response, fire){ //collect articles until there are at le
             if (response.response.docs[i].headline.main == pickedArticles[b].headline.main) {flagDup = true; console.log ("dup detected. " + response.response.docs[i].headline.main); }
 
         }
+        //flag predictable and undesirable articles from being included
+        if (response.response.docs[i].headline.main == "Fight Schedule") {flagDup = true}
        if (!flagDup){pickedArticles[pickedArticles.length] = response.response.docs[i]}
     }
     console.log("Pooler has  " + pickedArticles.length  + " articles and FIRE = " + fire);
