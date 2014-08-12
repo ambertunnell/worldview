@@ -1,4 +1,4 @@
- var pickedArticles = [];
+var pickedArticles = []; //used by article pooler
 function article (passedCity1) {
 
         $('.news-header').show();
@@ -74,8 +74,8 @@ function article (passedCity1) {
                         success: function (response) {
                             numberOfArticles = response.response.docs.length;
                             console.log("On 2nd search found this many articles " + numberOfArticles);
-                            articlePooler(response);
-                            if (numberOfArticles < 5){ //BEGIN 2ND <5 IF
+                            totArt = articlePooler(response);
+                            if (totArt < 10){ //BEGIN 2ND <5 IF
                                 
                                 URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+country+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)&api-key=" + API_KEY;
                                 // URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+country+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)%20AND%20glocations:("+country+")&api-key=" + API_KEY;   q=countyr and geoloc = country
@@ -90,7 +90,7 @@ function article (passedCity1) {
                                     success: function (response) {
                                         numberOfArticles = response.response.docs.length;
                                         console.log("On 3nd search found this many articles " + numberOfArticles);
-                                        articlePooler(response);
+                                        articlePooler(response,true);
                                     },
                                      error: function (response) {
                                         console.log("News ajax query failed.");
@@ -117,15 +117,25 @@ function article (passedCity1) {
    
 }
 
-function articlePooler(response){ //collect articles until there are at least 10. Passed most geo specific articles first 
-    numberOfArticles = response.response.docs.length;
+
+function articlePooler(response, fire){ //collect articles until there are at least 10. Passed most geo specific articles first 
+    var numberOfArticles = response.response.docs.length;
+    var flagDup;
     console.log("Pooler passed " + numberOfArticles + " articles");
     for (var i = 0; i < numberOfArticles; i++) {
-        pickedArticles[pickedArticles.length] = response.response.docs[i]
+        flagDup = false;
+        for (b = 0; b < pickedArticles.length; b++) { // loop through existing article for dup titles
+            if (response.response.docs[i].headline.main == pickedArticles[b].headline.main) {flagDup = true; console.log ("dup detected. " + response.response.docs[i].headline.main); }
+
+        }
+       if (!flagDup){pickedArticles[pickedArticles.length] = response.response.docs[i]}
     }
-    if (pickedArticles.length >= 10){
+    console.log("Pooler has  " + pickedArticles.length  + " articles and FIRE = " + fire);
+    if (pickedArticles.length >= 10 || fire == true){
         printArticles();
     }
+    
+    return pickedArticles.length;
 
 }
 
@@ -140,7 +150,6 @@ function printArticles(){
  
     
     for (var i = 0; i < 10; i=i+2) {
-        console.log("first for loop i = " + i);
         var result = response[i];
         var id = response[i]._id;
         var title = response[i].headline.main;
@@ -161,7 +170,6 @@ function printArticles(){
 
     if (numberOfArticles > 5) {
         for (var i = 1; i < 10; i=i+2) {
-            console.log("Second for loop i = " + i);
             var result = response[i];
             var id = response[i]._id;
             var title = response[i].headline.main;
