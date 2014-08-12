@@ -95,7 +95,7 @@ $(function () {
                 var link = response[i].link;
                 console.log(url);
                 console.log(link);
-                $('#dashboard .dashboard-photos').append("<li><div class='photo' style='background-image: url(" + url + "); background-size: cover'><a target='_blank' href='" + link + "'><img src="  + "></a><button class='remove-photo'>Remove</button></div></li>");
+                $('#dashboard .dashboard-photos').append("<li><div class='photo dash-photo' style='background-image: url(" + url + "); background-size: cover'><a target='_blank' href='" + link + "'><img src="  + "></a><button class='remove-photo'>Remove</button></div></li>");
             }
         },
         error: function (response) {

@@ -175,7 +175,7 @@ ul {
   display: inline;
 }
 
-.photo {
+.dash-photo {
   height: 215px;
   border: 5px solid white;
   padding: 10px;
@@ -195,7 +195,7 @@ ul {
   /*height: 200px;*/
 }
 .photo:hover {
-  opacity: .8;
+/*  opacity: .8;*/
 }
 
 .dashboard-photos .photo button {
