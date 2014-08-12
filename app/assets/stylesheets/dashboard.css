@@ -3,7 +3,7 @@
 #dashboard {
   position: fixed;
   overflow: scroll;
-  background-color: black;  
+  background-color: white;  
   font-family: Arial, Helvetica, sans-serif;
   top: 0;
   right: 0;
@@ -36,7 +36,6 @@
 #dashboard h4 {
   font-size: 35px;
   padding: 10px;
-  color: white;
 }
 
 ul {
@@ -46,13 +45,15 @@ ul {
 .dashboard-photo {
   width: 100%;
   float: left;
-  height: 300px;
+  /*height: 300px;*/
   display: block;
 }
 
 .dashboard-photo img {
   width: 150px;
   border-radius: 50%;
+  /*border: 2px solid black;*/
+  padding-bottom: 15px;
 
 }
 
@@ -60,14 +61,14 @@ ul {
 
 .col-dashboard-news {
   clear: both;
-  width: 90.4% !important;
+  width: 90% !important;
   display: block;
-  border: 1px solid grey;
-  overflow: scroll;
-  height: 500px;     
+  /*border: 1px solid grey;*/
+  overflow: auto;
+  /*height: 500px;     */
   background-color: #fff;  
   padding: 5px;
-  margin-bottom: 10px;
+  /*margin-bottom: 10px;*/
 }
 
 .dashboard-articles {
@@ -77,7 +78,7 @@ ul {
 }
 
 .dashboard-articles li {
-    border: 1px solid grey;
+    /*border: 1px solid grey;*/
     margin-bottom: 10px;
     padding-right: 5px;
     height: 150px;
@@ -143,11 +144,15 @@ ul {
 
 /******************* photos and tweets **********************/
 
-.col-dashboard-photos, .col-dashboard-tweets {
-  width: 45% !important;
+.col-dashboard-tweets {
+  /*width: 45% !important;*/
   overflow: auto; 
-  height: 550px;
-  border: 1px solid grey;
+  /*height: 550px;*/
+  /*border: 1px solid grey;*/
+  display: inline-block;
+}
+
+.col-dashboard-photos {
   display: inline-block;
 }
 
@@ -155,14 +160,11 @@ ul {
 
 
 .dashboard-photos li {
-  height: 150px;
-  width: 50%;
+  /*height: 150px;*/
+  /*width: 100%;*/
   display: inline-block;
-  padding: 10px;
-}
+  /*padding: 10px;*/
 
-.dashboard-photos .photo {
-  height: 150px;
 }
 
 .dashboard-photos h3 {
@@ -173,28 +175,39 @@ ul {
   display: inline;
 }
 
+.photo {
+  height: 215px;
+  border: 5px solid white;
+  padding: 10px;
+}
+
 
 .dashboard-photos li img {
-  height: 150px;
-  float: left;
-  padding: 5px;
+  height: 210px;
+  width: 225px;
+  opacity: .000001;
+
+  /*float: left;*/
+  /*padding: 5px;*/
+  padding: 2px;
   margin: auto;
+  border: 5px solid white;
+  /*height: 200px;*/
+}
+.photo:hover {
+  opacity: .8;
 }
 
 .dashboard-photos .photo button {
-  position: absolute;
+  /*position: absolute;*/
   float: left;
-  top: -36;
-/*  bottom: 0;
-  left: 0;
-  margin-left: 15px;
-  margin-bottom: 20px; */
+  background: none;
   color: white; 
-  border: 1px solid white;  
+  border: 1px solid white; 
 }
 
 .dashboard-photos button:hover {
-  background: #003399;
+  background: black;
   border: 1px solid white;
   color: white;
   transition-duration: .5s;
@@ -208,6 +221,7 @@ ul {
 .dashboard-tweets {
   float: left;
   margin: 5px;
+  width: 90%;
 }
 
 
