@@ -17,8 +17,9 @@ function photos(location) {
                 console.log("Flickr photos GET request successful.");
 
                 var photosArray = response.photos.photo;
-
-                for (var i = 0; i < 12; i++) {
+                if (photosArray.length < 12) {var loopLength = photosArray.length} else {var loopLength = 12}
+                 
+                for (var i = 0; i < loopLength; i++) {
                     var farmid = photosArray[i].farm;
                     var id = photosArray[i].id;
                     var serverid = photosArray[i].server;

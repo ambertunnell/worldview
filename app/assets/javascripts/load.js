@@ -1,9 +1,10 @@
+var loggedIn;
 var userCities;
 
 $(function () {
   //things to hide on load
 
-  $('.weather-header').hide();
+  $('.weather-header h4').hide();
   $('#flickr').hide();
   $('.divider').hide();
   $('.about').hide();
@@ -16,8 +17,8 @@ $(function () {
           userCities = response2;
           console.log("get cities ajax request succeeded. ");
           for (i =0; i< response2.length; i++){
-            makeClock(response2[i]);
-          }
+                makeClock(response2[i]);   
+            }
           
         },
         error: function (response2){
@@ -25,6 +26,28 @@ $(function () {
           loggedIn = false;
         }
     });
+
+
+  // $.ajax({
+  //           type: "GET",
+  //           url: "/users/signed_in",
+  //           success: function (response) {
+  //             console.log("Sign_in AJAX request succeeded.");
+  //             if (response == true){
+  //               console.log("Show like button - A user is logged in.")
+  //               loggedIn = true;
+  //               // create clocks for the user's cities
+  //    // end inner ajax
+  //             } else {
+  //               loggedIn = false;
+  //               // create clocks for the five default cities
+  //             }
+  //           },
+  //           error: function (response){
+  //             console.log("Error could not retrieve user information.");
+  //             loggedIn = false;
+  //           }
+  //       }); 
 
   //listeners
   $('.clock-row').on('click', '.ul-clock', function(){
@@ -67,7 +90,7 @@ $(function () {
     //   var newLocation = location.toUpperCase();
     // }
 
-        // scroll to weather on initial click
+        // scroll to anchor on initial click
         var target = $('#weather-anchor');
         if( target.length ) {
             event.preventDefault();

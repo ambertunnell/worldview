@@ -37,52 +37,6 @@
   <div class="col-md-9 divider dividerfour">
   </div>
 
-  <div class="col-md-9 about" id="creators">
-    <center><h4>Created By</h4></center>
-    <div class="contributors">
-      <div class="contributor">
-        <div id="ed">
-        </div>
-       <center> <p>Edward Warren</p></center>
-       <center><%= link_to image_tag('/assets/github.png', height: '25'), '#', target: '_blank' %>
-        <%= link_to image_tag('linkedin.png', height: '25'), '#', target: '_blank' %>
-        <%= link_to image_tag('twitter3.png', height: '25'), 'http://www.twitter.com/ewarren7', target: '_blank' %>
-      </center>
-      </div>
-      <div class="contributor">
-        <div id="amber">
-        </div>
-        <center><p>Amber Tunnell</p></center>
-         <center><%= link_to image_tag('/assets/github.png', height: '25'), 'https://github.com/ambertunnell/', target: '_blank' %>
-          <%= link_to image_tag('linkedin.png', height: '25'), 'https://www.linkedin.com/in/ambertunnell/', target: '_blank' %>
-          <%= link_to image_tag('twitter3.png', height: '25'), 'http://www.twitter.com/ambertunnell', target: '_blank' %>
-        </center>
-        </div>
-      <div class="contributor">
-        <div id="koren">
-        </div>
-        <center><p>Koren Leslie Cohen</p></center>
-        <center><%= link_to image_tag('/assets/github.png', height: '25'), 'https://github.com/KorenLeslieCohen/', target: '_blank' %>
-          <%= link_to image_tag('linkedin.png', height: '25'), 'https://www.linkedin.com/pub/koren-leslie-cohen/26/178/726', target: '_blank' %>
-          <%= link_to image_tag('twitter3.png', height: '25'), 'http://www.twitter.com/korenlc', target: '_blank' %>
-        </center>
-      </div>
-      <div class="contributor">
-        <div id="ben">
-        </div>
-        <center> <p>Ben Serviss</p></center>
-        <center><%= link_to image_tag('/assets/github.png', height: '25'), 'https://github.com/kamoh/', target: '_blank' %>
-          <%= link_to image_tag('linkedin.png', height: '25'), 'http://www.linkedin.com/in/benserviss', target: '_blank' %>
-          <%= link_to image_tag('twitter3.png', height: '25'), 'http://www.twitter.com/benserviss', target: '_blank' %>
-        </center>
-      </div>
-
-    </div>
-    <center><h5><a href="#top">worldview</a> providers users with curated media from thousands of searchable locations around the world using the Twitter, Forecast.io, Weather Underground, Flickr and New York Times APIs. Users can log in through Twitter OAuth, where they will have the ability to save all content to a personalized dashboard. Read more.</h5></center>
-  </div>
-
-<%#= render "layouts/footer" %>
-<footer>
-  <center><p>&copy; <a href="#top">worldview</a> 2014 | Built with &hearts; by <a href="http://www.twitter.com/ewarren7" target="_blank">Edward Warren</a>, <a href="http://www.twitter.com/ambertunnell" target="_blank">Amber Tunnell</a>, <a href="http://www.twitter.com/korenlc" target="_blank">Koren Leslie Cohen</a> &amp; <a href="http://www.twitter.com/benserviss" target="_blank">Ben Serviss</a></p></center>
-</footer>  
+<%= render "layouts/about" %>
+<%= render "layouts/footer" %>
 
