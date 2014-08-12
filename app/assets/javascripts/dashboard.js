@@ -69,6 +69,8 @@ $(function () {
               success: function(response) {
                   console.log("Article DELETE request successful");
                   console.log("article url = " + articleUrl);
+                  userArticles = response;
+                  article(userCity);    
               },
               error: function(response) {
                   console.log("Article DELETE request failed");
@@ -125,6 +127,8 @@ $(function () {
             success: function(response) {
                 console.log("Photo DELETE request successful");
                 console.log("photo url = " + photoUrl);
+                userPhotos = response;
+                photos(userCity);
             },
             error: function(response) {
                 console.log("Photo DELETE request failed");
