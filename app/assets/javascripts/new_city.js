@@ -42,7 +42,7 @@ function submit_new_city(passedInput) {
                 console.log("response: "+response.RESULTS[i]);
                 return;
               } else if (response.RESULTS[i].name.match(/(kong international|S.A.R.)/i)) {
-                $("#invalid_city").text("Please enter a valid city");
+                // $("#invalid_city").text("Please enter a valid city");
                 console.log("Successful response and marked as an International airport, not a city");
                 console.log("response: "+response.RESULTS[i].name);
                 console.log("value of i = "+i++);
