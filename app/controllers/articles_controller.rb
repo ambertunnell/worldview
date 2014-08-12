@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
     
     respond_to do |format|
       if @user.save
-        format.json { render json: @user}
+        format.json { render json: user_articles(@user)}
       else
         format.json { head :no_content }
       end
