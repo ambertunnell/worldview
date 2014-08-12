@@ -6,14 +6,12 @@ MONDAY
 
 PRIORITY
 
-- refactoring the login status (global variable) (edward)
-  - preventing 'save' buttons from appearing on content if user is not logged in
 - finish dashboard (amber & koren)
-- fix the container for the 'log in' button in the top right - keeps overflowing
+- fix the container for the 'log in' button in the top right - keeps overflowing (koren)
 - check for duplicate news headlines (edward)
-- make sure you only have 5 cities in a session 
-- animate clocks getting added and deleted (ben)
-- look at UTC offset for countries off by minutes and not hours (edward)
+- add international and school filter to city locations (ben)
+  - if there's an int'l or school, go to the next array result
+- articles won't display if the article array is less than 10
 
 OTHERS
 
@@ -33,6 +31,12 @@ OTHERS
 - tuesday (deploy to heroku to find problems)
 
 SUNDAY
+
+(done) - look at UTC offset for countries off by minutes and not hours (edward)
+(done) - refactoring the login status (global variable) (edward)
+  - preventing 'save' buttons from appearing on content if user is not logged in
+(done) - make sure you only have 5 cities in a session (amber)
+(done) - animate clocks getting added (ben)
 
 (done) - refining article results (edward)
 (done) - additional city validation (ben)
