@@ -95,7 +95,7 @@ $(function () {
                 var link = response[i].link;
                 console.log(url);
                 console.log(link);
-                $('#dashboard .dashboard-photos').append("<li><div class='photo dash-photo' style='background-image: url(" + url + "); background-size: cover'><a target='_blank' href='" + link + "'><img src="  + "></a><button class='remove-photo'>Remove</button></div></li>");
+                $('#dashboard .dashboard-photos').append("<li><div class='photo dash-photo' style='background-image: url(" + url + "); background-size: cover'><a target='_blank' href='" + link + "'><img src=" + url + "></a><button class='remove-photo'>Remove</button></div></li>");
             }
         },
         error: function (response) {
@@ -148,7 +148,15 @@ $(function () {
             for (var i = 0; i < response.length; i++) {
                 var data = response[i].data;
 
-                $('#dashboard .dashboard-tweets').append("<li><h3>" + data + "</h3><button class='remove-tweet'>Remove</button></li>");
+                if (i % 3 === 0) {
+                  $('#dashboard .dashboard-tweets1').append("<li><div class='individual-tweet-dash'><h3>" + data + "</h3><button class='remove-tweet'>Remove</button></div></li>");
+                }
+                if (i % 3 === 1) {
+                  $('#dashboard .dashboard-tweets2').append("<li><div class='individual-tweet-dash'><h3>" + data + "</h3><button class='remove-tweet'>Remove</button></div></li>");
+                }
+                if (i % 3 === 2) {
+                  $('#dashboard .dashboard-tweets3').append("<li><div class='individual-tweet-dash'><h3>" + data + "</h3><button class='remove-tweet'>Remove</button></div></li>");
+                }
             }
         },
         error: function (response) {
