@@ -41,6 +41,7 @@ function article (passedCity1) {
 
 //loop through the term array until there are 10 articles. relies on global vars to track tries
 function articleLoop(){
+    //var citySort = userCity.city
     var terms = [[cityName,biggerthing],[cityName + " " + biggerthing,"skip"], [biggerthing,"skip", true]];
     var query = terms[searchTries][0];
     var geoloc = terms[searchTries][1];
