@@ -22,11 +22,13 @@ function makeClock (cityobject){
         var WEATHER_API_KEY = 'c2ebf0ca079e86eb70261f70d92ce7ce';
         var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + cityobject.lat+","+cityobject.lon;
         var offset;
+        sleep(100);
         weather = $.ajax({
             url: URL,
             dataType: 'jsonp',
             success: function (response) {
-                console.log(cityobject.name + " UTC ajax success.");
+                 console.log(cityobject.name + " UTC ajax success.");
+                  
                  var datacity = cityobject.name.toLowerCase().replace(/ /g, '')+cityobject.id;
                 
                 // if clock 4 exists, fade it out
