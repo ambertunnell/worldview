@@ -3,7 +3,10 @@ function tweets(location) {
         var search_term = location.name.replace(/ /g,"");
    
         $('.twitter-header').show();
-        $('#twitter').empty();
+        $('#twitter1').empty();
+        $('#twitter2').empty();
+        $('#twitter3').empty();
+        $('#twitter4').empty();
         
         var URL = "/twitter?location=" + search_term;
 
@@ -41,13 +44,24 @@ function tweets(location) {
                         for (var j = 0; j < response[i].entities.media.length; j++) {
                             var url = response[i].entities.media[j].url;
                             // tweet = tweet.replace(url, "<a href=\"" + url + "\" target=\"_blank\">" + url + "</a>");
-                            tweet = tweet.replace(url, "<img src=" + response[i].entities.media[j].media_url + " style='height: 160px; width: 280px;>");
+                            tweet = tweet.replace(url, '<img src=' + response[i].entities.media[j].media_url + '>');
                             
                         }
                     }
 
-                    $('#twitter').append("<li><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></li>");
-                    
+                    if (i % 4 === 0) {
+                        $('#twitter1').append("<li><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
+                    }
+                    if (i % 4 === 1)  {  
+                        $('#twitter2').append("<li><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
+                    }
+                    if (i % 4 === 2)   {  
+                        $('#twitter3').append("<li><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
+                    }  
+                    if (i % 4 === 3)   {
+                        $('#twitter4').append("<li><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
+                    }
+
                     if (loggedIn == true){
                         console.log("Show tweet like button.")
                         $('.save-tweet').show();            
@@ -55,7 +69,6 @@ function tweets(location) {
                         console.log("Hide tweet like button.")
                         $('.save-tweet').hide();
                       }
-
 
                 }
             },
