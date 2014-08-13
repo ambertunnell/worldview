@@ -23,6 +23,7 @@ h4 {
 .divider {
   border-bottom: 5px solid white;
   height: 200px;
+  width: 100%;
   min-width: 1300px;
   /*float: left;*/
 }
