@@ -198,43 +198,8 @@ input {
   height:50px;
 }
 
-@media screen and (max-width : 1060px) {
-
- /* .clock {*/
-    /*margin-left: 45px;*/
-    /*color: pink;*/
-/*    margin-right: 10px;
-    margin-left: 10px;*/
-  /*}*/
-
-}
 
 
-/*@media screen and (max-width : 1060px) {
-
-  .clock {*/
-    /*margin-left: 45px;*/
-    /*color: pink;*/
-/*    margin-right: 0px;
-    margin-left: 0px;
-  }
-
-}*/
-
-@media screen and (max-width : 890px) {
-
-/*  .clock {*/
-    /*margin-left: 45px;*/
-    /*color: pink;*/
-/*    margin-right: 0px;
-    margin-left: 0px;*/
-  /*}*/
-
-}
-
-
-    /* </div> 
-    <div class="initial5-clock col-md-2 clock" data-city="initial">*/
 
 
 
