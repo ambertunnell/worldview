@@ -7,8 +7,17 @@ class TweetsController < ApplicationController
       config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
       config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
     end
-    render :json => @client.search("##{params[:location]} -rt", :result_type => "popular", :lang => "en" ).take(12).collect.to_json
-    # binding.pry
+     # <City id: 3, name: "London", created_at: "2014-08-13 01:04:48", updated_at: "2014-08-13 01:04:48", bigger_thing: "United Kingdom", lon: -0.45, lat: 51.48, country: "GB">
+    
+    @city = City.find(params[:location])
+    tweets = {
+      cityname: [],
+      bigthing: []
+    }
+    binding.pry
+    tweests:cityname << @client.search("##{} -rt", :result_type => "popular", :lang => "en" ).take(12).collect.to_json
+    render :json => @client.search("##{} -rt", :result_type => "popular", :lang => "en" ).take(12).collect.to_json
+    
   end
 
 

@@ -8,7 +8,7 @@ function tweets(location) {
         $('#twitter3').empty();
         $('#twitter4').empty();
         
-        var URL = "/twitter?location=" + search_term;
+        var URL = "/twitter?location=" + userCity.id;
 
         $.ajax({
             url: URL,
