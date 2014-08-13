@@ -189,6 +189,8 @@ $(function () {
             success: function(response) {
                 console.log("Tweet DELETE request successful");
                 console.log("tweet url = " + tweetData);
+                userTweets = response;
+                tweets(userCity);      
             },
             error: function(response) {
                 console.log("Tweet DELETE request failed");
