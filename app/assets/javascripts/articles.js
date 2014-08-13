@@ -8,38 +8,13 @@ function article (passedCity1) {
         $('.news-header').show();
         $('#news1').empty();
         $('#news2').empty();
-
-        var search;
-        var country;
-        cityName = passedCity1.name.toLowerCase();
-        biggerthing = passedCity1.bigger_thing;
-        switch (cityName) {
-            case 'new york city':
-                search = "new+york+city";
-                country = "\"New%20York%20City\""
-                break;
-            case 'london':
-                search = "london";
-                country = "\"London (England)\""
-                break;
-            case 'hong kong international':
-                search = "hong+kong"; 
-                country = "\"CHINA\"";
-                break;
-            default:
-                search = cityName;
-                country = biggerthing;
-            
-        };
-
             
        articleLoop();
-
         
    
 }
 
-//loop through the term array until there are 10 articles. relies on global vars to track tries
+//loop through the terms array for queries to try until there are 10 articles. relies on global vars to track # of tries
 function articleLoop(){
     var terms = [[cityName,biggerthing], [cityName + " " + biggerthing,"skip"], [biggerthing,"skip", true]];
     if (cityName.split(" ").slice().length > 2) {// cities with 3 words get cut to 2 words in cascading fall back searches
@@ -50,7 +25,6 @@ function articleLoop(){
         
     }
    
-
     var query = terms[searchTries][0];
     var geoloc = terms[searchTries][1];
     
@@ -101,16 +75,15 @@ function articleRequest(query, geoloc, fire){ //pass skip for 2nd arg to skip ge
     });
 }
 
-//collect articles in array until there are 10 or until sent the fire command
-function articlePooler(response, fire){ //collect articles until there are at least 10. Passed most geo specific articles first 
+//collect articles until there are at least 10 or fire = true. Passed most geo specific articles first prints in that order.
+function articlePooler(response, fire){ 
     var numberOfArticles = response.response.docs.length;
     var flagDup;
     console.log("Pooler passed " + numberOfArticles + " articles");
     for (var i = 0; i < numberOfArticles; i++) {
         flagDup = false;
-        for (b = 0; b < pickedArticles.length; b++) { // loop through existing article for dup titles
+        for (b = 0; b < pickedArticles.length; b++) { // loop through existing article for dup titles (happens when times updates an article)
             if (response.response.docs[i].headline.main == pickedArticles[b].headline.main) {flagDup = true; console.log ("dup detected. " + response.response.docs[i].headline.main); }
-
         }
         //flag predictable and undesirable articles from being included
         if (response.response.docs[i].headline.main == "Fight Schedule") {flagDup = true}
@@ -139,7 +112,7 @@ function printArticles(){
     
  
     
-    for (var i = 0; i < 10; i=i+2) {
+    for (var i = 0; i < 10; i=i+2) { //put every other article in first column
         var result = response[i];
         var id = response[i]._id;
         var title = response[i].headline.main;
@@ -173,8 +146,8 @@ function printArticles(){
 
     }
 
-    if (numberOfArticles > 5) {
-        for (var i = 1; i < 10; i=i+2) {
+ 
+        for (var i = 1; i < 10; i=i+2) {//put every other article in 2nd column
             var result = response[i];
             var id = response[i]._id;
             var title = response[i].headline.main;
@@ -207,18 +180,9 @@ function printArticles(){
             }  
 
         } 
-        // $('#news').hide();
-        // $('#news').slideDown(5000);
-        pickedArticles = [];
-    }
 
-    // if (loggedIn == true){
-    //     console.log("Show article read later button.")
-    //     $('.save-article').show();            
-    //   } else {
-    //     console.log("Hide article read later button.")
-    //     $('.save-article').hide();
-    //   }
+        pickedArticles = [];
+    
 
 }
 
