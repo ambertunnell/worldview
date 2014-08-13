@@ -24,6 +24,4 @@
 //= require skycons
 //= require clocks
 //= require new_city
-//= require more
 //= require load
-
