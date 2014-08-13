@@ -70,7 +70,8 @@ h6 {
   list-style: none;
   transition-property: background;
   transition-duration: .5s;
-  /*background: red;*/
+  background: rgb(255, 255, 255);  /*Fall-back for browsers that don't support rgba */
+  background: rgba(255, 255, 255, .1);
 }
 
 .ul-clock:hover {

@@ -10,12 +10,10 @@
   <meta name="description" content="Web application utilizing Forecast.io, Twitter, Weather Underground, New York Times, and Flickr APIs to provide curated content from thousands of searchable cities around the world.">
 </head>
 <body id="scroll">
+  <%= render "layouts/navbar" %> 
   <center>
-  <div class="entire-container">
-    <%= render "layouts/navbar" %>    
     <%= yield %>
     <%= render "layouts/footer" %>
-  </div>
   </center> 
 </body>
 </html>
