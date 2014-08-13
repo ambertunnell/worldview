@@ -136,6 +136,7 @@ h6 {
   /*color: pink;*/
   margin-right: 20px;
   margin-left: 20px;
+  float: left;
 }
 
 .clock-row h2 {
@@ -151,8 +152,12 @@ h6 {
   margin: auto;
 }
 
+.clock-title {
+  width: 1200px;
+}
+
 #clock-container { 
-  /*background: red;*/
+  height: 200px;
 }
 
 .instructions h2 {
@@ -192,6 +197,10 @@ input {
   width:150px;
   height:50px;
 }
+
+
+
+
 
 
 
