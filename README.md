@@ -30,6 +30,7 @@ Rails app that curates media for tens of thousands of searchable cities in the w
 ## Authors
 
 Koren Leslie Cohen, Edward Warren, Ben Serviss, & Amber Tunnell 
+[Koren Leslie Cohen](https://github.com/KorenLeslieCohen), [Edward Warren](https://github.com/Ewarren7), [Ben Serviss](https://github.com/kamoh), & Amber Tunnell 
 
 
 ## License
