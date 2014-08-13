@@ -5,8 +5,8 @@ function printTweet (col,tweetHTML,id) {
 
       for (var j = 0; j < userTweets.length; j++) {
           if (id === userTweets[j]) {
-              $("#twitter"+col +":last-child button").last().html("Saved in dashboard!");
-              $("#twitter"+col +":last-child button").last().prop("disabled",true);
+              $("#twitter"+col +" :last-child button").last().html("Saved in dashboard!");
+              $("#twitter"+col +" :last-child button").last().prop("disabled",true);
           }
       }
   } 
