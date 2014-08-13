@@ -136,6 +136,7 @@ h6 {
   /*color: pink;*/
   margin-right: 20px;
   margin-left: 20px;
+  float: left;
 }
 
 .clock-row h2 {
@@ -151,8 +152,12 @@ h6 {
   margin: auto;
 }
 
+.clock-title {
+  width: 1200px;
+}
+
 #clock-container { 
-  /*background: red;*/
+  height: 200px;
 }
 
 .instructions h2 {
@@ -192,6 +197,45 @@ input {
   width:150px;
   height:50px;
 }
+
+@media screen and (max-width : 1060px) {
+
+ /* .clock {*/
+    /*margin-left: 45px;*/
+    /*color: pink;*/
+/*    margin-right: 10px;
+    margin-left: 10px;*/
+  /*}*/
+
+}
+
+
+/*@media screen and (max-width : 1060px) {
+
+  .clock {*/
+    /*margin-left: 45px;*/
+    /*color: pink;*/
+/*    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+}*/
+
+@media screen and (max-width : 890px) {
+
+/*  .clock {*/
+    /*margin-left: 45px;*/
+    /*color: pink;*/
+/*    margin-right: 0px;
+    margin-left: 0px;*/
+  /*}*/
+
+}
+
+
+    /* </div> 
+    <div class="initial5-clock col-md-2 clock" data-city="initial">*/
+
 
 
 
