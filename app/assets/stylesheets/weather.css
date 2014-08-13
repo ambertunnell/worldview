@@ -2,24 +2,15 @@
 
 .col-md-1 {
   background: white;
-  /*height: 250px;*/
-  width: 100%;
   overflow: auto;
-  margin: 0;
   padding: auto;
- /* float: left;*/
-/*  border: 10px solid black;*/
-/*  margin: 1%;*/
-/*  box-shadow: 2px;*/
-/*  transition-duration: .7s;
-  transition-property: background;*/
-
+  width: 1300px;
+  float: center;
+  margin: 0;
 }
 
 .weather {
   padding-left: 10%;
-  /*padding-top: 5%;*/
-  /*width: 265%;*/
 }
 
 .weather p {
@@ -30,7 +21,6 @@
   margin-left: auto;
   margin-right: auto;
   font-size: 20px;
-  /*position: block;*/
 }
 
 #icon1 {

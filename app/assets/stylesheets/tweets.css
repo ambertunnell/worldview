@@ -2,11 +2,12 @@
 
 .col-md-6 {
   background: white;
-  width: 100%;
   overflow: auto;
-  margin: 0;
   padding: auto;
   border-bottom: 5px solid white;
+  width: 1300px;
+  float: center;
+  margin: 0;
 }
 
 #twitter {

@@ -1,12 +1,13 @@
 /*NEWS*/
 
 .col-md-5 {
-  width: 100% !important;
   overflow: auto;
-  margin: 0;
   padding: auto;
   background: white;
   border-bottom: 5px solid white;
+  width: 1300px;
+  float: center;
+  margin: 0;
 }
 
 #news h3 {
