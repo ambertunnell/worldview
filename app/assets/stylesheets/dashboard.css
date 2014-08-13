@@ -29,8 +29,8 @@
   position: relative;
   margin: 10% auto;
   padding: 5px 20px 13px 20px;
-  border-radius: 0px;
   color: black;
+  border: 2px solid grey;
 }
 
 #dashboard h4 {
@@ -44,9 +44,13 @@ ul {
 
 .dashboard-photo {
   width: 90%;
-  float: left;
+  /*float: left;*/
   /*height: 300px;*/
   display: block;
+}
+
+.dashboard-photo h4 {
+  padding-top: 100px;
 }
 
 .dashboard-photo img {
@@ -54,14 +58,13 @@ ul {
   border-radius: 50%;
   /*border: 2px solid black;*/
   padding-bottom: 15px;
-
 }
 
 /****** ARTICLES ******/
 
 .col-dashboard-news {
   clear: both;
-  width: 90% !important;
+  width: 100% !important;
   display: block;
   /*border: 1px solid grey;*/
   overflow: auto;
@@ -69,6 +72,10 @@ ul {
   background-color: #fff;  
   padding: 5px;
   /*margin-bottom: 10px;*/
+}
+
+.col-dashboard-news h4 {
+
 }
 
 .dashboard-articles {
@@ -84,7 +91,6 @@ ul {
     padding-right: 5px;
     height: 150px;
 }
-
 
 .dashboard-articles li h3 {
   height: 20px; 
@@ -153,13 +159,14 @@ ul {
   /*border: 1px solid grey;*/
   display: inline-block;
   font-family: 'Oswald';
-  margin-left: 40px;
+/*  margin-left: 40px;*/
 }
 
 .col-dashboard-photos {
   display: inline-block;
-  margin-left: 35px;
+/*  margin-left: 35px;*/
   width: 100%;
+  /*margin-left: 30px;*/
 }
 
 /****** PHOTOS ******/
@@ -171,7 +178,7 @@ ul {
   display: inline-block;
   /*padding: 10px;*/
   float: left;
-  margin: 5px;
+  /*margin: 5px;*/
 }
 
 .dashboard-photos h3 {
@@ -184,8 +191,9 @@ ul {
 
 .dash-photo {
   height: 215px;
-  border: 5px solid white;
-  padding: 10px;
+  border: 13px solid white;
+  /*padding: 10px;*/
+ /* margin-left: 20px;*/
 }
 
 .dash-photo:hover {
@@ -194,7 +202,7 @@ ul {
 
 .dashboard-photos li img {
   height: 210px;
-  width: 225px;
+  width: 257px;
   opacity: .000001;
 
   /*float: left;*/
@@ -210,7 +218,9 @@ ul {
   float: left;
   background: none;
   color: white; 
-  border: 1px solid white; 
+  border: 1px solid white;
+  margin-top: 5px; 
+  margin-left: 5px;
 }
 
 .dashboard-photos button:hover {
@@ -225,12 +235,21 @@ ul {
 
 /****** TWEETS ******/
 
+.dashboard-tweets1 {
+  margin-left: 40px;
+}
+
+.dashboard-tweets2,
+.dashboard-tweets3 {
+  margin-left: 15px;
+}
+
 .dashboard-tweets1,
 .dashboard-tweets2,
 .dashboard-tweets3 {
   float: left;
   width: 30%;
-  margin: 5px;
+/*  margin: 5px;*/
   font-family: 'Oswald';
 }
 
