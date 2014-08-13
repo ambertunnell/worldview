@@ -9,8 +9,9 @@ $('.news-header').show();
 $('#news1').empty();
 $('#news2').empty();
 
-cityName = passedCity1.name.toLowerCase();
-biggerthing = passedCity1.bigger_thing;
+cityName = (passedCity1.name.toLowerCase()).replace(/ /g,"%20");
+biggerthing = (passedCity1.bigger_thing.toLowerCase()).replace(/ /g,"%20"); 
+ // "\"New%20York%20City\""
         
 articleLoop();
    
@@ -18,11 +19,12 @@ articleLoop();
 
 //loop through the terms array for queries to try until there are 10 articles. relies on global vars to track # of tries
 function articleLoop(){
-    var terms = [[cityName,biggerthing], [cityName + " " + biggerthing,"skip"], [biggerthing,"skip", true]];
-    if (cityName.split(" ").slice().length > 2) {// cities with 3 words get cut to 2 words in cascading fall back searches
-        var cityShort = cityName.split(" ").slice()[0] + " " + cityName.split(" ").slice()[1];
-        terms.splice(1, 0, [cityShort,biggerthing]);
-        terms.splice(3, 0, [cityShort + " " + biggerthing,"skip"]);
+    var terms = [[cityName,cityName],[cityName,biggerthing], [cityName + " " + biggerthing,"skip"], [biggerthing,"skip", true]];
+    if (cityName.split("%20").slice().length > 2) {// cities with 3 words get cut to 2 words in cascading fall back searches
+        var cityShort = cityName.split("%20").slice()[0] + "%20" + cityName.split("%20").slice()[1];
+        terms.splice(1, 0, [cityShort,cityShort]);
+        terms.splice(2, 0, [cityShort,biggerthing])
+        terms.splice(4, 0, [cityShort + " " + biggerthing,"skip"]);
         console.log ("Spliced IN!!!!!!!!!");
         
     }
@@ -56,7 +58,7 @@ function articleRequest(query, geoloc, fire){ //pass skip for 2nd arg to skip ge
     past_month = yyyy+mm+dd;
 
     if (geoloc != undefined && geoloc != "skip"){         
-        var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + query + "&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)%20AND%20glocations:("+geoloc+")&api-key=" + API_KEY;
+        var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + query + "&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)%20AND%20glocations:(%22"+geoloc+"%22)&api-key=" + API_KEY;
     }else {
         var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+query+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)&api-key=" + API_KEY;
     }

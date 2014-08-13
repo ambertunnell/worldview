@@ -14,9 +14,9 @@ class TweetsController < ApplicationController
       cityname: [],
       bigthing: []
     }
-    binding.pry
-    tweests:cityname << @client.search("##{} -rt", :result_type => "popular", :lang => "en" ).take(12).collect.to_json
-    render :json => @client.search("##{} -rt", :result_type => "popular", :lang => "en" ).take(12).collect.to_json
+    # binding.pry
+    # tweests:cityname << @client.search("##{} -rt", :result_type => "popular", :lang => "en" ).take(12).collect.to_json
+    # render :json => @client.search("##{} -rt", :result_type => "popular", :lang => "en" ).take(12).collect.to_json
     
   end
 
