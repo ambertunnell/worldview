@@ -1,3 +1,4 @@
+
 function weather1 (location) {
     var WEATHER_API_KEY = 'c2ebf0ca079e86eb70261f70d92ce7ce';
 
@@ -11,12 +12,10 @@ function weather1 (location) {
     //     paris_coords = "48.856614,2.352222",
     //     sanfran_coords = "37.7749295,-122.41941550000001"; 
 
-
-        $('.weather-header').show();
-        $('.weather-header h4').show();
-        $(".weather").empty();
-
-       
+    $('.weather-header').show();
+    $('.weather-header h4').show();
+    $(".weather").empty();
+           
         // var coords;
 
         // switch (location) {
@@ -42,7 +41,6 @@ function weather1 (location) {
 
         var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + coords;
         
-
         weather = $.ajax({
             url: URL,
             dataType: 'jsonp',
@@ -68,7 +66,7 @@ function weather1 (location) {
                 var skycons = new Skycons({
                     "color": 'black'});
                 // $(".weather").append(skycons.add("icon1", icon));
-                $(".weather").append('<p><canvas id="icon1" >'+skycon_anim+'</canvas><br>' + temp + ' °F | ' + tempc + ' °C<br>' + summary + '<br>' + precipitation + '% Chance of Rain</p>');
+                $(".weather").html('<p><canvas id="icon1" >'+skycon_anim+'</canvas><br>' + temp + ' °F | ' + tempc + ' °C<br>' + summary + '<br>' + precipitation + '% Chance of Rain</p>');
                 switch (icon) {
                     case 'partly-cloudy-night':
                         var skycon_anim = skycons.add("icon1", Skycons.PARTLY_CLOUDY_NIGHT);
@@ -124,12 +122,12 @@ function weather1 (location) {
                     // height: "toggle"
                 }, 700, function() {
                     // console.log("// Animation complete.");
+                    // weatherDone = true;
                   });
             },
             error: function (response) {
                 console.log("Forecast.io API request failed");
             }
         });
-
 
 }

@@ -15,5 +15,17 @@ class ApplicationController < ActionController::Base
   def set_cities
     @cities = City.all
   end
+
+  helper_method def user_articles(user)
+    @articles = user.articles.collect { |article| article.url }
+  end 
+
+  helper_method def user_photos(user)
+    @photos = user.photos.collect { |photo| photo.url }
+  end 
+
+  helper_method def user_tweets(user)
+    @tweets = user.tweets.collect { |tweet| tweet.uid }
+  end 
   
 end

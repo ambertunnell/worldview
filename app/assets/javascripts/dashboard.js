@@ -1,6 +1,6 @@
 $(function () {
   
-  // see if url has has and get that hash
+  // see if url has hash and get that hash
   var x = location.hash;
 
   //populate dashboard if URL is #dashboard
@@ -69,6 +69,8 @@ $(function () {
               success: function(response) {
                   console.log("Article DELETE request successful");
                   console.log("article url = " + articleUrl);
+                  userArticles = response;
+                  article(userCity);    
               },
               error: function(response) {
                   console.log("Article DELETE request failed");
@@ -125,6 +127,8 @@ $(function () {
             success: function(response) {
                 console.log("Photo DELETE request successful");
                 console.log("photo url = " + photoUrl);
+                userPhotos = response;
+                photos(userCity);
             },
             error: function(response) {
                 console.log("Photo DELETE request failed");
@@ -185,6 +189,8 @@ $(function () {
             success: function(response) {
                 console.log("Tweet DELETE request successful");
                 console.log("tweet url = " + tweetData);
+                userTweets = response;
+                tweets(userCity);      
             },
             error: function(response) {
                 console.log("Tweet DELETE request failed");

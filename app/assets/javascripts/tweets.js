@@ -20,6 +20,7 @@ function tweets(location) {
                 for (var i = 0; i < response.length; i++) {
                     // console.log(response);
                     var tweet = response[i].text;
+                    var id = response[i].id;
 
                     // render hashtags as links
                     for (var j = 0; j < response[i].entities.hashtags.length; j++) {
@@ -50,27 +51,67 @@ function tweets(location) {
                     }
 
                     if (i % 4 === 0) {
-                        $('#twitter1').append("<li><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
+                        $('#twitter1').append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
+                        if (loggedIn == true) {
+                            console.log("Show tweet like button.");
+
+                            for (var j = 0; j < userTweets.length; j++) {
+                                if (id === userTweets[j]) {
+                                    $("#twitter1 :last-child button").last().html("Saved in dashboard!");
+                                    $("#twitter1 :last-child button").last().prop("disabled",true);
+                                }
+                            }
+                        } 
                     }
                     if (i % 4 === 1)  {  
-                        $('#twitter2').append("<li><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
+                        $('#twitter2').append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
+                        if (loggedIn == true) {
+                            console.log("Show tweet like button.");
+
+                            for (var j = 0; j < userTweets.length; j++) {
+                                if (id === userTweets[j]) {
+                                    $("#twitter2 :last-child button").last().html("Saved in dashboard!");
+                                    $("#twitter2 :last-child button").last().prop("disabled",true);
+                                }
+                            }
+                        } 
                     }
                     if (i % 4 === 2)   {  
-                        $('#twitter3').append("<li><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
+                        $('#twitter3').append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
+
+                        if (loggedIn == true) {
+                            console.log("Show tweet like button.");
+
+                            for (var j = 0; j < userTweets.length; j++) {
+                                if (id === userTweets[j]) {
+                                    $("#twitter3 :last-child button").last().html("Saved in dashboard!");
+                                    $("#twitter3 :last-child button").last().prop("disabled",true);
+                                }
+                            }
+                        } 
                     }  
                     if (i % 4 === 3)   {
-                        $('#twitter4').append("<li><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
+                        $('#twitter4').append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
+
+                        if (loggedIn == true) {
+                            console.log("Show tweet like button.");
+
+                            for (var j = 0; j < userTweets.length; j++) {
+                                if (id === userTweets[j]) {
+                                    $("#twitter4 :last-child button").last().html("Saved in dashboard!");
+                                    $("#twitter4 :last-child button").last().prop("disabled",true);
+                                }
+                            }
+                        } 
                     }
 
-                    if (loggedIn == true){
-                        console.log("Show tweet like button.")
-                        $('.save-tweet').show();            
-                      } else {
-                        console.log("Hide tweet like button.")
-                        $('.save-tweet').hide();
-                      }
 
                 }
+
+                if (loggedIn == false) {
+                    $('.save-tweet').hide();
+                }
+
             },
             error: function (response) {
                 console.log("error");
@@ -86,6 +127,7 @@ $(function () {
         event.preventDefault();
 
         var individual_tweet = $(this).closest('li').find('h3').html();
+        var id = $(this).closest('li').data("id");
 
         var $that = $(this);
 
@@ -94,7 +136,8 @@ $(function () {
             url: "/tweets",
             data: {
                 tweet: {
-                    data: individual_tweet
+                    data: individual_tweet,
+                    uid: id
                 }
             },
             success: function (response) {

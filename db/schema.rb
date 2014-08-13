@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810065309) do
+ActiveRecord::Schema.define(version: 20140812222654) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -53,9 +53,10 @@ ActiveRecord::Schema.define(version: 20140810065309) do
   end
 
   create_table "tweets", force: true do |t|
-    t.string   "data"
+    t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "uid"
   end
 
   create_table "user_articles", force: true do |t|

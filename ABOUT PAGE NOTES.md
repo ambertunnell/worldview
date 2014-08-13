@@ -1,0 +1,21 @@
+- site structure
+
+- uses multiple ajax calls to asynchronously call apis
+- on page load, loads five cities (default cities) by pinging forecast.io's api and gets the UTC offset and time to set the clocks (if you're logged in, pulls your five most recent cities)
+  - checks if you're logged in - if so, pull the last five cities you had the last time you were logged in
+- when you click a clock, calls four api calls - articles, weather, photos and tweets
+  - each call fires asyncronously, retrieving relevant data from each source for the city using different information
+  - article searches for name and geolocation info
+    - if not enough results for the city, removes geo info and adds bigger entity
+    - if still not enough results, searches for just bigger entity
+  - weather searches based on lat and lon
+  - photo searches for city name and bigger entity
+  - tweet searches for popular tweets (activity) plus hashtag with the city
+- if you're logged in, can add a new city
+  - when you enter a valid city, sends ajax request to weather underground's autocomplete api
+  - gets next best match for a city and generates a new clock for that city
+- saving
+  - if logged in, creates save buttons next to each content piece 
+  - when you click save, it sends all the data attached to the piece of content to the database, makes a new content piece (or recalls it if it already exists) 
+  - when you click dashboard, it sends requests to the database for all of the user's stored content
+  - when you delete an item, it sends a request to the database to destroy it
