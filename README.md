@@ -1,4 +1,4 @@
-# Worldview
+# worldview
 
 ## Description
 
@@ -25,11 +25,12 @@ Rails app that curates media for tens of thousands of searchable cities in the w
 
 + Utilize more news APIs to create a more comprehensive news base
 + Allow users to customize content further 
++ Plan to add additional test coverage
 
 
 ## Authors
 
-Koren Leslie Cohen, Edward Warren, Ben Serviss, & Amber Tunnell 
+[Koren Leslie Cohen](https://github.com/KorenLeslieCohen), [Edward Warren](https://github.com/Ewarren7), [Ben Serviss](https://github.com/kamoh), & [Amber Tunnell](https://github.com/ambertunnell) 
 
 
 ## License
