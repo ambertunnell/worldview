@@ -1,33 +1,41 @@
 
 <br><br>Want to know how worldview works? <a href = "#" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Read more</a>.
-    <div id="light" class="white_content"><h4>What's in a worldview?</h4><br>
-      <div>
-      <div id="about-col-1">
-        <img src="/assets/worldview_6.png">
-      </div>
-      <div id="about-col-2">
-        How do we find up-to-the-minute information on almost every city in the world in just a click? Behind the scenes, worldview works with five APIs to pull detailed data about each city.
 
-        <h2>Creating the Clock</h2>
+<div id="light" class="white_content"><h4>What's in a worldview?</h4><br>
+    <a id="dashboard-xlink" href="#" title="Close" class="close" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">X</a>
+    <!-- <a href = "#" >Close</a> -->
+<div class="modal-box">
+    <div class="modal-text">
+  <div>
+  <div id="about-col-1"><br><br>
+    <img src="/assets/worldview_6.png">
+  </div>
+  <div id="about-col-2"><br><br>
+    How do we find up-to-the-minute information on almost every city in the world in just a click? Behind the scenes, worldview works with five APIs to pull detailed data about each city.
 
-        When you enter in a new city, the name is sent to <%= link_to 'Weather Underground', 'http://www.wunderground.com/weather/api/', target: '_blank' %>'s Autocomplete API, which matches your input with the most relevant city and returns its name, state, country and coordinates.<br><br>
+    <h2>Creating the Clock</h2>
 
-        Next, this information is sent to <%= link_to 'Forecast.io', 'https://developer.forecast.io/', target: '_blank' %>, which returns the UTC Offset to generate that city's current time. With this information, worldview creates a new clock representing that city.
+    When you enter in a new city, the name is sent to <%= link_to 'Weather Underground', 'http://www.wunderground.com/weather/api/', target: '_blank' %>'s Autocomplete API, which matches your input with the most relevant city and returns its name, state, country and coordinates.<br><br>
 
-        <h2>Finding the Data</h2>
+    Next, this information is sent to <%= link_to 'Forecast.io', 'https://developer.forecast.io/', target: '_blank' %>, which returns the UTC Offset to generate that city's current time. With this information, worldview creates a new clock representing that city.
 
-        With the city's clock created and saved to the database, the next step relies on you.<br><br>
+    <h2>Finding the Data</h2>
 
-        When you click the clock, all the information previously gathered is split up into separate API calls and sent out to <%= link_to 'The New York Times', 'http://developer.nytimes.com/docs', target: '_blank' %> for news; <%= link_to 'Forecast.io', 'https://developer.forecast.io/', target: '_blank' %> once again for the current weather; <%= link_to 'Flickr', 'https://www.flickr.com/services/api/', target: '_blank' %> for tagged photos; and <%= link_to 'Twitter', 'https://dev.twitter.com/', target: '_blank' %> for trending tweets carrying the city's hashtag.
+    With the city's clock created and saved to the database, the next step relies on you.<br><br>
 
-        <h2>Instant Updates</h2>
+    When you click the clock, all the information previously gathered is split up into separate API calls and sent out to <%= link_to 'The New York Times', 'http://developer.nytimes.com/docs', target: '_blank' %> for news; <%= link_to 'Forecast.io', 'https://developer.forecast.io/', target: '_blank' %> once again for the current weather; <%= link_to 'Flickr', 'https://www.flickr.com/services/api/', target: '_blank' %> for tagged photos; and <%= link_to 'Twitter', 'https://dev.twitter.com/', target: '_blank' %> for trending tweets carrying the city's hashtag.
 
-        <%= link_to 'worldview','http://world-view.today' %> makes liberal use of AJAX (Asyncronous JavaScript and XML) calls to request and fetch data instantly. This allows the site to function on a single page for a truly seamless experience.<br><br>
+    <h2>Instant Updates</h2>
 
-        <div class="clearfix"></div>
-      </div>
-    </div>
-              <a href = "#" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+    <%= link_to 'worldview','http://world-view.today' %> makes liberal use of AJAX (Asyncronous JavaScript and XML) calls to request and fetch data instantly. This allows the site to function on a single page for a truly seamless experience.<br><br>
+
+    <div class="clearfix"></div>
+  </div>
+</div>
+          
 <br>
+</div>
+    
     </div>
-    <div id="fade" class="black_overlay"></div>
+</div>
+<div id="fade" class="black_overlay"></div>
