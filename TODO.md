@@ -2,6 +2,11 @@ News Navigator
 News Sprint | NewSprint
 worldview
 
+BUGS
+
+- like a picture, switch cities, go back to the city, the picture won't be marked as 'liked' already
+- add text that says 'log in to add infinite cities'
+
 WEDNESDAY
 
 - firefox
@@ -12,7 +17,6 @@ WEDNESDAY
  (fixed) - small gap of white space above nav bar
 - chrome
   (fixed) - tweet like button not working (on heroku)
-
 
 PRIORITY
 
