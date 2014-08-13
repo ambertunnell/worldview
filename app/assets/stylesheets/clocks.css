@@ -16,8 +16,8 @@
   padding: 0;
   left: 0;
   top: 0;
-  /*width: 1300px;*/
-  width: 100%;
+  min-width: 1300px;
+  /*width: 100%;*/
   background-image: image-url('1.jpg');
   background-attachment: fixed;
   background-size: cover;

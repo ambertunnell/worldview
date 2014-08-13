@@ -23,8 +23,8 @@ h4 {
 .divider {
   border-bottom: 5px solid white;
   height: 200px;
-  width: 100%;
-  float: left;
+  min-width: 1300px;
+  /*float: left;*/
 }
 
 .dividerone {
@@ -34,13 +34,13 @@ h4 {
 }
 
 .dividertwo {
-    background-image: url('paris.jpg');
+  background-image: url('paris.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
 
 .dividerthree {
-    background-image: url('boston.jpg');
+  background-image: url('boston.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
