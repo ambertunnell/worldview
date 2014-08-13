@@ -1,4 +1,4 @@
-# Worldview
+# worldview
 
 ## Description
 
@@ -25,6 +25,7 @@ Rails app that curates media for tens of thousands of searchable cities in the w
 
 + Utilize more news APIs to create a more comprehensive news base
 + Allow users to customize content further 
++ Plan to add additional test coverage
 
 
 ## Authors

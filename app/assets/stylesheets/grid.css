@@ -53,7 +53,7 @@ h4 {
 }
 
 .dividerone {
-  background-image: url('nyc.jpg');
+  background-image: url('hongkong.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
@@ -65,7 +65,7 @@ h4 {
 }
 
 .dividerthree {
-    background-image: url('hongkong.jpg');
+    background-image: url('boston.jpg');
   background-attachment: fixed;
   background-size: cover;
 }

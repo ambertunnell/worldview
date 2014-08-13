@@ -147,19 +147,24 @@ $(function () {
         success: function (response) {
             console.log("Tweet GET request successful.");
 
-            $('#dashboard .dashboard-tweets').empty();
+            $('#dashboard .dashboard-tweets1').empty();
+            $('#dashboard .dashboard-tweets2').empty();
+            $('#dashboard .dashboard-tweets3').empty();
 
             for (var i = 0; i < response.length; i++) {
                 var data = response[i].data;
 
                 if (i % 3 === 0) {
                   $('#dashboard .dashboard-tweets1').append("<li><div class='individual-tweet-dash'><h3>" + data + "</h3><button class='remove-tweet'>Remove</button></div></li>");
+                  console.log("Adding tweet " + i);
                 }
                 if (i % 3 === 1) {
                   $('#dashboard .dashboard-tweets2').append("<li><div class='individual-tweet-dash'><h3>" + data + "</h3><button class='remove-tweet'>Remove</button></div></li>");
+                  console.log("Adding tweet " + i);
                 }
                 if (i % 3 === 2) {
                   $('#dashboard .dashboard-tweets3').append("<li><div class='individual-tweet-dash'><h3>" + data + "</h3><button class='remove-tweet'>Remove</button></div></li>");
+                  console.log("Adding tweet " + i);
                 }
             }
         },

@@ -63,12 +63,17 @@ ul {
   overflow: auto;
   background-color: #fff;  
   padding: 5px;
+  border-bottom: 3px solid red;
 }
 
 .dashboard-articles {
   float: left;
-  margin: 5px;
   display: inline-block; 
+}
+
+.col-dashboard-news ul,
+.dashboard-articles ul {
+  width: 100%;
 }
 
 .dashboard-articles li {
@@ -77,6 +82,7 @@ ul {
     margin-bottom: 10px;
     padding-right: 5px;
     height: 150px;
+    width: 100%;
 }
 
 .dashboard-articles li h3 {
@@ -93,6 +99,10 @@ ul {
   margin-top: 0 !important;
   margin-bottom: 5px; 
   float: left;
+}
+
+.dashboard-articles li h3 a:hover {
+  color: red !important;
 }
 
 .my-article img {
@@ -148,6 +158,7 @@ ul {
 .col-dashboard-photos {
   display: inline-block;
   width: 100%;
+  border-bottom: 3px solid red;
 }
 
 /****** PHOTOS ******/
@@ -167,8 +178,8 @@ ul {
 }
 
 .dash-photo {
-  height: 215px;
-  border: 13px solid white;
+  height: 230px;
+  border: 10px solid white;
 }
 
 .dash-photo:hover {
@@ -176,12 +187,11 @@ ul {
 }
 
 .dashboard-photos li img {
-  height: 180px;
-  width: 250px;
+  height: 200px;
+  width: 260px;
   opacity: .000001;
   padding: 2px;
   margin: auto;
-  border: 5px solid white;
 }
 
 .dashboard-photos .photo button {
@@ -220,7 +230,6 @@ ul {
   font-family: 'Oswald';
 }
 
-
 .individual-tweet-dash {
   text-align: left;
   padding: 10px;
@@ -253,9 +262,15 @@ ul {
 .dashboard-tweets1 h3 a,
 .dashboard-tweets2 h3 a,
 .dashboard-tweets3 h3 a {
-  color: #003399 !important;
   font-size: 20px; 
-  font-family: Oswald;   
+  font-family: Oswald;
+  color: #003399;   
+}
+
+.dashboard-tweets1 h3 a:hover,
+.dashboard-tweets2 h3 a:hover,
+.dashboard-tweets3 h3 a:hover {
+  color: red;
 }
 
 .dashboard-tweets1 button,
