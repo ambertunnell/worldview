@@ -14,9 +14,19 @@ class TweetsController < ApplicationController
       cityname: [],
       bigthing: []
     }
+  
+
+    if @city.name.split(" ").length > 2
+       cityShort = @city.name.split(" ")[0] + @city.name.split(" ")[1]  
+    end
+    cityLong = @city.name.gsub(/ /,"")
+    bigthingLong = @city.bigger_thing.gsub(/ /,"")
+    
+    tweets[:cityname].push(@client.search("##{cityLong} -rt", :result_type => "popular", :lang => "en" ).take(10)).flatten!
+    tweets[:cityname].push(@client.search("##{cityShort} -rt", :result_type => "popular", :lang => "en" ).take(10)).flatten!
+    tweets[:bigthing].push(@client.search("##{bigthingLong} -rt", :result_type => "popular", :lang => "en" ).take(10)).flatten!
     # binding.pry
-    # tweests:cityname << @client.search("##{} -rt", :result_type => "popular", :lang => "en" ).take(12).collect.to_json
-    # render :json => @client.search("##{} -rt", :result_type => "popular", :lang => "en" ).take(12).collect.to_json
+    render :json => tweets.to_json
     
   end
 
