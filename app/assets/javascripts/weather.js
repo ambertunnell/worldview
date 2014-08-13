@@ -5,39 +5,10 @@ function weather1 (location) {
     var lon = location.lon;
     var lat = location.lat;
     var coords = lat+","+lon;
-    // var nyc_coords = "40.712784,-74.005941",
-    //     london_coords = "51.507351,-0.127758",
-    //     hongkong_coords = "22.396428,114.10949700000003", 
-    //     sydney_coords = "-33.867487,151.20699",
-    //     paris_coords = "48.856614,2.352222",
-    //     sanfran_coords = "37.7749295,-122.41941550000001"; 
 
     $('.weather-header').show();
     $('.weather-header h4').show();
-    $(".weather").empty();
-           
-        // var coords;
-
-        // switch (location) {
-        //     case 'newyork':
-        //         coords = nyc_coords;
-        //         break;
-        //     case 'london':
-        //         coords = london_coords;
-        //         break;
-        //     case 'hongkong':
-        //         coords = hongkong_coords;
-        //         break;
-        //     case 'sydney':
-        //         coords = sydney_coords;
-        //         break;
-        //     case 'paris':
-        //         coords = paris_coords;
-        //         break;
-        //     case 'sanfran':
-        //         coords = sanfran_coords;
-        //         break;
-        // };
+    $(".weather").attr("style='opacity:0'");
 
         var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + coords;
         
@@ -45,17 +16,12 @@ function weather1 (location) {
             url: URL,
             dataType: 'jsonp',
             success: function (response) {
-                // console.log(response);
 
                 var place = response['timezone'];
                 var continent = (/.*\//).exec(place)[0].replace("/", "");
                 var city = place.replace(/.*\//, "").replace("_", " ");
                 var icon = response.currently.icon;
                 var formatted_icon = response.currently.icon.toUpperCase().split("-").join("_");
-                // console.log(formatted_icon);
-                // if (city === "Shanghai") {
-                //     city = "Beijing";
-                // }
 
                 var locale = city + " | " + continent,
                     temp = parseInt(response['currently']['temperature']),
@@ -65,7 +31,6 @@ function weather1 (location) {
 
                 var skycons = new Skycons({
                     "color": 'black'});
-                // $(".weather").append(skycons.add("icon1", icon));
                 $(".weather").html('<p><canvas id="icon1" >'+skycon_anim+'</canvas><br>' + temp + ' °F | ' + tempc + ' °C<br>' + summary + '<br>' + precipitation + '% Chance of Rain</p>');
                 switch (icon) {
                     case 'partly-cloudy-night':
@@ -111,18 +76,12 @@ function weather1 (location) {
                         break;
                 };
 
-                // skycons.set("icon1", Skycons.formatted_icon);
-                // console.log(formatted_icon);
                 skycons.play();
 
                 $(".weather p").animate({
 
                     left: "+=10",
-                    // right: "+=50",
-                    // height: "toggle"
                 }, 700, function() {
-                    // console.log("// Animation complete.");
-                    // weatherDone = true;
                   });
             },
             error: function (response) {
