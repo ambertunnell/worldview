@@ -5,12 +5,14 @@ var searchTries = 0;
 
 function article (passedCity1) {
 
-        $('.news-header').show();
-        $('#news1').empty();
-        $('#news2').empty();
-            
-       articleLoop();
+$('.news-header').show();
+$('#news1').empty();
+$('#news2').empty();
+
+cityName = passedCity1.name.toLowerCase();
+biggerthing = passedCity1.bigger_thing;
         
+articleLoop();
    
 }
 
