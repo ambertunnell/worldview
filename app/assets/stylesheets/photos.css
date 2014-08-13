@@ -42,7 +42,7 @@
 #flickr .photo {
   /*background-color: rgba(61, 61, 61, 0.8);*/
   background-color: rgba(250,250,250, 0.6);
-  /*float:left;*/
+  float:left;
   position: relative;
   max-width: 290px;
   margin: 13px;
