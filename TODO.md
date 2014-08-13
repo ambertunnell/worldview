@@ -6,7 +6,6 @@ TUESDAY
 
 PRIORITY
 
-- fix weather double click bug
 - finish dashboard (amber & koren)
 - fix the container for the 'log in' button in the top right - keeps overflowing (koren)
 - if there is no content (articles, photos, tweets), add a notice and fallback to bigger thing search
@@ -14,6 +13,7 @@ PRIORITY
 - switching to unicorn from webrick (edward)
 
 (done) - rename ap in twitter auth page (koren)
+(done) - fix weather double click bug
 
 OTHERS
 
