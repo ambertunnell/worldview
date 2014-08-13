@@ -117,7 +117,7 @@ function printArticles(){
     
  
     
-    for (var i = 0; i < 10; i=i+2) { //put every other article in first column
+    for (var i = 0; i < response.length; i=i+2) { //put every other article in first column
         var result = response[i];
         var id = response[i]._id;
         var title = response[i].headline.main;
@@ -152,7 +152,7 @@ function printArticles(){
     }
 
  
-        for (var i = 1; i < 10; i=i+2) {//put every other article in 2nd column
+        for (var i = 1; i < response.length; i=i+2) {//put every other article in 2nd column
             var result = response[i];
             var id = response[i]._id;
             var title = response[i].headline.main;
