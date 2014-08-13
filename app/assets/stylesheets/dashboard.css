@@ -11,9 +11,6 @@
   left: 0;
   z-index: 0;
   opacity:0;
-/*  -webkit-transition: opacity 400ms ease-in;
-  -moz-transition: opacity 400ms ease-in;
-  transition: opacity 400ms ease-in;*/
   transition-duration: 1.2s;
   pointer-events: none;
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -44,8 +41,6 @@ ul {
 
 .dashboard-photo {
   width: 90%;
-  /*float: left;*/
-  /*height: 300px;*/
   display: block;
 }
 
@@ -56,7 +51,6 @@ ul {
 .dashboard-photo img {
   width: 150px;
   border-radius: 50%;
-  /*border: 2px solid black;*/
   padding-bottom: 15px;
 }
 
@@ -66,16 +60,9 @@ ul {
   clear: both;
   width: 100% !important;
   display: block;
-  /*border: 1px solid grey;*/
   overflow: auto;
-  /*height: 500px;     */
   background-color: #fff;  
   padding: 5px;
-  /*margin-bottom: 10px;*/
-}
-
-.col-dashboard-news h4 {
-
 }
 
 .dashboard-articles {
@@ -107,7 +94,6 @@ ul {
   margin-bottom: 5px; 
   float: left;
 }
-
 
 .my-article img {
   height: 150px;
@@ -155,30 +141,21 @@ ul {
 .col-dashboard-tweets {
   width: 100%;
   overflow: auto;
-  /*height: 550px;*/
-  /*border: 1px solid grey;*/
   display: inline-block;
   font-family: 'Oswald';
-/*  margin-left: 40px;*/
 }
 
 .col-dashboard-photos {
   display: inline-block;
-/*  margin-left: 35px;*/
   width: 100%;
-  /*margin-left: 30px;*/
 }
 
 /****** PHOTOS ******/
 
 
 .dashboard-photos li {
-  /*height: 150px;*/
-  /*width: 100%;*/
   display: inline-block;
-  /*padding: 10px;*/
   float: left;
-  /*margin: 5px;*/
 }
 
 .dashboard-photos h3 {
@@ -192,8 +169,6 @@ ul {
 .dash-photo {
   height: 215px;
   border: 13px solid white;
-  /*padding: 10px;*/
- /* margin-left: 20px;*/
 }
 
 .dash-photo:hover {
@@ -201,20 +176,15 @@ ul {
 }
 
 .dashboard-photos li img {
-  height: 210px;
-  width: 257px;
+  height: 180px;
+  width: 250px;
   opacity: .000001;
-
-  /*float: left;*/
-  /*padding: 5px;*/
   padding: 2px;
   margin: auto;
   border: 5px solid white;
-  /*height: 200px;*/
 }
 
 .dashboard-photos .photo button {
-  /*position: absolute;*/
   float: left;
   background: none;
   color: white; 
@@ -230,8 +200,6 @@ ul {
   transition-duration: .5s;
   transition-property: background, border-color, color;
 }
-
-
 
 /****** TWEETS ******/
 
@@ -249,14 +217,12 @@ ul {
 .dashboard-tweets3 {
   float: left;
   width: 30%;
-/*  margin: 5px;*/
   font-family: 'Oswald';
 }
 
 
 .individual-tweet-dash {
   text-align: left;
-  /*height: 105px;*/
   padding: 10px;
   border-bottom: 1px solid grey;
   overflow: auto;
@@ -267,7 +233,6 @@ ul {
 .dashboard-tweets1 li img,
 .dashboard-tweets2 li img,
 .dashboard-tweets3 li img {
-  /*height: 150px;*/
   float: left;
   display: inline;
   width: 100%;
