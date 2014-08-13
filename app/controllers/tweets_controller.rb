@@ -10,11 +10,7 @@ class TweetsController < ApplicationController
      # <City id: 3, name: "London", created_at: "2014-08-13 01:04:48", updated_at: "2014-08-13 01:04:48", bigger_thing: "United Kingdom", lon: -0.45, lat: 51.48, country: "GB">
     
     @city = City.find(params[:location])
-    tweets = {
-      cityname: [],
-      bigthing: []
-    }
-  
+    tweets = []
 
     if @city.name.split(" ").length > 2
        cityShort = @city.name.split(" ")[0] + @city.name.split(" ")[1]  
@@ -22,11 +18,15 @@ class TweetsController < ApplicationController
     cityLong = @city.name.gsub(/ /,"")
     bigthingLong = @city.bigger_thing.gsub(/ /,"")
     
-    tweets[:cityname].push(@client.search("##{cityLong} -rt", :result_type => "popular", :lang => "en" ).take(10)).flatten!
-    tweets[:cityname].push(@client.search("##{cityShort} -rt", :result_type => "popular", :lang => "en" ).take(10)).flatten!
-    tweets[:bigthing].push(@client.search("##{bigthingLong} -rt", :result_type => "popular", :lang => "en" ).take(10)).flatten!
-    # binding.pry
-    render :json => tweets.to_json
+    tweets.push(@client.search("##{cityLong} -rt", :result_type => "popular", :lang => "en" ).take(10)).flatten!
+    if tweets.length <12 && cityShort !=nil
+      tweets.push(@client.search("##{cityShort} -rt", :result_type => "popular", :lang => "en" ).take(10)).flatten!
+    end
+    if tweets.length <12
+      tweets.push(@client.search("##{bigthingLong} -rt", :result_type => "popular", :lang => "en" ).take(10)).flatten!
+    end
+    
+    render :json => tweets.take(12).to_json
     
   end
 

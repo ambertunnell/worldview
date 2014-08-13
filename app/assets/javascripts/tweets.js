@@ -1,3 +1,17 @@
+function printTweet (col,tweetHTML,id) {
+  $('#twitter' + col).append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweetHTML + "</h3><button class='save-tweet'>Like</button></div></li>");
+  if (loggedIn == true) {
+      console.log("Show tweet like button.");
+
+      for (var j = 0; j < userTweets.length; j++) {
+          if (id === userTweets[j]) {
+              $("#twitter"+col +":last-child button").last().html("Saved in dashboard!");
+              $("#twitter"+col +":last-child button").last().prop("disabled",true);
+          }
+      }
+  } 
+}
+
 function tweets(location) {
 
         var search_term = location.name.replace(/ /g,"");
@@ -16,7 +30,7 @@ function tweets(location) {
             data: {},
             dataType: "json",
             success: function(response) {
-                console.log("twitter response: "+response);
+                
                 for (var i = 0; i < response.length; i++) {
                     // console.log(response);
                     var tweet = response[i].text;
@@ -51,63 +65,11 @@ function tweets(location) {
                         }
                     }
 
-                    if (i % 4 === 0) {
-                        $('#twitter1').append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
-                        if (loggedIn == true) {
-                            console.log("Show tweet like button.");
+                    //print tweet
 
-                            for (var j = 0; j < userTweets.length; j++) {
-                                if (id === userTweets[j]) {
-                                    $("#twitter1 :last-child button").last().html("Saved in dashboard!");
-                                    $("#twitter1 :last-child button").last().prop("disabled",true);
-                                }
-                            }
-                        } 
-                    }
-                    if (i % 4 === 1)  {  
-                        $('#twitter2').append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
-                        if (loggedIn == true) {
-                            console.log("Show tweet like button.");
+                    printTweet((i % 4)+1,tweet,id);
 
-                            for (var j = 0; j < userTweets.length; j++) {
-                                if (id === userTweets[j]) {
-                                    $("#twitter2 :last-child button").last().html("Saved in dashboard!");
-                                    $("#twitter2 :last-child button").last().prop("disabled",true);
-                                }
-                            }
-                        } 
-                    }
-                    if (i % 4 === 2)   {  
-                        $('#twitter3').append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
-
-                        if (loggedIn == true) {
-                            console.log("Show tweet like button.");
-
-                            for (var j = 0; j < userTweets.length; j++) {
-                                if (id === userTweets[j]) {
-                                    $("#twitter3 :last-child button").last().html("Saved in dashboard!");
-                                    $("#twitter3 :last-child button").last().prop("disabled",true);
-                                }
-                            }
-                        } 
-                    }  
-                    if (i % 4 === 3)   {
-                        $('#twitter4').append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweet + "</h3><button class='save-tweet'>Like</button></div></li>");
-
-                        if (loggedIn == true) {
-                            console.log("Show tweet like button.");
-
-                            for (var j = 0; j < userTweets.length; j++) {
-                                if (id === userTweets[j]) {
-                                    $("#twitter4 :last-child button").last().html("Saved in dashboard!");
-                                    $("#twitter4 :last-child button").last().prop("disabled",true);
-                                }
-                            }
-                        } 
-                    }
-
-
-                }
+                 }
 
                 if (loggedIn == false) {
                     $('.save-tweet').hide();
@@ -122,6 +84,7 @@ function tweets(location) {
         });
     
 }
+
 $(function () {
     $('.twitter-header').hide();
     $("#twitter1, #twitter2, #twitter3, #twitter4").on("click", ".save-tweet", function (event) {
