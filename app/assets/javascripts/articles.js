@@ -128,6 +128,8 @@ function articlePooler(response, fire){ //collect articles until there are at le
             if (response.response.docs[i].headline.main == pickedArticles[b].headline.main) {flagDup = true; console.log ("dup detected. " + response.response.docs[i].headline.main); }
 
         }
+        //flag predictable and undesirable articles from being included
+        if (response.response.docs[i].headline.main == "Fight Schedule") {flagDup = true}
        if (!flagDup){pickedArticles[pickedArticles.length] = response.response.docs[i]}
     }
     console.log("Pooler has  " + pickedArticles.length  + " articles and FIRE = " + fire);
@@ -166,6 +168,21 @@ function printArticles(){
              $('#news1').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + pubdate + "</p><p>" + abstract + "</p><button class='save-article'>Read later</button></li>");
         }
 
+        if (loggedIn == true) {
+            console.log("Show article saved button.");
+
+            for (var j = 0; j < userArticles.length; j++) {
+                if (url === userArticles[j]) {
+                    $("#news1 :last-child button").last().html("Article saved in dashboard!");
+                    $("#news1 :last-child button").last().prop("disabled",true);
+                }
+            }
+        }
+
+        if (loggedIn == false) {
+            $('.save-article').hide();
+        }       
+
     }
 
     if (numberOfArticles > 5) {
@@ -186,18 +203,25 @@ function printArticles(){
                  $('#news2').append("<li class='article' data-id=" + id + "><h3><a target='_blank' href='" + url + "'>" + title + " </a></h3><p>" + pubdate + "</p><p>" + abstract + "</p><button class='save-article'>Read later</button></li>");
             }
 
+            if (loggedIn == true) {
+                console.log("Show article saved button.");
+
+                for (var j = 0; j < userArticles.length; j++) {
+                    if (url === userArticles[j]) {
+                        $("#news2 :last-child button").last().html("Article saved in dashboard!");
+                        $("#news2 :last-child button").last().prop("disabled",true);
+                    }
+                }
+            }
+
+            if (loggedIn == false) {
+                $('.save-article').hide();
+            }  
+
         } 
         // $('#news').hide();
         // $('#news').slideDown(5000);
     }
-
-    if (loggedIn == true){
-        console.log("Show article read later button.")
-        $('.save-article').show();            
-      } else {
-        console.log("Hide article read later button.")
-        $('.save-article').hide();
-      }
 
 }
 
@@ -232,6 +256,7 @@ $(function () {
             success: function (response) {
                 console.log("Saving article successful.");
                 $that.text("Article saved in dashboard!");
+                $that.prop("disabled",true);
             },
             error: function (response) {
                 console.log("Saving article failed.");

@@ -7,6 +7,7 @@ gem 'twitter', '~> 5.11.0'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'jquery-ui-rails'
+gem 'unicorn'
 
 
 

@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   end
 
   def get_cities
-    #binding.pry
     @user = User.find(session[:user_id]) if session[:user_id] 
     if @user != nil
       render json: @user.cities.all.to_json 
@@ -29,9 +28,20 @@ class UsersController < ApplicationController
 
   def signed_in
     if session[:user_id]
-      render json: "true"
+
+      @user_info = {
+        signed_in: true,
+        articles: user_articles(current_user),
+        photos: user_photos(current_user),
+        tweets: user_tweets(current_user)
+      }
+      render json: @user_info
     else
-      render json: "false"
+
+    @user_info = {
+        signed_in: false
+      }
+      render json: @user_info
     end 
   end
 

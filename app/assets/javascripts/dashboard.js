@@ -69,6 +69,8 @@ $(function () {
               success: function(response) {
                   console.log("Article DELETE request successful");
                   console.log("article url = " + articleUrl);
+                  userArticles = response;
+                  article(userCity);    
               },
               error: function(response) {
                   console.log("Article DELETE request failed");
@@ -95,7 +97,7 @@ $(function () {
                 var link = response[i].link;
                 console.log(url);
                 console.log(link);
-                $('#dashboard .dashboard-photos').append("<li><div class='photo dash-photo' style='background-image: url(" + url + "); background-size: cover'><a target='_blank' href='" + link + "'><img src="  + "></a><button class='remove-photo'>Remove</button></div></li>");
+                $('#dashboard .dashboard-photos').append("<li><div class='photo dash-photo' style='background-image: url(" + url + "); background-size: cover'><a target='_blank' href='" + link + "'><img src=" + url + "></a><button class='remove-photo'>Remove</button></div></li>");
             }
         },
         error: function (response) {
@@ -107,9 +109,9 @@ $(function () {
 
       $(".modal-text").on("click",".remove-photo", function(){
         console.log("Remove photo button clicked");
-        $(this).closest("li").slideUp({
+        $(this).closest("li").fadeOut({
           // populateDashboard();
-        });
+        }, 1500);
         var photoUrl = $(this).closest("li").find("img").attr("src")
         // console.log("photo url- " + photoUrl);
         
@@ -125,6 +127,8 @@ $(function () {
             success: function(response) {
                 console.log("Photo DELETE request successful");
                 console.log("photo url = " + photoUrl);
+                userPhotos = response;
+                photos(userCity);
             },
             error: function(response) {
                 console.log("Photo DELETE request failed");
@@ -148,7 +152,15 @@ $(function () {
             for (var i = 0; i < response.length; i++) {
                 var data = response[i].data;
 
-                $('#dashboard .dashboard-tweets').append("<li><h3>" + data + "</h3><button class='remove-tweet'>Remove</button></li>");
+                if (i % 3 === 0) {
+                  $('#dashboard .dashboard-tweets1').append("<li><div class='individual-tweet-dash'><h3>" + data + "</h3><button class='remove-tweet'>Remove</button></div></li>");
+                }
+                if (i % 3 === 1) {
+                  $('#dashboard .dashboard-tweets2').append("<li><div class='individual-tweet-dash'><h3>" + data + "</h3><button class='remove-tweet'>Remove</button></div></li>");
+                }
+                if (i % 3 === 2) {
+                  $('#dashboard .dashboard-tweets3').append("<li><div class='individual-tweet-dash'><h3>" + data + "</h3><button class='remove-tweet'>Remove</button></div></li>");
+                }
             }
         },
         error: function (response) {
@@ -177,6 +189,8 @@ $(function () {
             success: function(response) {
                 console.log("Tweet DELETE request successful");
                 console.log("tweet url = " + tweetData);
+                userTweets = response;
+                tweets(userCity);      
             },
             error: function(response) {
                 console.log("Tweet DELETE request failed");
