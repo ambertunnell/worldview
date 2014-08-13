@@ -1,0 +1,288 @@
+/******* More **********/
+
+#more {
+  position: fixed;
+  overflow: scroll;
+  background-color: white;  
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  opacity:0;
+/*  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;*/
+  transition-duration: 1.2s;
+  pointer-events: none;
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#more:target {
+  /*opacity:1;*/
+  pointer-events: auto;
+}
+
+#more > .modal-box {
+  width: 1100px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 0px;
+  color: black;
+}
+
+#more h4 {
+  font-size: 35px;
+  padding: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+.more-photo {
+  width: 100%;
+  float: left;
+  /*height: 300px;*/
+  display: block;
+}
+
+.more-photo img {
+  width: 150px;
+  border-radius: 50%;
+  /*border: 2px solid black;*/
+  padding-bottom: 15px;
+
+}
+
+/****** ARTICLES ******/
+
+.col-more-news {
+  clear: both;
+  width: 90% !important;
+  display: block;
+  /*border: 1px solid grey;*/
+  overflow: auto;
+  /*height: 500px;     */
+  background-color: #fff;  
+  padding: 5px;
+  /*margin-bottom: 10px;*/
+}
+
+.more-articles {
+  float: left;
+  margin: 5px;
+  display: inline-block; 
+}
+
+.more-articles li {
+    /*border: 1px solid grey;*/
+    margin-bottom: 10px;
+    padding-right: 5px;
+    height: 150px;
+}
+
+
+.more-articles li h3 {
+  height: 20px; 
+  display: block;
+  margin-top: 10px !important;
+}
+
+.more-articles li h3 a {
+  color: #003399 !important;
+  font-family: Oswald;
+  font-size: 20px;
+  text-align: left !important;
+  margin-top: 0 !important;
+  margin-bottom: 5px; 
+  float: left;
+}
+
+
+.my-article img {
+  height: 150px;
+  float: left;
+  margin-right: 10px;
+}
+
+.my-article p {
+  font-family: 'Oswald';
+  font-size: 16px;
+  text-align: justify;
+  margin-bottom: 0 !important;
+}
+
+.more-pubdate {
+  margin: 5px;
+  font-size: 16px !important;
+  display: block !important;
+}
+
+.more-articles button {
+  float: right;
+  float: bottom;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 20px; 
+  color: black; 
+  border: 1px solid black;  
+  display: inline;
+  text-wrap: normal;
+}
+
+.more-articles button:hover {
+  background: #003399;
+  border: 1px solid white;
+  color: white;
+  transition-duration: .5s;
+  transition-property: background, border-color, color;
+}
+
+
+/******************* photos and tweets **********************/
+
+.col-more-tweets {
+  width: 90%;
+  overflow: auto; 
+  /*height: 550px;*/
+  /*border: 1px solid grey;*/
+  display: inline-block;
+}
+
+.col-more-photos {
+  display: inline-block;
+}
+
+/****** PHOTOS ******/
+
+
+.more-photos li {
+  /*height: 150px;*/
+  /*width: 100%;*/
+  display: inline-block;
+  /*padding: 10px;*/
+
+}
+
+.more-photos h3 {
+  display: inline;
+}
+
+.more-photos p {
+  display: inline;
+}
+
+.dash-photo {
+  height: 215px;
+  border: 5px solid white;
+  padding: 10px;
+}
+
+.dash-photo:hover {
+  opacity: .8;
+}
+
+.more-photos li img {
+  height: 210px;
+  width: 225px;
+  opacity: .000001;
+
+  /*float: left;*/
+  /*padding: 5px;*/
+  padding: 2px;
+  margin: auto;
+  border: 5px solid white;
+  /*height: 200px;*/
+}
+
+.more-photos .photo button {
+  /*position: absolute;*/
+  float: left;
+  background: none;
+  color: white; 
+  border: 1px solid white; 
+}
+
+.more-photos button:hover {
+  background: black;
+  border: 1px solid white;
+  color: white;
+  transition-duration: .5s;
+  transition-property: background, border-color, color;
+}
+
+
+
+/****** TWEETS ******/
+
+.more-tweets {
+  float: left;
+  margin: 5px;
+}
+
+
+.more-tweets li {
+  text-align: left;
+  height: 105px;
+  padding: 10px;
+}
+
+.more-tweets h3 {
+  font-family: Oswald;
+  font-size: 20px;
+  text-align: left !important;  
+  margin-top: 10px;
+  margin-bottom: 15px;  
+}
+
+.more-tweets h3 a {
+  color: #003399 !important;
+  font-size: 20px; 
+  font-family: Oswald;   
+}
+
+.more-tweets button {
+  float: right;
+  float: bottom;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 20px; 
+  color: black; 
+  border: 1px solid black;  
+  display: inline;
+  text-wrap: normal;
+}
+
+.more-tweets button:hover {
+  background: #003399;
+  border: 1px solid white;
+  color: white;
+  transition-duration: .5s;
+  transition-property: background, border-color, color;
+}
+
+/********* CLOSE *************/
+
+#more-xlink {
+  font-size: 100px;
+  color: black;
+  display:none;
+}
+
+.close {
+  color: black;
+  line-height: 300px;
+  position: absolute;
+  right: 100px;
+  text-align: center;
+  font-size: 200px;
+  top: -20px;
+  width: 80px;
+  height: 80px;
+  text-decoration: none;
+}
+
+.close:hover { color: #88b7b3; }
