@@ -31,9 +31,10 @@ function articleLoop(){
    
     var query = terms[searchTries][0];
     var geoloc = terms[searchTries][1];
+    var fire = terms[searchTries][2];
     
     console.log ("  ...Have " + pickedArticles.length + " articles. Now Searching for QUERY " + query + " GEOLOC " + geoloc);
-    articleRequest(query, geoloc);
+    articleRequest(query, geoloc, fire);
     searchTries ++;
 }
 
@@ -70,7 +71,7 @@ function articleRequest(query, geoloc, fire){ //pass skip for 2nd arg to skip ge
         jsonpCallback: 'svc_search_v2_articlesearch',
         success: function (response) {
             // var numberOfArticles = response.response.docs.length;
-            // console.log("On 3nd search found this many articles " + numberOfArticles);
+            
             articlePooler(response, fire);
         },
          error: function (response) {
