@@ -1,6 +1,6 @@
 $(function () {
   
-  // see if url has has and get that hash
+  // see if url has hash and get that hash
   var x = location.hash;
 
   //populate dashboard if URL is #dashboard
