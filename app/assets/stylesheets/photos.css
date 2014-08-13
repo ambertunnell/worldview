@@ -1,17 +1,14 @@
 /*PHOTOS*/
 
 .col-md-4 {
-  /*background: white;*/
-  width: 100%;
   min-width: 1200px;
   height: 800px;
   overflow: hidden;
-  margin: 0;
-/*  background-image: url('2.jpg');
-  background-attachment: fixed;
-  background-size: cover;*/
   background: white;
   border-bottom: 5px solid white;
+  width: 1300px;
+  float: center;
+  margin: 0;
 }
 
 #flickr {
