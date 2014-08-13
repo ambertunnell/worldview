@@ -2,9 +2,13 @@ function submit_new_city(passedInput) {
     console.log("submitted " + passedInput);
     if (passedInput !== undefined) {
         var user_input = passedInput;
+    } else if ($("#new-city").val() == "") {
+        $("#invalid_city").text("Input must not be blank");
+        console.log("Input was blank");
+        return false;
     } else if (parseInt($("#new-city").val()) * 0 === 0) {
         console.log("Input is a number and not a valid city");
-        $("#invalid_city").text("Not a valid city");
+        $("#invalid_city").text("Letters only, please");
         console.log(("result: " + parseInt($("#new-city").val()) % 2));
         return false;
     } else {

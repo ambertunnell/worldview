@@ -105,15 +105,6 @@ function tweets(location) {
                         } 
                     }
 
-                    // if (loggedIn == true){
-                    //     console.log("Show tweet like button.")
-                    //     $('.save-tweet').show();            
-                    //   } else {
-                    //     console.log("Hide tweet like button.")
-                    //     $('.save-tweet').hide();
-                    //   }
-
-  
 
                 }
 
