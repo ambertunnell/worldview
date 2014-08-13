@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   end 
 
   helper_method def user_tweets(user)
-    @tweets = user.tweets.collect { |tweet| tweet.data }
+    @tweets = user.tweets.collect { |tweet| tweet.uid }
   end 
   
 end

@@ -47,7 +47,7 @@ class TweetsController < ApplicationController
     
     respond_to do |format|
       if @user.save
-        format.json { render json: @user}
+        format.json { render json: user_tweets(@user)}
       else
         format.json { head :no_content }
       end
@@ -57,7 +57,7 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweet).permit(:data)
+    params.require(:tweet).permit(:data, :uid)
   end  
 
 end

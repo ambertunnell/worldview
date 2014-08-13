@@ -223,14 +223,6 @@ function printArticles(){
         // $('#news').slideDown(5000);
     }
 
-    // if (loggedIn == true){
-    //     console.log("Show article read later button.")
-    //     $('.save-article').show();            
-    //   } else {
-    //     console.log("Hide article read later button.")
-    //     $('.save-article').hide();
-    //   }
-
 }
 
 
