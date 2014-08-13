@@ -4,6 +4,16 @@ worldview
 
 WEDNESDAY
 
+- firefox
+  - footer is pulled up to the top (can fix with a clearfix before the footer div)
+  - clicking a clock does not autoscroll down to the content
+ (fixed) - webfont for footer 'about' text is not working
+ (fixed) - webfont for 'more' lightbox page is not working
+ (fixed) - small gap of white space above nav bar
+- chrome
+  - tweet like button not working (on heroku)
+
+
 PRIORITY
 
 - finish dashboard (amber & koren)
