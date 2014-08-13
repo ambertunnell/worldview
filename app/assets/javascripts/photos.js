@@ -45,7 +45,7 @@ function photos(location) {
 
                     for (var j = 0; j < userPhotos.length; j++) {
                         if (image === userPhotos[j]) {
-                            $("#flickr :last-child button").last().html("Saved");
+                            $("#flickr :last-child button").last().html("Saved!");
                             $("#flickr :last-child button").last().prop("disabled",true);
                         }
                     }
@@ -178,7 +178,7 @@ $(function () {
 
                         for (var j = 0; j < userPhotos.length; j++) {
                             if (image === userPhotos[j]) {
-                                $("#flickr :last-child button").last().html("Saved");
+                                $("#flickr :last-child button").last().html("Saved!");
                             }
                         }
                     }
