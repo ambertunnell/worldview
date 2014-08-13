@@ -2,18 +2,13 @@ News Navigator
 News Sprint | NewSprint
 worldview
 
-TUESDAY
+WEDNESDAY
 
 PRIORITY
 
-- fix weather double click bug
 - finish dashboard (amber & koren)
-- fix the container for the 'log in' button in the top right - keeps overflowing (koren)
 - if there is no content (articles, photos, tweets), add a notice and fallback to bigger thing search
-- testing (ben)
-- switching to unicorn from webrick (edward)
-
-(done) - rename ap in twitter auth page (koren)
+- stress testing (everyone)
 
 OTHERS
 
@@ -30,6 +25,13 @@ OTHERS
   - possibly make night/day clock backgrounds
 - footer & about page (and diagram of ajax calls)
 - adding another login (facebook? linkedin?)
+
+TUESDAY
+
+(done) - switching to unicorn from webrick (edward)
+(done) - fix the container for the 'log in' button in the top right - keeps overflowing (koren)
+(done) - rename ap in twitter auth page (koren)
+(done) - fix weather double click bug
 
 MONDAY
 
