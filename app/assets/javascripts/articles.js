@@ -41,16 +41,26 @@ function article (passedCity1) {
 
 //loop through the term array until there are 10 articles. relies on global vars to track tries
 function articleLoop(){
-    //var citySort = userCity.city
-    var terms = [[cityName,biggerthing],[cityName + " " + biggerthing,"skip"], [biggerthing,"skip", true]];
+    var terms = [[cityName,biggerthing], [cityName + " " + biggerthing,"skip"], [biggerthing,"skip", true]];
+    if (cityName.split(" ").slice().length > 2) {// cities with 3 words get cut to 2 words in cascading fall back searches
+        var cityShort = cityName.split(" ").slice()[0] + " " + cityName.split(" ").slice()[1];
+        terms.splice(1, 0, [cityShort,biggerthing]);
+        terms.splice(3, 0, [cityShort + " " + biggerthing,"skip"]);
+        console.log ("Spliced IN!!!!!!!!!");
+        
+    }
+   
+
     var query = terms[searchTries][0];
     var geoloc = terms[searchTries][1];
+    
     console.log ("  ...Have " + pickedArticles.length + " articles. Now Searching for QUERY " + query + " GEOLOC " + geoloc);
     articleRequest(query, geoloc);
+    searchTries ++;
 }
 
 //perform ajax query to news api.
-function articleRequest(query, geoloc, fire){
+function articleRequest(query, geoloc, fire){ //pass skip for 2nd arg to skip geoloc
     var API_KEY = "dd74b110c07677ce3e0c5c1f94642e26:10:31738630";
     var today = new Date();
     var past = today.setDate(today.getDate()-15);
@@ -84,7 +94,6 @@ function articleRequest(query, geoloc, fire){
             // var numberOfArticles = response.response.docs.length;
             // console.log("On 3nd search found this many articles " + numberOfArticles);
             articlePooler(response, fire);
-            searchTries ++;
         },
          error: function (response) {
             console.log("News ajax query failed.");
