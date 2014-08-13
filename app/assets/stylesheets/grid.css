@@ -20,32 +20,7 @@ h4 {
   padding-top: 50px;
 }
 
-.entire-container {
-  width: 1300px;
-  float: center;
-  margin: 0;
-}
-
-.grid, 
-.container {
-  width: 100%;
-  margin: 0;
-  float: left;
-}
-
-.container {
-  width: 1300px;
-  background-image: image-url('1.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  /*border-bottom: 5px solid white;*/
-  height: 100vh;
-  margin: 0;
-
-}
-
 .divider {
-  /*background: white;*/
   border-bottom: 5px solid white;
   height: 200px;
   width: 100%;
@@ -53,7 +28,7 @@ h4 {
 }
 
 .dividerone {
-  background-image: url('nyc.jpg');
+  background-image: url('hongkong.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
@@ -65,7 +40,7 @@ h4 {
 }
 
 .dividerthree {
-    background-image: url('hongkong.jpg');
+    background-image: url('boston.jpg');
   background-attachment: fixed;
   background-size: cover;
 }

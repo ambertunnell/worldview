@@ -2,19 +2,22 @@ News Navigator
 News Sprint | NewSprint
 worldview
 
-MONDAY
+TUESDAY
 
 PRIORITY
 
+- fix weather double click bug
 - finish dashboard (amber & koren)
 - fix the container for the 'log in' button in the top right - keeps overflowing (koren)
-- check for duplicate news headlines (edward)
 - if there is no content (articles, photos, tweets), add a notice and fallback to bigger thing search
-- articles won't display if the article array is less than 10 (edward)
 - testing (ben)
+- switching to unicorn from webrick (edward)
+
+(done) - rename ap in twitter auth page (koren)
 
 OTHERS
 
+(later) - article title filter (for fight times, other schedules)
   - if you're logged in and save something, when you save out and come back, the 'save' button should be 'saved'
 - testing and collect all bugs/feedback items (everyone)
 - background photo should pull in from flickr (or a map?)
@@ -22,15 +25,18 @@ OTHERS
   - results page if there are no results for a search
   - (low) adding a city when you're not logged in
   - (next year) autocomplete when adding 3 characters
-- rename ap in twitter auth page (koren)
 - general css styling (koren)
 - possibly make clock hands white? easier to see on the dark background
   - possibly make night/day clock backgrounds
-- show photos attached to tweets (ben)
 - footer & about page (and diagram of ajax calls)
-- tuesday (deploy to heroku to find problems)
 - adding another login (facebook? linkedin?)
 
+MONDAY
+
+(done) - tuesday (deploy to heroku to find problems)
+(done) - show photos attached to tweets 
+(done) - articles won't display if the article array is less than 10 (edward)
+(done) - check for duplicate news headlines (edward)
 (done) - fix log in with twitter button so the whole thing is a clickable link (ben)
 (done) - add international and school filter to city locations (ben)
   (done) - if there's an int'l or school, go to the next array result
