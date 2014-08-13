@@ -136,4 +136,9 @@ MODELS
 
   articles
 
+  GIT BRANCHES
+    ED:
+      articlerefac - contains just article json request refac 
+      TWIT refrac - contains article and twitter
+
 
