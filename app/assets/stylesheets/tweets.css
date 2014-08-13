@@ -16,7 +16,7 @@
 #twitter h3,
 .individual-tweet h3 {
   font-family: 'Oswald';
-  padding: 10px; 
+  padding: 10px 10px 0px 10px; 
   font-size: 20px;
   margin-top: 0;
   margin-bottom: 10px;
@@ -50,6 +50,7 @@
 
 .save-tweet {
   margin-left: 10px;
+  margin-bottom: 5px;
   color: black;
   border-color: black;
   display: inline;
