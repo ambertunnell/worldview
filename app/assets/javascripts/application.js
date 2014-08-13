@@ -25,4 +25,3 @@
 //= require clocks
 //= require new_city
 //= require load
-
