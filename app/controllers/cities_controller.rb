@@ -38,11 +38,16 @@ class CitiesController < ApplicationController
 
   def get_city
     # pass back updated variables of the users articles, photos, and tweets
-    @user_info = { 
-        articles: user_articles(current_user),
-        photos: user_photos(current_user),
-        tweets: user_tweets(current_user)
-      }
+    @user = User.find(session[:user_id]) if session[:user_id] 
+    if @user != nil
+      @user_info = { 
+          articles: user_articles(current_user),
+          photos: user_photos(current_user),
+          tweets: user_tweets(current_user)
+        }
+    else @user_info = []
+
+    end
 
     @city = City.find(params[:id])
     response = {

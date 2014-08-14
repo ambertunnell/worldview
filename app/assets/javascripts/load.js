@@ -55,9 +55,11 @@ $(function () {
         $('#current-location').append("<li><a> CURRENT LOCATION: " + newLocation + "</a></li>");
 
         //update users vars so that save buttons will reflect saves. 
-        userArticles = response.user_vars.articles;
-        userPhotos = response.user_vars.photos;
-        userTweets = response.user_vars.tweets;
+        if (loggedIn){
+          userArticles = response.user_vars.articles;
+          userPhotos = response.user_vars.photos;
+          userTweets = response.user_vars.tweets;
+        }
       },
       error: function(response){
         console.log("Clock clicking failed - could not post to cities/get_city");
