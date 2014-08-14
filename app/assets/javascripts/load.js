@@ -43,16 +43,21 @@ $(function () {
     $.ajax({
       type: "POST",
       data: {id: city_id},
-      url: '/cities/get_city',
+      url: '/cities/get_city', //will get city info and also updated info on users articles, photots and tweets 
       success: function(response){
-        userCity = response;
-        article(response);
-        weather1(response);
-        photos(response);
-        tweets(response);
-        var newLocation = (response.name + ", " + response.bigger_thing).toUpperCase();
+        userCity = response.city;
+        article(response.city);
+        weather1(response.city);
+        photos(response.city);
+        tweets(response.city);
+        var newLocation = (response.city.name + ", " + response.city.bigger_thing).toUpperCase();
         $('#current-location').empty();
         $('#current-location').append("<li><a> CURRENT LOCATION: " + newLocation + "</a></li>");
+
+        //update users vars so that save buttons will reflect saves. 
+        userArticles = response.user_vars.articles;
+        userPhotos = response.user_vars.photos;
+        userTweets = response.user_vars.tweets;
       },
       error: function(response){
         console.log("Clock clicking failed - could not post to cities/get_city");

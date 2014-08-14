@@ -37,8 +37,19 @@ class CitiesController < ApplicationController
   end
 
   def get_city
+    # pass back updated variables of the users articles, photos, and tweets
+    @user_info = { 
+        articles: user_articles(current_user),
+        photos: user_photos(current_user),
+        tweets: user_tweets(current_user)
+      }
+
     @city = City.find(params[:id])
-    render json: @city.to_json
+    response = {
+      city: @city,
+      user_vars: @user_info
+    }
+    render json: response.to_json
   end
 
   private
