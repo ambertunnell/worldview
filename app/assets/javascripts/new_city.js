@@ -56,7 +56,9 @@ function submit_new_city(passedInput) {
                 console.log(response);
                 console.log(response.RESULTS);
                 var cityname = first_result.match(/(\D+)(,\s+)(\D+)/)[1];
+                cityname = cityname.replace(/[^\w\s]/gi, '') //strip anything that is not a-z character
                 var bigger_thing = first_result.match(/(\D+)(,\s+)(\D+)/)[3];
+                bigger_thing = bigger_thing.replace(/[^\w\s]/gi, '') //strip anything that is not a-z character
                 var lat = response.RESULTS[i].lat;
                 var lon = response.RESULTS[i].lon;
                 var country = response.RESULTS[i].c;
