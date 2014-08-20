@@ -29,7 +29,7 @@ function makeClock (cityobject){
             success: function (response) {
                  console.log(cityobject.name + " UTC ajax success.");
                   
-                 var datacity = cityobject.name.toLowerCase().replace(/ /g, '')+cityobject.id;
+                 var datacity = cityobject.name.toLowerCase().replace(/ /g, '').replace(/[^\w\s]/gi, '')+cityobject.id;
                 
                 // if clock 4 exists, fade it out
 

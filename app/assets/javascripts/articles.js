@@ -8,11 +8,10 @@ function article (passedCity1) {
 $('.news-header').show();
 $('#news1').empty();
 $('#news2').empty();
+ 
+cityName = (passedCity1.name.toLowerCase()).replace(/ /g,"%20").replace(/[^\w\s]/gi, '');
+biggerthing = (passedCity1.bigger_thing.toLowerCase()).replace(/ /g,"%20").replace(/[^\w\s]/gi, ''); 
 
-cityName = (passedCity1.name.toLowerCase()).replace(/ /g,"%20");
-biggerthing = (passedCity1.bigger_thing.toLowerCase()).replace(/ /g,"%20"); 
- // "\"New%20York%20City\""
-        
 articleLoop();
    
 }

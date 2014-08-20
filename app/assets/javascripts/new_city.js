@@ -56,9 +56,9 @@ function submit_new_city(passedInput) {
                 console.log(response);
                 console.log(response.RESULTS);
                 var cityname = first_result.match(/(\D+)(,\s+)(\D+)/)[1];
-                cityname = cityname.replace(/[^\w\s]/gi, '') //strip anything that is not a-z character
+               
                 var bigger_thing = first_result.match(/(\D+)(,\s+)(\D+)/)[3];
-                bigger_thing = bigger_thing.replace(/[^\w\s]/gi, '') //strip anything that is not a-z character
+                // bigger_thing = bigger_thing.replace(/[^\w\s]/gi, '') //strip anything that is not a-z character
                 var lat = response.RESULTS[i].lat;
                 var lon = response.RESULTS[i].lon;
                 var country = response.RESULTS[i].c;
@@ -97,7 +97,9 @@ function submit_new_city(passedInput) {
                     } else {
                         $("#invalid_city").text(cityArray[0] + ", " + cityArray[1] + " added");
                         console.log("Saving city successful: " + response);
+                        
                         makeClock(response);
+
                     }
                 },
                 error: function (response) {
