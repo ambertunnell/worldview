@@ -19,22 +19,30 @@ $(document).ready(function() {
 
 function makeClock (cityobject){
    
-        var WEATHER_API_KEY = 'c2ebf0ca079e86eb70261f70d92ce7ce';
-        var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + cityobject.lat+","+cityobject.lon;
-        var offset;
+    var WEATHER_API_KEY = 'c2ebf0ca079e86eb70261f70d92ce7ce';
+    var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + cityobject.lat+","+cityobject.lon;
+    var offset;
+      
+    var datacity = cityobject.name.toLowerCase().replace(/ /g, '').replace(/[^\w\s]/gi, '')+cityobject.id;
+
+    // if clock 4 exists, fade it out
+
+    $( " #clock-container " ).children('div').eq(4).replaceWith("<div class=\""+datacity+"-clock col-md-2 clock\" data-city=\""+cityobject.id+"\"><ul class=\"ul-clock\"><li class=\"exit-clock\"></li><li class=\"sec\"></li><li class=\"hour\"></li><li class=\"min\"></li></ul><center><h2>"+cityobject.name+"</h2></center></div>");
+
+    $( " #clock-container " ).children('div').eq(4).hide();
+    //SET NAME OF CITY BELOW CLOCK
+    $( " #clock-container " ).children('div').eq(4).find("h2").text(cityobject.name);
+
+    //MOVE BUILT CLOCK from 5th pos to 1st
+    
+    var built = $( " #clock-container " ).children('div').eq(4).detach();
+    $( "#clock-container " ).prepend(built);
       
         weather = $.ajax({
             url: URL,
             dataType: 'jsonp',
             success: function (response) {
-                 console.log(cityobject.name + " UTC ajax success.");
-                  
-                 var datacity = cityobject.name.toLowerCase().replace(/ /g, '').replace(/[^\w\s]/gi, '')+cityobject.id;
-                
-                // if clock 4 exists, fade it out
-
-                $( " #clock-container " ).children('div').eq(4).replaceWith("<div class=\""+datacity+"-clock col-md-2 clock\" data-city=\""+cityobject.id+"\"><ul class=\"ul-clock\"><li class=\"exit-clock\"></li><li class=\"sec\"></li><li class=\"hour\"></li><li class=\"min\"></li></ul><center><h2>"+cityobject.name+"</h2></center></div>");
-                $( " #clock-container " ).children('div').eq(4).hide();
+                console.log(cityobject.name + " UTC ajax success.");
 
                 offset = response['offset'];
                 console.log("   City offset: " + cityobject.name+ " " + offset);
@@ -69,16 +77,9 @@ function makeClock (cityobject){
                 var mrotate = "rotate(" + mdegree + "deg)";
                 $("."+datacity+"-clock .min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate}); 
                 }, 1000 );
-                
-                //SET NAME OF CITY BELOW CLOCK
-                $( " #clock-container " ).children('div').eq(4).find("h2").text(cityobject.name);
-                
-                $( " #clock-container " ).children('div').eq(4).fadeIn(1200,function(){});
-
-                //MOVE BUILT CLOCK from 5th pos to 1st
-                var built = $( " #clock-container " ).children('div').eq(4).detach();
-                $( "#clock-container " ).prepend(built);
-                
+                 
+           
+            $( "."+datacity+"-clock" ).fadeIn(3200,function(){});    
 
             },
               
