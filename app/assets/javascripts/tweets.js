@@ -32,7 +32,6 @@ function tweets(location) {
             success: function(response) {
                 
                 for (var i = 0; i < response.length; i++) {
-                    // console.log(response);
                     var tweet = response[i].text;
                     var id = response[i].id;
 
@@ -58,7 +57,6 @@ function tweets(location) {
                     if (response[i].entities.media !== undefined) {
                         for (var j = 0; j < response[i].entities.media.length; j++) {
                             var url = response[i].entities.media[j].url;
-                            // tweet = tweet.replace(url, "<a href=\"" + url + "\" target=\"_blank\">" + url + "</a>");
                            tweet = tweet.replace(" " + url, "");
                            tweet = tweet + "<img src=" + response[i].entities.media[j].media_url + ">";
                             
@@ -78,7 +76,6 @@ function tweets(location) {
             },
             error: function (response) {
                 console.log("error");
-                // console.log(response);
             }
 
         });

@@ -5,11 +5,11 @@ class ApplicationController < ActionController::Base
   before_action :set_cities
 
   helper_method def logged_in?
-    !!current_user #double negation to convert to boolean
+    !!current_user
   end
 
   helper_method def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id] #memoized
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def set_cities
