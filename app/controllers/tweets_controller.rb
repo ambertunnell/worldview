@@ -7,7 +7,6 @@ class TweetsController < ApplicationController
       config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
       config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
     end
-     # <City id: 3, name: "London", created_at: "2014-08-13 01:04:48", updated_at: "2014-08-13 01:04:48", bigger_thing: "United Kingdom", lon: -0.45, lat: 51.48, country: "GB">
     
     @city = City.find(params[:location])
     tweets = []

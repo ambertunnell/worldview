@@ -1,4 +1,2 @@
 module TweetsHelper
-
-
 end
