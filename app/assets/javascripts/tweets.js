@@ -1,11 +1,11 @@
 function printTweet (col,tweetHTML,id) {
-  $('#twitter' + col).append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweetHTML + "</h3><button class='save-tweet'>Like</button></div></li>");
+  $('#twitter' + col).append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweetHTML + "</h3><button class='save-tweet'>Save</button></div></li>");
   if (loggedIn == true) {
       console.log("Show tweet like button.");
 
       for (var j = 0; j < userTweets.length; j++) {
           if (id === userTweets[j]) {
-              $("#twitter"+col +" :last-child button").last().html("Saved in dashboard!");
+              $("#twitter"+col +" :last-child button").last().html("Saved to Dashboard");
               $("#twitter"+col +" :last-child button").last().prop("disabled",true);
           }
       }
@@ -103,7 +103,7 @@ $(function () {
             },
             success: function (response) {
                 console.log("Saving tweet successful.");
-                $that.text("Saved in dashboard!");
+                $that.text("Saved to Dashboard");
 
             },
             error: function (response) {
