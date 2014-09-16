@@ -45,7 +45,7 @@ function submit_new_city(passedInput) {
                 console.log("Successful response and marked as a country, not a city");
                 console.log("response: "+response.RESULTS[i]);
                 return;
-              } else if (response.RESULTS[i].name.match(/(kong international|S.A.R.)/i)) {
+              } else if (response.RESULTS[i].name.match(/(kong international|S.A.R.)|de Olivenca|do Potengi/i)) {
                 console.log("Successful response and marked as an International airport, not a city");
                 console.log("response: "+response.RESULTS[i].name);
                 console.log("value of i = "+i++);
