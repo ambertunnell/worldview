@@ -1,11 +1,11 @@
 function printTweet (col,tweetHTML,id) {
-  $('#twitter' + col).append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweetHTML + "</h3><button class='save-tweet'>Like</button></div></li>");
+  $('#twitter' + col).append("<li data-id=\"" + id + "\"><div class='individual-tweet'><h3>" + tweetHTML + "</h3><button class='save-tweet'>Save</button></div></li>");
   if (loggedIn == true) {
       console.log("Show tweet like button.");
 
       for (var j = 0; j < userTweets.length; j++) {
           if (id === userTweets[j]) {
-              $("#twitter"+col +" :last-child button").last().html("Saved in dashboard!");
+              $("#twitter"+col +" :last-child button").last().html("Saved to Dashboard");
               $("#twitter"+col +" :last-child button").last().prop("disabled",true);
           }
       }
@@ -32,7 +32,6 @@ function tweets(location) {
             success: function(response) {
                 
                 for (var i = 0; i < response.length; i++) {
-                    // console.log(response);
                     var tweet = response[i].text;
                     var id = response[i].id;
 
@@ -58,7 +57,6 @@ function tweets(location) {
                     if (response[i].entities.media !== undefined) {
                         for (var j = 0; j < response[i].entities.media.length; j++) {
                             var url = response[i].entities.media[j].url;
-                            // tweet = tweet.replace(url, "<a href=\"" + url + "\" target=\"_blank\">" + url + "</a>");
                            tweet = tweet.replace(" " + url, "");
                            tweet = tweet + "<img src=" + response[i].entities.media[j].media_url + ">";
                             
@@ -78,7 +76,6 @@ function tweets(location) {
             },
             error: function (response) {
                 console.log("error");
-                // console.log(response);
             }
 
         });
@@ -106,7 +103,7 @@ $(function () {
             },
             success: function (response) {
                 console.log("Saving tweet successful.");
-                $that.text("Saved in dashboard!");
+                $that.text("Saved to Dashboard");
 
             },
             error: function (response) {

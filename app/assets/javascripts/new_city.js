@@ -45,8 +45,7 @@ function submit_new_city(passedInput) {
                 console.log("Successful response and marked as a country, not a city");
                 console.log("response: "+response.RESULTS[i]);
                 return;
-              } else if (response.RESULTS[i].name.match(/(kong international|S.A.R.)/i)) {
-                // $("#invalid_city").text("Please enter a valid city");
+              } else if (response.RESULTS[i].name.match(/(kong international|S.A.R.)|de Olivenca|do Potengi/i)) {
                 console.log("Successful response and marked as an International airport, not a city");
                 console.log("response: "+response.RESULTS[i].name);
                 console.log("value of i = "+i++);
@@ -108,7 +107,6 @@ function submit_new_city(passedInput) {
             });
         },
         error: function (response) {
-            // var first_result = response['results'][0]['name']
             console.log("new city form failure: " + response);
             $("#invalid-city").prepend("Not a valid city");
             $("#new-city").val("");

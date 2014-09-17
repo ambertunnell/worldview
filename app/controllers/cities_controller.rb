@@ -18,17 +18,9 @@ class CitiesController < ApplicationController
       render json: "this city already exists".to_json
     end
       
-      #  Should and this to solve race condition error
-      #  begin
-      #   CreditAccount.find_or_create_by(user_id: user.id)
-      # rescue ActiveRecord::RecordNotUnique
-      #   retry
-      # end
- 
   end
 
   def get_city
-    # pass back updated variables of the users articles, photos, and tweets
     @user = User.find(session[:user_id]) if session[:user_id] 
     if @user != nil
       @user_info = { 

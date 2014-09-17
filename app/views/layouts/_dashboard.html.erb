@@ -1,11 +1,13 @@
-<a id="dashboard-link" href="#dashboard"><%= "WELCOME, #{current_user.first_name.upcase}!" %></a>
+<a id="dashboard-link" href="#dashboard"><%= "DASHBOARD" %>
+<%#= "WELCOME, #{current_user.first_name.upcase}!" %>
+</a>
 
 <div id="dashboard">
   <div class="modal-box">
     <a id="dashboard-xlink" href="#" title="Close" class="close">X</a>
     <div class="modal-text">
 
-      <center><h4>PERSONAL DASHBOARD</h4></center>
+      <center><h4>DASHBOARD</h4></center>
 
     <div class="dashboard-photo">
       <center><h4><%= current_user.name %></h4></center>

@@ -38,14 +38,14 @@ function photos(location) {
 
                 var link = "http://flickr.com/photo.gne?id=" + id + "_" + secret + "_n.jpg"
 
-                $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link + "'><img src=" + image + " style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Like</button></div></li>");
+                $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link + "'><img src=" + image + " style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Save</button></div></li>");
 
                 if (loggedIn == true) {
                     console.log("Show photo like button.");
 
                     for (var j = 0; j < userPhotos.length; j++) {
                         if (image === userPhotos[j]) {
-                            $("#flickr :last-child button").last().html("Saved!");
+                            $("#flickr :last-child button").last().html("Saved in Dashboard");
                             $("#flickr :last-child button").last().prop("disabled",true);
                         }
                     }
@@ -91,7 +91,7 @@ $(function () {
             },
             success: function (response) {
                 console.log("Saving photo successful.");
-                $that.text("Saved!");
+                $that.text("Saved to Dashboard");
                 $that.prop("disabled",true);
 
             },
@@ -169,7 +169,7 @@ $(function () {
 
                     var link = "http://flickr.com/photo.gne?id=" + id + "_" + secret + "_n.jpg";
 
-                    $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link + "'><img src=" + image + " style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Like</button></div></li>");
+                    $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link + "'><img src=" + image + " style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Save</button></div></li>");
 
 
 

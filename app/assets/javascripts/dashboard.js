@@ -52,9 +52,7 @@ $(function () {
 
       $(".modal-text").on("click",".remove-article", function(){
           console.log("Remove article button clicked");
-          $(this).closest(".my-article").slideUp({
-            // populateDashboard();
-          });
+          $(this).closest(".my-article").slideUp({});
           var articleUrl = $(this).closest('li').eq(0).find("a").attr("href");
           
           $(this).html("Removed");
@@ -113,7 +111,6 @@ $(function () {
           // populateDashboard();
         }, 1500);
         var photoUrl = $(this).closest("li").find("img").attr("src")
-        // console.log("photo url- " + photoUrl);
         
         $(this).html("Removed");
         $.ajax({
