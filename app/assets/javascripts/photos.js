@@ -36,7 +36,8 @@ function photos(location) {
                         photosArray = photosArray.concat(response.photos.photo);
                         var loopLength = photosArray.length;
                         console.log("Flickr photos GET request 2 successful.");
-                        printPhotos (0,loopLength);
+                        if (loopLength > 12) {loopLength=12}
+                        printPhotos (0,loopLength,0);
                     },
                     error: function (response) {
                         console.log("Flickr photos get request 2 failed.");
@@ -47,7 +48,7 @@ function photos(location) {
                
             } else {
                 var loopLength = 12
-                printPhotos (0,12);
+                printPhotos (0,12,0);
             }
 
             
@@ -59,7 +60,8 @@ function photos(location) {
 
 }
 
-function printPhotos(startL, endL){
+function printPhotos(startL, endL, loopNum){
+    $('#flickr').empty();
     for (var i = startL; i < endL; i++) {
         var farmid = photosArray[i].farm;
         var id = photosArray[i].id;
@@ -90,7 +92,7 @@ function printPhotos(startL, endL){
         $('.save-photo').hide();
     }
 
-    $('.more-photos').data('flickr-num', 1);
+    $('.more-photos').data('flickr-num', loopNum);
 
 
 }
@@ -131,7 +133,8 @@ $(function () {
 
     //**************** MORE PHOTO FETCH ******************//
     $(".more-photos").click(function () {
-        var loopNum = $('.more-photos').data('flickr-num');
+        var loopNum = $('.more-photos').data('flickr-num') + 1;
+        
         console.log(loopNum);
         switch (loopNum) {
             case 0:
@@ -165,10 +168,11 @@ $(function () {
             case 7:
                 var start = 91;
                 var end = 100;
+                loopNum = -1; //so datatag gets written as 0 and loop will start over
                 break;
         }
-            printPhotos(start,end);
+            printPhotos(start,end, loopNum);
     });
-}
+});
 
  
