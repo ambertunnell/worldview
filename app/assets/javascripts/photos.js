@@ -21,7 +21,7 @@ function photos(location) {
             console.log("Flickr photos GET request 1 successful.");
 
             photosArray = response.photos.photo;
-            if (photosArray.length < 100) {
+            if (photosArray.length < 100) { //need to get 100 now for when more photos is clicked
                 console.log("Photo loopLength set to " + photosArray.length);
             // Begin fallback ajax call
                 search = (location.bigger_thing).replace(/ /g, "%20").toLowerCase();
@@ -60,7 +60,7 @@ function photos(location) {
 
 }
 
-function printPhotos(startL, endL, loopNum){
+function printPhotos(startL, endL, loopNum){ //note loopnum is written to the .more-photos datatag
     $('#flickr').empty();
     for (var i = startL; i < endL; i++) {
         var farmid = photosArray[i].farm;
@@ -171,7 +171,7 @@ $(function () {
             case 7:
                 var start = 91;
                 var end = 100;
-                loopNum = -1; //so datatag gets written as 0 and loop will start over
+                loopNum = -1; //so datatag gets written as -1 and loop will start over
                 break;
         }
             printPhotos(start,end, loopNum);
