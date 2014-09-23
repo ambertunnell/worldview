@@ -21,7 +21,7 @@ function photos(location) {
             console.log("Flickr photos GET request 1 successful.");
 
             photosArray = response.photos.photo;
-            if (photosArray.length < 12) {
+            if (photosArray.length < 100) {
                 console.log("Photo loopLength set to " + photosArray.length);
             // Begin fallback ajax call
                 search = (location.bigger_thing).replace(/ /g, "%20").toLowerCase();
@@ -134,7 +134,10 @@ $(function () {
     //**************** MORE PHOTO FETCH ******************//
     $(".more-photos").click(function () {
         var loopNum = $('.more-photos').data('flickr-num') + 1;
-        
+        var maxLoop = Math.floor(photosArray.length / 12);
+        if(maxLoop > 7) {maxLoop = 7;}
+        console.log("Photo max loop number is " + maxLoop);
+        if(loopNum === maxLoop) {loopNum = 0;}
         console.log(loopNum);
         switch (loopNum) {
             case 0:
