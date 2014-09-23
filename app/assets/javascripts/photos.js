@@ -33,7 +33,8 @@ function photos(location) {
                     },
                     dataType: "json",
                     success: function (response) {
-                        var loopLength = photosArray.push(response.photos.photo);
+                        photosArray = photosArray.concat(response.photos.photo);
+                        var loopLength = photosArray.length;
                         console.log("Flickr photos GET request 2 successful.");
                         printPhotos (loopLength);
                     },
@@ -59,7 +60,7 @@ function photos(location) {
 }
 
 function printPhotos(length){
-    for (var i = 0; i < loopLength; i++) {
+    for (var i = 0; i < length; i++) {
         var farmid = photosArray[i].farm;
         var id = photosArray[i].id;
         var serverid = photosArray[i].server;
