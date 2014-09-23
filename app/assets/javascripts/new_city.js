@@ -45,7 +45,7 @@ function submit_new_city(passedInput) {
                 console.log("Successful response and marked as a country, not a city");
                 console.log("response: "+response.RESULTS[i]);
                 return;
-              } else if (response.RESULTS[i].name.match(/(kong international|S.A.R.)|de Olivenca|do Potengi/i)) {
+              } else if (response.RESULTS[i].name.match(/(international|S\.A\.R|de Olivenca|do Potengi)/i)) {
                 console.log("Successful response and marked as an International airport, not a city");
                 console.log("response: "+response.RESULTS[i].name);
                 console.log("value of i = "+i++);
@@ -75,36 +75,39 @@ function submit_new_city(passedInput) {
                 $("#new-city").val("");
                 console.log("finished");
 
-            $.ajax({
-                type: "POST",
-                url: "/cities",
-                data: {
-                    city: {
-                        name: cityArray[0],
-                        bigger_thing: cityArray[1],
-                        lat: cityArray[2],
-                        lon: cityArray[3],
-                        country: cityArray[4],
-                        lastClock: cityArray[5]
-                    }
-                },
-                success: function (response) {
-                    if (response == "this city already exists") {
-                        $("#invalid_city").text("You're already tracking that city");
-                        console.log("Saving city denied - city is already on page.");
-                    } else {
-                        $("#invalid_city").text(cityArray[0] + ", " + cityArray[1] + " added");
-                        console.log("Saving city successful: " + response);
-                        
-                        makeClock(response);
+            // if (loggedIn == true) {
 
+                $.ajax({
+                    type: "POST",
+                    url: "/cities",
+                    data: {
+                        city: {
+                            name: cityArray[0],
+                            bigger_thing: cityArray[1],
+                            lat: cityArray[2],
+                            lon: cityArray[3],
+                            country: cityArray[4],
+                            lastClock: cityArray[5]
+                        }
+                    },
+                    success: function (response) {
+                        if (response == "this city already exists") {
+                            $("#invalid_city").text("You're already tracking that city");
+                            console.log("Saving city denied - city is already on page.");
+                        } else {
+                            $("#invalid_city").text(cityArray[0] + ", " + cityArray[1] + " added");
+                            console.log("Saving city successful: " + response);
+                            
+                            makeClock(response);
+
+                        }
+                    },
+                    error: function (response) {
+                        console.log("Saving city failed.");
+                        console.log(response);
                     }
-                },
-                error: function (response) {
-                    console.log("Saving city failed.");
-                    console.log(response);
-                }
-            });
+                });
+            // }
         },
         error: function (response) {
             console.log("new city form failure: " + response);

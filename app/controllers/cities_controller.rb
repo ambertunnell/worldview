@@ -10,9 +10,9 @@ class CitiesController < ApplicationController
     end
    
     unless @user.cities.find_by(lat: city_params[:lat], lon: city_params[:lon])
-      @user.cities << @city
+      @user.cities << @city if @user
       del_city_id = city_params[:lastClock].to_i
-      CityUser.find_by(user_id: @user.id, city_id: del_city_id).destroy   
+      CityUser.find_by(user_id: @user.id, city_id: del_city_id).destroy if @user
       render json: @city
     else
       render json: "this city already exists".to_json
