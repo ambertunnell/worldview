@@ -3,19 +3,30 @@ class CitiesController < ApplicationController
   def create
 
     @user = User.find(session[:user_id]) if session[:user_id]
+    # binding.pry
     @city = City.find_or_create_by(lat: city_params[:lat], lon: city_params[:lon]) do |city| 
       city.name = city_params[:name] 
+      # binding.pry
       city.bigger_thing = city_params[:bigger_thing] 
+      # binding.pry
       city.country = city_params[:country] 
+      # binding.pry
     end
-   
-    unless @user.cities.find_by(lat: city_params[:lat], lon: city_params[:lon])
-      @user.cities << @city
-      del_city_id = city_params[:lastClock].to_i
-      CityUser.find_by(user_id: @user.id, city_id: del_city_id).destroy   
+
+    if !@user
+      # binding.pry
       render json: @city
-    else
-      render json: "this city already exists".to_json
+
+    else 
+      unless @user.cities.find_by(lat: city_params[:lat], lon: city_params[:lon])
+        # binding.pry
+        @user.cities << @city if @user
+        del_city_id = city_params[:lastClock].to_i
+        CityUser.find_by(user_id: @user.id, city_id: del_city_id).destroy if @user
+        render json: @city
+      else
+        render json: "this city already exists".to_json
+      end
     end
       
   end
