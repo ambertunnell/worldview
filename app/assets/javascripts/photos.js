@@ -1,5 +1,5 @@
 //**************** FIRST PHOTO FETCH ******************//
-
+var photosArray = [];
 function photos(location) {
 
     $('.more-photos').data('flickr-num', 0);
@@ -18,55 +18,81 @@ function photos(location) {
         },
         dataType: "json",
         success: function (response) {
-            console.log("Flickr photos GET request successful.");
+            console.log("Flickr photos GET request 1 successful.");
 
-            var photosArray = response.photos.photo;
+            photosArray = response.photos.photo;
             if (photosArray.length < 12) {
-                var loopLength = photosArray.length
+                console.log("Photo loopLength set to " + photosArray.length);
+            // Begin fallback ajax call
+                search = (location.bigger_thing).replace(/ /g, "%20").toLowerCase();
+                $.ajax({
+                    type: "GET",
+                    url: "/photos/flickr",
+                    data: {
+                        search: search
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        var loopLength = photosArray.push(response.photos.photo);
+                        console.log("Flickr photos GET request 2 successful.");
+                        printPhotos (loopLength);
+                    },
+                    error: function (response) {
+                        console.log("Flickr photos get request 2 failed.");
+                    }
+                });
+            // End Fallback ajax
+
+               
             } else {
                 var loopLength = 12
+                printPhotos (12);
             }
 
-            for (var i = 0; i < loopLength; i++) {
-                var farmid = photosArray[i].farm;
-                var id = photosArray[i].id;
-                var serverid = photosArray[i].server;
-                var secret = photosArray[i].secret;
-                var title = photosArray[i].title;
-
-                var image = "https://farm" + farmid + ".staticflickr.com/" + serverid + "/" + id + "_" + secret + "_n.jpg";
-
-                var link = "http://flickr.com/photo.gne?id=" + id + "_" + secret + "_n.jpg"
-
-                $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link + "'><img src=" + image + " style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Save</button></div></li>");
-
-                if (loggedIn == true) {
-                    console.log("Show photo like button.");
-
-                    for (var j = 0; j < userPhotos.length; j++) {
-                        if (image === userPhotos[j]) {
-                            $("#flickr :last-child button").last().html("Saved in Dashboard");
-                            $("#flickr :last-child button").last().prop("disabled",true);
-                        }
-                    }
-                }
-
-            }
-
-            if (loggedIn == false) {
-                $('.save-photo').hide();
-            }
-
-            $('.more-photos').data('flickr-num', 1);
-
+            
         },
         error: function (response) {
-            console.log("Flickr photos get request failed.");
+            console.log("Flickr photos get request 1 failed.");
         }
     });
 
 }
 
+function printPhotos(length){
+    for (var i = 0; i < loopLength; i++) {
+        var farmid = photosArray[i].farm;
+        var id = photosArray[i].id;
+        var serverid = photosArray[i].server;
+        var secret = photosArray[i].secret;
+        var title = photosArray[i].title;
+
+        var image = "https://farm" + farmid + ".staticflickr.com/" + serverid + "/" + id + "_" + secret + "_n.jpg";
+
+        var link = "http://flickr.com/photo.gne?id=" + id + "_" + secret + "_n.jpg"
+
+        $('#flickr').append("<li><div class='photo col-md-3 img-thumbnail' style='background-image: url(" + image + "); background-size: cover'><a target='_blank' href='" + link + "'><img src=" + image + " style='height: 160px; width: 280px; border: none; opacity: .000000001'></a><button class='save-photo'>Save</button></div></li>");
+
+        if (loggedIn == true) {
+            console.log("Show photo like button.");
+
+            for (var j = 0; j < userPhotos.length; j++) {
+                if (image === userPhotos[j]) {
+                    $("#flickr :last-child button").last().html("Saved in Dashboard");
+                    $("#flickr :last-child button").last().prop("disabled",true);
+                }
+            }
+        }
+
+    }
+
+    if (loggedIn == false) {
+        $('.save-photo').hide();
+    }
+
+    $('.more-photos').data('flickr-num', 1);
+
+
+}
 
 $(function () {
 
