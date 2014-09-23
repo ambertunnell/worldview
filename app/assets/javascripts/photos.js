@@ -127,47 +127,48 @@ $(function () {
             }
         });
     });
-}
+
 
     //**************** MORE PHOTO FETCH ******************//
-$(".more-photos").click(function () {
-            var loopNum = $('.more-photos').data('flickr-num');
-            console.log(loopNum);
-            switch (loopNum) {
-                case 0:
-                    var start = 0;
-                    var end = 12;
-                    break;
-                case 1:
-                    var start = 13;
-                    var end = 25;
-                    break;
-                case 2:
-                    var start = 26;
-                    var end = 38;
-                    break;
-                case 3:
-                    var start = 39;
-                    var end = 51;
-                    break;
-                case 4:
-                    var start = 52;
-                    var end = 64;
-                    break;
-                case 5:
-                    var start = 65;
-                    var end = 77;
-                    break;
-                case 6:
-                    var start = 78;
-                    var end = 90;
-                    break;
-                case 7:
-                    var start = 91;
-                    var end = 100;
-                    break;
-            }
+    $(".more-photos").click(function () {
+        var loopNum = $('.more-photos').data('flickr-num');
+        console.log(loopNum);
+        switch (loopNum) {
+            case 0:
+                var start = 0;
+                var end = 12;
+                break;
+            case 1:
+                var start = 13;
+                var end = 25;
+                break;
+            case 2:
+                var start = 26;
+                var end = 38;
+                break;
+            case 3:
+                var start = 39;
+                var end = 51;
+                break;
+            case 4:
+                var start = 52;
+                var end = 64;
+                break;
+            case 5:
+                var start = 65;
+                var end = 77;
+                break;
+            case 6:
+                var start = 78;
+                var end = 90;
+                break;
+            case 7:
+                var start = 91;
+                var end = 100;
+                break;
+        }
             printPhotos(start,end);
-});
+    });
+}
 
  
