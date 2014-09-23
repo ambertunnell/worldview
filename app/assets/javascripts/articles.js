@@ -138,7 +138,7 @@ function printArticles(){
 
             for (var j = 0; j < userArticles.length; j++) {
                 if (url === userArticles[j]) {
-                    $("#news1 :last-child button").last().html("Saved in Dashboard");
+                    $("#news1 :last-child button").last().html("Saved to Dashboard");
                     $("#news1 :last-child button").last().prop("disabled",true);
                 }
             }
@@ -173,7 +173,7 @@ function printArticles(){
 
                 for (var j = 0; j < userArticles.length; j++) {
                     if (url === userArticles[j]) {
-                        $("#news2 :last-child button").last().html("Saved in Dashboard");
+                        $("#news2 :last-child button").last().html("Saved to Dashboard");
                         $("#news2 :last-child button").last().prop("disabled",true);
                     }
                 }
@@ -220,7 +220,7 @@ $(function () {
             },
             success: function (response) {
                 console.log("Saving article successful.");
-                $that.text("Saved in Dashboard");
+                $that.text("Saved to Dashboard");
                 $that.prop("disabled",true);
             },
             error: function (response) {

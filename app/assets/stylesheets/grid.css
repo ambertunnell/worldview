@@ -30,24 +30,28 @@ h4 {
 
 .dividerone {
   background-image: url('hongkong.jpg');
+  /*background-image: url('1.jpg');*/
   background-attachment: fixed;
   background-size: cover;
 }
 
 .dividertwo {
   background-image: url('paris.jpg');
+  /*background-image: url('2.jpg');*/
   background-attachment: fixed;
   background-size: cover;
 }
 
 .dividerthree {
   background-image: url('boston.jpg');
+  /*background-image: url('3.jpg');*/
   background-attachment: fixed;
   background-size: cover;
 }
 
 .dividerfour {
-    background-image: url('nyc2.jpg');
+  background-image: url('nyc2.jpg');
+  /*background-image: url('4.jpg');*/
   background-attachment: fixed;
   background-size: cover;
 }
