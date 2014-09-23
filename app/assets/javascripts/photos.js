@@ -59,8 +59,8 @@ function photos(location) {
 
 }
 
-function printPhotos(start, end){
-    for (var i = start; i < end; i++) {
+function printPhotos(startL, endL){
+    for (var i = startL; i < endL; i++) {
         var farmid = photosArray[i].farm;
         var id = photosArray[i].id;
         var serverid = photosArray[i].server;
@@ -127,15 +127,12 @@ $(function () {
             }
         });
     });
+}
 
     //**************** MORE PHOTO FETCH ******************//
 $(".more-photos").click(function () {
-
-    
             var loopNum = $('.more-photos').data('flickr-num');
-
             console.log(loopNum);
-
             switch (loopNum) {
                 case 0:
                     var start = 0;
@@ -170,8 +167,7 @@ $(".more-photos").click(function () {
                     var end = 100;
                     break;
             }
-
-            printPhotos(start,end)
+            printPhotos(start,end);
 });
 
  
