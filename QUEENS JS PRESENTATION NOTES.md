@@ -1,0 +1,36 @@
+QUEENS JS TALK
+
+  - background on the making of the site
+    - quick background info on us (non-coding backgrounds to flatiron)
+    - had a week to do a new project
+    - started with the idea of presenting news headlines, evolved to add more apis and functionalty
+  - demo the site
+    - click city, see each api
+    - log in, add city, find new content
+    - save content to the db
+  - process of developing it
+    - worked through getting basic api calls in through ajax, site ui was rough
+    - lost a day struggling with yahoo boss before switching to nyt
+    - main tasks: getting ui to not suck, getting content to not suck
+    - iterated on ui design before going to bootstrap, ended up replicating the theme in css
+    - news
+      - got decent content, but for smaller cities would have nothing
+      - needed to set up fallback to country/state, aka 'bigger thing'
+      - also needed to stagger articles on the page so the most recent stories are at the top, instead of left column to right column
+    - pictures
+      - got okish content, but needed to get better and also present it in a uniform way
+      - lots of iterations to 
+    - tweets
+      - lots of upfront integration issues
+      - similar fallback mechanism for city and bigger thing
+      - big problem was perserving links and hashtag links
+      - also iterating on the ui design for presentation
+    - takeaways:
+      - when the design isn't final, hard to say how the backend should be set up
+      - when both back and frontend are being developed simultaneously, have to be ready to adjust one or both 
+      - finding the focus for what this should be helped guide us to a better direction
+    - future:
+      - implement some feedback
+      - expand on features
+      - address known issues (full mobile responsiveness, huge resource usage)
+
