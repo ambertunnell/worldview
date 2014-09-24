@@ -29,6 +29,7 @@
     <% unless logged_in? %> 
       <div class="login">
         <center>
+          <div id="invalid_city" style="color:white">&nbsp;</div>
           <form onsubmit="return submit_new_city();">
             <input type="text" id="new-city" placeholder="Add a city...">
           </form>
