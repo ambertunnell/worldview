@@ -15,19 +15,20 @@ class CitiesController < ApplicationController
 
     if !@user
       # binding.pry
+      @user = User.create (name: 'Guest', provider: 'anon', uid: session[:user_id], image: 'https://origin.ih.constantcontact.com/fs197/1110193228531/img/301.jpg?a=1115291249439')
       render json: @city
-
-    else 
-      unless @user.cities.find_by(lat: city_params[:lat], lon: city_params[:lon])
-        # binding.pry
-        @user.cities << @city if @user
-        del_city_id = city_params[:lastClock].to_i
-        CityUser.find_by(user_id: @user.id, city_id: del_city_id).destroy if @user
-        render json: @city
-      else
-        render json: "this city already exists".to_json
-      end
     end
+     
+    unless @user.cities.find_by(lat: city_params[:lat], lon: city_params[:lon])
+      # binding.pry
+      @user.cities << @city if @user
+      del_city_id = city_params[:lastClock].to_i
+      CityUser.find_by(user_id: @user.id, city_id: del_city_id).destroy if @user
+      render json: @city
+    else
+      render json: "this city already exists".to_json
+    end
+    
       
   end
 
