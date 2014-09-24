@@ -26,8 +26,8 @@ class UsersController < ApplicationController
   end
 
   def signed_in
-    if session[:user_id]
-
+    @user = User.find(session[:user_id]) if session[:user_id] 
+    if session[:user_id] && @user.provider != "anon" # check for anon to see if they are just a temporary user
       @user_info = {
         signed_in: true,
         articles: user_articles(current_user),

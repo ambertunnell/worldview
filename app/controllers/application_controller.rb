@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :set_cities
 
   helper_method def logged_in?
-    !!current_user
+    !!current_user && @current_user.provider != "anon"
   end
 
   helper_method def current_user
