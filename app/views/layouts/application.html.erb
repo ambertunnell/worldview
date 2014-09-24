@@ -7,6 +7,14 @@
   <%= csrf_meta_tags %>
   <meta property="og:image" content="screenshot-newmain.png" />
   <%= analytics_init if Rails.env.production? %>
+  <meta name="keywords" content="Koren Leslie Cohen, Amber Tunnell, Edward Warren, Ben Serviss, The Flatiron School, world clocks, javascript, ajax, rails, curated media"/>
+  <meta name="description" content="Web application utilizing Forecast.io, Twitter, Weather Underground, New York Times, and Flickr APIs to provide curated content from thousands of searchable cities around the world.">
+</head>
+<body id="scroll">
+  <%= render "layouts/navbar" %> 
+  <center>
+    <%= yield %>
+  </center> 
   <!-- Google Analytics Info -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -18,13 +26,5 @@
       ga('send', 'pageview');
     </script>
     <!-- end analytics -->
-  <meta name="keywords" content="Koren Leslie Cohen, Amber Tunnell, Edward Warren, Ben Serviss, The Flatiron School, world clocks, javascript, ajax, rails, curated media"/>
-  <meta name="description" content="Web application utilizing Forecast.io, Twitter, Weather Underground, New York Times, and Flickr APIs to provide curated content from thousands of searchable cities around the world.">
-</head>
-<body id="scroll">
-  <%= render "layouts/navbar" %> 
-  <center>
-    <%= yield %>
-  </center> 
 </body>
 </html>
