@@ -30,8 +30,7 @@ function makeClock (cityobject){
     $( " #clock-container " ).children('div').eq(4).replaceWith("<div class=\""+datacity+"-clock col-md-2 clock\" data-city=\""+cityobject.id+"\"><ul class=\"ul-clock\"><li class=\"exit-clock\"></li><li class=\"sec\"></li><li class=\"hour\"></li><li class=\"min\"></li></ul><center><h2>"+cityobject.name+"</h2></center></div>");
 
     $( " #clock-container " ).children('div').eq(4).hide();
-    //SET NAME OF CITY BELOW CLOCK
-    $( " #clock-container " ).children('div').eq(4).find("h2").text(cityobject.name);
+   
 
     //MOVE BUILT CLOCK from 5th pos to 1st
     
