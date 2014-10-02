@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if @user != nil
       render json: @user.cities.all.to_json 
     else
-      render json: City.all[0..4].to_json 
+      render json: [City.find(1), City.find(2), City.find(3), City.find(4), City.find(5)].to_json
     end
   end
 
