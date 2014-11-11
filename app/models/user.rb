@@ -22,4 +22,8 @@ class User < ActiveRecord::Base
     self.name.split(" ")[0]
   end 
 
+  def anonymous?
+    self.provider == "anon"
+  end 
+
 end

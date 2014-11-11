@@ -39,7 +39,7 @@ function articleLoop(){
 
 //perform ajax query to news api.
 function articleRequest(query, geoloc, fire){ //pass skip for 2nd arg to skip geoloc
-    var API_KEY = "dd74b110c07677ce3e0c5c1f94642e26:10:31738630";
+    var API_KEY = "<%= ENV["NYT_KEY"] %>";
     var today = new Date();
     var past = today.setDate(today.getDate()-15);
     var pastDate = new Date(past);
@@ -56,9 +56,11 @@ function articleRequest(query, geoloc, fire){ //pass skip for 2nd arg to skip ge
     } 
     
     past_month = yyyy+mm+dd;
-
+    
     if (geoloc != undefined && geoloc != "skip"){         
         var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q=" + query + "&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)%20AND%20glocations:(%22"+geoloc+"%22)&api-key=" + API_KEY;
+
+
     }else {
         var URL = "http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?callback=svc_search_v2_articlesearch&q="+query+"&sort=newest&begin_date="+past_month+"&fq=type_of_material:(News)&api-key=" + API_KEY;
     }
