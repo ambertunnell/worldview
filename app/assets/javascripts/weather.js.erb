@@ -1,6 +1,6 @@
 
 function weather1 (location) {
-    var WEATHER_API_KEY = 'c2ebf0ca079e86eb70261f70d92ce7ce';
+    var WEATHER_API_KEY = "<%=ENV['FORECAST_IO_KEY']%>";
 
     var lon = location.lon;
     var lat = location.lat;
