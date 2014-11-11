@@ -24,7 +24,6 @@ class UsersController < ApplicationController
       # render json: City.all[0..4].to_json 
       # above is very taxing, switched to
         render json: City.all.limit(5).to_json
-
     end
   end
 
