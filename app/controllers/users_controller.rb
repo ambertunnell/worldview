@@ -17,17 +17,19 @@ class UsersController < ApplicationController
   end
 
   def get_cities
-    @user = User.find(session[:user_id]) if session[:user_id] 
+    @user = current_user
     if @user != nil
       render json: @user.cities.all.to_json 
     else
-      render json: [City.find(1), City.find(2), City.find(3), City.find(4), City.find(5)].to_json
+      # render json: City.all[0..4].to_json 
+      # above is very taxing, switched to
+        render json: City.all.limit(5).to_json
     end
   end
 
   def signed_in
-    @user = User.find(session[:user_id]) if session[:user_id] 
-    if session[:user_id] && @user.provider != "anon" # check for anon to see if they are just a temporary user
+    @user = current_user
+    if @user && !@user.anonymous? # check for anon to see if they are just a temporary user
       @user_info = {
         signed_in: true,
         articles: user_articles(current_user),

@@ -2,7 +2,7 @@ class CitiesController < ApplicationController
 
   def create
    
-    @user = User.find(session[:user_id]) if session[:user_id]
+    @user = current_user
     # binding.pry
     @city = City.find_or_create_by(lat: city_params[:lat], lon: city_params[:lon]) do |city| 
       city.name = city_params[:name] 
@@ -16,7 +16,9 @@ class CitiesController < ApplicationController
     if !@user #create a temp user tied to session ID
       #binding.pry
       @user = User.create(name: 'Guest', provider: 'anon', uid: session[:session_id], image: 'https://origin.ih.constantcontact.com/fs197/1110193228531/img/301.jpg?a=1115291249439')
-      @user.cities << [City.find(1), City.find(2), City.find(3), City.find(4), City.find(5)]
+      @user.cities << City.find_by(id: [1, 2, 3, 4, 5])
+
+
       session[:user_id] = @user.id #sets user_id into user cookie even though they are temp user. This distinction of temp is tracked by rails bc the temp user provider will always be 'anon'. Anon users are treated as not logged in for purposes of the JS logged in var and the rails loggen_in? helper method. This means only their cities are saved but they cannot save articles, see dashboard ect. 
     end
      
@@ -35,9 +37,9 @@ class CitiesController < ApplicationController
   end
 
   def get_city
-    @user = User.find(session[:user_id]) if session[:user_id] 
-    
-    if @user != nil && @user.provider != "anon"
+    @user = current_user
+    #binding.pry
+    if @user && !@user.anonymous?
       @user_info = { 
           articles: user_articles(current_user),
           photos: user_photos(current_user),
