@@ -10,7 +10,7 @@ function weather1 (location) {
     $('.weather-header h4').show();
     $(".weather").attr("style='opacity:0'");
 
-        var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + coords;
+        var URL = "https://api.darksky.net/forecast/" + WEATHER_API_KEY + "/" + coords;
         
         weather = $.ajax({
             url: URL,

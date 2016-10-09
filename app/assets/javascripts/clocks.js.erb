@@ -20,7 +20,7 @@ $(document).ready(function() {
 function makeClock (cityobject){
    
     var WEATHER_API_KEY = "<%=ENV['FORECAST_IO_KEY']%>";
-    var URL = "https://api.forecast.io/forecast/" + WEATHER_API_KEY + "/" + cityobject.lat+","+cityobject.lon;
+    var URL = "https://api.darksky.net/forecast/" + WEATHER_API_KEY + "/" + cityobject.lat+","+cityobject.lon;
     var offset;
       
     var datacity = cityobject.name.toLowerCase().replace(/ /g, '').replace(/[^\w\s]/gi, '')+cityobject.id;
